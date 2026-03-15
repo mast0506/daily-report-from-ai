@@ -5,185 +5,166 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>🌍 全球资讯简报 - Daily Global Briefing</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; line-height: 1.6; color: #333; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; }
-        .container { max-width: 900px; margin: 0 auto; padding: 2rem; background: white; border-radius: 15px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); }
-        header { text-align: center; padding-bottom: 2rem; border-bottom: 3px solid #667eea; margin-bottom: 2rem; }
-        h1 { color: #667eea; font-size: 2.5rem; margin-bottom: 0.5rem; }
-        .date { background: #667eea; color: white; padding: 0.3rem 1rem; border-radius: 20px; display: inline-block; font-weight: bold; }
-        section { margin: 2rem 0; }
-        h2 { color: #764ba2; border-left: 5px solid #667eea; padding-left: 1rem; margin-bottom: 1.5rem; font-size: 1.8rem; }
-        .news-item { background: #f8f9fa; padding: 1rem; margin: 1rem 0; border-radius: 8px; border-left: 4px solid #667eea; transition: transform 0.2s; }
-        .news-item:hover { transform: translateX(5px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
-        .title { font-weight: bold; font-size: 1.1rem; color: #333; margin-bottom: 0.5rem; }
-        .source { color: #667eea; font-size: 0.9rem; margin-bottom: 0.3rem; }
-        .link { display: inline-block; background: #eef2ff; padding: 0.3rem 0.8rem; border-radius: 15px; color: #667eea; text-decoration: none; font-size: 0.9rem; margin-top: 0.5rem; }
-        .link:hover { background: #667eea; color: white; }
-        .summary { color: #666; padding-left: 1rem; border-left: 3px solid #ddd; margin-top: 0.5rem; }
-        footer { text-align: center; margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #eee; color: #666; font-size: 0.9rem; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; line-height: 1.6; color: #333; max-width: 900px; margin: 0 auto; padding: 20px; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); }
+        .container { background: white; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); padding: 30px; margin-bottom: 20px; }
+        h1 { color: #2c3e50; text-align: center; border-bottom: 3px solid #3498db; padding-bottom: 15px; }
+        h2 { color: #34495e; border-left: 4px solid #3498db; padding-left: 12px; margin-top: 30px; }
+        .date { text-align: center; color: #7f8c8d; font-size: 1.1em; margin-bottom: 20px; }
+        .news-item { background: #f8f9fa; border-left: 4px solid #3498db; padding: 15px; margin: 15px 0; border-radius: 0 8px 8px 0; transition: transform 0.2s; }
+        .news-item:hover { transform: translateX(5px); }
+        .news-title { font-weight: bold; color: #2c3e50; margin-bottom: 8px; }
+        .news-desc { color: #555; line-height: 1.6; }
+        .news-source { font-size: 0.9em; color: #7f8c8d; margin-top: 8px; }
+        .news-link { display: inline-block; background: #3498db; color: white; padding: 5px 12px; border-radius: 4px; text-decoration: none; font-size: 0.9em; margin-top: 8px; }
+        .news-link:hover { background: #2980b9; }
+        .footer { text-align: center; color: #7f8c8d; font-size: 0.9em; margin-top: 30px; padding-top: 20px; border-top: 1px solid #ecf0f1; }
+        @media (max-width: 600px) { .container { padding: 20px; } h1 { font-size: 1.5em; } }
     </style>
 </head>
 <body>
     <div class="container">
-        <header>
-            <h1>🌍 全球资讯简报</h1>
-            <p>Global News Briefing | 2026-03-13</p>
-        </header>
+        <h1>🌍 全球资讯简报 - Daily Global Briefing</h1>
+        <div class="date">2026 年 3 月 15 日（周日）| Sunday, March 15, 2026</div>
 
-        <!-- 航运板块 -->
-        <section>
-            <h2>🚢 航运板块 (Shipping & Logistics)</h2>
-            
-            <div class="news-item">
-                <div class="title">巴拿马港口风波持续发酵</div>
-                <div class="source">来源：BBC News 中文</div>
-                <a href="https://www.bbc.com/zhongwen/articles/c5y4wz97w63o/simp" target="_blank" class="link">阅读原文 →</a>
-                <p class="summary">2026 年 2 月 23 日，巴拿马政府突袭接管长和港口设施。随后在 3 月 9、10 日连续两日，中国国家交通运输部及发改委先后约谈马士基集团（A.P. Moller-Maersk），中国航运巨头暂停部分港口营运。</p>
-            </div>
+        <h2>🚢 航运板块 (Shipping & Logistics)</h2>
+        
+        <div class="news-item">
+            <div class="news-title">Fitch: 2026 年航运市场进入"风险定价年"</div>
+            <div class="news-desc">从 Fitch 的框架看，2026 年的航运市场或更接近"风险定价年"，即决定行情的未必是单一的供需指标，而是地缘政治、政策成本、通行条件与贸易规则在不同路径下的组合结果。集运考验运力纪律与联盟协同能力；油轮交易需重视回撤风险；干散货可能处于"运量相对稳定但利润波动更大"区间。</div>
+            <div class="news-source">来源：信德海事网</div>
+            <a href="https://www.xindemarinenews.com/china/62394.html" target="_blank" class="news-link">阅读原文 →</a>
+        </div>
 
-            <div class="news-item">
-                <div class="title">洛杉矶港不确定性增加</div>
-                <div class="source">来源：WorldCargo News</div>
-                <a href="https://www.worldcargonews.com/news/2026/03/los-angeles-sees-more-uncertainty-on-the-horizon/" target="_blank" class="link">阅读原文 →</a>
-                <p class="summary">中东危机导致洛杉矶港面临更多航运中断风险。在经历预测性的前两个月后，港口方面正为供应链 disruption 做准备。</p>
-            </div>
+        <div class="news-item">
+            <div class="news-title">跨太平洋航线面临结构性过剩挑战</div>
+            <div class="news-desc">当前跨太平洋航线面临的核心问题并非需求端的暂时性波动，而是供给端的结构性过剩。2024 年全球集装箱运输量虽然创下历史新高，但仍然无法消化航运公司近年来大规模扩张的船队运力。全球集装箱船队运力在过去两年增长超过 12%，而同期全球贸易量增速仅为 3-4%。</div>
+            <div class="news-source">来源：SCI.AI / YRules</div>
+            <a href="https://news.yrules.com/archives/3813" target="_blank" class="news-link">阅读原文 →</a>
+        </div>
 
-            <div class="news-item">
-                <div class="title">SAPICS 发布非洲供应链 2026 前瞻</div>
-                <div class="source">来源：SCI.AI / YRules</div>
-                <a href="https://news.yrules.com/archives/3953" target="_blank" class="link">阅读原文 →</a>
-                <p class="summary">南非货运与物流市场在 2026 年规模达 155.5 亿美元，较 2025 年的 147 亿美元实现稳健增长。AI 与关键矿产投资正驱动物流市场加速升级。</p>
-            </div>
+        <div class="news-item">
+            <div class="news-title">宁波港集装箱吞吐量同比增长 9%</div>
+            <div class="news-desc">宁波港（601018）作为长三角核心枢纽港口，全球第三大集装箱港，2026 年 1 月集装箱吞吐量同比增长 9%。深水航道优势明显，航线网络完善，成本控制能力突出；长三角外贸复苏 + 航线转移红利持续释放。</div>
+            <div class="news-source">来源：新浪新闻</div>
+            <a href="https://www.sina.cn/news/detail/5271742035266745.html" target="_blank" class="news-link">阅读原文 →</a>
+        </div>
 
-            <div class="news-item">
-                <div class="title">Fitch: 2026 航运市场进入"风险定价年"</div>
-                <div class="source">来源：信德海事网</div>
-                <a href="https://www.xindemarinenews.com/china/62394.html" target="_blank" class="link">阅读原文 →</a>
-                <p class="summary">2026 年航运市场或更接近"风险定价年"，地缘政治、政策成本与贸易规则将成为主导因素。集运考验运力纪律与联盟协同能力；油轮交易需重视回撤风险；干散货可能处于"运量相对稳定但利润波动更大"区间。</p>
-            </div>
+        <div class="news-item">
+            <div class="news-title">TikTok 美区新政推动跨境电商物流合规化</div>
+            <div class="news-desc">TikTok 2026 美区新政标志着跨境电商"野蛮生长"时代终结，物流合规与服务升级成为生存前提。对卖家而言，尽早接入官方物流或合规海外仓，优化库存与选品结构，是降低风险的关键。</div>
+            <div class="news-source">来源：ANL Group</div>
+            <a href="https://www.anl-cn.com/newsdetail/101.html" target="_blank" class="news-link">阅读原文 →</a>
+        </div>
 
-            <div class="news-item">
-                <div class="title">Wärtsilä: 航运业四大趋势</div>
-                <div class="source">来源：MarineLink</div>
-                <a href="https://www.marinelink.com/news/maritime/shipping" target="_blank" class="link">阅读原文 →</a>
-                <p class="summary">2026 年全球航运业将呈现四大趋势：加速数字化转型、脱碳压力加剧、监管路径不确定性增长。Wärtsilä 将生命周期优化作为主要主题进行重点关注。</p>
-            </div>
-        </section>
+        <div class="news-item">
+            <div class="news-title">2026 年 3 月国际仓库假期提醒</div>
+            <div class="news-desc">日本大阪/东京、韩国、泰国等地将于 3 月 20 日休仓；中国、加拿大、英国、美国等地正常运营。请及时安排取件事宜。</div>
+            <div class="news-source">来源：Shipbao</div>
+            <a href="https://www.shipbao.cn/information/news_detail/id/555" target="_blank" class="news-link">阅读原文 →</a>
+        </div>
 
-        <!-- 时政板块 -->
-        <section>
-            <h2>🏛️ 时政板块 (Geopolitics & World Affairs)</h2>
-            
-            <div class="news-item">
-                <div class="title">俄乌冲突进入第 4 年</div>
-                <div class="source">来源：NPR</div>
-                <a href="https://www.npr.org/sections/world/" target="_blank" class="link">阅读原文 →</a>
-                <p class="summary">俄罗斯在乌克兰的"特别军事行动"已近四年，成为二战以来欧洲大陆最致命的冲突。西方政府与智库称，超过 150 万人死亡、受伤或失踪。</p>
-            </div>
+        <h2>🏛️ 时政板块 (Geopolitics & World Affairs)</h2>
+        
+        <div class="news-item">
+            <div class="news-title">王毅外长即将赴越南出席"3+3"战略对话</div>
+            <div class="news-desc">应越方邀请，中共中央政治局委员、外交部长王毅与中共中央书记处书记、公安部长王小洪，国防部长董军将于 3 月 15 日至 17 日赴越南出席中越外交、国防、公安"3+3"战略对话机制首次部长级会议。在越期间，王毅还将同...</div>
+            <div class="news-source">来源：中国驻马来西亚大使馆</div>
+            <a href="https://medan.china-consulate.gov.cn/fyrth/202603/t20260313_11874556.htm" target="_blank" class="news-link">阅读原文 →</a>
+        </div>
 
-            <div class="news-item">
-                <div class="title">莫斯科 2026 年预算面临挑战</div>
-                <div class="source">来源：Reuters</div>
-                <a href="https://www.reuters.com/" target="_blank" class="link">阅读原文 →</a>
-                <p class="summary">莫斯科原本计划 2026 年预算以原油价格$59/桶为基础，但伊朗被袭击事件暴露其影响力衰退，油价反而飙升至$80，给预算带来压力。</p>
-            </div>
+        <div class="news-item">
+            <div class="news-title">中国外交年度重点与挑战分析</div>
+            <div class="news-desc">2026 年中国外交面临多重挑战。王毅外长明确表示中日关系走向何方取决于日方选择，对中日关系的基调最为严厉。中俄、中美、中欧、中印、中日五大关系中呈现差异化态势。</div>
+            <div class="news-source">来源：虎嗅网</div>
+            <a href="https://www.huxiu.com/article/4840315.html" target="_blank" class="news-link">阅读原文 →</a>
+        </div>
 
-            <div class="news-item">
-                <div class="title">2026 年全球十大议题</div>
-                <div class="source">来源：CIDOB</div>
-                <a href="https://www.cidob.org/en/publications/world-2026-ten-issues-will-shape-international-agenda" target="_blank" class="link">阅读原文 →</a>
-                <p class="summary">2026 年，技术军事化与军备竞赛将加剧。但随着经济差距扩大，民众对地缘政治议程的优先事项与自身不满之间的脱节感日益增强。</p>
-            </div>
+        <div class="news-item">
+            <div class="news-title">大国势力回归：全球地缘政治新格局</div>
+            <div class="news-desc">当前世界并非简单回归地缘政治，而是出现 overt geopolitics：美俄越来越愿意公开行使权力，即使这与国际法或多边规范相矛盾。这种强势大国政治风格不再掩饰于法律或规范之下。</div>
+            <div class="news-source">来源：The Diplomat</div>
+            <a href="https://thediplomat.com/2026/02/spheres-of-influence-are-officially-back-and-china-stands-to-gain" target="_blank" class="news-link">Read more →</a>
+        </div>
 
-            <div class="news-item">
-                <div class="title">CFR: 世界变得更加暴力无序</div>
-                <div class="source">来源：Council on Foreign Relations</div>
-                <a href="https://www.cfr.org/" target="_blank" class="link">阅读原文 →</a>
-                <p class="summary">CFR 年度冲突风险评估显示，美国外交政策专家对美国国家安全威胁与国际稳定担忧加剧。全球暴力与混乱趋势持续上升。</p>
-            </div>
-        </section>
+        <h2>💰 财经板块 (Finance & Markets)</h2>
+        
+        <div class="news-item">
+            <div class="news-title">2026 年政府工作报告发布：经济增长目标 4.5%-5.0%</div>
+            <div class="news-desc">2026 年《政府工作报告》提出经济增长预期目标为 4.5% 至 5.0%，较 2025 年的 5.0% 有所放缓。预算赤字和特别国债发行规模基本符合预期。适度宽松的货币政策和积极的财政政策旨在提振国内消费与投资。</div>
+            <div class="news-source">来源：渣打银行</div>
+            <a href="https://www.sc.com/cn/market-outlook/market-watch-sc-6-3-2026/" target="_blank" class="news-link">阅读原文 →</a>
+        </div>
 
-        <!-- 财经板块 -->
-        <section>
-            <h2>💰 财经板块 (Finance & Markets)</h2>
-            
-            <div class="news-item">
-                <div class="title">伊朗战争影响油价波动</div>
-                <div class="source">来源：CNBC</div>
-                <a href="https://www.cnbc.com/2026/03/11/stock-market-today-live-updates.html" target="_blank" class="link">阅读原文 →</a>
-                <p class="summary">投资者在特朗普总统公布关税政策后的一周内持续担忧伊朗战争对油价的影响。股市因中东局势而剧烈波动。</p>
-            </div>
+        <div class="news-item">
+            <div class="news-title">2026 年宏观政策转型：从规模扩张到结构优化</div>
+            <div class="news-desc">2026 年政府工作报告标志着宏观政策从规模扩张向结构优化与机制重塑转型，通过财政支出聚焦"投资于人"、地方治理转向"当家理财"、货币政策锚定增长与物价双重目标。</div>
+            <div class="news-source">来源：第一财经</div>
+            <a href="https://www.yicai.com/" target="_blank" class="news-link">阅读原文 →</a>
+        </div>
 
-            <div class="news-item">
-                <div class="title">道琼斯工业指数周跌幅创纪录</div>
-                <div class="source">来源：CNBC</div>
-                <a href="https://www.cnbc.com/2026/03/09/stock-market-today-live-updates.html" target="_blank" class="link">阅读原文 →</a>
-                <p class="summary">特朗普总统在 4 月公布关税政策后，道琼斯指数录得自那以来最差的周表现。市场持续受贸易政策不确定性影响。</p>
-            </div>
+        <div class="news-item">
+            <div class="news-title">国务院讨论通过 2026 年重点工作分工方案</div>
+            <div class="news-desc">研究建立地方财政补贴负面清单管理机制，强化地方债务监管。政策重心转向高质量发展，强调创新驱动与内需拉动。</div>
+            <div class="news-source">来源：证券时报</div>
+            <a href="https://www.stcn.com/" target="_blank" class="news-link">阅读原文 →</a>
+        </div>
 
-            <div class="news-item">
-                <div class="title">股市反弹迹象显现</div>
-                <div class="source">来源：CNBC</div>
-                <a href="https://www.cnbc.com/2026/03/10/stock-market-today-live-updates.html" target="_blank" class="link">阅读原文 →</a>
-                <p class="summary">周一触及低点后，股市全面收高。特朗普政府释放出美国 - 伊朗战争可能结束的迹象，引发市场反弹。</p>
-            </div>
+        <div class="news-item">
+            <div class="news-title">A 股市场结构性分化，成长股回落资源股回升</div>
+            <div class="news-desc">2026 年 3 月 12 日市场综述：上证指数在 4100 点附近徘徊，成交回暖但投资者感受分化。本周市场小幅震荡，成长股回落、资源周期股回升，量化抱团效应明显。</div>
+            <div class="news-source">来源：和讯网</div>
+            <a href="https://m.hexun.com/stock/2026-03-14/223701588.html" target="_blank" class="news-link">阅读原文 →</a>
+        </div>
 
-            <div class="news-item">
-                <div class="title">非农就业数据意外负增长</div>
-                <div class="source">来源：英为财情 (Investing.com)</div>
-                <a href="https://cn.investing.com/news/latest-news" target="_blank" class="link">阅读原文 →</a>
-                <p class="summary">2026 年 2 月美国新增非农就业 -9.2 万人，大幅低于预期。光大证券研报分析指出数据异常可能反映经济放缓信号。</p>
-            </div>
+        <div class="news-item">
+            <div class="news-title">国际油价突破 100 美元，能源股观点上调至中性</div>
+            <div class="news-desc">大新银行经济研究及投资策略部指出，美伊战事持续，市场对美国经济滞胀忧虑升温。美股短线可能承压，建议投资者关注手中品种业绩，增加波段、均衡配置。</div>
+            <div class="news-source">来源：Investing.com</div>
+            <a href="https://cn.investing.com/news/latest-news" target="_blank" class="news-link">阅读原文 →</a>
+        </div>
 
-            <div class="news-item">
-                <div class="title">AI 对经济影响引发担忧</div>
-                <div class="source">来源：CNBC</div>
-                <a href="https://www.cnbc.com/2026/03/10/stock-market-today-live-updates.html" target="_blank" class="link">阅读原文 →</a>
-                <p class="summary">S&P 500 和纳斯达克在 2 月收跌，投资者对人工智能对经济的潜在冲击感到担忧。科技股波动加剧。</p>
-            </div>
-        </section>
+        <h2>🤖 AI 与机器人板块 (AI & Robotics)</h2>
+        
+        <div class="news-item">
+            <div class="news-title">APM Expo 2026 倒计时：3 月 18-20 日盛大开幕</div>
+            <div class="news-desc">距离 APM EXPO 2026 还有 3 天！作为亚洲领先的机器人及自动化展览会，本届展会将聚焦具身智能、协作机器人、工业自动化等前沿领域。多家中国企业将展示最新成果。</div>
+            <div class="news-source">来源：APM Expo Official</div>
+            <a href="https://apmexpo.com" target="_blank" class="news-link">官网信息 →</a>
+        </div>
 
-        <!-- AI 与机器人板块 -->
-        <section>
-            <h2>🤖 AI 与机器人板块 (AI & Robotics)</h2>
-            
-            <div class="news-item">
-                <div class="title">中国聚焦"未来产业"</div>
-                <div class="source">来源：BBC News 中文</div>
-                <a href="https://www.bbc.com/zhongwen/articles/cewz7yxrqdgo/simp" target="_blank" class="link">阅读原文 →</a>
-                <p class="summary">政府工作报告明确培育"未来产业"，包括人工智能、未来能源、量子科技、具身智能（智能机器人）、脑机界面和 6G。中国全力押注 AI 与机器人等未来产业作为下一场增长赌局。</p>
-            </div>
+        <div class="news-item">
+            <div class="news-title">2026 年机器人技术趋势：物理人工智能成为主流</div>
+            <div class="news-desc">2026 年的核心主题是物理人工智能（Physical AI）。机器人不再只是单体产品，而是嵌入生产线、仓储路线规划、协同调度等系统。从运动控制竞争转向"智能涌现"能力，AI 大模型深度融合定义"智能"新范式。</div>
+            <div class="news-source">来源：RoboDK / 知乎</div>
+            <a href="https://robodk.com/cn/blog/2026%E6%9C%BA%E5%99%A8%E4%BA%BA%E8%B6%8B%E5%8A%BF/" target="_blank" class="news-link">阅读原文 →</a>
+        </div>
 
-            <div class="news-item">
-                <div class="title">AWE2026 在上海开幕</div>
-                <div class="source">来源：AIbase</div>
-                <a href="https://www.aibase.com/news" target="_blank" class="link">阅读原文 →</a>
-                <p class="summary">AWE2026（亚洲家电展）在上海开幕，首次采用"一会两区"模式，规模达 17 万平方米。展会聚焦未来 3-5 年智能生活，展示全模态大模型、外骨骼机器人等尖端技术。</p>
-            </div>
+        <div class="news-item">
+            <div class="news-title">NVIDIA GTC 2026：3 月 16-19 日圣何塞举办</div>
+            <div class="news-desc">全球领先的 AI 大会 NVIDA GTC 将于 3 月 16-19 日在圣何塞及线上举办。探索物理 AI 和机器人开发的未来，了解研究、机器人训练、数字孪生以及设计塑造建筑、工厂、产品等方面的进展。</div>
+            <div class="news-source">来源：NVIDIA</div>
+            <a href="https://www.nvidia.cn/gtc-global/" target="_blank" class="news-link">注册参会 →</a>
+        </div>
 
-            <div class="news-item">
-                <div class="title">春晚机器人浓度大幅提升</div>
-                <div class="source">来源：DW News</div>
-                <a href="https://www.dw.com/zh/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/t-69572979" target="_blank" class="link">阅读原文 →</a>
-                <p class="summary">2026 年火马年春晚上，宇树科技、魔法原子、银河通用和松延动力四家机器人公司组团亮相，大幅提升"机器人浓度"。中国社交媒体上机器人话题冲上热搜。</p>
-            </div>
+        <div class="news-item">
+            <div class="news-title">中国具身智能人形机器人：从春晚出圈到全球舞台</div>
+            <div class="news-desc">2026 年，是具身智能与人形机器人从实验室走向大众视野的元年。宇树科技、智元机器人等在制造、零售和仓储物流场景中展示了能稳定运行的具身智能产品，标志着赛道已迈过原型演示阶段，进入工程化、可量产部署阶段。</div>
+            <div class="news-source">来源：东方财富网</div>
+            <a href="https://caifuhao.eastmoney.com/news/20260223003009760426320" target="_blank" class="news-link">阅读原文 →</a>
+        </div>
 
-            <div class="news-item">
-                <div class="title">Google 强化工业机器人 AI 布局</div>
-                <div class="source">来源：Artificial Intelligence News</div>
-                <a href="https://www.artificialintelligence-news.com/news/google-industrial-robotics-ai-physical-ai-intrinsic/" target="_blank" class="link">阅读原文 →</a>
-                <p class="summary">Google 将 Intrinsic 部门整合入企业内部，加速制造业物理 AI 发展。此举标志企业级机器人战略转型，不仅是内部重组，而是真正的业务布局。</p>
-            </div>
-        </section>
+        <div class="news-item">
+            <div class="news-title">Google 整合 Intrinsic 部门加速工业 AI 机器人战略</div>
+            <div class="news-desc">Google 将 Intrinsic 部门整合入企业内部，加速制造业物理 AI 发展。此举标志企业级机器人战略转型，不仅是内部重组，而是真正的业务布局。</div>
+            <div class="news-source">来源：AI News</div>
+            <a href="https://www.artificialintelligence-news.com/news/google-industrial-robotics-ai-physical-ai-intrinsic/" target="_blank" class="news-link">阅读原文 →</a>
+        </div>
 
-        <footer>
-            <p><strong>📝 数据整理说明</strong></p>
-            <p>• 资讯时效性：所有新闻均选自过去 24 小时内的最新报道<br>
-               • 来源权威性：优先选择 BBC、Reuters、CNBC、DW 等国际主流媒体<br>
-               • 更新频率：每日自动更新，持续追踪全球动态</p>
-            <br>
-            <p>*此简报由 AI Agent 自动生成 | 下次更新：2026-03-14 07:15*</p>
-        </footer>
+        <div class="footer">
+            <p><strong>📧 订阅此简报：</strong>每日早上 07:15 (Asia/Singapore) 自动发送</p>
+            <p><strong>🌐 在线浏览：</strong><a href="https://mast0506.github.io/daily-report-from-ai/" target="_blank">https://mast0506.github.io/daily-report-from-ai/</a></p>
+            <p><small>© 2026 Global Briefing Team | 本简报由 AI 自动生成，仅供参考</small></p>
+        </div>
     </div>
 </body>
 </html>
