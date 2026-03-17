@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📰 每日全球资讯简报 - 2026 年 3 月 17 日</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Microsoft YaHei', 'Segoe UI', Arial, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 40px 20px;
+        }
+        .container { max-width: 1400px; margin: 0 auto; background: white; border-radius: 16px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); overflow: hidden; }
+        .header { background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); color: white; padding: 60px 40px; text-align: center; }
+        .header h1 { font-size: 2.8em; margin-bottom: 15px; font-weight: 700; }
+        .header p { font-size: 1.3em; opacity: 0.95; }
+        .date-badge { display: inline-block; background: #ff6b6b; color: white; padding: 10px 25px; border-radius: 30px; margin-top: 20px; font-weight: 600; font-size: 1.1em; }
+        .summary-box { background: #fff3cd; border-left: 4px solid #ffc107; padding: 25px; margin: 25px 0; border-radius: 8px; }
+        .summary-title { font-size: 1.2em; color: #856404; font-weight: 700; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+        .section { padding: 40px; border-bottom: 2px solid #eee; }
+        .section:last-child { border-bottom: none; }
+        .section-title { font-size: 2em; color: #1e3c72; margin-bottom: 30px; padding-bottom: 15px; border-bottom: 4px solid #667eea; display: inline-block; }
+        .news-card { background: #f8f9fa; border-left: 4px solid #667eea; padding: 25px; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .news-card.danger { border-left-color: #dc3545; background: #fff5f5; }
+        .news-card.warning { border-left-color: #ff9800; background: #fff9e6; }
+        .news-card.info { border-left-color: #2196f3; background: #f5faff; }
+        .news-title { font-size: 1.4em; font-weight: 700; color: #1e3c72; margin-bottom: 12px; }
+        .news-title.danger { color: #dc3545; }
+        .news-date { display: inline-block; background: #667eea; color: white; padding: 6px 15px; border-radius: 20px; font-size: 0.9em; margin-bottom: 12px; }
+        .news-content { margin-top: 12px; line-height: 2.0; }
+        .highlights-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-bottom: 25px; }
+        .highlight-card { background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%); padding: 25px; border-radius: 12px; border-left: 4px solid #667eea; }
+        .highlight-card h3 { color: #2c3e50; margin-bottom: 12px; font-size: 1.2em; }
+        .highlight-card p { color: #555; line-height: 1.7; }
+        .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 20px; }
+        .stat-card { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 25px; border-radius: 12px; text-align: center; }
+        .stat-number { font-size: 2.5em; font-weight: 700; margin-bottom: 8px; }
+        .stat-label { font-size: 0.95em; opacity: 0.95; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { padding: 15px; text-align: left; border-bottom: 1px solid #ddd; }
+        th { background: #1e3c72; color: white; font-weight: 600; }
+        tr:hover { background: #f8f9fa; }
+        .tag-container { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px; }
+        .tag { background: #e3f2fd; color: #1976d2; padding: 5px 15px; border-radius: 15px; font-size: 0.85em; }
+        .footer { background: #1e3c72; color: white; padding: 40px; text-align: center; }
+        @media (max-width: 768px) {
+            .header h1 { font-size: 1.8em; }
+            .section { padding: 25px; }
+            .highlights-grid { grid-template-columns: 1fr; }
+            .stat-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>📰 每日全球资讯简报</h1>
+            <p>全球航运 • 时政动态 • 财经市场 • AI&科技</p>
+            <div class="date-badge">📅 2026 年 3 月 17 日 (星期二)</div>
+        </div>
+
+        <!-- 🔴 今日要闻摘要 -->
+        <div class="summary-box">
+            <div class="summary-title">🔥 今日要闻重点</div>
+            <ul style="padding-left: 20px;">
+                <li><strong>美伊冲突持续升级：</strong>美国与以色列联合打击伊朗核设施，最高领袖哈梅内伊遇袭身亡，霍尔木兹海峡面临封锁风险。</li>
+                <li><strong>航运市场危机：</strong>约 20% 全球石油供应受影响，油价峰值飙升至$126/桶；至少 21 艘商船遭攻击，15+ 艘商船被袭记录。</li>
+                <li><strong>能源通道重塑：</strong>伊朗封锁霍尔木兹海峡，多国组建护航联盟；中国"电态"崛起形成新型政治依赖。</li>
+                <li><strong>金融市场反弹：</strong>美股三大股指集体上涨（道指 +0.83%、标普 +1.01%、纳指 +1.22%），结束连续三周下跌势头。</li>
+            </ul>
+        </div>
+
+        <!-- 🌍 时政板块 -->
+        <div class="section">
+            <h2 class="section-title">🏛️ 时政动态</h2>
+            
+            <div class="news-card danger">
+                <span class="news-date">2026-03-17 最新</span>
+                <h3 class="news-title danger">美伊冲突全面升级，霍尔木兹海峡危机</h3>
+                <div class="news-content">
+                    <p><strong>核心事件：</strong>2026 年 2 月 28 日，美国与以色列发动协调一致的军事打击行动，目标涵盖伊朗核设施、军事基地及高级领导层。伊朗最高领袖阿里•哈梅内伊在袭击中身亡，引发地区局势剧烈动荡。</p>
+                    <p><strong>最新动态：</strong></p>
+                    <ul style="margin-top: 10px; margin-left: 20px;">
+                        <li>美伊之间直接沟通渠道已重新激活（特使 Steve Witkoff 与外长 Abbas Araghchi）</li>
+                        <li>霍尔木兹海峡面临封锁风险，全球石油储备承压消耗</li>
+                        <li>阿联酋富查伊拉石油工业区遭无人机袭击引发火灾</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="highlights-grid">
+                <div class="highlight-card">
+                    <h3>🌏 中国"电态"崛起</h3>
+                    <p>中国在清洁能源出口领域的扩张形成新型政治依赖关系，被国际称为"electrostate"。这一经济成功案例正在全球南方国家中建立广泛影响力网络。</p>
+                </div>
+                
+                <div class="highlight-card">
+                    <h3>⚖️ 西方制裁体系出现裂痕</h3>
+                    <p>始于美伊军事冲突正在暴露华盛顿未曾预设的第二战线：西方制裁纪律的缓慢瓦解。欧盟国家虽试图最小化影响，但仍被拖入其中。</p>
+                </div>
+
+                <div class="highlight-card">
+                    <h3>🛳️ 印尼镍外交</h3>
+                    <p>与美国的贸易协议显示，印尼的镍产业已成为地缘政治杠杆。巧妙利用自身在电动汽车电池供应链中的关键地位，在美中对峙中寻找平衡。</p>
+                </div>
+            </div>
+
+            <div class="news-card">
+                <span class="news-date">持续更新</span>
+                <h3 class="news-title">乌克兰战争进入第五年</h3>
+                <div class="news-content">
+                    <p>俄罗斯的入侵行动已彻底改变欧洲安全架构，使西方联盟紧张，并测试了国际决心的极限。任何潜在协议的条款仍然与前线一样充满争议。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 🚢 航运板块 -->
+        <div class="section">
+            <h2 class="section-title">🚢 全球航运市场</h2>
+            
+            <div class="news-card danger">
+                <span class="news-date">3 月 16 日最新危机</span>
+                <h3 class="news-title danger">霍尔木兹海峡持续封锁，航运受重大冲击</h3>
+                <div class="news-content">
+                    <p><strong>危机概况：</strong>自 2026 年 2 月 28 日美伊冲突爆发以来，伊朗封锁了霍尔木兹海峡，约 20% 的全球石油供应和大量 LNG 运输受到严重影响。</p>
+                    
+                    <div class="stat-grid">
+                        <div class="stat-card">
+                            <div class="stat-number">20%</div>
+                            <div class="stat-label">全球石油流量受影响</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">$126</div>
+                            <div class="stat-label">布伦特原油峰值 (美元/桶)</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">70%</div>
+                            <div class="stat-label">海峡航运下降</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">21+</div>
+                            <div class="stat-label">商船遭攻击</div>
+                        </div>
+                    </div>
+
+                    <p style="margin-top: 20px;"><strong>被袭船舶记录：</strong></p>
+                    <table>
+                        <tr><th>日期</th><th>船舶名称</th><th>类型</th><th>结果</th></tr>
+                        <tr><td>3 月 1 日</td><td>MT Skylight</td><td>油轮</td><td>弃船，2 人遇难</td></tr>
+                        <tr><td>3 月 4 日</td><td>Safeen Prestige</td><td>集装箱船</td><td>弃船</td></tr>
+                        <tr><td>3 月 6 日</td><td>Mussafah 2</td><td>拖船</td><td>沉没，3 人失踪</td></tr>
+                        <tr><td>3 月 11 日</td><td>Mayuree Naree</td><td>散货船</td><td>起火，3 人失踪</td></tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="news-card warning">
+                <span class="news-date">3 月 15 日最新</span>
+                <h3 class="news-title warning">国际护航行动推进中</h3>
+                <div class="news-content">
+                    <ul style="margin-top: 10px; margin-left: 20px;">
+                        <li><strong>美国：</strong>特朗普总统要求盟国派遣军舰协助，美军计划于 3 月底开始护航油轮。</li>
+                        <li><strong>法国：</strong>宣布联合多国开展防御性护航任务，向中东派遣 12 艘舰艇。</li>
+                        <li><strong>G7 会议：</strong>3 月 11 日成员国同意探讨护航方案，但德国、意大利、西班牙等多国排除军事介入。</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="news-card">
+                <span class="news-date">运价调整汇总</span>
+                <h3 class="news-title">主要航运公司集体涨价</h3>
+                <table>
+                    <tr><th>航运公司</th><th>生效日期</th><th>涉及航线</th><th>调整幅度</th></tr>
+                    <tr><td>CMA CGM (达飞)</td><td>3 月 1 日</td><td>远东 - 非洲/北欧/拉美</td><td>PSS $700-1000/TEU</td></tr>
+                    <tr><td>Hapag-Lloyd</td><td>3 月 1-2 日</td><td>欧地/阿拉伯湾</td><td>WRS $1500/TEU, 冷藏$3500</td></tr>
+                    <tr><td>MSC</td><td>3 月 1 日</td><td>远东 - 欧地及黑海</td><td>新费率 + GFS $54/TEU</td></tr>
+                    <tr><td>马士基</td><td>3 月 1 日</td><td>东亚 - 西非塞内加尔</td><td>PSS 旺季附加费上调</td></tr>
+                </table>
+            </div>
+
+            <div class="news-card info">
+                <span class="news-date">物流供应链动态</span>
+                <h3 class="news-title">NRF：美国进口货运量继续下降</h3>
+                <div class="news-content">
+                    <p><strong>2026 年预测：</strong></p>
+                    <ul style="margin-top: 10px; margin-left: 20px;">
+                        <li>2 月 forecast：186 万 TEU，同比下降 8.5%</li>
+                        <li>3 月 forecast：179 万 TEU，同比下降 16.8%</li>
+                        <li>4 月 forecast：197 万 TEU，同比下降 10.9%</li>
+                    </ul>
+                    <p><strong>UPS 观点：</strong>2026-27 年跨太平洋合同季预计合同价格低于前期周期，货主谈判优势持续保持较强状态。</p>
+                </div>
+            </div>
+
+            <div class="news-card warning">
+                <span class="news-date">3 月第 2 周</span>
+                <h3 class="news-title">航空货运市场受冲击</h3>
+                <table>
+                    <tr><th>航线</th><th>运价涨幅</th><th>状态</th></tr>
+                    <tr><td>中国 - 北美</td><td>+20%</td><td>部分恢复</td></tr>
+                    <tr><td>中国 - 欧洲</td><td>+16%</td><td>逐步恢复</td></tr>
+                    <tr><td>东南亚 - 北美</td><td>+50%</td><td>紧张</td></tr>
+                    <tr><td>东南亚 - 欧洲</td><td>+65%</td><td>高度紧张</td></tr>
+                </table>
+                <p style="margin-top: 10px;"><strong>现状：</strong>卡塔尔多哈枢纽 (~600 架次/天) 仍完全暂停；阿联酋航空已恢复逾 50% 航班，通过安全空中走廊运营。</p>
+            </div>
+        </div>
+
+        <!-- 📈 财经板块 -->
+        <div class="section">
+            <h2 class="section-title">📊 金融市场</h2>
+            
+            <div class="news-card info">
+                <span class="news-date">2026-03-17 市场动态</span>
+                <h3 class="news-title">美股三大股指集体反弹</h3>
+                <div class="news-content">
+                    <p><strong>核心动态：</strong>美股周一强劲反弹，标普 500 指数结束连续三周下跌势头。受油价回落推动，三大股指集体上涨。</p>
+                    
+                    <div class="stat-grid">
+                        <div class="stat-card">
+                            <div class="stat-number">+0.83%</div>
+                            <div class="stat-label">道琼斯工业指数</div>
+                            <div style="font-size: 0.9em; opacity: 0.9;">46,946.41 点</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">+1.01%</div>
+                            <div class="stat-label">标普 500 指数</div>
+                            <div style="font-size: 0.9em; opacity: 0.9;">6,699.38 点</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">+1.22%</div>
+                            <div class="stat-label">纳斯达克指数</div>
+                            <div style="font-size: 0.9em; opacity: 0.9;">22,374.18 点</div>
+                        </div>
+                    </div>
+
+                    <p><strong>亚太市场表现：</strong></p>
+                    <ul style="margin-top: 10px; margin-left: 20px;">
+                        <li>恒生指数：上涨 1.45% 收于 25,834.02 点</li>
+                        <li>上证指数（CSI 300）：平盘收于 4,671.56 点</li>
+                        <li>日经 225：微跌 0.13% 收于 53,751.15 点</li>
+                        <li>韩国 Kospi：上涨 1.14% 收于 5,549.85 点</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="news-card warning">
+                <span class="news-date">2026-03-17 能源市场</span>
+                <h3 class="news-title">国际油价回落，护航船队正在组建</h3>
+                <div class="news-content">
+                    <p><strong>油价动态：</strong></p>
+                    <ul style="margin-top: 10px; margin-left: 20px;">
+                        <li><strong>WTI 原油：</strong>$93.50/桶（-5.28%）</li>
+                        <li><strong>布伦特原油：</strong>$100.21/桶（-2.84%）</li>
+                        <li><strong>原因：</strong>美国允许伊朗油轮通行，并将组建多国护航联盟</li>
+                    </ul>
+                    
+                    <p><strong>财政部长贝森特：</strong>将很快宣布一个由多国组成的联盟，为霍尔木兹海峡的船只提供护航。分析师警告，如果中东危机持续，油价可能飙升至 200 美元/桶。</p>
+                </div>
+            </div>
+
+            <div class="news-card">
+                <span class="news-date">宏观经济数据</span>
+                <h3 class="news-title">通胀压力引发加息担忧</h3>
+                <div class="news-content">
+                    <p><strong>美国 PCE 通胀率：</strong>12 个月年化率为 2.9%，仍高于美联储 2% 目标水平。</p>
+                    <p><strong>美联储利率前景：</strong>期货市场显示 2026 年加息概率约 25%，市场预期从此前多次降息转向鹰派。伊朗战争引发的通胀压力可能导致美联储在 3 月 18 日会议后加息。</p>
+                    <p><strong>汇率动态：</strong>USD/CNY 当前汇率 6.90，本周波动区间 6.84-6.92。</p>
+                </div>
+            </div>
+
+            <div class="news-card info">
+                <span class="news-date">公司动态</span>
+                <h3 class="news-title">Meta 计划裁员超 20% 削减 AI 成本</h3>
+                <div class="news-content">
+                    <p><strong>Meta：</strong>据 Reuters 报道，公司计划裁掉超过 20% 的员工以应对 AI 支出。股价仍上涨逾 2%。</p>
+                    <p><strong>Nebius：</strong>宣布与 Meta 达成 120 亿美元专用 AI 容量协议，股价早盘飙升 14%。</p>
+                    <p><strong>其他异动：</strong>Peloton（商用健身器材 +4.5%）、Micron Technology（台湾建厂 +4%）、加密货币板块（比特币走高带动 MARA、Strategy +4%，Circle +5.4%）</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 🤖 AI&机器人板块 -->
+        <div class="section">
+            <h2 class="section-title">🤖 人工智能与机器人技术</h2>
+            
+            <div class="news-card info">
+                <span class="news-date">2026-03-17 AI&科技动态</span>
+                <h3 class="news-title">AI 基础设施与国防应用进展</h3>
+                <div class="news-content">
+                    <p><strong>Meta-Nebius AI 协议：</strong>Nebius Group 宣布与 Meta 达成 120 亿美元专用 AI 容量协议，将在多个地点提供基础设施支持。该消息推动 Nebius 股价早盘飙升 14%。</p>
+                    
+                    <p><strong>特朗普 AI 政策调整：</strong>下令美国政府停止使用 Anthropic 的尖端 AI 模型，这是科技公司与五角大楼之间关于新技术使用方式对峙的最新进展。</p>
+                    
+                    <div class="highlights-grid">
+                        <div class="highlight-card" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); border-left-color: #6c757d;">
+                            <h3>⚔️ AI 在国防政策中的应用</h3>
+                            <p>AI 在国防领域的应用正成为中美战略竞争的新维度。五角大楼与科技公司之间的紧张关系持续，关于技术伦理和自主武器系统的讨论日益激烈。</p>
+                        </div>
+
+                        <div class="highlight-card" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); border-left-color: #6c757d;">
+                            <h3>🚁 无人机战争频率升级</h3>
+                            <p>西方可能通过提升无人机战争的高频段来颠覆现有格局。分析师建议采取"高频扑克"策略，让西方发挥自身优势，迫使对手进入高技术对抗。</p>
+                        </div>
+
+                        <div class="highlight-card" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); border-left-color: #6c757d;">
+                            <h3>🔋 钯金市场受贸易关税冲击</h3>
+                            <p>针对俄罗斯钯金的新型反倾销关税旨在保护美国国内关键矿产产能。然而，关于美国钯金市场长期健康的疑问仍在持续，这对电动汽车供应链构成潜在风险。</p>
+                        </div>
+                    </div>
+
+                    <p><strong>GTC 会议预期：</strong>英伟达因 GTC 会议预期推动芯片股上涨 1-2%。市场对 AI 基础设施需求的持续增长保持乐观态度。</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <h3>📊 数据来源说明</h3>
+            <p style="margin-top: 15px; opacity: 0.9;">
+                本报告综合整理了来自 Council on Foreign Relations, Geopolitical Monitor, SeaRates, Freightos, CNBC, Reuters, 新华社及各大国际媒体关于全球航运、时政、财经及 AI&机器人领域的最新信息。
+            </p>
+            <p style="margin-top: 20px; font-size: 0.9em; opacity: 0.85;">
+                ⚠️ <strong>免责声明：</strong>本报告仅供参考，不构成投资建议。地缘政治局势复杂多变，实际运营可能受多种因素影响。具体决策请咨询专业顾问和分析师。
+            </p>
+            <p style="margin-top: 20px; font-size: 0.85em;">
+                📧 订阅此每日简报：请访问 https://mast0506.github.io/daily-report-from-ai<br>
+                © 2026 全球资讯简报 | 自动生成 | 下次更新：2026-03-18 07:15
+            </p>
+        </div>
+    </div>
+</body>
+</html>
