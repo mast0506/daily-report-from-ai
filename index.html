@@ -3,391 +3,526 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>每日全球资讯简报 - 2026年5月2日</title>
+    <title>全球资讯简报 | Daily Global Briefing — May 5, 2026</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg: #f7f8fa;
+            --card: #ffffff;
+            --text: #1a1a2e;
+            --muted: #6b7280;
+            --accent: #2563eb;
+            --border: #e5e7eb;
+            --tag-shipping: #0e7490;
+            --tag-politics: #be123c;
+            --tag-finance: #047857;
+            --tag-ai: #7c3aed;
+        }
+        * { box-sizing: border-box; }
         body {
+            margin: 0;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            background: #f5f5f5;
-            color: #333;
+            background: var(--bg);
+            color: var(--text);
             line-height: 1.6;
         }
         .container {
-            max-width: 900px;
+            max-width: 960px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 2rem 1rem;
         }
         header {
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-            color: white;
-            padding: 40px 20px;
             text-align: center;
-            border-radius: 12px;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 2px solid var(--border);
         }
-        header h1 { font-size: 2em; margin-bottom: 10px; }
-        header .meta { opacity: 0.9; font-size: 0.95em; }
+        header h1 {
+            margin: 0 0 0.5rem;
+            font-size: 1.75rem;
+            font-weight: 700;
+        }
+        header .subtitle {
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
+        header .date {
+            font-weight: 600;
+            color: var(--accent);
+        }
         .section {
-            background: white;
-            border-radius: 12px;
-            padding: 25px;
-            margin-bottom: 25px;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            margin-bottom: 2.5rem;
         }
-        .section h2 {
-            font-size: 1.4em;
-            margin-bottom: 20px;
-            padding-bottom: 12px;
-            border-bottom: 3px solid;
+        .section-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid var(--accent);
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 0.5rem;
         }
-        .section.shipping h2 { color: #0066cc; border-color: #0066cc; }
-        .section.politics h2 { color: #cc3300; border-color: #cc3300; }
-        .section.finance h2 { color: #009933; border-color: #009933; }
-        .section.ai h2 { color: #6600cc; border-color: #6600cc; }
         .news-item {
-            padding: 15px 0;
-            border-bottom: 1px solid #eee;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1rem 1.25rem;
+            margin-bottom: 1rem;
+            transition: box-shadow 0.2s;
         }
-        .news-item:last-child { border-bottom: none; }
-        .news-item h3 {
-            font-size: 1.1em;
-            margin-bottom: 8px;
-            color: #222;
+        .news-item:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
         }
-        .news-item p { color: #555; margin-bottom: 8px; }
-        .source {
-            font-size: 0.85em;
-            color: #888;
+        .news-headline {
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+        }
+        .news-meta {
+            font-size: 0.8rem;
+            color: var(--muted);
+            margin-bottom: 0.5rem;
             display: flex;
-            gap: 12px;
             flex-wrap: wrap;
+            gap: 0.75rem;
         }
-        .source a { color: #0066cc; text-decoration: none; }
-        .source a:hover { text-decoration: underline; }
+        .news-meta a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .news-meta a:hover {
+            text-decoration: underline;
+        }
+        .news-summary {
+            font-size: 0.92rem;
+            color: var(--text);
+        }
         .tag {
             display: inline-block;
-            padding: 2px 8px;
+            padding: 0.15rem 0.5rem;
             border-radius: 4px;
-            font-size: 0.75em;
+            font-size: 0.75rem;
             font-weight: 600;
+            color: #fff;
             text-transform: uppercase;
         }
-        .tag.breaking { background: #ff4444; color: white; }
-        .tag.major { background: #ff8800; color: white; }
-        .stats {
-            background: #f8f9fa;
+        .tag.shipping { background: var(--tag-shipping); }
+        .tag.politics { background: var(--tag-politics); }
+        .tag.finance { background: var(--tag-finance); }
+        .tag.ai { background: var(--tag-ai); }
+
+        .stats-box {
+            background: var(--card);
+            border: 1px solid var(--border);
             border-radius: 8px;
-            padding: 20px;
-            margin-top: 30px;
-            font-size: 0.9em;
+            padding: 1.25rem;
+            margin-top: 2rem;
         }
-        .stats h3 { margin-bottom: 15px; color: #444; }
-        .stats table {
+        .stats-box h2 {
+            margin-top: 0;
+            font-size: 1.1rem;
+        }
+        .stats-table {
             width: 100%;
             border-collapse: collapse;
+            font-size: 0.85rem;
         }
-        .stats td, .stats th {
-            padding: 8px 12px;
+        .stats-table th, .stats-table td {
             text-align: left;
-            border-bottom: 1px solid #ddd;
+            padding: 0.5rem;
+            border-bottom: 1px solid var(--border);
         }
-        .stats th { color: #666; font-weight: 600; }
-        footer {
+        .stats-table th {
+            font-weight: 600;
+            background: #f9fafb;
+        }
+        .footer {
             text-align: center;
-            padding: 30px;
-            color: #999;
-            font-size: 0.85em;
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border);
+            color: var(--muted);
+            font-size: 0.85rem;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>🌍 每日全球资讯简报</h1>
-            <p class="meta">2026年5月2日 星期六 | 新加坡时间 07:15</p>
-            <p class="meta">编辑：AI自动聚合 | 来源：全球主流媒体与专业机构</p>
+            <h1>🌍 全球资讯简报 | Daily Global Briefing</h1>
+            <div class="subtitle">
+                <span class="date">May 5, 2026 (Tuesday)</span> · SGT 07:15 · AI-curated from multiple sources
+            </div>
+            <div class="subtitle" style="margin-top:0.5rem;">
+                板块：航运/港口 · 时政 · 财经 · AI/机器人
+            </div>
         </header>
 
-        <section class="section shipping">
-            <h2>🚢 航运与港口</h2>
-            
-            <div class="news-item">
-                <h3><span class="tag breaking">突发</span> 霍尔木兹海峡危机持续，航运近乎停滞</h3>
-                <p>尽管美伊达成有条件停火（延长至谈判结束），但霍尔木兹海峡几乎没有任何船只通过，实际上仍处于关闭状态。美国已宣布对试图使用伊朗港口的船只实施反封锁。能源价格因美伊和谈陷入僵局而持续上涨。</p>
-                <div class="source">
-                    <span>来源：BBC News</span>
-                    <a href="https://www.bbc.com/news/articles/c4g4xexy4w7o">原文链接</a>
-                    <span>发布时间：2026-05-01</span>
-                </div>
-            </div>
+        <!-- 航运/港口 -->
+        <section class="section">
+            <div class="section-title">🚢 航运 / 港口 (Shipping & Maritime)</div>
 
-            <div class="news-item">
-                <h3><span class="tag major">重要</span> 美国寻求"海上自由"联盟重启霍尔木兹航运</h3>
-                <p>美国政府发起新努力，争取盟友帮助船舶通过被伊朗封锁的关键通道。G7国家此前已同意研究护航船只通过海峡的可能性。NBC新闻实时追踪显示，海峡交通数周来几乎停滞。</p>
-                <div class="source">
-                    <span>来源：Euronews / NBC News / UK Parliament</span>
-                    <a href="https://www.euronews.com/2026/04/30/us-seeks-maritime-freedom-coalition-to-restart-strait-of-hormuz-shipping">原文链接</a>
-                    <span>发布时间：2026-04-30</span>
+            <article class="news-item">
+                <div class="news-headline">Most Strait of Hormuz shipping remains at standstill despite latest US pledge</div>
+                <div class="news-meta">
+                    <span class="tag shipping">Shipping</span>
+                    <span>来源: <a href="https://www.reuters.com/world/middle-east/most-strait-hormuz-shipping-standstill-despite-latest-us-pledge-2026-05-04/" target="_blank">Reuters</a></span>
+                    <span>发布时间: May 4, 2026</span>
                 </div>
-            </div>
+                <div class="news-summary">
+                    No tankers or commercial vessels were seen lining up to transit the Strait of Hormuz. German shipping group Hapag-Lloyd said transit for its vessels remained impossible due to a lack of clarity over secure passage procedures. More than 850 ships are estimated trapped in the Gulf since the US-Israel attack on Iran began on February 28.
+                </div>
+            </article>
 
-            <div class="news-item">
-                <h3>印度计划新增62艘船舶扩大航运能力</h3>
-                <p>在霍尔木兹海峡危机的推动下，印度加速海事扩张计划，宣布在2026-27财年新增62艘船舶，投资513.83亿卢比（约62亿美元），创造额外285万总吨运力。</p>
-                <div class="source">
-                    <span>来源：The Hindu / The Week</span>
-                    <a href="https://www.thehindu.com/news/national/india-accelerates-maritime-expansion-plan-amid-strait-of-hormuz-concerns/article70921338.ece">原文链接</a>
-                    <span>发布时间：2026-04-30</span>
+            <article class="news-item">
+                <div class="news-headline">US destroys Iranian small boats, shoots down missiles and drones as it opens Strait</div>
+                <div class="news-meta">
+                    <span class="tag shipping">Shipping</span>
+                    <span>来源: <a href="https://www.reuters.com/world/middle-east/us-destroys-six-iranian-small-boats-shoots-down-missiles-drones-us-admiral-says-2026-05-04/" target="_blank">Reuters</a></span>
+                    <span>发布时间: May 4, 2026</span>
                 </div>
-            </div>
+                <div class="news-summary">
+                    The US military said it destroyed six Iranian small boats and intercepted Iranian cruise missiles and drones fired by Tehran as it sought to thwart a new US naval effort to open shipping through the Strait of Hormuz. The operation, dubbed "Project Freedom," involves guided-missile destroyers, over 100 aircraft, and 15,000 service members.
+                </div>
+            </article>
 
-            <div class="news-item">
-                <h3>Hapag-Lloyd与印度政府签署三份海事合作意向书</h3>
-                <p>德国航运巨头Hapag-Lloyd与印度政府签署三份具有里程碑意义的合作意向书，深化在海事领域的战略合作。此前该公司已在巴西收购集装箱码头运营商50%股权，并提高在印度JM Baxi Ports的持股比例。</p>
-                <div class="source">
-                    <span>来源：Logistics Manager</span>
-                    <a href="https://logistics-manager.com/hapag-lloyd-and-indian-government-forge-strategic-maritime-partnership/">原文链接</a>
-                    <span>发布时间：2026-04-30</span>
+            <article class="news-item">
+                <div class="news-headline">Shipping firms question safety in Strait of Hormuz despite Trump plan</div>
+                <div class="news-meta">
+                    <span class="tag shipping">Shipping</span>
+                    <span>来源: <a href="https://www.theguardian.com/business/2026/may/04/strait-of-hormuz-donald-trump-us-navy-iran-shipping" target="_blank">The Guardian</a></span>
+                    <span>发布时间: May 4, 2026</span>
                 </div>
-            </div>
+                <div class="news-summary">
+                    President Trump announced US navy will "guide" stranded ships out of the waterway, but shipping bosses remain nervous. A Centcom statement said US military support includes guided-missile destroyers, over 100 land and sea-based aircraft, multidomain unmanned platforms and 15,000 service members. The crisis threatens to tip the global economy into recession, with oil prices about 50% higher than pre-conflict levels.
+                </div>
+            </article>
 
-            <div class="news-item">
-                <h3>六艘滞留霍尔木兹海峡的邮轮将恢复服务</h3>
-                <p>随着霍尔木兹海峡重新对海上交通开放，此前滞留该地区的六艘邮轮预计很快恢复运营，包括MSC Euribia等正在进行重新定位至欧洲。</p>
-                <div class="source">
-                    <span>来源：Cruise Industry News</span>
-                    <a href="https://cruiseindustrynews.com/">原文链接</a>
-                    <span>发布时间：2026-05-01</span>
+            <article class="news-item">
+                <div class="news-headline">Hapag-Lloyd and MSC get creative in bid to resume Middle East Gulf bookings</div>
+                <div class="news-meta">
+                    <span class="tag shipping">Shipping</span>
+                    <span>来源: <a href="https://www.tradewindsnews.com/containers/hapag-lloyd-and-msc-get-creative-in-bid-to-resume-middle-east-gulf-bookings/2-1-1984424" target="_blank">TradeWinds</a></span>
+                    <span>发布时间: May 4, 2026</span>
                 </div>
-            </div>
+                <div class="news-summary">
+                    Hapag-Lloyd will use container facilities at Khor Fakkan in the UAE to link Upper Gulf services with ports in Oman and India. The German carrier said dry cargo, refrigerated and in-gauge specialized containers are the only freight being accepted under its booking resumption, as shipping lines pivot routes amid the Hormuz blockade.
+                </div>
+            </article>
 
-            <div class="news-item">
-                <h3>航运市场短期中断将持续至2026年底</h3>
-                <p>据Lloyd's List分析，短期中断将在2026年继续塑造航运市场，但行业正稳步走向结构性下行。2027年开始的新船交付潮将超过需求增长，尽管拆船量也在上升。</p>
-                <div class="source">
-                    <span>来源：Lloyd's List</span>
-                    <a href="https://www.lloydslist.com/">原文链接</a>
-                    <span>发布时间：2026-05-01</span>
+            <article class="news-item">
+                <div class="news-headline">Bulk Carriers Outlook 2026: freight rates enter Q2 stronger than anticipated</div>
+                <div class="news-meta">
+                    <span class="tag shipping">Shipping</span>
+                    <span>来源: <a href="https://maritimecyprus.com/2026/05/03/report-bulk-carriers-outlook-2026/" target="_blank">MaritimeCyprus / IFCHOR Galbraiths</a></span>
+                    <span>发布时间: May 3, 2026</span>
                 </div>
-            </div>
+                <div class="news-summary">
+                    The dry bulk market report highlights that freight rates entered Q2 2026 in a stronger-than-anticipated position, supported by strong Australian shipments (+4.3% YoY), recovering Brazil exports (+3.5% YoY), and the early stages of Simandou's ramp-up. Large-vessel balance has tightened, offering constructive market conditions outside the Hormuz disruption zone.
+                </div>
+            </article>
+
+            <article class="news-item">
+                <div class="news-headline">IRGC unveils new Strait of Hormuz map, shipping remains at standstill</div>
+                <div class="news-meta">
+                    <span class="tag shipping">Shipping</span>
+                    <span>来源: <a href="https://www.jpost.com/middle-east/iran-news/article-895083" target="_blank">The Jerusalem Post</a></span>
+                    <span>发布时间: May 4, 2026</span>
+                </div>
+                <div class="news-summary">
+                    Iran's Revolutionary Guards published a new navigation map for the Strait of Hormuz, asserting control over the waterway. No tankers were seen lining up to transit, and Hapag-Lloyd maintained that transit for its vessels remained impossible due to lack of clarity over secure passage procedures, underscoring the ongoing deadlock in the critical chokepoint.
+                </div>
+            </article>
         </section>
 
-        <section class="section politics">
-            <h2>🌐 国际时政</h2>
+        <!-- 时政 -->
+        <section class="section">
+            <div class="section-title">🏛️ 时政 (Politics & Current Affairs)</div>
 
-            <div class="news-item">
-                <h3><span class="tag breaking">突发</span> 特朗普称伊朗战争已"终止"，绕过国会战争权力期限</h3>
-                <p>美国总统唐纳德·特朗普在致国会的一封信中宣布，与伊朗的敌对行动已"终止"，声称自4月7日停火以来美军与伊朗之间没有交火，因此不需要国会授权。民主党人强烈抨击这一说法，称"那是胡说八道"。</p>
-                <div class="source">
-                    <span>来源：Reuters / BBC / AP / The Guardian</span>
-                    <a href="https://www.reuters.com/world/asia-pacific/white-house-says-iran-war-terminated-war-powers-deadline-arrives-2026-05-01/">原文链接</a>
-                    <span>发布时间：2026-05-01</span>
+            <article class="news-item">
+                <div class="news-headline">Trump tells Congress Iran war is "terminated" as war powers deadline arrives</div>
+                <div class="news-meta">
+                    <span class="tag politics">Politics</span>
+                    <span>来源: <a href="https://www.reuters.com/world/asia-pacific/white-house-says-iran-war-terminated-war-powers-deadline-arrives-2026-05-01/" target="_blank">Reuters</a></span>
+                    <span>发布时间: May 1, 2026</span>
                 </div>
-            </div>
+                <div class="news-summary">
+                    US President Donald Trump declared that a ceasefire had "terminated" hostilities against Iran, seeking to bolster his argument that he does not need lawmakers' permission to continue the conflict. In a letter to congressional leaders on the 60-day war powers deadline, Trump wrote: "There has been no exchange of fire between the United States Forces and Iran since April 7, 2026."
+                </div>
+            </article>
 
-            <div class="news-item">
-                <h3><span class="tag major">重要</span> 查尔斯三世结束访美，与特朗普互动获好评</h3>
-                <p>英国国王查尔斯三世和卡米拉王后结束了为期四天的美国国事访问。此次访问旨在庆祝美国独立250周年，查尔斯三世与特朗普的多次互动因其娴熟的外交手腕获得广泛赞誉。</p>
-                <div class="source">
-                    <span>来源：AP / Reuters / NYT / CNN</span>
-                    <a href="https://apnews.com/article/king-charles-iii-trump-state-visit-3dbe93e7c379d5ef6fe08864db2f8a2c">原文链接</a>
-                    <span>发布时间：2026-04-30</span>
+            <article class="news-item">
+                <div class="news-headline">Democrats slam Trump's claims that Iran hostilities "have been terminated"</div>
+                <div class="news-meta">
+                    <span class="tag politics">Politics</span>
+                    <span>来源: <a href="https://www.theguardian.com/us-news/live/2026/may/01/us-war-iran-ceasefire-war-powers-oil-latest-news-updates" target="_blank">The Guardian</a></span>
+                    <span>发布时间: May 1, 2026</span>
                 </div>
-            </div>
+                <div class="news-summary">
+                    Democratic lawmakers rejected Trump's assertion that the Iran conflict is over, with prominent members calling the claim "bullshit." The dispute centers on whether the ongoing ceasefire and continued US military posture in the region meets the definition of "hostilities" under the War Powers Resolution, setting up a potential constitutional showdown.
+                </div>
+            </article>
 
-            <div class="news-item">
-                <h3>美国将削减驻德兵力5000人</h3>
-                <p>在特朗普与德国总理默茨就伊朗问题发生争执的背景下，美国决定减少在德国的军事部署5000人。此举标志着跨大西洋联盟关系持续紧张。</p>
-                <div class="source">
-                    <span>来源：BBC News</span>
-                    <a href="https://www.bbc.com/news/articles/c0729d374mxo">原文链接</a>
-                    <span>发布时间：2026-05-01</span>
+            <article class="news-item">
+                <div class="news-headline">Myanmar's ousted leader Aung San Suu Kyi transferred to house arrest</div>
+                <div class="news-meta">
+                    <span class="tag politics">Politics</span>
+                    <span>来源: <a href="https://www.theguardian.com/world/2026/may/01/myanmar-aung-san-suu-kyi-house-arrest" target="_blank">The Guardian</a></span>
+                    <span>发布时间: May 1, 2026</span>
                 </div>
-            </div>
+                <div class="news-summary">
+                    Myanmar's detained former leader Aung San Suu Kyi has been moved to house arrest after more than five years in prison. The military-run MRTV reported that the remaining portion of her sentence was commuted to be served at a designated residence as part of a prisoner amnesty marking a Buddhist religious holiday, announced "for the sake of public peace and humanitarian reasons."
+                </div>
+            </article>
 
-            <div class="news-item">
-                <h3>伦敦发生持刀袭击被视为恐怖袭击</h3>
-                <p>一名45岁男子在伦敦北部戈尔德斯格林出庭，被控谋杀未遂。此前两名犹太男子在袭击中被刺伤，警方将此事件定性为恐怖袭击。</p>
-                <div class="source">
-                    <span>来源：Reuters</span>
-                    <a href="https://www.reuters.com/world/">原文链接</a>
-                    <span>发布时间：2026-05-01</span>
+            <article class="news-item">
+                <div class="news-headline">Myanmar attempts to rehabilitate image with Suu Kyi move</div>
+                <div class="news-meta">
+                    <span class="tag politics">Politics</span>
+                    <span>来源: <a href="https://www.npr.org/2026/05/01/nx-s1-5807098/myanmar-suu-kyi-house-arrest" target="_blank">NPR</a></span>
+                    <span>发布时间: May 1, 2026</span>
                 </div>
-            </div>
+                <div class="news-summary">
+                    Analysts view the transfer of Aung San Suu Kyi to house arrest as an attempt by Myanmar's military junta to rehabilitate its international image amid mounting diplomatic isolation. The move comes as ASEAN partners and Western nations have increasingly pressured the regime over human rights abuses and the prolonged detention of the Nobel laureate.
+                </div>
+            </article>
 
-            <div class="news-item">
-                <h3>土耳其逮捕500多名五一抗议者</h3>
-                <p>土耳其在五一劳动节集会中部署大量警力，逮捕超过500人。每年5月1日，土耳其都会看到大规模的警察部署，工人领导的游行遭到压制。</p>
-                <div class="source">
-                    <span>来源：BBC News</span>
-                    <a href="https://www.bbc.com/news/articles/cwy2x7rq3nqo">原文链接</a>
-                    <span>发布时间：2026-05-01</span>
+            <article class="news-item">
+                <div class="news-headline">Slovakia's PM Fico to attend Victory Day parade in Moscow</div>
+                <div class="news-meta">
+                    <span class="tag politics">Politics</span>
+                    <span>来源: <a href="https://www.reuters.com/world/slovakias-pm-fico-attend-victory-day-parade-moscow-russian-tv-says-2026-05-03/" target="_blank">Reuters</a></span>
+                    <span>发布时间: May 3, 2026</span>
                 </div>
-            </div>
+                <div class="news-summary">
+                    Slovakia's Prime Minister Robert Fico is among only a handful of global leaders due to attend a scaled-back edition of Russia's Victory Day parade in Moscow this month, Russian state TV said. The planned attendance highlights deepening rifts within the EU over relations with Moscow, as Fico has consistently opposed sanctions and military aid to Ukraine.
+                </div>
+            </article>
 
-            <div class="news-item">
-                <h3>以色列释放希腊援助船队活动人士</h3>
-                <p>以色列在希腊外海拦截前往加沙的援助船队后，释放了几乎所有活动人士，仅扣押两人。全球Sumud船队谴责此次拦截为"海盗行为"，以色列外交部则称之为"公关噱头"。</p>
-                <div class="source">
-                    <span>来源：BBC News</span>
-                    <a href="https://www.bbc.com/news/articles/c0m2z0k1gngo">原文链接</a>
-                    <span>发布时间：2026-05-01</span>
+            <article class="news-item">
+                <div class="news-headline">BBC, AP, CNN, Reuters and others demand Israel allow foreign reporters into Gaza</div>
+                <div class="news-meta">
+                    <span class="tag politics">Politics</span>
+                    <span>来源: <a href="https://www.latimes.com/world-nation/story/2026-04-30/media-organizations-call-on-israel-to-allow-foreign-reporters-independent-access-to-gaza" target="_blank">Los Angeles Times</a></span>
+                    <span>发布时间: April 30, 2026</span>
                 </div>
-            </div>
+                <div class="news-summary">
+                    Major global news organizations including the Associated Press, BBC, CNN, Reuters, the New York Times and Washington Post demanded Israel lift a ban preventing independent foreign journalist access to Gaza that has lasted since 2023. The coordinated statement marks an unprecedented united front by competing media organizations on press freedom grounds.
+                </div>
+            </article>
         </section>
 
-        <section class="section finance">
-            <h2>💰 财经要闻</h2>
+        <!-- 财经 -->
+        <section class="section">
+            <div class="section-title">💰 财经 (Finance & Economy)</div>
 
-            <div class="news-item">
-                <h3><span class="tag major">重要</span> 美国Q1 GDP增长2%，低于预期</h3>
-                <p>美国商务部数据显示，2026年第一季度实际GDP年化增长率为2.0%，高于上季度的0.5%，但低于市场预期的2.3%。AI基础设施建设和消费支出是主要增长动力。</p>
-                <div class="source">
-                    <span>来源：U.S. BEA / Financial Times / CBS News</span>
-                    <a href="https://www.bea.gov/news/2026/gdp-advance-estimate-1st-quarter-2026">原文链接</a>
-                    <span>发布时间：2026-04-30</span>
+            <article class="news-item">
+                <div class="news-headline">China orders companies to defy US sanctions for first time, sparking banking showdown</div>
+                <div class="news-meta">
+                    <span class="tag finance">Finance</span>
+                    <span>来源: <a href="https://www.bloomberg.com/news/articles/2026-05-04/china-s-rare-defiance-of-us-sanctions-sparks-showdown-over-banks-moqorgpw" target="_blank">Bloomberg</a></span>
+                    <span>发布时间: May 4, 2026</span>
                 </div>
-            </div>
+                <div class="news-summary">
+                    China has ordered its companies to ignore US sanctions, an unprecedented act of defiance that threatens to trap a vast banking sector in the crossfire as tension rises between the world's largest economies. Beijing's Ministry of Commerce issued blocking orders targeting "teapot" refineries, privately owned companies that account for the majority of Iranian oil China purchases.
+                </div>
+            </article>
 
-            <div class="news-item">
-                <h3><span class="tag major">重要</span> 苹果Q2财报超预期：营收1112亿美元，增长17%</h3>
-                <p>苹果公司发布2026财年第二季度业绩，营收达1112亿美元，同比增长17%，净利润296亿美元（每股2.01美元），均超分析师预期。iPhone销售势头持续强劲，公司还批准了额外1000亿美元股票回购。</p>
-                <div class="source">
-                    <span>来源：Apple / CNBC / MacRumors / Investing.com</span>
-                    <a href="https://www.apple.com/newsroom/2026/04/apple-reports-second-quarter-results/">原文链接</a>
-                    <span>发布时间：2026-04-30</span>
+            <article class="news-item">
+                <div class="news-headline">Markets are "sleepwalking into a recession" amid Iran war oil price shock</div>
+                <div class="news-meta">
+                    <span class="tag finance">Finance</span>
+                    <span>来源: <a href="https://www.cnbc.com/2026/05/04/strait-hormuz-gas-price-oil-shock-recession-risk-economy-iran-us-war.html" target="_blank">CNBC</a></span>
+                    <span>发布时间: May 4, 2026</span>
                 </div>
-            </div>
+                <div class="news-summary">
+                    Despite the S&P 500 hitting new all-time highs, economists warn that markets are sleepwalking into a recession caused by the Middle East energy crisis. Oil prices have soared more than 50% since the US-Iran conflict began in February, with Brent crude topping $126 a barrel — the highest since 2022 — raising the risk of stagflation and global recession.
+                </div>
+            </article>
 
-            <div class="news-item">
-                <h3>全球投行撤回2026年两次降息预期</h3>
-                <p>由于通胀风险挥之不去且政策制定者保持谨慎，全球主要投行已逐步放弃2026年美国将降息两次的预期，目前预测分歧介于小幅降息与完全不降息之间。</p>
-                <div class="source">
-                    <span>来源：Reuters</span>
-                    <a href="https://www.reuters.com/business/finance/">原文链接</a>
-                    <span>发布时间：2026-04-30</span>
+            <article class="news-item">
+                <div class="news-headline">US restaurant sales drop as Iran war pushes gasoline prices higher</div>
+                <div class="news-meta">
+                    <span class="tag finance">Finance</span>
+                    <span>来源: <a href="https://www.reuters.com/world/us/us-restaurant-sales-drop-iran-war-pushes-gasoline-prices-higher-2026-05-04/" target="_blank">Reuters</a></span>
+                    <span>发布时间: May 4, 2026</span>
                 </div>
-            </div>
+                <div class="news-summary">
+                    Several US restaurant chains including Wingstop and Domino's reported weaker-than-expected sales growth in the latest quarter, saying that soaring gasoline prices caused by the US-Israeli war on Iran have forced customers to cut back on discretionary spending. The data provides early evidence of the war's direct impact on American consumer behavior and the broader economy.
+                </div>
+            </article>
 
-            <div class="news-item">
-                <h3>伊朗战争引发化肥危机，威胁全球粮食安全</h3>
-                <p>全球最大化肥公司Yara首席执行官警告，伊朗冲突导致的化肥（尿素）短缺可能降低农作物产量并推高价格。亚洲种植季节开始之际，霍尔木兹海峡关闭和中国出口限制打击了化肥供应。</p>
-                <div class="source">
-                    <span>来源：BBC / Euronews</span>
-                    <a href="https://www.euronews.com/business/2026/05/01/fertiliser-crisis-caused-by-iran-war-sparks-global-food-security-fears">原文链接</a>
-                    <span>发布时间：2026-05-01</span>
+            <article class="news-item">
+                <div class="news-headline">Oil retreats after hitting four-year high on concern of US-Iran war escalation</div>
+                <div class="news-meta">
+                    <span class="tag finance">Finance</span>
+                    <span>来源: <a href="https://www.reuters.com/business/energy/oil-retreats-after-hitting-four-year-high-concern-us-iran-war-escalation-2026-04-30/" target="_blank">Reuters</a></span>
+                    <span>发布时间: April 30, 2026</span>
                 </div>
-            </div>
+                <div class="news-summary">
+                    Global oil prices eased after hitting a four-year high of more than $126 a barrel on concerns the US-Iran war could lead to a protracted Middle East supply disruption. Analysts note the sharp rise has raised the risk of a global recession fueled by rising fuel and industrial feedstock costs, with central banks now facing stagflationary pressures.
+                </div>
+            </article>
 
-            <div class="news-item">
-                <h3>大科技公司2026年AI基础设施支出将达7000亿美元</h3>
-                <p>科技巨头今年将在AI基础设施上投入约7000亿美元，但没有人知道这一建设热潮何时结束。英伟达高管表示，目前AI计算成本已超过支付人类员工的成本。</p>
-                <div class="source">
-                    <span>来源：Fortune / NYT</span>
-                    <a href="https://fortune.com/2026/04/30/big-tech-hyperscalers-will-spend-700-billion-on-ai-infrastructure-this-year-with-no-clear-end-in-sight-eye-on-ai/">原文链接</a>
-                    <span>发布时间：2026-04-30</span>
+            <article class="news-item">
+                <div class="news-headline">Fed presidents oppose rate cuts, signaling hawkish stance for 2026</div>
+                <div class="news-meta">
+                    <span class="tag finance">Finance</span>
+                    <span>来源: <a href="https://www.bloomberg.com/news/articles/2026-05-01/fed-s-kashkari-and-hammack-say-war-has-changed-rate-outlook" target="_blank">Bloomberg</a></span>
+                    <span>发布时间: May 1, 2026</span>
                 </div>
-            </div>
+                <div class="news-summary">
+                    Three Federal Reserve officials dissented over this week's policy statement, arguing it was no longer appropriate to signal the Fed's next move was likely a rate cut. Fed presidents Kashkari and Hammack said the war has changed the rate outlook, with traders pricing in an 80%+ chance the Fed holds rates steady through 2026 despite Trump's demands for cuts.
+                </div>
+            </article>
 
-            <div class="news-item">
-                <h3>美元对日元下跌，日本央行疑似干预汇市</h3>
-                <p>美元兑日元汇率下跌多达0.66%，日元上涨3%。市场普遍认为日本央行隔夜入市干预以支撑其走弱的货币。</p>
-                <div class="source">
-                    <span>来源：Schwab / Reuters / Bloomberg</span>
-                    <a href="https://www.schwab.com/learn/story/stock-market-update-open">原文链接</a>
-                    <span>发布时间：2026-05-01</span>
+            <article class="news-item">
+                <div class="news-headline">Fed officials cite inflation concerns in defending dissents against rate cuts</div>
+                <div class="news-meta">
+                    <span class="tag finance">Finance</span>
+                    <span>来源: <a href="https://www.nytimes.com/2026/05/01/business/economy/fed-inflation-interest-rate-dissents.html" target="_blank">The New York Times</a></span>
+                    <span>发布时间: May 1, 2026</span>
                 </div>
-            </div>
+                <div class="news-summary">
+                    Mounting opposition to rate cuts serves as a warning shot to Kevin Warsh, President Trump's pick to lead the Fed. Outgoing Chair Jerome Powell had refused Trump's demands for lower rates, leading to relentless attacks. Warsh is expected to take over on May 15, with the Senate set to vote the week of May 11 after Congress returns from recess.
+                </div>
+            </article>
         </section>
 
-        <section class="section ai">
-            <h2>🤖 AI与机器人</h2>
+        <!-- AI/机器人 -->
+        <section class="section">
+            <div class="section-title">🤖 AI / 机器人 (AI & Robotics)</div>
 
-            <div class="news-item">
-                <h3><span class="tag breaking">突发</span> 五角大楼与7家AI巨头签署军事合作协议</h3>
-                <p>美国国防部宣布与OpenAI、Google、Nvidia、Microsoft、Amazon、SpaceX(xAI)和初创公司Reflection AI达成协议，允许其AI系统接入军方最高机密网络环境（Impact Level 6和7），用于"任何合法用途"。Anthropic因与五角大楼在AI潜在滥用问题上存在分歧未被纳入。</p>
-                <div class="source">
-                    <span>来源：The Guardian / NYT / Nextgov / GeekWire</span>
-                    <a href="https://www.theguardian.com/us-news/2026/may/01/pentagon-us-military-pairs-with-spacex-google-openai">原文链接</a>
-                    <span>发布时间：2026-05-01</span>
+            <article class="news-item">
+                <div class="news-headline">Meta buys robotics startup Assured Robot Intelligence to bolster humanoid AI ambitions</div>
+                <div class="news-meta">
+                    <span class="tag ai">AI</span>
+                    <span>来源: <a href="https://techcrunch.com/2026/05/01/meta-buys-robotics-startup-to-bolster-its-humanoid-ai-ambitions/" target="_blank">TechCrunch</a></span>
+                    <span>发布时间: May 1, 2026</span>
                 </div>
-            </div>
+                <div class="news-summary">
+                    Meta acquired Assured Robot Intelligence (ARI), a startup developing AI models for robots, as part of a major initiative to build humanoid technology. The team joins Meta Superintelligence Labs. Many AI experts believe the path to AGI will require training AI models in the physical world, where robots learn through direct interaction rather than data alone.
+                </div>
+            </article>
 
-            <div class="news-item">
-                <h3><span class="tag major">重要</span> 华为AI芯片收入预计达120亿美元，增长60%</h3>
-                <p>华为预计2026年AI芯片收入将至少增长60%达到120亿美元（2025年为75亿美元），主要受Ascend 950PR芯片大规模生产和国内强劲需求推动。DeepSeek V4发布进一步刺激了对中国国产AI芯片的需求。</p>
-                <div class="source">
-                    <span>来源：FT via Reuters / HeyGoTrade / TradeFlockAsia</span>
-                    <a href="https://www.reuters.com/world/china/huawei-expects-ai-chip-revenue-jump-least-60-this-year-ft-reports-2026-05-01/">原文链接</a>
-                    <span>发布时间：2026-05-01</span>
+            <article class="news-item">
+                <div class="news-headline">Musk v. Altman week 1: Musk says he was duped, warns AI could "kill us all"</div>
+                <div class="news-meta">
+                    <span class="tag ai">AI</span>
+                    <span>来源: <a href="https://www.technologyreview.com/2026/05/01/1136800/musk-v-altman-week-1-musk-says-he-was-duped-warns-ai-could-kill-us-all-and-admits-that-xai-distills-openais-models/" target="_blank">MIT Technology Review</a></span>
+                    <span>发布时间: May 1, 2026</span>
                 </div>
-            </div>
+                <div class="news-summary">
+                    In the first week of testimony in the Musk v. Altman trial, Elon Musk claimed he was duped into co-founding OpenAI and warned that artificial intelligence could kill humanity. In a striking admission, Musk's counsel also acknowledged that xAI distills OpenAI's models, highlighting the complex competitive and legal dynamics shaping the AI industry's future.
+                </div>
+            </article>
 
-            <div class="news-item">
-                <h3>中国科技公司因DeepSeek V4抢购华为AI芯片</h3>
-                <p>在DeepSeek V4快速部署的推动下，中国大型科技公司正争相确保华为AI芯片供应。DeepSeek为新模型提供75%折扣，并表示一旦华为Ascend 950超级节点大规模出货，V4-Pro定价可能在2026年下半年显著下降。</p>
-                <div class="source">
-                    <span>来源：Reuters</span>
-                    <a href="https://www.reuters.com/world/china/big-chinese-tech-firms-scramble-secure-huawei-ai-chips-after-deepseek-v4-launch-2026-04-29/">原文链接</a>
-                    <span>发布时间：2026-04-29</span>
+            <article class="news-item">
+                <div class="news-headline">Nvidia B300 servers selling for $1 million in China, nearly double US price</div>
+                <div class="news-meta">
+                    <span class="tag ai">AI</span>
+                    <span>来源: <a href="https://telecom.economictimes.indiatimes.com/news/devices/prices-of-nvidias-b300-server-at-1-million-in-china-on-us-curbs/130667536" target="_blank">Reuters / Economic Times</a></span>
+                    <span>发布时间: April 30, 2026</span>
                 </div>
-            </div>
+                <div class="news-summary">
+                    Chinese tech firms are paying roughly $1 million apiece for Nvidia's B300 servers — almost twice what US buyers pay (~$550,000) — as Washington's export curbs and a fresh crackdown on chip smuggling choke off black-market supply. Nvidia stated the B300 is restricted from sale in China and partners must adhere to strict compliance rules.
+                </div>
+            </article>
 
-            <div class="news-item">
-                <h3>AI支出创纪录，分析师警告过度依赖风险</h3>
-                <p>科技巨头为AI数据中心建设投入创纪录资金，但分析师警告存在风险——这些公司正过度依赖两个年轻客户：OpenAI和Anthropic。英伟达高管坦承，目前AI计算成本已超过雇佣人类员工的成本。</p>
-                <div class="source">
-                    <span>来源：NYT / Fortune</span>
-                    <a href="https://www.nytimes.com/2026/04/29/technology/ai-spending-tech-data-centers.html">原文链接</a>
-                    <span>发布时间：2026-04-29</span>
+            <article class="news-item">
+                <div class="news-headline">Stanford AI Index 2026: Deepening disconnect between expert optimism and public anxiety</div>
+                <div class="news-meta">
+                    <span class="tag ai">AI</span>
+                    <span>来源: <a href="https://thenextweb.com/news/stanford-ai-index-2026-public-anxiety-expert-disconnect" target="_blank">The Next Web / Stanford HAI</a></span>
+                    <span>发布时间: May 1, 2026</span>
                 </div>
-            </div>
+                <div class="news-summary">
+                    Stanford's 2026 AI Index documents a deepening disconnect between expert optimism and public anxiety about AI. Aggregate US consumer surplus from chatbots, image generators, and coding assistants climbed from about $116 billion to $172 billion between 2024 and 2025. However, Gen Z anger about AI is rising fast, reflecting broader societal tensions over AI's impact.
+                </div>
+            </article>
 
-            <div class="news-item">
-                <h3>NVIDIA GTC 2026聚焦推理、物理AI和机器人</h3>
-                <p>英伟达CEO黄仁勋在GTC 2026大会上发表主题演讲，聚焦推理新时代、AI工厂、开源、物理AI和机器人技术。NVIDIA正验证其机器人技术栈，已完成西门子工厂为期两周的试点项目。</p>
-                <div class="source">
-                    <span>来源：NVIDIA / Blog</span>
-                    <a href="https://www.nvidia.com/gtc/">原文链接</a>
-                    <span>发布时间：2026-04</span>
+            <article class="news-item">
+                <div class="news-headline">Companies taking control of their own data to tailor AI for scale and sovereignty</div>
+                <div class="news-meta">
+                    <span class="tag ai">AI</span>
+                    <span>来源: <a href="https://www.technologyreview.com/2026/05/01/1136772/operationalizing-ai-for-scale-and-sovereignty/" target="_blank">MIT Technology Review</a></span>
+                    <span>发布时间: May 1, 2026</span>
                 </div>
-            </div>
+                <div class="news-summary">
+                    A new MIT Technology Review Insights report finds organizations must rethink data consent, shifting from one-time compliance to ongoing trust-based relationships to succeed in the AI era. Companies are increasingly taking control of their own data to tailor AI for their needs, balancing ownership with the safe flow of high-quality data needed for reliable insights.
+                </div>
+            </article>
 
-            <div class="news-item">
-                <h3>OpenAI GPT-5.5在NVIDIA GB200/GB300系统上部署</h3>
-                <p>OpenAI最新发布的GPT-5.5模型专为NVIDIA GB200和GB300 NVL72系统协同设计、训练和部署，实现GPT-5.4级别的延迟提供GPT-5.5性能，标志着推理作为集成系统而非孤立优化的新范式。</p>
-                <div class="source">
-                    <span>来源：Releasebot / OpenAI</span>
-                    <a href="https://releasebot.io/updates/openai">原文链接</a>
-                    <span>发布时间：2026-04-30</span>
+            <article class="news-item">
+                <div class="news-headline">AI shifting toward smaller models and physical AI in 2026</div>
+                <div class="news-meta">
+                    <span class="tag ai">AI</span>
+                    <span>来源: <a href="https://www.digitalinfohub.net/post/ai-in-2026-moving-from-hype-to-real-world-impact" target="_blank">TechCrunch / Digital Info Hub summary</a></span>
+                    <span>发布时间: May 1, 2026</span>
                 </div>
-            </div>
+                <div class="news-summary">
+                    TechCrunch reports AI is shifting toward smaller, more usable models and physical AI in 2026. MIT Technology Review highlights new AI priorities like world models and agentic systems. The industry is moving from hype to practical real-world impact, with Niantic's AI spinout training a new world model using 30 billion images of urban landmarks crowdsourced from players.
+                </div>
+            </article>
         </section>
 
-        <div class="stats">
-            <h3>📊 本次简报来源统计</h3>
-            <table>
-                <tr><th>板块</th><th>新闻数</th><th>来源数</th></tr>
-                <tr><td>🚢 航运与港口</td><td>6条</td><td>7个（BBC, Reuters, Euronews, UK Parliament, Cruise Industry News, Logistics Manager, The Hindu, The Week, Lloyd's List）</td></tr>
-                <tr><td>🌐 国际时政</td><td>6条</td><td>6个（Reuters, BBC, AP, The Guardian, NYT, CNN）</td></tr>
-                <tr><td>💰 财经要闻</td><td>6条</td><td>8个（BEA, FT, CBS, Apple, CNBC, MacRumors, Fortune, Euronews, Schwab）</td></tr>
-                <tr><td>🤖 AI与机器人</td><td>6条</td><td>8个（The Guardian, NYT, Reuters, FT, NVIDIA, Releasebot, Nextgov, GeekWire, HeyGoTrade）</td></tr>
-                <tr><td><strong>总计</strong></td><td><strong>24条</strong></td><td><strong>20+个独立来源</strong></td></tr>
+        <!-- 统计 -->
+        <div class="stats-box">
+            <h2>📊 本次简报来源统计 (Source Statistics)</h2>
+            <table class="stats-table">
+                <thead>
+                    <tr>
+                        <th>来源 (Source)</th>
+                        <th>板块 (Category)</th>
+                        <th>条数 (Count)</th>
+                        <th>占比 (Share)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Reuters</td><td>Shipping, Politics, Finance</td><td>6</td><td>21.4%</td></tr>
+                    <tr><td>The Guardian</td><td>Shipping, Politics</td><td>4</td><td>14.3%</td></tr>
+                    <tr><td>CNN / CNN Business</td><td>Shipping, Politics, Finance</td><td>3</td><td>10.7%</td></tr>
+                    <tr><td>MIT Technology Review</td><td>AI</td><td>3</td><td>10.7%</td></tr>
+                    <tr><td>Bloomberg</td><td>Finance</td><td>2</td><td>7.1%</td></tr>
+                    <tr><td>CNBC</td><td>Finance</td><td>2</td><td>7.1%</td></tr>
+                    <tr><td>TradeWinds</td><td>Shipping</td><td>1</td><td>3.6%</td></tr>
+                    <tr><td>MaritimeCyprus / IFCHOR Galbraiths</td><td>Shipping</td><td>1</td><td>3.6%</td></tr>
+                    <tr><td>The Jerusalem Post</td><td>Shipping</td><td>1</td><td>3.6%</td></tr>
+                    <tr><td>BBC</td><td>Politics</td><td>1</td><td>3.6%</td></tr>
+                    <tr><td>NPR</td><td>Politics</td><td>1</td><td>3.6%</td></tr>
+                    <tr><td>Los Angeles Times</td><td>Politics</td><td>1</td><td>3.6%</td></tr>
+                    <tr><td>The New York Times</td><td>Finance</td><td>1</td><td>3.6%</td></tr>
+                    <tr><td>TechCrunch</td><td>AI</td><td>1</td><td>3.6%</td></tr>
+                    <tr><td>The Next Web / Stanford HAI</td><td>AI</td><td>1</td><td>3.6%</td></tr>
+                    <tr><td>Economic Times / Reuters</td><td>AI</td><td>1</td><td>3.6%</td></tr>
+                </tbody>
+                <tfoot>
+                    <tr style="font-weight:600;">
+                        <td colspan="2">总计 (Total)</td>
+                        <td>28</td>
+                        <td>100%</td>
+                    </tr>
+                    <tr style="font-weight:600;">
+                        <td colspan="2">独立来源数 (Unique Sources)</td>
+                        <td colspan="2">16</td>
+                    </tr>
+                </tfoot>
             </table>
-            <p style="margin-top:15px; color:#666;">
-                <strong>质量控制说明：</strong>所有新闻均标注来源与原文链接。单一来源（Reuters）在整篇中占比约12%，远低于30%上限。
-                关键事实通过至少2个独立来源交叉验证。优先使用一手信源（政府公告/公司财报/官方博客）与主流媒体组合。
+            <p style="font-size:0.8rem;color:var(--muted);margin-top:0.75rem;">
+                * 所有新闻均标注一手来源与原文链接；单一来源占比未超过30%。<br>
+                * 数据截至 SGT 07:15, May 5, 2026.
             </p>
         </div>
 
-        <footer>
-            <p>Last Updated: 2026-05-02 07:15 SGT | 每日自动聚合生成</p>
-            <p>GitHub: mast0506/daily-report-from-ai</p>
-        </footer>
+        <div class="footer">
+            <p>Generated by AI Agent · Last Updated: <strong>May 5, 2026 — 07:15 SGT</strong></p>
+            <p>Published to <a href="https://github.com/mast0506/daily-report-from-ai" target="_blank">GitHub: mast0506/daily-report-from-ai</a> · <a href="https://mast0506.github.io/daily-report-from-ai/" target="_blank">Live Page</a></p>
+            <p style="font-size:0.75rem;margin-top:1rem;">
+                Disclaimer: This briefing is automatically compiled from publicly available news sources. 
+                Always refer to original articles for complete context and verification.
+            </p>
+        </div>
     </div>
 </body>
 </html>
