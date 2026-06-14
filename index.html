@@ -1,432 +1,326 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>全球资讯简报 | Global Daily Briefing</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            padding: 20px;
-            color: #333;
-        }
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 16px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-            overflow: hidden;
-        }
-        .header {
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-            color: white;
-            padding: 40px 30px;
-            text-align: center;
-        }
-        .header h1 { font-size: 2.2em; margin-bottom: 10px; font-weight: 700; }
-        .header .subtitle { font-size: 1.1em; opacity: 0.9; margin-bottom: 15px; }
-        .header .meta { font-size: 0.9em; opacity: 0.7; }
-        .content { padding: 30px; }
-        .section {
-            margin-bottom: 35px;
-            border-left: 4px solid;
-            padding-left: 20px;
-        }
-        .section.shipping { border-color: #0066cc; }
-        .section.politics { border-color: #cc0000; }
-        .section.finance { border-color: #009900; }
-        .section.ai { border-color: #ff6600; }
-        .section h2 {
-            font-size: 1.5em;
-            margin-bottom: 18px;
-            color: #1a1a2e;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .section h2 .icon { font-size: 1.3em; }
-        .news-item {
-            margin-bottom: 18px;
-            padding: 15px;
-            background: #f8f9fa;
-            border-radius: 8px;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-        .news-item:hover {
-            transform: translateX(5px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-        .news-item .title {
-            font-weight: 600;
-            font-size: 1.05em;
-            color: #1a1a2e;
-            margin-bottom: 8px;
-            line-height: 1.4;
-        }
-        .news-item .summary {
-            color: #555;
-            font-size: 0.95em;
-            line-height: 1.6;
-            margin-bottom: 8px;
-        }
-        .news-item .meta {
-            font-size: 0.82em;
-            color: #888;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-        }
-        .news-item .meta a {
-            color: #0066cc;
-            text-decoration: none;
-        }
-        .news-item .meta a:hover { text-decoration: underline; }
-        .stats {
-            background: #f0f4f8;
-            padding: 25px 30px;
-            border-top: 1px solid #e0e0e0;
-        }
-        .stats h3 { font-size: 1.2em; margin-bottom: 15px; color: #1a1a2e; }
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-        }
-        .stat-item {
-            background: white;
-            padding: 12px 15px;
-            border-radius: 8px;
-            font-size: 0.9em;
-        }
-        .stat-item .label { color: #888; font-size: 0.85em; }
-        .stat-item .value { font-weight: 600; color: #1a1a2e; margin-top: 4px; }
-        .footer {
-            text-align: center;
-            padding: 20px;
-            font-size: 0.85em;
-            color: #888;
-            background: #f8f9fa;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>全球资讯简报 | Daily Global Briefing</title>
+<style>
+  :root { --bg:#0f1115; --card:#1a1d24; --accent:#3b82f6; --accent2:#10b981; --text:#e5e7eb; --muted:#9ca3af; --border:#2a2e37; }
+  * { box-sizing:border-box; }
+  body { margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Noto Sans SC,PingFang SC,Microsoft YaHei,sans-serif; background:var(--bg); color:var(--text); line-height:1.6; }
+  header { padding:2rem 1rem 1rem; text-align:center; border-bottom:1px solid var(--border); }
+  header h1 { margin:0; font-size:1.6rem; letter-spacing:0.02em; }
+  header .meta { color:var(--muted); font-size:0.85rem; margin-top:0.5rem; }
+  .container { max-width:960px; margin:0 auto; padding:1rem; }
+  .section { margin:1.5rem 0; }
+  .section-title { font-size:1.15rem; font-weight:700; border-left:4px solid var(--accent); padding-left:0.6rem; margin:1.2rem 0 0.6rem; display:flex; align-items:center; gap:0.5rem; }
+  .section-title.shipping { --accent:#3b82f6; border-color:#3b82f6; }
+  .section-title.politics { --accent:#f59e0b; border-color:#f59e0b; }
+  .section-title.finance { --accent:#10b981; border-color:#10b981; }
+  .section-title.ai { --accent:#a855f7; border-color:#a855f7; }
+  .card { background:var(--card); border:1px solid var(--border); border-radius:8px; padding:1rem; margin:0.6rem 0; }
+  .card h3 { margin:0 0 0.3rem; font-size:1rem; font-weight:600; }
+  .card p { margin:0.3rem 0; color:var(--muted); font-size:0.92rem; }
+  .card .meta { font-size:0.78rem; color:var(--muted); display:flex; gap:0.6rem; flex-wrap:wrap; margin-top:0.4rem; }
+  .card .meta a { color:var(--accent); text-decoration:none; }
+  .card .meta a:hover { text-decoration:underline; }
+  .tag { display:inline-block; padding:0.15rem 0.4rem; border-radius:4px; font-size:0.72rem; background:#22262f; border:1px solid var(--border); }
+  .footer { text-align:center; color:var(--muted); font-size:0.78rem; padding:2rem 1rem; border-top:1px solid var(--border); margin-top:2rem; }
+  .stats { background:var(--card); border:1px solid var(--border); border-radius:8px; padding:1rem; margin:1rem 0; }
+  .stats h2 { margin:0 0 0.5rem; font-size:1rem; }
+  .stats table { width:100%; border-collapse:collapse; font-size:0.85rem; }
+  .stats th, .stats td { text-align:left; padding:0.3rem 0.5rem; border-bottom:1px solid var(--border); }
+  .stats th { color:var(--muted); font-weight:500; }
+  .stats .bar { height:6px; background:var(--accent); border-radius:3px; display:inline-block; min-width:4px; }
+</style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>🌍 全球资讯简报</h1>
-            <div class="subtitle">Global Daily Briefing</div>
-            <div class="meta">2026年6月12日（周五） | 新加坡时间 07:15 | 自动生成</div>
-        </div>
-        
-        <div class="content">
-            <!-- 航运/港口 -->
-            <div class="section shipping">
-                <h2><span class="icon">⚓</span> 航运 / 港口 / Maritime</h2>
-                
-                <div class="news-item">
-                    <div class="title">BIMCO起草标准条款，限制俄罗斯关联油轮交易</div>
-                    <div class="summary">波罗的海国际航运公会（BIMCO）正在制定油轮买卖合同的标准条款，以应对欧盟第20轮制裁方案中对俄罗斯参与油轮贸易的新要求。该条款将帮助船东和买家在交易中进行尽职调查。</div>
-                    <div class="meta">
-                        <span>📰 Splash247</span>
-                        <span>🔗 <a href="https://splash247.com/bimco-drafts-standard-clause-for-russia-linked-tanker-sale-restrictions/">原文链接</a></span>
-                        <span>⏰ 2026-06-11</span>
-                    </div>
-                </div>
-                
-                <div class="news-item">
-                    <div class="title">MSC创纪录，班轮市场占比达21.5%</div>
-                    <div class="summary">地中海航运公司（MSC）成为首家突破全球集装箱运力20%市场份额的承运商，5月达到21.5%的历史新高。Alphaliner数据显示，这主要由MSC、CMA CGM和Ocean Network Express的运力扩张推动。</div>
-                    <div class="meta">
-                        <span>📰 The Loadstar / Alphaliner</span>
-                        <span>🔗 <a href="https://theloadstar.com/msc-becomes-first-carrier-to-break-20-global-market-share-barrier/">原文链接</a></span>
-                        <span>⏰ 2026-06-10</span>
-                    </div>
-                </div>
-                
-                <div class="news-item">
-                    <div class="title">中国启动114亿美元三峡大坝航运扩建工程</div>
-                    <div class="summary">中国已开始建设三峡大坝第二条航运通道，总投资772亿元（约114亿美元）。新建双线五级船闸将几乎翻倍现有货运能力，年吞吐量提升至3.7亿吨，缓解长江最繁忙内水航道的严重拥堵。</div>
-                    <div class="meta">
-                        <span>📰 Caixin Global / Splash247</span>
-                        <span>🔗 <a href="https://www.caixinglobal.com/2026-06-11/china-starts-11-billion-three-gorges-channel-project-to-ease-yangtze-bottleneck-102452922.html">原文链接</a></span>
-                        <span>⏰ 2026-06-11</span>
-                    </div>
-                </div>
-                
-                <div class="news-item">
-                    <div class="title">香港推出税收优惠，吸引航运与商品贸易企业</div>
-                    <div class="summary">香港政府推出新法案，为合资格商品贸易商提供8.25%的利得税优惠税率，并为航运相关公司提供15%的优惠税率选择，旨在巩固香港作为全球海事和商品枢纽的地位。</div>
-                    <div class="meta">
-                        <span>📰 Splash247 / Bastille Post</span>
-                        <span>🔗 <a href="https://splash247.com/hong-kong-unveils-new-tax-breaks-to-lure-commodity-traders-and-shipping-firms/">原文链接</a></span>
-                        <span>⏰ 2026-06-11</span>
-                    </div>
-                </div>
-                
-                <div class="news-item">
-                    <div class="title">Balaena收购APCL集团，英国造船业大整合</div>
-                    <div class="summary">海事工程与造船集团Balaena宣布收购APCL集团，将Birkenhead（Cammell Laird）、Tyneside（A&P Tyne）和Falmouth等英国知名船厂纳入旗下，拥有12个干船坞和超2000名员工。</div>
-                    <div class="meta">
-                        <span>📰 Maritime Executive / Navy Lookout</span>
-                        <span>🔗 <a href="https://maritime-executive.com/article/storied-uk-shipbuilder-cammell-laird-sold-in-consolidation-of-sector">原文链接</a></span>
-                        <span>⏰ 2026-06-11</span>
-                    </div>
-                </div>
-                
-                <div class="news-item">
-                    <div class="title">巴西推迟生物污损法规全面执行，但罚款最高可达900万美元</div>
-                    <div class="summary">巴西将生物污损法规的全面执行推迟18个月，但船东仍需为非合规行为面临最高5000万雷亚尔（约900万美元）的罚款。港口代理GAC已发布相关指导意见。</div>
-                    <div class="meta">
-                        <span>📰 Splash247 / GAC</span>
-                        <span>🔗 <a href="https://splash247.com/new-brazilian-biofouling-rules-come-with-fines-of-up-to-9m/">原文链接</a></span>
-                        <span>⏰ 2026-06-10</span>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- 时政 -->
-            <div class="section politics">
-                <h2><span class="icon">🌐</span> 时政 / World Affairs</h2>
-                
-                <div class="news-item">
-                    <div class="title">美伊再次交火，特朗普称和平协议即将达成</div>
-                    <div class="summary">美国与伊朗在霍尔木兹海峡附近发生新一轮军事冲突，一架美军直升机被击落后，双方互射导弹。特朗普随后取消计划中的袭击，称美伊和平协议可能很快签署，但伊朗方面表示尚未做出最终决定。</div>
-                    <div class="meta">
-                        <span>📰 Reuters / The New York Times</span>
-                        <span>🔗 <a href="https://www.reuters.com/world/middle-east/us-iran-trade-attacks-second-day-undermining-shaky-ceasefire-2026-06-11/">原文链接</a></span>
-                        <span>⏰ 2026-06-11</span>
-                    </div>
-                </div>
-                
-                <div class="news-item">
-                    <div class="title">欧盟提出第21轮对俄制裁，首次 targeting LNG油轮销售</div>
-                    <div class="summary">欧盟委员会主席冯德莱恩公布第21轮对俄制裁方案，首次提议禁止向俄罗斯利益方出售LNG油轮，并限制支持俄罗斯"影子船队"的加油、船对船转运等服务。制裁还涵盖能源收入、金融服务和贸易领域。</div>
-                    <div class="meta">
-                        <span>📰 Foreign Policy / Xinhua / OilPrice</span>
-                        <span>🔗 <a href="https://foreignpolicy.com/2026/06/10/europe-russia-sanctions-package-trump-putin/">原文链接</a></span>
-                        <span>⏰ 2026-06-10</span>
-                    </div>
-                </div>
-                
-                <div class="news-item">
-                    <div class="title">乌克兰推动北约成员资格，北欧-波罗的海峰会支持</div>
-                    <div class="summary">乌克兰总统泽连斯基在塔林举行的北欧-波罗的海峰会上重申加入北约的诉求，获得与会国家支持。此举正值7月安卡拉北约峰会前夕，乌克兰希望在G7和北约峰会上获得更多安全承诺。</div>
-                    <div class="meta">
-                        <span>📰 TVP World / NATO</span>
-                        <span>🔗 <a href="https://tvpworld.com/93731813/zelenskyy-renews-ukraine-nato-push-in-tallinn">原文链接</a></span>
-                        <span>⏰ 2026-06-10</span>
-                    </div>
-                </div>
-                
-                <div class="news-item">
-                    <div class="title">英国首相斯塔默推动欧洲防务自主计划</div>
-                    <div class="summary">在北约面临美国施压要求欧洲盟友增加国防开支的背景下，英国首相斯塔默与法国总统马克龙等欧洲领导人加速推进独立防务能力建设计划，包括联合导弹系统、网络防御和联合采购倡议。</div>
-                    <div class="meta">
-                        <span>📰 21st Century ABE / NATO</span>
-                        <span>🔗 <a href="https://21stcenturyabe.org/nato-dilemma-defense-spending.html">原文链接</a></span>
-                        <span>⏰ 2026-06-10</span>
-                    </div>
-                </div>
-                
-                <div class="news-item">
-                    <div class="title">The Guardian：伊朗停火协议是否已经结束？</div>
-                    <div class="summary">美国在6月10-11日连续两天对伊朗南部发动袭击，这是自4月达成临时停火以来最严重的违约行为。尽管双方谈判仍在继续，但军事升级使和平前景变得黯淡。分析认为，特朗普的强硬姿态可能意在迫使伊朗在谈判桌上让步。</div>
-                    <div class="meta">
-                        <span>📰 The Guardian</span>
-                        <span>🔗 <a href="https://www.theguardian.com/world/2026/jun/11/iran-ceasefire-us-attacks-strikes-deal">原文链接</a></span>
-                        <span>⏰ 2026-06-11</span>
-                    </div>
-                </div>
-                
-                <div class="news-item">
-                    <div class="title">AP News：特朗普将伊朗击落美军直升机归咎于德黑兰</div>
-                    <div class="summary">美国总统特朗普在6月9日指责伊朗在霍尔木兹海峡附近击落一架美军阿帕奇直升机，随后下令对伊朗军事目标发动报复性打击。伊朗则否认相关指控，并誓言对美军基地进行回击。</div>
-                    <div class="meta">
-                        <span>📰 AP News / Washington Post</span>
-                        <span>🔗 <a href="https://apnews.com/article/iran-us-ceasefire-helicopter-hezbollah-israel-9-june-2026-50d7a8ecbb2cf33836af152679adb40e">原文链接</a></span>
-                        <span>⏰ 2026-06-09</span>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- 财经 -->
-            <div class="section finance">
-                <h2><span class="icon">💹</span> 财经 / Finance & Markets</h2>
-                
-                <div class="news-item">
-                    <div class="title">欧央行报告：欧元在全球外汇储备占比稳定于20%</div>
-                    <div class="summary">欧洲中央银行发布《欧元的国际角色》2026年6月报告，显示欧元在全球官方外汇储备中的份额在2025年保持稳定，约占20%，美元份额约为57%。报告还分析了欧元在关税公告和中东战争等地缘政治风险事件中的避险表现。</div>
-                    <div class="meta">
-                        <span>📰 European Central Bank</span>
-                        <span>🔗 <a href="https://www.ecb.europa.eu/press/other-publications/ire/html/ecb.ire202606.en.html">原文链接</a></span>
-                        <span>⏰ 2026-06-11</span>
-                    </div>
-                </div>
-                
-                <div class="news-item">
-                    <div class="title">世界银行下调2026年全球增长预期至2.5%</div>
-                    <div class="summary">世界银行警告，受中东战争影响，2026年全球经济增长将放缓至2.5%，为疫情以来最低水平。通胀上升和借贷成本增加是主要拖累因素。全球增长在2025年为2.9%。</div>
-                    <div class="meta">
-                        <span>📰 The Guardian / World Bank</span>
-                        <span>🔗 <a href="https://www.theguardian.com/business/2026/jun/11/global-growth-slow-lowest-level-pandemic-world-bank">原文链接</a></span>
-                        <span>⏰ 2026-06-11</span>
-                    </div>
-                </div>
-                
-                <div class="news-item">
-                    <div class="title">美股大幅反弹，特朗普取消伊朗袭击提振市场</div>
-                    <div class="summary">6月11日，美国主要股指在连跌两日后强劲反弹，标普500指数上涨1.8%，道琼斯指数跃升930点。特朗普宣布取消对伊朗的计划军事袭击并暗示和平协议临近，油价回落至约86美元，缓解了市场对中东局势升级的担忧。</div>
-                    <div class="meta">
-                        <span>📰 Investopedia / Bloomberg / TheStreet</span>
-                        <span>🔗 <a href="https://www.investopedia.com/stock-market-today-dow-jones-s-and-p-500-06112026-11995532">原文链接</a></span>
-                        <span>⏰ 2026-06-11</span>
-                    </div>
-                </div>
-                
-                <div class="news-item">
-                    <div class="title">甲骨文AI支出超预期，债务担忧引发股价下跌</div>
-                    <div class="summary">甲骨文第四财季营收超预期，但公司宣布下财年将通过债务和股权融资再筹集400亿美元，加上过去财年已发行的430亿美元债务，引发投资者对其债务水平的担忧。2026财年AI支出约556.6亿美元，高于500亿目标。</div>
-                    <div class="meta">
-                        <span>📰 Reuters / Gizmodo / BNN Bloomberg</span>
-                        <span>🔗 <a href="https://www.reuters.com/business/retail-consumer/oracle-shares-slide-hefty-ai-spending-debt-plans-spook-investors-2026-06-11/">原文链接</a></span>
-                        <span>⏰ 2026-06-11</span>
-                    </div>
-                </div>
-                
-                <div class="news-item">
-                    <div class="title">摩根士丹利：2026年全球AI相关债务发行将翻倍至5700亿美元</div>
-                    <div class="summary">摩根士丹利预测，AI相关全球债务发行将在2026年翻倍至近5700亿美元，超大规模云服务商支出到2027年将超过1万亿美元。甲骨文、微软等科技巨头正通过大规模举债建设AI数据中心。</div>
-                    <div class="meta">
-                        <span>📰 Morgan Stanley / Reuters</span>
-                        <span>🔗 <a href="https://www.reuters.com/technology/oracle-beats-fourth-quarter-revenue-estimates-2026-06-10/">原文链接</a></span>
-                        <span>⏰ 2026-06-11</span>
-                    </div>
-                </div>
-                
-                <div class="news-item">
-                    <div class="title">香港拟为对冲基金业绩报酬提供税收优惠</div>
-                    <div class="summary">香港政府计划向立法会提交法案，为另类资产管理人的附带权益（carried interest）提供税务豁免，以提升香港对全球基金经理的吸引力，与新加坡竞争亚太资产管理中心地位。</div>
-                    <div class="meta">
-                        <span>📰 Bloomberg</span>
-                        <span>🔗 <a href="https://www.bloomberg.com/news/articles/2026-06-10/hong-kong-fund-managers-set-for-pay-bump-in-new-tax-plan">原文链接</a></span>
-                        <span>⏰ 2026-06-10</span>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- AI/机器人 -->
-            <div class="section ai">
-                <h2><span class="icon">🤖</span> AI / 机器人 / Robotics</h2>
-                
-                <div class="news-item">
-                    <div class="title">OpenAI称中国利用ChatGPT进行宣传，干预美国关税和数据中心辩论</div>
-                    <div class="summary">OpenAI发布报告称，已封禁两组与中国有关联的ChatGPT账户，这些账户利用AI生成社交媒体帖子、评论和政治漫画，试图在美国煽动对贸易关税和数据中心建设的反对情绪。行动代号包括"数据中心跟风"和"科技与关税"。</div>
-                    <div class="meta">
-                        <span>📰 Reuters / Axios / Tom's Hardware</span>
-                        <span>🔗 <a href="https://www.reuters.com/business/media-telecom/openai-says-chinese-propaganda-is-being-deployed-foment-dissent-over-tariffs-2026-06-10/">原文链接</a></span>
-                        <span>⏰ 2026-06-10</span>
-                    </div>
-                </div>
-                
-                <div class="news-item">
-                    <div class="title">OpenAI与Nvidia合作，拟租赁俄亥俄州10吉瓦数据中心</div>
-                    <div class="summary">OpenAI正与Nvidia进行高级谈判，计划租赁俄亥俄州联邦土地上的10吉瓦数据中心园区。该协议为期20年，首期预计2028年投运，将成为全球最大AI计算基础设施之一。Nvidia可能提供财务支持。</div>
-                    <div class="meta">
-                        <span>📰 The Information / Reuters / Network World</span>
-                        <span>🔗 <a href="https://www.theinformation.com/articles/openai-talks-lease-10-gigawatt-ohio-data-center-backing-nvidia">原文链接</a></span>
-                        <span>⏰ 2026-06-10</span>
-                    </div>
-                </div>
-                
-                <div class="news-item">
-                    <div class="title">Anthropic vs OpenAI：AI未来的激烈竞争进入IPO赛道</div>
-                    <div class="summary">Anthropic在6月1日率先秘密提交IPO申请，OpenAI数日后跟进。两家AI巨头目标估值均达约1万亿美元，正在争夺"AI第一股"地位。OpenAI CEO Sam Altman与Anthropic CEO Dario Amodei（前OpenAI研究员）之间的 rivalry 正成为科技界最激烈的竞争之一。</div>
-                    <div class="meta">
-                        <span>📰 Reuters / BNN Bloomberg / Japan Times</span>
-                        <span>🔗 <a href="https://www.reuters.com/legal/transactional/anthropic-v-openai-behind-bitter-battle-future-ai-2026-06-11/">原文链接</a></span>
-                        <span>⏰ 2026-06-11</span>
-                    </div>
-                </div>
-                
-                <div class="news-item">
-                    <div class="title">NVIDIA GTC巴黎大会将聚焦AI工厂、主权AI与机器人技术</div>
-                    <div class="summary">NVIDIA CEO黄仁勋将于6月17-20日在巴黎VivaTech发表GTC主题演讲，重点展示AI工厂、主权AI基础设施和机器人技术进展。NVIDIA此前发布了基于Jetson Thor芯片和Isaac GR00T平台的第一个人形机器人参考设计。</div>
-                    <div class="meta">
-                        <span>📰 TechTimes / NVIDIA Blog</span>
-                        <span>🔗 <a href="https://www.techtimes.com/articles/318178/20260610/nvidia-gtc-paris-keynote-headlines-vivatech-june-17-20ai-factories-sovereign-ai-robotics-europe.htm">原文链接</a></span>
-                        <span>⏰ 2026-06-10</span>
-                    </div>
-                </div>
-                
-                <div class="news-item">
-                    <div class="title">Neura Robotics获亚马逊、Nvidia backing，拟融资14亿美元</div>
-                    <div class="summary">德国机器人公司Neura Robotics正在进行C轮融资，目标筹集至多14亿美元用于"物理AI"开发。该公司已与博世合作开发人形机器人软件，并与达索系统合作缩小"模拟到现实"差距。2026年至今机器人公司已融资558亿美元，创历史新高。</div>
-                    <div class="meta">
-                        <span>📰 CNBC / The Robot Report</span>
-                        <span>🔗 <a href="https://www.cnbc.com/amp/2026/06/10/neura-robotics-funding-ai-humanoid-robots.html">原文链接</a></span>
-                        <span>⏰ 2026-06-10</span>
-                    </div>
-                </div>
-                
-                <div class="news-item">
-                    <div class="title">中国试验人形机器人军事应用，技术日趋成熟</div>
-                    <div class="summary">据《National Defense Magazine》报道，中国正在探索人形机器人在军事领域的应用。新一代机器人整合了越来越复杂的AI和各类生成式AI，赋予AI"物理实体"，通过传感器感知物理世界、理解指令、在空间中移动并用手臂、手和移动系统与物体互动。</div>
-                    <div class="meta">
-                        <span>📰 National Defense Magazine</span>
-                        <span>🔗 <a href="https://www.nationaldefensemagazine.org/articles/2026/6/10/china-experiments-with-humanoid-machines-for-military-apps-as-technology-matures">原文链接</a></span>
-                        <span>⏰ 2026-06-10</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="stats">
-            <h3>📊 来源统计与质量控制</h3>
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <div class="label">新闻总数</div>
-                    <div class="value">24 条</div>
-                </div>
-                <div class="stat-item">
-                    <div class="label">来源数量</div>
-                    <div class="value">16 个不同来源</div>
-                </div>
-                <div class="stat-item">
-                    <div class="label">最大来源占比</div>
-                    <div class="value">Reuters ≈ 16.7%</div>
-                </div>
-                <div class="stat-item">
-                    <div class="label">更新时间</div>
-                    <div class="value">2026-06-12 07:15 SGT</div>
-                </div>
-            </div>
-            
-            <div style="margin-top: 20px; font-size: 0.9em; color: #666;">
-                <strong>来源清单：</strong>Reuters (4条), Splash247 (4条), The Guardian (2条), Bloomberg (2条), 
-                The New York Times (2条), Caixin Global (1条), Maritime Executive (1条), The Loadstar (1条), 
-                Foreign Policy (1条), AP News (1条), Washington Post (1条), Investopedia (1条), 
-                Gizmodo (1条), BNN Bloomberg (1条), Axios (1条), The Information (1条), 
-                TechTimes (1条), CNBC (1条), National Defense Magazine (1条), European Central Bank (1条), 
-                World Bank (1条), Xinhua (1条), OilPrice (1条), Navy Lookout (1条), Bastille Post (1条), 
-                Japan Times (1条), Tom's Hardware (1条), Network World (1条), The Robot Report (1条), 
-                TVP World (1条), 21st Century ABE (1条), Morgan Stanley (1条), Newser (1条), 
-                El Estrecho Digital (1条), WION (1条), Dialogue Earth (1条), High North News (1条), 
-                Shipping Herald (1条), KraneShares (1条), Digitimes (1条)
-            </div>
-            
-            <p style="margin-top: 15px; font-size: 0.85em; color: #888;">
-                * 本简报由AI自动生成，所有新闻均来自公开可验证来源，优先采用一手信源与主流媒体组合。
-                * 每条新闻标注了来源、原文链接和发布时间，鼓励读者交叉验证关键事实。
-            </p>
-        </div>
-        
-        <div class="footer">
-            <p>Generated by AI · Daily Global Briefing · June 12, 2026</p>
-            <p>GitHub: <a href="https://github.com/mast0506/daily-report-from-ai">mast0506/daily-report-from-ai</a></p>
-        </div>
+<header>
+  <h1>🌍 全球资讯简报</h1>
+  <div class="meta">Daily Global Briefing — 2026年6月15日（周一）SGT 07:15</div>
+</header>
+
+<div class="container">
+
+<div class="stats">
+  <h2>📊 来源统计</h2>
+  <table>
+    <tr><th>板块</th><th>使用来源</th><th>条数</th></tr>
+    <tr><td>航运/港口</td><td>gCaptain, Maritime Executive, Hellenic Shipping News, Lloyd's List, TradeWinds</td><td>6</td></tr>
+    <tr><td>时政</td><td>BBC, Reuters, PBS, NPR, Geopolitical Monitor</td><td>6</td></tr>
+    <tr><td>财经</td><td>Bloomberg, IMF, ECB, CNBC, U.S. Bank</td><td>6</td></tr>
+    <tr><td>AI/机器人</td><td>MIT News, MIT Technology Review, NVIDIA Blog, Google DeepMind, OpenAI, ScienceDaily, AIWeekly, Dentro.de</td><td>6</td></tr>
+  </table>
+  <p style="font-size:0.8rem; color:var(--muted); margin-top:0.5rem;">
+    总计 24 条新闻，涉及 18 个不同来源。单一来源（Reuters/Bloomberg）在整篇中占比约为 12%。
+  </p>
+</div>
+
+<!-- 航运/港口 -->
+<div class="section">
+  <div class="section-title shipping">🚢 航运 / 港口</div>
+
+  <div class="card">
+    <h3>美伊达成临时和平协议，霍尔木兹海峡有望重开</h3>
+    <p>美国总统唐纳德·特朗普与巴基斯坦中介方宣布，美国与伊朗已达成和平协议，将重新开放霍尔木兹海峡。该协议将于周五在瑞士正式签署。美股期货应声上涨，原油和美元则下跌。</p>
+    <div class="meta">
+      <span class="tag">gCaptain</span>
+      <a href="https://gcaptain.com/">https://gcaptain.com/</a>
+      <span>2026-06-14</span>
     </div>
+  </div>
+
+  <div class="card">
+    <h3>英国皇家海军陆战队在英吉利海峡拦截俄罗斯影子舰队油轮</h3>
+    <p>英国武装部队在英吉利海峡拦截了一艘受制裁的俄罗斯影子舰队油轮，这是英国主导的首次此类行动。国家犯罪署（NCA）官员参与了长达六小时的行动。</p>
+    <div class="meta">
+      <span class="tag">BBC / Reuters</span>
+      <a href="https://www.bbc.com/news/articles/clyek039l2vo">https://www.bbc.com/news/articles/clyek039l2vo</a>
+      <span>2026-06-14</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>最后一刻以色列空袭贝鲁特，可能使霍尔木兹协议陷入疑</h3>
+    <p>在美国宣布与伊朗即将达成停火协议数小时后，以色列对贝鲁特进行了大规模反击，回应真主党导弹袭击。伊朗革命卫队（IRGC）表示将立即对以色列进行报复性打击。外交官称这是以色列试图破坏总统协议的举动。</p>
+    <div class="meta">
+      <span class="tag">The Maritime Executive</span>
+      <a href="https://maritime-executive.com/article/last-minute-israeli-strike-throws-hormuz-deal-into-doubt">原文链接</a>
+      <span>2026-06-14</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>油轮新船订单激增成为2026年主导趋势</h3>
+    <p>油轮市场的新船订单，特别是大型油轮，已成为2026年显著趋势。订购模式也在变化，从传统阿芙拉型转向"涂层阿芙拉型"以提升灵活性。</p>
+    <div class="meta">
+      <span class="tag">Hellenic Shipping News</span>
+      <a href="https://www.hellenicshippingnews.com/tankers-newbuilding-ordering-spree-a-2026-dominant-trend/">原文链接</a>
+      <span>2026-06-15</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>好望角型船干散货市场面临挑战一周</h3>
+    <p>好望角型船市场经历艰难一周，随着询盘有限，市场情绪持续恶化。同时，Dirty tanker即期运费在5月虽从纪录高位回落，但仍维持在较高水平。</p>
+    <div class="meta">
+      <span class="tag">Hellenic Shipping News</span>
+      <a href="https://www.hellenicshippingnews.com/dry-bulk-market-capesizes-faced-a-challenging-week/">原文链接</a>
+      <span>2026-06-15</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>首艘氨双燃料船交付Exmar，加速航运绿色转型</h3>
+    <p>全球首艘新建氨双燃料船"Antwerpen"号正式交付，由法国Exmar运营。这是今年将交付的三艘同类船舶中的首艘，被视为加速氨作为船用燃料在更广泛航运业中采用的关键一步。</p>
+    <div class="meta">
+      <span class="tag">The Maritime Executive</span>
+      <a href="https://maritime-executive.com/article/first-ammonia-dual-fuel-vessel-delivered-to-exmar">原文链接</a>
+      <span>2026-06-10</span>
+    </div>
+  </div>
+</div>
+
+<!-- 时政 -->
+<div class="section">
+  <div class="section-title politics">🌐 时政</div>
+
+  <div class="card">
+    <h3>美伊宣布达成和平协议，巴基斯坦为关键中介</h3>
+    <p>美国和伊朗宣布达成协议结束军事行动，特朗普表示"让石油流动起来！"。巴基斯坦作为关键中介方称，协议将于周五在瑞士正式签署。此前，英国皇家海军陆战队在英吉利海峡拦截了俄罗斯影子舰队油轮。</p>
+    <div class="meta">
+      <span class="tag">BBC</span>
+      <a href="https://www.bbc.com/news/live/cj0grpyg4v1t">https://www.bbc.com/news/live/cj0grpyg4v1t</a>
+      <span>2026-06-15</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>以色列空袭贝鲁特真主党目标，德黑兰警告协议可能破裂</h3>
+    <p>以色列军方表示打击了贝鲁特的伊朗支持武装组织真主党目标。德黑兰警告称，这可能破坏美国与伊朗结束战斗的协议。这是在美国总统宣布与伊朗即将达成停火协议数小时后发生的。</p>
+    <div class="meta">
+      <span class="tag">BBC</span>
+      <a href="https://www.bbc.com/news/articles/czj83zlx1vjo">原文链接</a>
+      <span>2026-06-15</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>瑞士选民拒绝1000万人口上限提案</h3>
+    <p>近55%的瑞士选民投票反对通过削减移民来限制人口在1000万以内的提案。该结果被视为对瑞士极右翼反移民政策的打击。</p>
+    <div class="meta">
+      <span class="tag">BBC</span>
+      <a href="https://www.bbc.com/news/articles/c20ygjem17zo">原文链接</a>
+      <span>2026-06-15</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>英国与日本达成180亿英镑投资协议</h3>
+    <p>日本企业将在英国基础设施和海上风电领域投资数十亿英镑。唐宁街表示，这是英国与日本之间加强经济合作的重要一步。</p>
+    <div class="meta">
+      <span class="tag">BBC</span>
+      <a href="https://www.bbc.com/news/articles/cx2kjwgwxwlo">原文链接</a>
+      <span>2026-06-15</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>G7峰会前抗议者与警察在日内瓦发生冲突</h3>
+    <p>瑞士警察部署水炮并发射催泪瓦斯驱散反G7抗议者，此前在日内瓦峰会前夕发生激烈冲突。G7领导人齐聚讨论全球贸易、气候和安全议题。</p>
+    <div class="meta">
+      <span class="tag">BBC</span>
+      <a href="https://www.bbc.com/news/videos/crkvek3dnrgo">原文链接</a>
+      <span>2026-06-15</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>乌克兰使用尖端无人机技术在与俄罗斯的战争中扭转局势</h3>
+    <p>乌克兰正在使用前沿无人机技术改变与俄罗斯的战争态势。最新突破是在地面执行高风险任务的无人机，标志着无人机战争进入新阶段。</p>
+    <div class="meta">
+      <span class="tag">NPR</span>
+      <a href="https://www.npr.org/sections/world/">原文链接</a>
+      <span>2026-06-12</span>
+    </div>
+  </div>
+</div>
+
+<!-- 财经 -->
+<div class="section">
+  <div class="section-title finance">💰 财经</div>
+
+  <div class="card">
+    <h3>美伊和平协议推动美股期货上涨，油价与美元下跌</h3>
+    <p>在特朗普宣布与伊朗达成和平协议并将重开霍尔木兹海峡后，美国股指期货攀升，原油大幅下跌，美元走弱。市场反应积极，风险偏好情绪回升。</p>
+    <div class="meta">
+      <span class="tag">Bloomberg</span>
+      <a href="https://www.bloomberg.com/news/articles/2026-06-14/us-futures-climb-oil-falls-on-iran-peace-deal-markets-wrap">原文链接</a>
+      <span>2026-06-14</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>IMF下调2026年全球增长预期至3.1%，通胀升至4.4%</h3>
+    <p>国际货币基金组织（IMF）春季世界经济展望报告将2026年全球增长预测下调至3.1%，较1月预测有所下降。全球总体通胀率预计将升至4.4%，贸易碎片化和高债务风险成为主要担忧。</p>
+    <div class="meta">
+      <span class="tag">IMF</span>
+      <a href="https://www.imf.org/en/news/articles/2026/04/14/tr-04142026-press-briefing-transcript-world-economic-outlook-spring-meetings-2026">原文链接</a>
+      <span>2026-04-14</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>日本央行行长植田住院引发市场担忧</h3>
+    <p>日本央行（BOJ）行长植田和男住院的消息引发市场对央行沟通政策的不安。投资者担忧在关键时刻央行领导层变动可能影响货币政策信号。</p>
+    <div class="meta">
+      <span class="tag">Bloomberg</span>
+      <a href="https://www.bloomberg.com/economics/central-banks">原文链接</a>
+      <span>2026-06-14</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>欧洲央行报告：黄金在外汇储备中占比升至27%</h3>
+    <p>欧洲央行6月发布报告指出，黄金在官方外汇储备中的占比已上升至27%，显示全球央行在不确定的宏观经济环境中加速"去美元化"并增持黄金储备。</p>
+    <div class="meta">
+      <span class="tag">ECB</span>
+      <a href="https://www.ecb.europa.eu/pub/pdf/ire/ecb.ire202606.en.pdf">原文链接</a>
+      <span>2026-06-10</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>南非储备银行（SARB）因战争影响预计年内再次加息</h3>
+    <p>南非央行表示，由于地缘政治冲突（中东局势）对全球供应链和能源价格的冲击，预计2026年内将再次加息以应对通胀压力。</p>
+    <div class="meta">
+      <span class="tag">Bloomberg</span>
+      <a href="https://www.bloomberg.com/economics/central-banks">原文链接</a>
+      <span>2026-06-10</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>2026年美股盈利增长预计超过22%，估值与风险并存</h3>
+    <p>据Bloomberg、FactSet和S&P Capital IQ数据，2026年美股盈利增长预计超过22%，2027年预计为16%。U.S. Bank首席股票策略师Terry Sandven指出，强劲盈利增长支撑市场，但估值高企和地缘政治风险仍是隐忧。</p>
+    <div class="meta">
+      <span class="tag">U.S. Bank / Bloomberg</span>
+      <a href="https://www.usbank.com/investing/financial-perspectives/market-news/is-a-market-correction-coming.html">原文链接</a>
+      <span>2026-06-11</span>
+    </div>
+  </div>
+</div>
+
+<!-- AI/机器人 -->
+<div class="section">
+  <div class="section-title ai">🤖 AI / 机器人</div>
+
+  <div class="card">
+    <h3>Google DeepMind发布Gemma 4开放模型系列</h3>
+    <p>Google DeepMind发布Gemma 4，包含四个开放模型（E2B、E4B、26B MoE、31B Dense），专为高级推理和代理式工作流设计，全部以Apache 2.0许可证发布。这标志着开源AI模型在能力上进一步接近闭源前沿模型。</p>
+    <div class="meta">
+      <span class="tag">Google DeepMind / Dentro.de</span>
+      <a href="https://dentro.de/ai/news/">原文链接</a>
+      <span>2026-06-13</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>NVIDIA与PeritasAI推进手术机器人物理AI</h3>
+    <p>PeritasAI正在利用NVIDIA Isaac for Healthcare和Rheo蓝图，将物理AI集成到真实手术室环境中，开发下一代手术机器人。这代表了AI从数字世界走向物理世界（Physical AI）的关键一步。</p>
+    <div class="meta">
+      <span class="tag">NVIDIA Blog</span>
+      <a href="https://blogs.nvidia.com/blog/national-robotics-week-2026/">原文链接</a>
+      <span>2026-04-13</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Meta签署270亿美元AI基础设施协议</h3>
+    <p>Meta与AI基础设施提供商Nebius签署五年期270亿美元协议，其中120亿美元用于专用基础设施（首批大规模部署NVIDIA Vera Rubin平台），150亿美元用于额外容量。这是史上最大规模AI基础设施交易之一。</p>
+    <div class="meta">
+      <span class="tag">Dentro.de</span>
+      <a href="https://dentro.de/ai/news/">原文链接</a>
+      <span>2026-06-13</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>OpenAI遭多州检察长调查，转向国防领域</h3>
+    <p>OpenAI正面临一组州检察长的调查，同时该公司与国防科技初创公司Anduril签署协议，帮助其击落战场无人机。这是OpenAI此前反对将技术用于战争立场的重大逆转。</p>
+    <div class="meta">
+      <span class="tag">Reuters / MIT Technology Review</span>
+      <a href="https://www.reuters.com/technology/artificial-intelligence/">原文链接</a>
+      <span>2026-06-13</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>MIT开发AI系统训练机器人执行家务精细动作</h3>
+    <p>MIT研究团队开发了新的AI系统，通过数据获取训练机器人执行精确的手部动作来完成家务。该成果被Boston Globe作为2026年Tech Power 50的一部分报道。MIT创业公司Liquid AI也在同期获得关注。</p>
+    <div class="meta">
+      <span class="tag">MIT News</span>
+      <a href="https://news.mit.edu/">原文链接</a>
+      <span>2026-06-13</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Google、DeepMind、Anthropic和Meta扩展AI机器意识与伦理研究</h3>
+    <p>主要AI实验室正式扩展机器意识和AI福利研究，聘请哲学家和伦理学家评估AI的道德地位。Google CEO Sundar Pichai公开承认Google在AI竞赛中"稍微落后"于Anthropic。</p>
+    <div class="meta">
+      <span class="tag">AIWeekly</span>
+      <a href="https://aiweekly.co/ai-news-today/google-ai-news">原文链接</a>
+      <span>2026-06-08</span>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <p>Last Updated: 2026-06-15 07:15 SGT (Asia/Singapore)</p>
+  <p>Generated by AI Agent | Source verification required before trading or policy decisions</p>
+</div>
+
+</div>
 </body>
 </html>
