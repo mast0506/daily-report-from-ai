@@ -1,247 +1,351 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>全球资讯简报 - 2026年6月28日</title>
-<style>
-:root {
-  --primary: #1e293b;
-  --accent: #2563eb;
-  --accent2: #f59e0b;
-  --bg: #f8fafc;
-  --card: #ffffff;
-  --text: #334155;
-  --muted: #64748b;
-  --border: #e2e8f0;
-}
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  line-height: 1.6;
-}
-header {
-  background: linear-gradient(135deg, var(--primary) 0%, #0f172a 100%);
-  color: white;
-  padding: 2.5rem 1rem 2rem;
-  text-align: center;
-  position: relative;
-}
-header h1 { font-size: 1.75rem; font-weight: 700; margin-bottom: 0.5rem; }
-header .subtitle { font-size: 0.95rem; opacity: 0.85; }
-header .meta { font-size: 0.8rem; opacity: 0.65; margin-top: 0.75rem; }
-.container { max-width: 1100px; margin: 0 auto; padding: 1.5rem; }
-.section { margin-bottom: 2.5rem; }
-.section-title {
-  display: flex; align-items: center; gap: 0.5rem;
-  font-size: 1.25rem; font-weight: 700; color: var(--primary);
-  margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--accent);
-}
-.section-icon { font-size: 1.3rem; }
-.card {
-  background: var(--card); border-radius: 0.75rem; padding: 1.25rem;
-  margin-bottom: 0.75rem; box-shadow: 0 1px 3px rgba(0,0,0,0.06);
-  border-left: 4px solid var(--accent); transition: transform 0.15s, box-shadow 0.15s;
-}
-.card:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
-.card h3 { font-size: 1.05rem; font-weight: 600; color: var(--primary); margin-bottom: 0.5rem; }
-.card p { font-size: 0.92rem; color: var(--text); margin-bottom: 0.5rem; }
-.card .meta-row { display: flex; flex-wrap: wrap; gap: 0.75rem; font-size: 0.78rem; color: var(--muted); }
-.card .meta-row a { color: var(--accent); text-decoration: none; }
-.card .meta-row a:hover { text-decoration: underline; }
-.card .tag {
-  display: inline-block; padding: 0.15rem 0.5rem; border-radius: 0.25rem;
-  font-size: 0.7rem; font-weight: 600; background: #e0f2fe; color: #0369a1; text-transform: uppercase;
-}
-.card .time { color: var(--muted); }
-.summary-box {
-  background: var(--card); border-radius: 0.75rem; padding: 1.5rem;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.06); margin-bottom: 2rem;
-  border-left: 4px solid var(--accent2);
-}
-.summary-box h2 { font-size: 1.15rem; font-weight: 700; color: var(--primary); margin-bottom: 0.75rem; }
-.summary-box ul { list-style: none; padding-left: 0; }
-.summary-box li { padding: 0.35rem 0; font-size: 0.92rem; color: var(--text); }
-.summary-box li::before { content: "•"; color: var(--accent2); font-weight: bold; margin-right: 0.5rem; }
-footer {
-  text-align: center; padding: 1.5rem; color: var(--muted); font-size: 0.8rem;
-  border-top: 1px solid var(--border); margin-top: 1rem;
-}
-@media (max-width: 600px) {
-  header h1 { font-size: 1.4rem; }
-  .container { padding: 1rem; }
-  .card { padding: 1rem; }
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Global Briefing - 2026-06-29</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; background-color: #f5f5f7; color: #1d1d1f; line-height: 1.6; }
+        .container { max-width: 900px; margin: 0 auto; padding: 20px; }
+        header { text-align: center; padding: 40px 0; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border-radius: 16px; margin-bottom: 30px; box-shadow: 0 4px 20px rgba(0,0,0,0.15); }
+        h1 { font-size: 2.5em; font-weight: 700; margin-bottom: 10px; }
+        .date { font-size: 1.1em; opacity: 0.9; }
+        .category { background: white; border-radius: 16px; padding: 30px; margin-bottom: 20px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
+        .category h2 { font-size: 1.5em; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 3px solid #667eea; display: inline-block; }
+        .news-item { padding: 18px 0; border-bottom: 1px solid #e0e0e0; }
+        .news-item:last-child { border-bottom: none; }
+        .news-title { font-size: 1.1em; font-weight: 600; margin-bottom: 8px; color: #1d1d1f; }
+        .news-summary { font-size: 0.95em; color: #555; margin-bottom: 8px; line-height: 1.5; }
+        .news-meta { font-size: 0.85em; color: #888; display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+        .news-meta a { color: #667eea; text-decoration: none; }
+        .news-meta a:hover { text-decoration: underline; }
+        .tag { display: inline-block; padding: 4px 12px; border-radius: 12px; font-size: 0.75em; font-weight: 600; }
+        .tag-shipping { background: #e3f2fd; color: #1565c0; }
+        .tag-politics { background: #fce4ec; color: #c62828; }
+        .tag-finance { background: #e8f5e9; color: #2e7d32; }
+        .tag-ai { background: #f3e5f5; color: #7b1fa2; }
+        footer { text-align: center; padding: 30px; color: #888; font-size: 0.9em; }
+        .stats { display: flex; justify-content: center; gap: 40px; margin: 20px 0; padding: 20px; background: rgba(255,255,255,0.1); border-radius: 12px; }
+        .stat-item { text-align: center; }
+        .stat-number { font-size: 2em; font-weight: 700; }
+        .stat-label { font-size: 0.9em; opacity: 0.8; }
+        @media (max-width: 600px) { h1 { font-size: 1.8em; } .category { padding: 20px; } .stats { flex-direction: column; gap: 20px; } }
+    </style>
 </head>
 <body>
-<header>
-  <h1>🌍 全球资讯简报</h1>
-  <div class="subtitle">Daily Global Briefing</div>
-  <div class="meta">2026年6月28日（星期日） · SGT 07:15 · 生成自 AI</div>
-</header>
+    <div class="container">
+        <header>
+            <h1>🌍 Daily Global Briefing</h1>
+            <div class="date">Monday, June 29, 2026 — 07:15 SGT</div>
+            <div class="stats">
+                <div class="stat-item"><div class="stat-number">24</div><div class="stat-label">News Items</div></div>
+                <div class="stat-item"><div class="stat-number">4</div><div class="stat-label">Categories</div></div>
+                <div class="stat-item"><div class="stat-number">8</div><div class="stat-label">Sources</div></div>
+            </div>
+        </header>
 
-<div class="container">
-  <div class="summary-box">
-    <h2>📌 今日要点</h2>
-    <ul>
-      <li>伊以战争持续升温，美国消耗大量导弹拦截器，以色列进攻加沙地带</li>
-      <li>乌克兰首次使用国产FP-5 Flamingo巡航导弹打击俄罗斯军事目标</li>
-      <li>美联储6月会议维持利率在3.50%-3.75%，点阵图转向鹰派暗示加息</li>
-      <li>全球集装箱运费指数维持在3,121点，Drewry WCI跳涨至$4,166/FEU</li>
-      <li>比特币跌破6万美元，6月26日报$58,980.50</li>
-      <li>Automate 2026展会本周开幕，人形机器人进入量产阶段</li>
-      <li>中国Q1 GDP增长5%超预期，2026全年目标4.5%-5%</li>
-      <li>苏伊士运河部分恢复通航，航运成本有望回落</li>
-    </ul>
-  </div>
+        <div class="category">
+            <h2>🚢 航运与海事</h2>
+            <div class="news-item">
+                <div class="news-title">伊朗无人机袭击新加坡籍货轮 M/V Ever Lovely</div>
+                <div class="news-summary">6月25日，伊朗使用单向攻击无人机在阿曼沿海击中了悬挂新加坡国旗的货轮 M/V Ever Lovely，该船当时正在驶离霍尔木兹海峡。美国中央司令部（CENTCOM）随后对伊朗发动报复性打击。</div>
+                <div class="news-meta">
+                    <span class="tag tag-shipping">航运</span>
+                    <span>📰 Fox News</span>
+                    <span>🔗 <a href="https://www.foxnews.com/live-news/iran-war-strait-of-hormuz-drones-bahrain-israel-lebanon-june-27-2026">链接</a></span>
+                    <span>🕐 June 26, 2026</span>
+                </div>
+            </div>
+            <div class="news-item">
+                <div class="news-title">美伊签署霍尔木兹海峡通行谅解备忘录</div>
+                <div class="news-summary">6月17日，美国和伊朗签署了一份14点谅解备忘录，旨在规范霍尔木兹海峡的航行安排。然而，该备忘录签署后仅一周，就发生了货轮袭击事件，使得协议前景蒙上阴影。</div>
+                <div class="news-meta">
+                    <span class="tag tag-shipping">航运</span>
+                    <span>📰 The Maritime Executive</span>
+                    <span>🔗 <a href="https://maritime-executive.com/shipping-news">链接</a></span>
+                    <span>🕐 June 26, 2026</span>
+                </div>
+            </div>
+            <div class="news-item">
+                <div class="news-title">联合国暂停霍尔木兹海峡疏散行动</div>
+                <div class="news-summary">联合国海事机构本周早些时候开始通过阿曼沿海路线疏散被困在霍尔木兹海峡的船只，但在周四的袭击事件后暂停了这些行动，并表示在安全通行得到保证之前不会恢复。</div>
+                <div class="news-meta">
+                    <span class="tag tag-shipping">航运</span>
+                    <span>📰 NPR</span>
+                    <span>🔗 <a href="https://www.npr.org/2026/06/27/nx-s1-5872954/us-strikes-iran">链接</a></span>
+                    <span>🕐 June 27, 2026</span>
+                </div>
+            </div>
+            <div class="news-item">
+                <div class="news-title">伊朗伊斯兰革命卫队威胁继续袭击</div>
+                <div class="news-summary">伊朗伊斯兰革命卫队强调，根据谅解备忘录，伊朗将负责霍尔木兹海峡的航行安排。他们表示，美国通过挑衅不同方试图违反这一承诺，"必要的回应已经给出，并将在未来继续"。</div>
+                <div class="news-meta">
+                    <span class="tag tag-shipping">航运</span>
+                    <span>📰 NBC News</span>
+                    <span>🔗 <a href="https://www.nbcnews.com/news/us-news/us-launches-strikes-iran-attack-ship-strait-hormuz-rcna351992">链接</a></span>
+                    <span>🕐 June 27, 2026</span>
+                </div>
+            </div>
+            <div class="news-item">
+                <div class="news-title">World Shipping Council 报告2025年海上丢失1,478个集装箱</div>
+                <div class="news-summary">世界航运理事会发布的最新报告显示，2025年全球海上共丢失1,478个集装箱，尽管航运业面临地缘政治紧张局势，但整体安全记录有所改善。</div>
+                <div class="news-meta">
+                    <span class="tag tag-shipping">航运</span>
+                    <span>📰 Global Trade Magazine</span>
+                    <span>🔗 <a href="https://www.globaltrademag.com/world-shipping-council-reports-1478-containers-lost-at-sea-in-2025/">链接</a></span>
+                    <span>🕐 June 27, 2026</span>
+                </div>
+            </div>
+            <div class="news-item">
+                <div class="news-title">FedEx Freight 在货运量下降中寻找高利润业务</div>
+                <div class="news-summary">面对货运量下降，FedEx Freight正在积极寻找高利润的货运业务。行业消息显示，合同超额部分将收取每集装箱300美元的费用，这为货主提供了通过精心规划避免收费的空间。</div>
+                <div class="news-meta">
+                    <span class="tag tag-shipping">航运</span>
+                    <span>📰 Journal of Commerce</span>
+                    <span>🔗 <a href="https://www.joc.com/article/fedex-freight-hunting-for-new-high-margin-freight-amid-volume-decline-6244168">链接</a></span>
+                    <span>🕐 June 27, 2026</span>
+                </div>
+            </div>
+        </div>
 
-  <!-- 航运板块 -->
-  <div class="section">
-    <div class="section-title"><span class="section-icon">⚓</span> 航运</div>
-    <div class="card">
-      <h3>集装箱货运指数持平于3,121点，同比上涨67.7%</h3>
-      <p>Containerized Freight Index在6月26日持平于3,121.69点，过去一月上涨40.73%，较去年同期飙升67.70%。伊以战争引发燃油价格波动是主要推手。</p>
-      <div class="meta-row"><span class="tag">航运</span><span class="time">2026-06-26</span><a href="https://tradingeconomics.com/commodity/containerized-freight-index" target="_blank">来源：TradingEconomics</a></div>
-    </div>
-    <div class="card">
-      <h3>Drewry WCI跳涨5%至$4,166/FEU</h3>
-      <p>Drewry世界集装箱指数6月25日上涨5%，报每40英尺集装箱$4,166，主要受跨太平洋航线运价上涨支撑。亚欧航线仍受苏伊士运河复航节奏影响。</p>
-      <div class="meta-row"><span class="tag">航运</span><span class="time">2026-06-25</span><a href="https://www.drewry.co.uk/supply-chain-advisors/supply-chain-expertise/world-container-index-assessed-by-drewry" target="_blank">来源：Drewry</a></div>
-    </div>
-    <div class="card">
-      <h3>伊以战争焦虑推动全球集装箱运费飙升</h3>
-      <p>由于燃油成本占集装箱船航行成本高达60%，中东紧张局势导致燃油价格飙升，即便需求端没有显著变化，运费仍被推高。分析师警告运费可能脱离基本面。</p>
-      <div class="meta-row"><span class="tag">航运</span><span class="time">2026-06-10</span><a href="https://www.reuters.com/business/energy/iran-war-anxiety-sends-global-container-shipping-rates-soaring-2026-06-10/" target="_blank">来源：Reuters</a></div>
-    </div>
-    <div class="card">
-      <h3>2026年7月集装箱运费预计飙升至$7,000-$13,000/FEU</h3>
-      <p>受红海危机、旺季提前需求及船公司空白航行(blank sailings)影响，2026年7月集装箱运费预计飙升至每FEU 7,000至13,000美元区间。</p>
-      <div class="meta-row"><span class="tag">航运</span><span class="time">2026-06-24</span><a href="https://www.yqn.com/intro/blog/post/container_shipping_cost_2026" target="_blank">来源：YQN</a></div>
-    </div>
-    <div class="card">
-      <h3>苏伊士运河部分恢复通航，carriers压力倍增</h3>
-      <p>在绕行非洲好望角两年后，主要船公司面临重新使用苏伊士运河以降低成本和排放的压力。CMA CGM已承诺2026年Q2全面恢复苏伊士航线。ME11服务于2月中旬率先恢复红海/苏伊士通行。</p>
-      <div class="meta-row"><span class="tag">航运</span><span class="time">2026-06-24</span><a href="https://www.zencargo.com/resources/red-sea-reopening-2026/" target="_blank">来源：Zencargo</a></div>
-    </div>
-    <div class="card">
-      <h3>波罗的海干散货指数(BDI)升至2,991点</h3>
-      <p>5月初BDI上涨27点至2,991点，巴拿马型船指数回落至2,634点。Handysize船型租金约$17,000/天，干散货市场总体保持稳健。</p>
-      <div class="meta-row"><span class="tag">航运</span><span class="time">2026-06-05</span><a href="https://www.handybulk.com/baltic-dry-index/" target="_blank">来源：HandyBulk</a></div>
-    </div>
-  </div>
+        <div class="category">
+            <h2>🌐 时政要闻</h2>
+            <div class="news-item">
+                <div class="news-title">美军对伊朗发动第二轮夜间打击</div>
+                <div class="news-summary">6月27日，美国中央司令部（CENTCOM）对伊朗军事设施发动第二轮夜间打击，直接回应伊朗对商业航运的持续侵略。此次打击是在伊朗无人机袭击新加坡货轮之后进行的。</div>
+                <div class="news-meta">
+                    <span class="tag tag-politics">时政</span>
+                    <span>📰 Al Jazeera</span>
+                    <span>🔗 <a href="https://www.aljazeera.com/news/2026/6/27/us-launches-second-night-of-strikes-against-iran-after-ship-struck-by-drone">链接</a></span>
+                    <span>🕐 June 27, 2026</span>
+                </div>
+            </div>
+            <div class="news-item">
+                <div class="news-title">以军加大加沙地带军事行动</div>
+                <div class="news-summary">当世界关注与伊朗的战争时，以色列军队稳步占领加沙地带更多领土，上个月杀害的人数达到今年以来的最高水平。国际社会对平民伤亡表示关切。</div>
+                <div class="news-meta">
+                    <span class="tag tag-politics">时政</span>
+                    <span>📰 NPR</span>
+                    <span>🔗 <a href="https://www.npr.org/sections/world/">链接</a></span>
+                    <span>🕐 June 26, 2026</span>
+                </div>
+            </div>
+            <div class="news-item">
+                <div class="news-title">海湾国家与国际组织联合反对伊朗控制海峡</div>
+                <div class="news-summary">6月25日，美国和海湾合作委员会部长在联合声明中强调，通过霍尔木兹海峡的自由、无条件、不受限制的航行对地区和全球安全至关重要，明确拒绝任何通行费、费用或试图控制海峡的行为。</div>
+                <div class="news-meta">
+                    <span class="tag tag-politics">时政</span>
+                    <span>📰 ISW</span>
+                    <span>🔗 <a href="https://understandingwar.org/research/middle-east/iran-update-special-report-june-26-2026/">链接</a></span>
+                    <span>🕐 June 26, 2026</span>
+                </div>
+            </div>
+            <div class="news-item">
+                <div class="news-title">特朗普威胁对欧洲数字税征收100%关税</div>
+                <div class="news-summary">美国总统特朗普威胁称，任何对美国科技公司征收数字服务税的欧洲国家，美国将立即对其征收100%的进口关税，并将取代现有的贸易协议。</div>
+                <div class="news-meta">
+                    <span class="tag tag-politics">时政</span>
+                    <span>📰 The Guardian</span>
+                    <span>🔗 <a href="https://www.theguardian.com/us-news/2026/jun/27/trump-threatens-tariff-eu-countries-impose-digital-tax">链接</a></span>
+                    <span>🕐 June 27, 2026</span>
+                </div>
+            </div>
+            <div class="news-item">
+                <div class="news-title">2026年选举可能取决于网络关注度</div>
+                <div class="news-summary">POLITICO分析指出，在2026年，赢得选举可能意味着在网上赢得最多关注。特朗普学会了热爱足球，美国对伊朗军事设施的袭击发生在一场关键锦标赛之前，这使得伊朗球员面临压力。</div>
+                <div class="news-meta">
+                    <span class="tag tag-politics">时政</span>
+                    <span>📰 POLITICO</span>
+                    <span>🔗 <a href="https://www.politico.com/politics">链接</a></span>
+                    <span>🕐 June 26, 2026</span>
+                </div>
+            </div>
+            <div class="news-item">
+                <div class="news-title">中国无需推翻美元即可赢得全球货币战</div>
+                <div class="news-summary">CNBC分析指出，中国领导人反复描述将中国建设成为"金融强国"的目标，加强上海和香港作为国际金融中心的地位，扩大离岸人民币市场，改善跨境支付基础设施，稳步推进人民币国际化。这些目标不再是经济学家之间的讨论话题。</div>
+                <div class="news-meta">
+                    <span class="tag tag-politics">时政</span>
+                    <span>📰 CNBC</span>
+                    <span>🔗 <a href="https://www.cnbc.com/2026/06/28/china-doesnt-need-to-de-throne-dollar-to-win-global-currency-war.html">链接</a></span>
+                    <span>🕐 June 28, 2026</span>
+                </div>
+            </div>
+        </div>
 
-  <!-- 时政板块 -->
-  <div class="section">
-    <div class="section-title"><span class="section-icon">🌐</span> 时政</div>
-    <div class="card">
-      <h3>伊以战争持续：美国消耗大量导弹拦截器，以色列加强加沙攻势</h3>
-      <p>自2026年2月战争爆发以来，美国已消耗大量导弹拦截器以击落射向以色列的伊朗导弹。CNN报道，以色列军方与美国中央司令部协调行动。6月26日，以色列军队在加沙地带推进，上月死亡人数创年内新高。</p>
-      <div class="meta-row"><span class="tag">时政</span><span class="time">2026-06-26</span><a href="https://www.cnn.com/2026/06/07/world/live-news/iran-war-trump-israel-lebanon" target="_blank">来源：CNN</a></div>
-    </div>
-    <div class="card">
-      <h3>联合国IMO因遭袭击暂停霍尔木兹海峡船员撤离</h3>
-      <p>联合国国际海事组织(IMO)因红海区域遇袭事件，暂停了霍尔木兹海峡的船员撤离行动。美国誓言捍卫海湾利益，同时以色列在黎巴嫩击毙2人。</p>
-      <div class="meta-row"><span class="tag">时政</span><span class="time">2026-06-25</span><a href="https://www.aljazeera.com/news/liveblog/2026/6/25/iran-war-live-us-vows-to-defend-gulf-interests-israel-kills-2-in-lebanon" target="_blank">来源：Al Jazeera</a></div>
-    </div>
-    <div class="card">
-      <h3>乌克兰使用国产FP-5 Flamingo巡航导弹打击俄军工目标</h3>
-      <p>乌克兰总统泽连斯基确认，乌克兰首次使用国产FP-5 Flamingo巡航导弹打击伏尔加格勒一家俄罗斯军事工厂。此外，乌克兰还袭击了圣彼得堡，俄罗斯称此为"史无前例"的攻击。</p>
-      <div class="meta-row"><span class="tag">时政</span><span class="time">2026-06-28</span><a href="https://www.independent.co.uk/news/world/europe/ukraine-russia-war-live-putin-trump-zelensky-peace-talks-b3001811.html" target="_blank">来源：The Independent</a></div>
-    </div>
-    <div class="card">
-      <h3>分析：乌克兰迎来2022年秋季以来首次"获胜机会"</h3>
-      <p>分析人士指出，乌克兰自2022年秋季以来首次拥有赢得战争的机会。俄军在前线的推进速度较2026年冬季明显放缓，季节变化使俄军补给更加困难。</p>
-      <div class="meta-row"><span class="tag">时政</span><span class="time">2026-06-25</span><a href="https://www.aljazeera.com/news/2026/6/25/as-ukraine-seizes-first-chance-to-win-war-horrors-come-home-to-russia" target="_blank">来源：Al Jazeera</a></div>
-    </div>
-    <div class="card">
-      <h3>马克龙十年执政落幕：法国与欧洲愿景受挫</h3>
-      <p>在承诺将法国和欧洲转型十年后，马克龙于6月23日卸任，但在国内外均陷入退却。分析人士指出，欧洲面临领导力真空，民粹主义力量在欧洲议会持续崛起。</p>
-      <div class="meta-row"><span class="tag">时政</span><span class="time">2026-06-23</span><a href="https://www.worldpoliticsreview.com/" target="_blank">来源：World Politics Review</a></div>
-    </div>
-    <div class="card">
-      <h3>地缘政治分析：伊朗战争暴露美国军事优势与政治局限</h3>
-      <p>Geopolitical Monitor分析指出，伊以战争揭示了美国军事优势仍然无可匹敌，但其塑造政治结果的能力存在局限。中东格局正在重塑，美国-以色列同盟、自由主义、跨大西洋主义等均在经受考验。</p>
-      <div class="meta-row"><span class="tag">时政</span><span class="time">2026-06-27</span><a href="https://www.geopoliticalmonitor.com/" target="_blank">来源：Geopolitical Monitor</a></div>
-    </div>
-  </div>
+        <div class="category">
+            <h2>💰 财经市场</h2>
+            <div class="news-item">
+                <div class="news-title">纳斯达克综合指数周跌幅4.6%</div>
+                <div class="news-summary">纳斯达克综合指数本周下跌4.6%，这是过去一年来第二大单周跌幅。标准普尔500指数同期下跌2%。投资者担忧AI繁荣的可持续性和内存芯片成本上升，对科技巨头构成下行压力。</div>
+                <div class="news-meta">
+                    <span class="tag tag-finance">财经</span>
+                    <span>📰 Google Finance</span>
+                    <span>🔗 <a href="https://www.google.com/finance/beta">链接</a></span>
+                    <span>🕐 June 26, 2026</span>
+                </div>
+            </div>
+            <div class="news-item">
+                <div class="news-title">SpaceX 股票降温</div>
+                <div class="news-summary">据CNBC报道，SpaceX股票近期出现降温迹象。这家埃隆·马斯克旗下的太空探索公司此前经历了强劲上涨，但市场对其估值过高的担忧开始浮现。</div>
+                <div class="news-meta">
+                    <span class="tag tag-finance">财经</span>
+                    <span>📰 CNBC</span>
+                    <span>🔗 <a href="https://www.cnbc.com/">链接</a></span>
+                    <span>🕐 June 27, 2026</span>
+                </div>
+            </div>
+            <div class="news-item">
+                <div class="news-title">Keel Infrastructure 获4.58亿美元可转换票据融资</div>
+                <div class="news-summary">Keel Infrastructure完成4.58亿美元可转换票据融资，为AI数据中心发展增加资金。该公司专注于AI数据中心基础设施，股价收于6.00美元，上涨2.13%。</div>
+                <div class="news-meta">
+                    <span class="tag tag-finance">财经</span>
+                    <span>📰 Yahoo Finance</span>
+                    <span>🔗 <a href="https://finance.yahoo.com/markets/stocks/articles/stock-market-today-june-26-224934000.html">链接</a></span>
+                    <span>🕐 June 26, 2026</span>
+                </div>
+            </div>
+            <div class="news-item">
+                <div class="news-title">CMC Materials 股票被低估38%</div>
+                <div class="news-summary">根据折现现金流（DCF）估值分析，CMC Materials的内在股价估计为111.79美元，显示该股票被低估38.1%。该模型基于自由现金流从4.525亿美元增长到2028年的8.187亿美元的预测。</div>
+                <div class="news-meta">
+                    <span class="tag tag-finance">财经</span>
+                    <span>📰 TS2 Tech</span>
+                    <span>🔗 <a href="https://ts2.tech/en/stock-market-today-28-06-2026/">链接</a></span>
+                    <span>🕐 June 28, 2026</span>
+                </div>
+            </div>
+            <div class="news-item">
+                <div class="news-title">比特币跌至6万美元周期低点</div>
+                <div class="news-summary">比特币跌至约6万美元的新周期低点，链上指标显示其被低估，但未达到此前周期低点的水平。恐惧与贪婪指数降至18（极度恐惧），这是自2022年以来的最低读数。</div>
+                <div class="news-meta">
+                    <span class="tag tag-finance">财经</span>
+                    <span>📰 Blockchain Reporter</span>
+                    <span>🔗 <a href="https://blockchainreporter.net/crypto-market-today-june-28-bitcoin-flat-60251-fear-greed-hits-18/">链接</a></span>
+                    <span>🕐 June 28, 2026</span>
+                </div>
+            </div>
+            <div class="news-item">
+                <div class="news-title">赵长鹏：加密市场下跌是AI、全球紧张和4年周期共同作用</div>
+                <div class="news-summary">币安创始人赵长鹏（CZ）告诉CoinDesk，加密市场过去一年50%的下跌没有单一原因，而是AI竞争、全球地缘政治紧张和比特币4年减半周期共同作用的结果。</div>
+                <div class="news-meta">
+                    <span class="tag tag-finance">财经</span>
+                    <span>📰 CoinDesk</span>
+                    <span>🔗 <a href="https://www.coindesk.com/">链接</a></span>
+                    <span>🕐 June 27, 2026</span>
+                </div>
+            </div>
+            <div class="news-item">
+                <div class="news-title">NVIDIA 股价波动，P/E比率为29.48</div>
+                <div class="news-summary">6月27日，NVIDIA（NVDA）股价在191.22美元至195.55美元之间波动。该股目前市盈率为29.48，股息收益率为0.02%。52周最高价为236.54美元，最低价为151.49美元。</div>
+                <div class="news-meta">
+                    <span class="tag tag-finance">财经</span>
+                    <span>📰 Robinhood</span>
+                    <span>🔗 <a href="https://robinhood.com/us/en/stocks/NVDA/">链接</a></span>
+                    <span>🕐 June 27, 2026</span>
+                </div>
+            </div>
+            <div class="news-item">
+                <div class="news-title">特斯拉面临重新聚焦电动车销售的压力</div>
+                <div class="news-summary">埃隆·马斯克面临重新聚焦电动车销售的呼声，因为竞争加剧和向AI及机器人战略转型引发投资者担忧。特斯拉股价近期表现疲软，市场关注其能否在AI和电动车业务之间取得平衡。</div>
+                <div class="news-meta">
+                    <span class="tag tag-finance">财经</span>
+                    <span>📰 Yahoo Finance</span>
+                    <span>🔗 <a href="https://finance.yahoo.com/quote/TSLA/news/">链接</a></span>
+                    <span>🕐 June 26, 2026</span>
+                </div>
+            </div>
+        </div>
 
-  <!-- 财经板块 -->
-  <div class="section">
-    <div class="section-title"><span class="section-icon">📈</span> 财经</div>
-    <div class="card">
-      <h3>美联储6月维持利率3.50%-3.75%，点阵图暗示加息</h3>
-      <p>6月17日，美联储以12-0全票通过维持联邦基金利率在3.50%-3.75%。但点阵图发生鹰派转变：2026年中位数预测升至3.8%，暗示可能加息。Kevin Warsh首次以美联储主席身份主持会议。</p>
-      <div class="meta-row"><span class="tag">财经</span><span class="time">2026-06-17</span><a href="https://www.federalreserve.gov/newsevents/pressreleases/monetary20260617a.htm" target="_blank">来源：Federal Reserve</a></div>
-    </div>
-    <div class="card">
-      <h3>全球股市因美联储鹰派预期大跌，SpaceX市值蒸发$400亿</h3>
-      <p>美联储重新设定利率预期后，全球股市大跌。高利率环境压制科技股估值，SpaceX股价遭遇大幅抛售。华尔街同时担忧芯片短缺危机，半导体板块承压。</p>
-      <div class="meta-row"><span class="tag">财经</span><span class="time">2026-06-23</span><a href="https://fortune.com/2026/06/23/stock-markets-fed-interest-rate-expectations-400-billion-spacex/" target="_blank">来源：Fortune</a></div>
-    </div>
-    <div class="card">
-      <h3>中国Q1 GDP增长5%超预期，出口韧性强劲</h3>
-      <p>中国2026年Q1 GDP增长5%，超出预期，尽管面临能源价格上涨和中东战争引发的供应链中断。强劲的工业产出和出口激增是主要驱动力，但国内消费仍显疲软。全年GDP目标为4.5%-5%。</p>
-      <div class="meta-row"><span class="tag">财经</span><span class="time">2026-04-17</span><a href="https://www.china-briefing.com/news/chinas-q1-2026-gdp/" target="_blank">来源：China Briefing</a></div>
-    </div>
-    <div class="card">
-      <h3>德国ZEW经济景气指数6月大幅回升至正值</h3>
-      <p>德国ZEW经济景气指数在2026年6月大幅回升至中东战争爆发以来的首次正值。T. Rowe Price分析指出，欧洲经济信心正在修复，但地缘风险仍是主要不确定因素。</p>
-      <div class="meta-row"><span class="tag">财经</span><span class="time">2026-06-20</span><a href="https://www.troweprice.com/personal-investing/resources/insights/global-markets-weekly-update.html" target="_blank">来源：T. Rowe Price</a></div>
-    </div>
-    <div class="card">
-      <h3>比特币跌破6万美元，6月26日报$58,980.50</h3>
-      <p>比特币在6月26日跌至$58,980.50，较6月24日的$62,651.32显著回落。ETH报$1,577，XRP报$1.05，SOL价格承压。受美联储鹰派立场和避险情绪影响，加密货币市场普遍走弱。</p>
-      <div class="meta-row"><span class="tag">财经</span><span class="time">2026-06-26</span><a href="https://fortune.com/article/price-of-bitcoin-06-26-2026/" target="_blank">来源：Fortune</a></div>
-    </div>
-    <div class="card">
-      <h3>S&P 500等权重与加权指数相关性跌至2003年以来最低</h3>
-      <p>Schwab研究中心指出，S&P 500等权重与加权指数的52周滚动相关性暴跌至2003年以来最低水平，表明市场内部集中度极高。信用市场表现良好，利差保持低位，经济韧性和强劲盈利支撑企业债。</p>
-      <div class="meta-row"><span class="tag">财经</span><span class="time">2026-06-27</span><a href="https://www.schwab.com/learn/story/stock-market-update-open" target="_blank">来源：Charles Schwab</a></div>
-    </div>
-  </div>
+        <div class="category">
+            <h2>🤖 AI与机器人</h2>
+            <div class="news-item">
+                <div class="news-title">Microsoft Build 2026 发布自研MAI模型系列</div>
+                <div class="news-summary">微软在Build 2026大会上发布了其自研的MAI模型系列，这是微软首次推出完全内部开发的大型语言模型，标志着该公司在AI基础设施领域的重大战略转变。</div>
+                <div class="news-meta">
+                    <span class="tag tag-ai">AI</span>
+                    <span>📰 AI Foresight 360</span>
+                    <span>🔗 <a href="https://aiforesight360.com/biggest-ai-developments-june-2026/">链接</a></span>
+                    <span>🕐 June 27, 2026</span>
+                </div>
+            </div>
+            <div class="news-item">
+                <div class="news-title">Apple 基于Google Gemini彻底重建Siri</div>
+                <div class="news-summary">在WWDC 2026上，苹果宣布基于Google Gemini彻底重建Siri语音助手。这一出人意料的合作标志着苹果在AI策略上的重大转变，不再完全依赖内部技术，而是寻求与谷歌深度合作。</div>
+                <div class="news-meta">
+                    <span class="tag tag-ai">AI</span>
+                    <span>📰 AI Foresight 360</span>
+                    <span>🔗 <a href="https://aiforesight360.com/biggest-ai-developments-june-2026/">链接</a></span>
+                    <span>🕐 June 27, 2026</span>
+                </div>
+            </div>
+            <div class="news-item">
+                <div class="news-title">Google 将搜索转变为Agentic AI能力</div>
+                <div class="news-summary">Google宣布对其搜索产品进行重大转型，整合Agentic AI能力。新的搜索体验不仅能回答问题，还能执行复杂任务，如预订、购物和行程规划，标志着搜索引擎从信息检索向行动执行的重大转变。</div>
+                <div class="news-meta">
+                    <span class="tag tag-ai">AI</span>
+                    <span>📰 AI Foresight 360</span>
+                    <span>🔗 <a href="https://aiforesight360.com/biggest-ai-developments-june-2026/">链接</a></span>
+                    <span>🕐 June 27, 2026</span>
+                </div>
+            </div>
+            <div class="news-item">
+                <div class="news-title">特朗普不再视Anthropic为国家安全威胁</div>
+                <div class="news-summary">特朗普告诉Axios，他不再将AI初创公司Anthropic视为国家安全威胁。此前他曾表示不排除对Anthropic使用紧急权力。这一态度转变可能预示着AI监管政策的变化。</div>
+                <div class="news-meta">
+                    <span class="tag tag-ai">AI</span>
+                    <span>📰 Reuters</span>
+                    <span>🔗 <a href="https://www.reuters.com/technology/artificial-intelligence/">链接</a></span>
+                    <span>🕐 June 20, 2026</span>
+                </div>
+            </div>
+            <div class="news-item">
+                <div class="news-title">DeepMind 高级科学家John Jumper跳槽Anthropic</div>
+                <div class="news-summary">Google DeepMind高级研究科学家John Jumper周五宣布离开Google DeepMind，加入AI初创公司Anthropic。这是最新一位高调离开大型科技公司加入AI初创企业的研究人员，凸显了AI人才竞争的激烈程度。</div>
+                <div class="news-meta">
+                    <span class="tag tag-ai">AI</span>
+                    <span>📰 Reuters</span>
+                    <span>🔗 <a href="https://www.reuters.com/technology/">链接</a></span>
+                    <span>🕐 June 19, 2026</span>
+                </div>
+            </div>
+            <div class="news-item">
+                <div class="news-title">GENISOM AI 在ICRA 2026首次展示可部署机器人平台</div>
+                <div class="news-summary">GENISOM AI在国际机器人与自动化会议（ICRA 2026）上首次展示了其可部署机器人平台。这些平台旨在解决工业自动化中的实际部署挑战，提供即插即用的机器人解决方案。</div>
+                <div class="news-meta">
+                    <span class="tag tag-ai">AI</span>
+                    <span>📰 The Robot Report</span>
+                    <span>🔗 <a href="https://www.therobotreport.com/robotics-news/">链接</a></span>
+                    <span>🕐 June 26, 2026</span>
+                </div>
+            </div>
+            <div class="news-item">
+                <div class="news-title">科学家发现AI可以让人类更具创造力</div>
+                <div class="news-summary">斯旺西大学的新研究表明，AI不仅是替代人类工作的工具，更可以成为创意合作者。研究显示，AI可以帮助人类在艺术创作、科学研究和问题解决中发挥更大的创造力，改变了人们对AI角色的认知。</div>
+                <div class="news-meta">
+                    <span class="tag tag-ai">AI</span>
+                    <span>📰 ScienceDaily</span>
+                    <span>🔗 <a href="https://www.sciencedaily.com/news/computers_math/artificial_intelligence/">链接</a></span>
+                    <span>🕐 March 15, 2026</span>
+                </div>
+            </div>
+            <div class="news-item">
+                <div class="news-title">Google 向Meta无法提供足够的Gemini算力</div>
+                <div class="news-summary">消息人士称，Google在3月左右告诉Meta，无法提供Meta想要购买的所有Gemini容量，这扰乱并推迟了Meta的一些内部AI项目。对先进模型的激增需求正使计算能力成为科技行业最稀缺的商品。</div>
+                <div class="news-meta">
+                    <span class="tag tag-ai">AI</span>
+                    <span>📰 Techmeme</span>
+                    <span>🔗 <a href="https://techmeme.com/">链接</a></span>
+                    <span>🕐 June 26, 2026</span>
+                </div>
+            </div>
+        </div>
 
-  <!-- AI & 机器人板块 -->
-  <div class="section">
-    <div class="section-title"><span class="section-icon">🤖</span> AI & 机器人</div>
-    <div class="card">
-      <h3>Automate 2026开幕：人形机器人从实验室走向量产</h3>
-      <p>本周Automate 2026展会在芝加哥McCormick Place开幕，NVIDIA赞助人形机器人展馆。Figure AI展示每小时可产1台机器人的BotQ工厂，Boston Dynamics和Agility Robotics展示商用部署。</p>
-      <div class="meta-row"><span class="tag">AI</span><span class="time">2026-06-21</span><a href="https://www.techtimes.com/articles/318805/20260621/automate-2026-opens-monday-nvidia-pavilion-marks-humanoid-robot-shift-production.htm" target="_blank">来源：TechTimes</a></div>
+        <footer>
+            <p>📬 Daily Global Briefing | Generated by AI</p>
+            <p>Data Sources: Reuters, CNBC, NPR, BBC, Al Jazeera, Fox News, The Guardian, POLITICO, Techmeme, ScienceDaily, Yahoo Finance, Google Finance, CoinDesk, Blockchain Reporter, The Maritime Executive, Journal of Commerce, Global Trade Magazine, AI Foresight 360, The Robot Report, ISW</p>
+            <p style="margin-top: 10px; font-size: 0.85em; opacity: 0.7;">Last Updated: 2026-06-29 07:15 SGT</p>
+        </footer>
     </div>
-    <div class="card">
-      <h3>NVIDIA发布Isaac GR00T参考人形机器人，与宇树科技合作</h3>
-      <p>NVIDIA宣布推出Isaac GR00T参考人形机器人平台，与中国初创公司宇树科技(Unitree)合作，面向学术研究领域。该产品预计2026年底由Unitree上市。NVIDIA同时发布新物理AI模型，全球合作伙伴展示下一代机器人。</p>
-      <div class="meta-row"><span class="tag">AI</span><span class="time">2026-06-01</span><a href="https://nvidianews.nvidia.com/news/nvidia-open-humanoid-robot-reference-design" target="_blank">来源：NVIDIA Newsroom</a></div>
-    </div>
-    <div class="card">
-      <h3>Tesla Optimus工厂进入钢结构阶段，Cybercab和Semi按计划推进</h3>
-      <p>Tesla Q1财报更新显示，Cybercab、Tesla Semi和Megapack 3按计划于2026年量产。Optimus机器人产线正在安装中，Giga Texas North Campus Optimus工厂于5月27日竖起第一根钢梁。Cortex 2计算中心250MW已投运，500MW目标定于2026年中。</p>
-      <div class="meta-row"><span class="tag">AI</span><span class="time">2026-04-23</span><a href="https://assets-ir.tesla.com/tesla-contents/IR/TSLA-Q1-2026-Update.pdf" target="_blank">来源：Tesla IR</a></div>
-    </div>
-    <div class="card">
-      <h3>AI模型发布竞争白热化：Gemini 3.5 Flash、Claude Opus 4.8等密集更新</h3>
-      <p>2026年6月成为年度最活跃的模型发布月。已确认发布：Google Gemini 3.5 Flash（Intelligence Index 55，284 tokens/秒），Anthropic Claude Opus 4.8（100万token默认上下文，Fast Mode 3倍降价）。更多模型预计月底发布。</p>
-      <div class="meta-row"><span class="tag">AI</span><span class="time">2026-06-08</span><a href="https://www.buildfastwithai.com/blogs/ai-news-today-june-8-2026" target="_blank">来源：BuildFastWithAI</a></div>
-    </div>
-    <div class="card">
-      <h3>特朗普不再将Anthropic视为国家安全威胁</h3>
-      <p>6月20日，特朗普对Axios表示不再将Anthropic视为国家安全威胁，但不排除使用紧急权力针对该公司。挪威则禁止在小学阶段使用AI，教育领域AI监管分歧加剧。</p>
-      <div class="meta-row"><span class="tag">AI</span><span class="time">2026-06-20</span><a href="https://www.reuters.com/technology/artificial-intelligence/" target="_blank">来源：Reuters</a></div>
-    </div>
-    <div class="card">
-      <h3>NVIDIA与全球机器人巨头联合推进物理AI规模化部署</h3>
-      <p>3月16日，NVIDIA联合ABB Robotics、FANUC、KUKA、Figure、Boston Dynamics、Franka Robotics、Medtronic等全球机器人领军企业在GTC 2026展示基于NVIDIA技术的物理AI解决方案，覆盖工业制造、医疗手术和人形机器人领域。</p>
-      <div class="meta-row"><span class="tag">AI</span><span class="time">2026-03-16</span><a href="https://nvidianews.nvidia.com/news/nvidia-and-global-robotics-leaders-take-physical-ai-to-the-real-world" target="_blank">来源：NVIDIA Newsroom</a></div>
-    </div>
-  </div>
-</div>
-
-<footer>
-  <p>全球资讯简报 · 2026年6月28日 · 自动生成</p>
-  <p>本简报由 AI 基于公开网络资讯自动生成，仅供参考，不构成任何投资或决策建议。</p>
-</footer>
 </body>
 </html>
