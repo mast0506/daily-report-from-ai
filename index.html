@@ -1,441 +1,407 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>全球资讯简报 | 2026-07-02</title>
-<style>
-  :root {
-    --bg: #0f172a;
-    --card: #1e293b;
-    --accent: #38bdf8;
-    --accent2: #f472b6;
-    --accent3: #a78bfa;
-    --accent4: #34d399;
-    --text: #e2e8f0;
-    --muted: #94a3b8;
-    --border: #334155;
-  }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans SC", sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    line-height: 1.7;
-    padding: 20px;
-    min-height: 100vh;
-  }
-  .container { max-width: 960px; margin: 0 auto; }
-  header {
-    text-align: center;
-    padding: 40px 0 30px;
-    border-bottom: 2px solid var(--border);
-    margin-bottom: 30px;
-  }
-  header h1 {
-    font-size: 2.2rem;
-    font-weight: 800;
-    letter-spacing: 2px;
-    background: linear-gradient(90deg, var(--accent), var(--accent2));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin-bottom: 8px;
-  }
-  header .meta {
-    color: var(--muted);
-    font-size: 0.95rem;
-  }
-  header .meta span { margin: 0 12px; }
-  .section {
-    background: var(--card);
-    border-radius: 16px;
-    padding: 24px 28px;
-    margin-bottom: 24px;
-    border: 1px solid var(--border);
-    transition: transform 0.2s;
-  }
-  .section:hover { transform: translateY(-2px); }
-  .section-header {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 20px;
-    padding-bottom: 12px;
-    border-bottom: 1px solid var(--border);
-  }
-  .section-header .icon {
-    width: 40px; height: 40px;
-    border-radius: 10px;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 1.3rem;
-  }
-  .section-header h2 {
-    font-size: 1.25rem;
-    font-weight: 700;
-  }
-  .shipping .icon { background: rgba(56,189,248,0.15); }
-  .shipping h2 { color: var(--accent); }
-  .politics .icon { background: rgba(244,114,182,0.15); }
-  .politics h2 { color: var(--accent2); }
-  .finance .icon { background: rgba(167,139,250,0.15); }
-  .finance h2 { color: var(--accent3); }
-  .tech .icon { background: rgba(52,211,153,0.15); }
-  .tech h2 { color: var(--accent4); }
-
-  .news-item {
-    padding: 14px 0;
-    border-bottom: 1px dashed var(--border);
-  }
-  .news-item:last-child { border-bottom: none; }
-  .news-item .title {
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--text);
-    margin-bottom: 6px;
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-  }
-  .news-item .title .num {
-    min-width: 28px; height: 28px;
-    border-radius: 6px;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 0.8rem;
-    font-weight: 700;
-    flex-shrink: 0;
-    margin-top: 2px;
-  }
-  .shipping .num { background: rgba(56,189,248,0.15); color: var(--accent); }
-  .politics .num { background: rgba(244,114,182,0.15); color: var(--accent2); }
-  .finance .num { background: rgba(167,139,250,0.15); color: var(--accent3); }
-  .tech .num { background: rgba(52,211,153,0.15); color: var(--accent4); }
-
-  .news-item .meta-line {
-    font-size: 0.82rem;
-    color: var(--muted);
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px 16px;
-    margin-left: 38px;
-  }
-  .news-item .meta-line a {
-    color: var(--accent);
-    text-decoration: none;
-    opacity: 0.85;
-    transition: opacity 0.2s;
-  }
-  .news-item .meta-line a:hover { opacity: 1; text-decoration: underline; }
-  .news-item .meta-line .source { font-weight: 500; }
-  .news-item .meta-line .time { color: #64748b; }
-
-  footer {
-    text-align: center;
-    padding: 30px 0 20px;
-    color: var(--muted);
-    font-size: 0.85rem;
-  }
-  footer a { color: var(--accent); text-decoration: none; }
-
-  @media (max-width: 640px) {
-    body { padding: 12px; }
-    header h1 { font-size: 1.5rem; }
-    .section { padding: 18px 16px; }
-    .news-item .meta-line { margin-left: 0; margin-top: 6px; }
-    .news-item .title { flex-direction: column; gap: 4px; }
-  }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>全球资讯简报 | Global Daily Briefing</title>
+    <style>
+        :root {
+            --bg: #0f172a;
+            --card: #1e293b;
+            --text: #e2e8f0;
+            --muted: #94a3b8;
+            --accent: #38bdf8;
+            --accent2: #f472b6;
+            --border: #334155;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+        }
+        .container { max-width: 960px; margin: 0 auto; padding: 2rem 1rem; }
+        header {
+            text-align: center;
+            padding: 2.5rem 1rem;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 2rem;
+        }
+        header h1 { font-size: 2rem; font-weight: 700; letter-spacing: -0.5px; }
+        header .date {
+            color: var(--accent);
+            font-size: 1rem;
+            margin-top: 0.5rem;
+            font-weight: 500;
+        }
+        header .count { color: var(--muted); font-size: 0.875rem; margin-top: 0.25rem; }
+        .section {
+            background: var(--card);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--border);
+        }
+        .section h2 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .section h2 .icon { font-size: 1.4rem; }
+        .news-item {
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+        .news-item:last-child { border-bottom: none; }
+        .news-title {
+            font-weight: 600;
+            font-size: 1rem;
+            color: var(--text);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.35rem;
+        }
+        .news-title:hover { color: var(--accent); }
+        .news-meta {
+            font-size: 0.8rem;
+            color: var(--muted);
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .news-meta a { color: var(--accent); text-decoration: none; }
+        .news-meta a:hover { text-decoration: underline; }
+        .badge {
+            display: inline-block;
+            padding: 0.15rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        .badge-shipping { background: rgba(56,189,248,0.15); color: #38bdf8; }
+        .badge-politics { background: rgba(248,113,113,0.15); color: #f87171; }
+        .badge-finance { background: rgba(250,204,21,0.15); color: #facc15; }
+        .badge-ai { background: rgba(167,139,250,0.15); color: #a78bfa; }
+        footer {
+            text-align: center;
+            padding: 2rem 1rem;
+            color: var(--muted);
+            font-size: 0.8rem;
+            border-top: 1px solid var(--border);
+        }
+        @media (max-width: 600px) {
+            header h1 { font-size: 1.5rem; }
+            .section { padding: 1rem; }
+        }
+    </style>
 </head>
 <body>
-<div class="container">
-<header>
-  <h1>🌍 全球资讯简报</h1>
-  <div class="meta">
-    <span>📅 2026年7月2日 周四</span>
-    <span>🕐 SGT 07:15</span>
-    <span>📍 Asia/Singapore</span>
-  </div>
-</header>
+    <header>
+        <h1>🌍 全球资讯简报</h1>
+        <div class="date">Global Daily Briefing — Friday, July 3, 2026 · 07:15 SGT</div>
+        <div class="count">24 条精选新闻 | Curated from global sources</div>
+    </header>
 
-<!-- 航运 -->
-<section class="section shipping">
-  <div class="section-header">
-    <div class="icon">🚢</div>
-    <h2>航运 & 供应链</h2>
-  </div>
+    <div class="container">
+        <!-- 航运 -->
+        <div class="section">
+            <h2><span class="icon">🚢</span> 航运物流 Shipping & Maritime</h2>
 
-  <div class="news-item">
-    <div class="title"><span class="num">01</span>红海危机持续：胡塞武装袭击导致全球航运大规模绕行好望角</div>
-    <div class="meta-line">
-      <span class="source">来源：Wikipedia / FreightWaves</span>
-      <span class="time">2026年6月</span>
-      <a href="https://en.wikipedia.org/wiki/Red_Sea_crisis" target="_blank">原文链接 ↗</a>
+            <div class="news-item">
+                <a class="news-title" href="https://www.drewry.co.uk/supply-chain-advisors/supply-chain-expertise/world-container-index-assessed-by-drewry" target="_blank">Drewry World Container Index 飙升 9% 至 $4,530/FEU</a>
+                <div class="news-meta">
+                    <span class="badge badge-shipping">Shipping</span>
+                    <span>Source: Drewry</span>
+                    <span>Time: 2 Jul 2026</span>
+                    <a href="https://www.drewry.co.uk/supply-chain-advisors/supply-chain-expertise/world-container-index-assessed-by-drewry" target="_blank">Link ↗</a>
+                </div>
+            </div>
+
+            <div class="news-item">
+                <a class="news-title" href="https://theloadstar.com/rate-rises-loom-as-port-congestion-hits-four-year-high/" target="_blank">全球港口拥堵达四年来最高水平，11% 船队运力被困</a>
+                <div class="news-meta">
+                    <span class="badge badge-shipping">Shipping</span>
+                    <span>Source: The Loadstar</span>
+                    <span>Time: 2 Jul 2026</span>
+                    <a href="https://theloadstar.com/rate-rises-loom-as-port-congestion-hits-four-year-high/" target="_blank">Link ↗</a>
+                </div>
+            </div>
+
+            <div class="news-item">
+                <a class="news-title" href="https://breakbulk.news/container-ports-face-rate-pressure-as-congestion-ties-up-11-of-fleet/" target="_blank">港口拥堵导致运力紧张，7 月 1 日起新一轮运费上涨生效</a>
+                <div class="news-meta">
+                    <span class="badge badge-shipping">Shipping</span>
+                    <span>Source: Breakbulk News</span>
+                    <span>Time: 30 Jun 2026</span>
+                    <a href="https://breakbulk.news/container-ports-face-rate-pressure-as-congestion-ties-up-11-of-fleet/" target="_blank">Link ↗</a>
+                </div>
+            </div>
+
+            <div class="news-item">
+                <a class="news-title" href="https://www.itln.in/shipping/dimerco-india-asia-ocean-freight-rates-rise-as-capacity-tightens-1359685" target="_blank">印度-亚洲航线运费上涨，新加坡和巴生港中转拥堵加剧</a>
+                <div class="news-meta">
+                    <span class="badge badge-shipping">Shipping</span>
+                    <span>Source: ITLN</span>
+                    <span>Time: 2 Jul 2026</span>
+                    <a href="https://www.itln.in/shipping/dimerco-india-asia-ocean-freight-rates-rise-as-capacity-tightens-1359685" target="_blank">Link ↗</a>
+                </div>
+            </div>
+
+            <div class="news-item">
+                <a class="news-title" href="https://container-news.com/freightos-weekly-update-ocean-rates-steady-as-shippers-brace-for-july-hikes/" target="_blank">Freightos：海运运价持稳，托运人为 7 月涨价做准备</a>
+                <div class="news-meta">
+                    <span class="badge badge-shipping">Shipping</span>
+                    <span>Source: Container News</span>
+                    <span>Time: 1 Jul 2026</span>
+                    <a href="https://container-news.com/freightos-weekly-update-ocean-rates-steady-as-shippers-brace-for-july-hikes/" target="_blank">Link ↗</a>
+                </div>
+            </div>
+
+            <div class="news-item">
+                <a class="news-title" href="https://www.cbsnews.com/live-updates/us-iran-war-vance-talks-resuming-core-mission-war-achieved/" target="_blank">一艘外籍集装箱船在霍尔木兹海峡偏离航道后搁浅</a>
+                <div class="news-meta">
+                    <span class="badge badge-shipping">Shipping</span>
+                    <span>Source: CBS News</span>
+                    <span>Time: 2 Jul 2026</span>
+                    <a href="https://www.cbsnews.com/live-updates/us-iran-war-vance-talks-resuming-core-mission-war-achieved/" target="_blank">Link ↗</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 时政 -->
+        <div class="section">
+            <h2><span class="icon">🌐</span> 时政热点 Politics & Geopolitics</h2>
+
+            <div class="news-item">
+                <a class="news-title" href="https://www.cnn.com/2026/07/01/world/live-news/iran-war-trump" target="_blank">美伊在多哈举行间接谈判，卡塔尔称取得“积极进展”</a>
+                <div class="news-meta">
+                    <span class="badge badge-politics">Politics</span>
+                    <span>Source: CNN</span>
+                    <span>Time: 1 Jul 2026</span>
+                    <a href="https://www.cnn.com/2026/07/01/world/live-news/iran-war-trump" target="_blank">Link ↗</a>
+                </div>
+            </div>
+
+            <div class="news-item">
+                <a class="news-title" href="https://www.aljazeera.com/news/2026/7/1/iran-to-open-communication-channel-on-mou-with-us-after-talks-in-qatar" target="_blank">伊朗同意与美国就谅解备忘录开启沟通渠道</a>
+                <div class="news-meta">
+                    <span class="badge badge-politics">Politics</span>
+                    <span>Source: Al Jazeera</span>
+                    <span>Time: 1 Jul 2026</span>
+                    <a href="https://www.aljazeera.com/news/2026/7/1/iran-to-open-communication-channel-on-mou-with-us-after-talks-in-qatar" target="_blank">Link ↗</a>
+                </div>
+            </div>
+
+            <div class="news-item">
+                <a class="news-title" href="https://www.nytimes.com/2026/07/01/world/middleeast/us-iran-diplomacy-qatar.html" target="_blank">纽约时报：霍尔木兹海峡航运回升，美伊仍存重大分歧</a>
+                <div class="news-meta">
+                    <span class="badge badge-politics">Politics</span>
+                    <span>Source: NYT</span>
+                    <span>Time: 1 Jul 2026</span>
+                    <a href="https://www.nytimes.com/2026/07/01/world/middleeast/us-iran-diplomacy-qatar.html" target="_blank">Link ↗</a>
+                </div>
+            </div>
+
+            <div class="news-item">
+                <a class="news-title" href="https://mod.gov.ua/en/news/ukraine-struck-11-russian-oil-refineries-and-8-defense-industry-facilities-results-of-june-deep-strike-operations" target="_blank">乌克兰 6 月深度打击摧毁 11 座俄炼油厂和 8 处国防设施</a>
+                <div class="news-meta">
+                    <span class="badge badge-politics">Politics</span>
+                    <span>Source: Ukraine MoD</span>
+                    <span>Time: 2 Jul 2026</span>
+                    <a href="https://mod.gov.ua/en/news/ukraine-struck-11-russian-oil-refineries-and-8-defense-industry-facilities-results-of-june-deep-strike-operations" target="_blank">Link ↗</a>
+                </div>
+            </div>
+
+            <div class="news-item">
+                <a class="news-title" href="https://www.latimes.com/world-nation/story/2026-07-02/major-russian-attack-kills-20-in-kyiv-as-ukrainian-strikes-disrupt-moscows-oil-sector" target="_blank">俄军对基辅发动 11 小时袭击，造成至少 20 名平民死亡</a>
+                <div class="news-meta">
+                    <span class="badge badge-politics">Politics</span>
+                    <span>Source: LA Times</span>
+                    <span>Time: 2 Jul 2026</span>
+                    <a href="https://www.latimes.com/world-nation/story/2026-07-02/major-russian-attack-kills-20-in-kyiv-as-ukrainian-strikes-disrupt-moscows-oil-sector" target="_blank">Link ↗</a>
+                </div>
+            </div>
+
+            <div class="news-item">
+                <a class="news-title" href="https://www.justsecurity.org/145491/early-edition-july-2-2026/" target="_blank">白俄罗斯人权状况未改善；德国起诉 Nord Stream 管道爆炸嫌疑人</a>
+                <div class="news-meta">
+                    <span class="badge badge-politics">Politics</span>
+                    <span>Source: Just Security</span>
+                    <span>Time: 2 Jul 2026</span>
+                    <a href="https://www.justsecurity.org/145491/early-edition-july-2-2026/" target="_blank">Link ↗</a>
+                </div>
+            </div>
+
+            <div class="news-item">
+                <a class="news-title" href="https://www.securitycouncilreport.org/" target="_blank">联合国安理会 7 月将重点讨论叙利亚政治与人道局势</a>
+                <div class="news-meta">
+                    <span class="badge badge-politics">Politics</span>
+                    <span>Source: Security Council Report</span>
+                    <span>Time: 1 Jul 2026</span>
+                    <a href="https://www.securitycouncilreport.org/" target="_blank">Link ↗</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 财经 -->
+        <div class="section">
+            <h2><span class="icon">💹</span> 财经市场 Finance & Markets</h2>
+
+            <div class="news-item">
+                <a class="news-title" href="https://www.nytimes.com/2026/07/02/business/economy/jobs-report-june-fed-interest-rates-warsh.html" target="_blank">美国 6 月非农新增就业低于预期，失业率降至 4.2%</a>
+                <div class="news-meta">
+                    <span class="badge badge-finance">Finance</span>
+                    <span>Source: NYT</span>
+                    <span>Time: 2 Jul 2026</span>
+                    <a href="https://www.nytimes.com/2026/07/02/business/economy/jobs-report-june-fed-interest-rates-warsh.html" target="_blank">Link ↗</a>
+                </div>
+            </div>
+
+            <div class="news-item">
+                <a class="news-title" href="https://www.cnbc.com/2026/07/02/us-treasury-yields-rise-as-investors-await-june-jobs-report.html" target="_blank">就业数据疲软削弱美联储 7 月加息预期，2 年期美债收益率回落</a>
+                <div class="news-meta">
+                    <span class="badge badge-finance">Finance</span>
+                    <span>Source: CNBC</span>
+                    <span>Time: 2 Jul 2026</span>
+                    <a href="https://www.cnbc.com/2026/07/02/us-treasury-yields-rise-as-investors-await-june-jobs-report.html" target="_blank">Link ↗</a>
+                </div>
+            </div>
+
+            <div class="news-item">
+                <a class="news-title" href="https://finance.yahoo.com/markets/live/stock-market-today-thursday-july-2-223136955.html" target="_blank">美股分化：道指创新高，纳斯达克因芯片股抛售下跌</a>
+                <div class="news-meta">
+                    <span class="badge badge-finance">Finance</span>
+                    <span>Source: Yahoo Finance</span>
+                    <span>Time: 2 Jul 2026</span>
+                    <a href="https://finance.yahoo.com/markets/live/stock-market-today-thursday-july-2-223136955.html" target="_blank">Link ↗</a>
+                </div>
+            </div>
+
+            <div class="news-item">
+                <a class="news-title" href="https://www.scotsmanguide.com/news/soft-jobs-report-shifts-outlook-for-fed-policy-path/" target="_blank">美联储维持基准利率 3.50%-3.75% 不变，更多官员预测加息</a>
+                <div class="news-meta">
+                    <span class="badge badge-finance">Finance</span>
+                    <span>Source: Scotsman Guide</span>
+                    <span>Time: 2 Jul 2026</span>
+                    <a href="https://www.scotsmanguide.com/news/soft-jobs-report-shifts-outlook-for-fed-policy-path/" target="_blank">Link ↗</a>
+                </div>
+            </div>
+
+            <div class="news-item">
+                <a class="news-title" href="https://www.investmentweek.co.uk/blog/4080428/market-movers-blog" target="_blank">2026 上半年欧洲 IPO 募资额同比增长 76%</a>
+                <div class="news-meta">
+                    <span class="badge badge-finance">Finance</span>
+                    <span>Source: Investment Week</span>
+                    <span>Time: 2 Jul 2026</span>
+                    <a href="https://www.investmentweek.co.uk/blog/4080428/market-movers-blog" target="_blank">Link ↗</a>
+                </div>
+            </div>
+
+            <div class="news-item">
+                <a class="news-title" href="https://www.ft.com/markets" target="_blank">Getty 终止 37 亿美元 Shutterstock 合并计划，因英国监管机构反对</a>
+                <div class="news-meta">
+                    <span class="badge badge-finance">Finance</span>
+                    <span>Source: Financial Times</span>
+                    <span>Time: 1 Jul 2026</span>
+                    <a href="https://www.ft.com/markets" target="_blank">Link ↗</a>
+                </div>
+            </div>
+
+            <div class="news-item">
+                <a class="news-title" href="https://www.benzinga.com/markets/tech/26/07/60207524/big-short-investor-michael-burry-reveals-tesla-nvidia-shorts-says-chip-boom-is-beginning-of-the-end" target="_blank">“大空头” Michael Burry 披露做空特斯拉和英伟达，称芯片繁荣“走到尽头”</a>
+                <div class="news-meta">
+                    <span class="badge badge-finance">Finance</span>
+                    <span>Source: Benzinga</span>
+                    <span>Time: 1 Jul 2026</span>
+                    <a href="https://www.benzinga.com/markets/tech/26/07/60207524/big-short-investor-michael-burry-reveals-tesla-nvidia-shorts-says-chip-boom-is-beginning-of-the-end" target="_blank">Link ↗</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- AI -->
+        <div class="section">
+            <h2><span class="icon">🤖</span> AI & Robotics</h2>
+
+            <div class="news-item">
+                <a class="news-title" href="https://www.chinapulse.com/data-news/2026/07/02/a-cheap-chinese-ai-model-is-closing-in-on-anthropic-and-openai" target="_blank">中国 Z.ai 发布 GLM-5.2，性能逼近 Anthropic/OpenAI，成本大幅降低</a>
+                <div class="news-meta">
+                    <span class="badge badge-ai">AI</span>
+                    <span>Source: ChinaPulse</span>
+                    <span>Time: 2 Jul 2026</span>
+                    <a href="https://www.chinapulse.com/data-news/2026/07/02/a-cheap-chinese-ai-model-is-closing-in-on-anthropic-and-openai" target="_blank">Link ↗</a>
+                </div>
+            </div>
+
+            <div class="news-item">
+                <a class="news-title" href="https://www.zdnet.com/article/ai-model-release-tracker/" target="_blank">Anthropic 发布 Claude Sonnet 5，配备 100 万 Token 上下文窗口</a>
+                <div class="news-meta">
+                    <span class="badge badge-ai">AI</span>
+                    <span>Source: ZDNET</span>
+                    <span>Time: 2 Jul 2026</span>
+                    <a href="https://www.zdnet.com/article/ai-model-release-tracker/" target="_blank">Link ↗</a>
+                </div>
+            </div>
+
+            <div class="news-item">
+                <a class="news-title" href="https://www.japantimes.co.jp/news/2026/07/01/japan/japan-ai-plans/" target="_blank">日本计划开发国产主权 AI 模型，2040 年部署 1000 万台 AI 机器人</a>
+                <div class="news-meta">
+                    <span class="badge badge-ai">AI</span>
+                    <span>Source: Japan Times</span>
+                    <span>Time: 1 Jul 2026</span>
+                    <a href="https://www.japantimes.co.jp/news/2026/07/01/japan/japan-ai-plans/" target="_blank">Link ↗</a>
+                </div>
+            </div>
+
+            <div class="news-item">
+                <a class="news-title" href="https://www.theregister.com/ai-and-ml/2026/07/02/new-humanoid-robots-from-china-look-like-creepy-pop-star-action-figures-complete-with-slightly-dodgy-lip-synch/5265490" target="_blank">中国人形机器人公司推出逼真伴侣机器人，单价 $17,600，订单超 13,000 台</a>
+                <div class="news-meta">
+                    <span class="badge badge-ai">AI</span>
+                    <span>Source: The Register</span>
+                    <span>Time: 2 Jul 2026</span>
+                    <a href="https://www.theregister.com/ai-and-ml/2026/07/02/new-humanoid-robots-from-china-look-like-creepy-pop-star-action-figures-complete-with-slightly-dodgy-lip-synch/5265490" target="_blank">Link ↗</a>
+                </div>
+            </div>
+
+            <div class="news-item">
+                <a class="news-title" href="http://www.maritimeprofessional.com/news/fleetwork-posidonia-2026-signals-turning-420836" target="_blank">AI 与云原生技术从创新项目转变为航运公司运营优先事项</a>
+                <div class="news-meta">
+                    <span class="badge badge-ai">AI</span>
+                    <span>Source: Maritime Professional</span>
+                    <span>Time: 2 Jul 2026</span>
+                    <a href="http://www.maritimeprofessional.com/news/fleetwork-posidonia-2026-signals-turning-420836" target="_blank">Link ↗</a>
+                </div>
+            </div>
+
+            <div class="news-item">
+                <a class="news-title" href="https://news.un.org/en/story/2026/07/1167848" target="_blank">联合国：AI 发展速度超过政府监管能力，呼吁全球立即行动</a>
+                <div class="news-meta">
+                    <span class="badge badge-ai">AI</span>
+                    <span>Source: UN News</span>
+                    <span>Time: 1 Jul 2026</span>
+                    <a href="https://news.un.org/en/story/2026/07/1167848" target="_blank">Link ↗</a>
+                </div>
+            </div>
+
+            <div class="news-item">
+                <a class="news-title" href="https://www.buildfastwithai.com/blogs/ai-news-today-july-1-2026" target="_blank">企业因“Token 最大化”在数周内烧光年度预算，Agentic AI 成本引发担忧</a>
+                <div class="news-meta">
+                    <span class="badge badge-ai">AI</span>
+                    <span>Source: BuildFastWithAI</span>
+                    <span>Time: 1 Jul 2026</span>
+                    <a href="https://www.buildfastwithai.com/blogs/ai-news-today-july-1-2026" target="_blank">Link ↗</a>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
 
-  <div class="news-item">
-    <div class="title"><span class="num">02</span>苏伊士运河通行量骤降：2024年10月仅877艘，较2023年11月2068艘大跌</div>
-    <div class="meta-line">
-      <span class="source">来源：Wikipedia</span>
-      <span class="time">2026年6月更新</span>
-      <a href="https://en.wikipedia.org/wiki/Red_Sea_crisis" target="_blank">原文链接 ↗</a>
-    </div>
-  </div>
-
-  <div class="news-item">
-    <div class="title"><span class="num">03</span>DHL：2026年全球海运需求同比增长4%，亚洲出口持续强劲</div>
-    <div class="meta-line">
-      <span class="source">来源：DHL Global Forwarding</span>
-      <span class="time">2026年6月</span>
-      <a href="https://www.dhl.com/us-en/home/global-forwarding/latest-news-and-webinars/ocean-freight-market-update.html" target="_blank">原文链接 ↗</a>
-    </div>
-  </div>
-
-  <div class="news-item">
-    <div class="title"><span class="num">04</span>洛杉矶港预计6-7月每月处理超90万集装箱单位</div>
-    <div class="meta-line">
-      <span class="source">来源：Supply Chain Dive</span>
-      <span class="time">2026年6月18日</span>
-      <a href="https://www.supplychaindive.com/topic/logistics/" target="_blank">原文链接 ↗</a>
-    </div>
-  </div>
-
-  <div class="news-item">
-    <div class="title"><span class="num">05</span>Yusen Logistics与cargo.one合作，部署AI驱动的全球空运操作系统</div>
-    <div class="meta-line">
-      <span class="source">来源：The Loadstar</span>
-      <span class="time">2026年7月1日</span>
-      <a href="https://theloadstar.com/" target="_blank">原文链接 ↗</a>
-    </div>
-  </div>
-
-  <div class="news-item">
-    <div class="title"><span class="num">06</span>Alpega Group与Wakeo正式建立战略联盟，为全球货主提供统一运输智能</div>
-    <div class="meta-line">
-      <span class="source">来源：The Loadstar</span>
-      <span class="time">2026年7月1日</span>
-      <a href="https://theloadstar.com/" target="_blank">原文链接 ↗</a>
-    </div>
-  </div>
-</section>
-
-<!-- 时政 -->
-<section class="section politics">
-  <div class="section-header">
-    <div class="icon">🌐</div>
-    <h2>国际时政</h2>
-  </div>
-
-  <div class="news-item">
-    <div class="title"><span class="num">07</span>加沙停火协议持续但局势紧张，联合国警告人道主义危机依然严峻</div>
-    <div class="meta-line">
-      <span class="source">来源：UN Security Council Report</span>
-      <span class="time">2026年7月1日</span>
-      <a href="https://www.securitycouncilreport.org/monthly-forecast/2026-07/the-middle-east-including-the-palestinian-question-25.php" target="_blank">原文链接 ↗</a>
-    </div>
-  </div>
-
-  <div class="news-item">
-    <div class="title"><span class="num">08</span>加沙重建需求高达714亿美元，首年人道主义需求约31亿美元</div>
-    <div class="meta-line">
-      <span class="source">来源：UN / EU / World Bank 联合评估</span>
-      <span class="time">2026年7月</span>
-      <a href="https://www.securitycouncilreport.org/monthly-forecast/2026-07/the-middle-east-including-the-palestinian-question-25.php" target="_blank">原文链接 ↗</a>
-    </div>
-  </div>
-
-  <div class="news-item">
-    <div class="title"><span class="num">09</span>乌克兰局势：盖洛普民调显示民众日益倾向谈判而非继续战争</div>
-    <div class="meta-line">
-      <span class="source">来源：Pravda NATO / Gallup</span>
-      <span class="time">2026年7月1日</span>
-      <a href="https://nato.news-pravda.com/world/2026/07/01/110459.html" target="_blank">原文链接 ↗</a>
-    </div>
-  </div>
-
-  <div class="news-item">
-    <div class="title"><span class="num">10</span>匈牙利选举后，欧洲对乌克兰的支持力度有望重新增强</div>
-    <div class="meta-line">
-      <span class="source">来源：Washington Monthly</span>
-      <span class="time">2026年5月7日</span>
-      <a href="https://washingtonmonthly.com/2026/05/07/trump-leaves-ukraines-future-to-europe/" target="_blank">原文链接 ↗</a>
-    </div>
-  </div>
-
-  <div class="news-item">
-    <div class="title"><span class="num">11</span>缅甸重新成为中印地缘政治竞争的新舞台</div>
-    <div class="meta-line">
-      <span class="source">来源：Geopolitical Monitor</span>
-      <span class="time">2026年6月</span>
-      <a href="https://www.geopoliticalmonitor.com/" target="_blank">原文链接 ↗</a>
-    </div>
-  </div>
-
-  <div class="news-item">
-    <div class="title"><span class="num">12</span>中国通过新《民族团结法》引发国际争议</div>
-    <div class="meta-line">
-      <span class="source">来源：Livemint</span>
-      <span class="time">2026年7月1日</span>
-      <a href="https://www.livemint.com/news/world/total-world-latest-news-on-july-1-2026-live-updates-11782854943729.html" target="_blank">原文链接 ↗</a>
-    </div>
-  </div>
-
-  <div class="news-item">
-    <div class="title"><span class="num">13</span>阿富汗兴都库什地区发生5.5级地震</div>
-    <div class="meta-line">
-      <span class="source">来源：Livemint</span>
-      <span class="time">2026年7月2日</span>
-      <a href="https://www.livemint.com/news/world/total-world-latest-news-on-july-2-2026-live-updates-11782932667188.html" target="_blank">原文链接 ↗</a>
-    </div>
-  </div>
-</section>
-
-<!-- 财经 -->
-<section class="section finance">
-  <div class="section-header">
-    <div class="icon">💰</div>
-    <h2>全球财经</h2>
-  </div>
-
-  <div class="news-item">
-    <div class="title"><span class="num">14</span>高盛下调2026年底黄金目标价至4900美元/盎司（此前为5400美元）</div>
-    <div class="meta-line">
-      <span class="source">来源：GoldRepublic / Goldman Sachs</span>
-      <span class="time">2026年6月</span>
-      <a href="https://www.goldrepublic.com/en-us/gold-price/forecast" target="_blank">原文链接 ↗</a>
-    </div>
-  </div>
-
-  <div class="news-item">
-    <div class="title"><span class="num">15</span>摩根大通：黄金在200日均线（约4340美元）与50日均线（约4730美元）之间震荡</div>
-    <div class="meta-line">
-      <span class="source">来源：J.P. Morgan Global Research</span>
-      <span class="time">2026年6月</span>
-      <a href="https://www.jpmorgan.com/insights/global-research/commodities/gold-prices" target="_blank">原文链接 ↗</a>
-    </div>
-  </div>
-
-  <div class="news-item">
-    <div class="title"><span class="num">16</span>美国核心通胀仍远高于美联储2%目标，市场预计年内至少加息一次</div>
-    <div class="meta-line">
-      <span class="source">来源：TradingEconomics</span>
-      <span class="time">2026年7月1日</span>
-      <a href="https://tradingeconomics.com/commodity/gold" target="_blank">原文链接 ↗</a>
-    </div>
-  </div>
-
-  <div class="news-item">
-    <div class="title"><span class="num">17</span>特朗普政府对59个国家及欧盟提出最高12.5%关税，涉强迫劳动调查</div>
-    <div class="meta-line">
-      <span class="source">来源：Tax Foundation / CNBC / NYT</span>
-      <span class="time">2026年6月</span>
-      <a href="https://taxfoundation.org/research/all/federal/trump-tariffs-trade-war/" target="_blank">原文链接 ↗</a>
-    </div>
-  </div>
-
-  <div class="news-item">
-    <div class="title"><span class="num">18</span>美国密歇根消费者信心指数2026年4月创历史新低</div>
-    <div class="meta-line">
-      <span class="source">来源：Wikipedia / University of Michigan</span>
-      <span class="time">2026年4月</span>
-      <a href="https://en.wikipedia.org/wiki/Tariffs_in_the_second_Trump_administration" target="_blank">原文链接 ↗</a>
-    </div>
-  </div>
-
-  <div class="news-item">
-    <div class="title"><span class="num">19</span>SEC批准加密ETF通用上市标准，加速产品审批流程</div>
-    <div class="meta-line">
-      <span class="source">来源：The Block</span>
-      <span class="time">2026年1月</span>
-      <a href="https://www.theblock.co/post/383361/crypto-etfs-2026-regulatory-tailwinds-issuers-brace-crowded-year" target="_blank">原文链接 ↗</a>
-    </div>
-  </div>
-
-  <div class="news-item">
-    <div class="title"><span class="num">20</span>SEC发布2026-2030战略计划，强调加密监管清晰度与减少执法越权</div>
-    <div class="meta-line">
-      <span class="source">来源：Bitcoin Magazine</span>
-      <span class="time">2026年5月</span>
-      <a href="https://bitcoinmagazine.com/news/sec-highlights-crypto-in-strategic-plan" target="_blank">原文链接 ↗</a>
-    </div>
-  </div>
-
-  <div class="news-item">
-    <div class="title"><span class="num">21</span>约24项加密事件合约ETF申请于2026年5月被SEC暂停审查</div>
-    <div class="meta-line">
-      <span class="source">来源：99Bitcoins</span>
-      <span class="time">2026年6月</span>
-      <a href="https://99bitcoins.com/news/altcoins/etf-rules-overhaul-sec-crypto/" target="_blank">原文链接 ↗</a>
-    </div>
-  </div>
-</section>
-
-<!-- AI & 机器人 -->
-<section class="section tech">
-  <div class="section-header">
-    <div class="icon">🤖</div>
-    <h2>AI & 机器人</h2>
-  </div>
-
-  <div class="news-item">
-    <div class="title"><span class="num">22</span>NVIDIA发布新物理AI模型与框架，全球合作伙伴推出下一代机器人</div>
-    <div class="meta-line">
-      <span class="source">来源：NVIDIA Newsroom</span>
-      <span class="time">2026年GTC大会</span>
-      <a href="https://nvidianews.nvidia.com/news/nvidia-releases-new-physical-ai-models-as-global-partners-unveil-next-generation-robots" target="_blank">原文链接 ↗</a>
-    </div>
-  </div>
-
-  <div class="news-item">
-    <div class="title"><span class="num">23</span>NVIDIA与全球机器人巨头合作，将物理AI推向现实世界规模化部署</div>
-    <div class="meta-line">
-      <span class="source">来源：NVIDIA Newsroom</span>
-      <span class="time">2026年GTC</span>
-      <a href="https://nvidianews.nvidia.com/news/nvidia-and-global-robotics-leaders-take-physical-ai-to-the-real-world" target="_blank">原文链接 ↗</a>
-    </div>
-  </div>
-
-  <div class="news-item">
-    <div class="title"><span class="num">24</span>OpenAI GPT-5.5在NVIDIA基础设施上驱动Codex AI Agent，超万名NVIDIA员工已内测</div>
-    <div class="meta-line">
-      <span class="source">来源：NVIDIA Blog / OpenAI</span>
-      <span class="time">2026年4月23日</span>
-      <a href="https://blogs.nvidia.com/blog/openai-codex-gpt-5-5-ai-agents/" target="_blank">原文链接 ↗</a>
-    </div>
-  </div>
-
-  <div class="news-item">
-    <div class="title"><span class="num">25</span>GENISOM AI在ICRA 2026首次展示可部署机器人平台</div>
-    <div class="meta-line">
-      <span class="source">来源：The Robot Report</span>
-      <span class="time">2026年6月</span>
-      <a href="https://www.therobotreport.com/robotics-news/" target="_blank">原文链接 ↗</a>
-    </div>
-  </div>
-
-  <div class="news-item">
-    <div class="title"><span class="num">26</span>丰田研究院定制NVIDIA Cosmos世界基础模型，实现机器人动态视图合成与导航新突破</div>
-    <div class="meta-line">
-      <span class="source">来源：NVIDIA Blog</span>
-      <span class="time">2026年4月</span>
-      <a href="https://blogs.nvidia.com/blog/national-robotics-week-2026/" target="_blank">原文链接 ↗</a>
-    </div>
-  </div>
-
-  <div class="news-item">
-    <div class="title"><span class="num">27</span>NVIDIA开发通用用途人形机器人加速计算系统、工具与服务</div>
-    <div class="meta-line">
-      <span class="source">来源：NVIDIA</span>
-      <span class="time">2026年</span>
-      <a href="https://www.nvidia.com/en-us/use-cases/humanoid-robots/" target="_blank">原文链接 ↗</a>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <p>📊 本简报由 AI Agent 自动生成 · 每日 07:15 SGT 更新</p>
-  <p><a href="https://github.com/mast0506/daily-report-from-ai" target="_blank">GitHub Repository ↗</a></p>
-  <p style="margin-top:8px; font-size:0.75rem; color:#475569;">Generated on 2026-07-02 07:15 SGT · Data sourced from public news outlets</p>
-</footer>
-</div>
+    <footer>
+        Generated by AI · Updated daily at 07:15 SGT · Sources include CNBC, NYT, FT, Al Jazeera, Reuters, Drewry, The Loadstar, and more.<br>
+        Deployed to GitHub Pages · /home/steven/.openclaw/workspace/daily-report
+    </footer>
 </body>
 </html>
