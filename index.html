@@ -3,487 +3,325 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>每日全球资讯简报 | Daily Global Briefing</title>
+    <title>全球资讯简报 — 2026年7月16日</title>
     <style>
-        :root {
-            --primary: #1a1a2e;
-            --secondary: #16213e;
-            --accent: #0f3460;
-            --highlight: #e94560;
-            --text: #eaeaea;
-            --muted: #a0a0a0;
-            --card-bg: #1e1e3f;
-            --border: #2a2a4a;
-        }
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            color: var(--text);
-            min-height: 100vh;
-            line-height: 1.6;
-        }
-        .container {
-            max-width: 960px;
-            margin: 0 auto;
-            padding: 2rem 1rem;
-        }
-        header {
-            text-align: center;
-            padding: 2rem 0;
-            border-bottom: 2px solid var(--highlight);
-            margin-bottom: 2rem;
-        }
-        header h1 {
-            font-size: 2.2rem;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-            margin-bottom: 0.5rem;
-        }
-        .meta {
-            color: var(--muted);
-            font-size: 0.95rem;
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            flex-wrap: wrap;
-        }
-        .meta span {
-            display: flex;
-            align-items: center;
-            gap: 0.4rem;
-        }
-        .section {
-            margin-bottom: 2.5rem;
-        }
-        .section-header {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            margin-bottom: 1.25rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 1px solid var(--border);
-        }
-        .section-icon {
-            font-size: 1.5rem;
-        }
-        .section-title {
-            font-size: 1.3rem;
-            font-weight: 600;
-            color: var(--highlight);
-        }
-        .news-item {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 1.25rem;
-            margin-bottom: 1rem;
-            transition: transform 0.2s, border-color 0.2s;
-        }
-        .news-item:hover {
-            transform: translateY(-2px);
-            border-color: var(--highlight);
-        }
-        .news-headline {
-            font-size: 1.05rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            color: var(--text);
-        }
-        .news-summary {
-            font-size: 0.92rem;
-            color: var(--muted);
-            margin-bottom: 0.75rem;
-        }
-        .news-meta {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.75rem;
-            font-size: 0.82rem;
-        }
-        .source {
-            color: #4fc3f7;
-            text-decoration: none;
-            font-weight: 500;
-        }
-        .source:hover {
-            text-decoration: underline;
-        }
-        .time {
-            color: #81c784;
-        }
-        .tag {
-            display: inline-block;
-            padding: 0.15rem 0.5rem;
-            border-radius: 4px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            text-transform: uppercase;
-        }
-        .tag-breaking {
-            background: #c62828;
-            color: #fff;
-        }
-        .tag-update {
-            background: #f9a825;
-            color: #1a1a2e;
-        }
-        .stats-bar {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-            margin-bottom: 2rem;
-        }
-        .stat-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 1.25rem;
-            text-align: center;
-        }
-        .stat-value {
-            font-size: 1.6rem;
-            font-weight: 700;
-            color: var(--highlight);
-        }
-        .stat-label {
-            font-size: 0.85rem;
-            color: var(--muted);
-            margin-top: 0.25rem;
-        }
-        footer {
-            text-align: center;
-            padding: 2rem 0;
-            border-top: 1px solid var(--border);
-            color: var(--muted);
-            font-size: 0.85rem;
-            margin-top: 2rem;
-        }
-        .disclaimer {
-            font-size: 0.8rem;
-            color: #888;
-            margin-top: 0.5rem;
-        }
-        @media (max-width: 600px) {
-            header h1 { font-size: 1.5rem; }
-            .section-title { font-size: 1.1rem; }
-            .news-headline { font-size: 0.95rem; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; background: #0f172a; color: #e2e8f0; line-height: 1.6; }
+        .container { max-width: 900px; margin: 0 auto; padding: 20px; }
+        header { text-align: center; padding: 40px 0; border-bottom: 2px solid #334155; margin-bottom: 30px; }
+        h1 { font-size: 2.2rem; color: #f8fafc; margin-bottom: 10px; }
+        .meta { color: #94a3b8; font-size: 0.95rem; }
+        .badge { display: inline-block; padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 600; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .badge-red { background: #dc2626; color: #fff; }
+        .badge-blue { background: #2563eb; color: #fff; }
+        .badge-green { background: #16a34a; color: #fff; }
+        .badge-purple { background: #9333ea; color: #fff; }
+        section { margin-bottom: 40px; }
+        h2 { font-size: 1.5rem; color: #f8fafc; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid #334155; display: flex; align-items: center; gap: 10px; }
+        .news-item { background: #1e293b; border-radius: 12px; padding: 20px; margin-bottom: 15px; border-left: 4px solid; transition: transform 0.2s; }
+        .news-item:hover { transform: translateX(4px); }
+        .news-item.shipping { border-left-color: #2563eb; }
+        .news-item.politics { border-left-color: #dc2626; }
+        .news-item.finance { border-left-color: #16a34a; }
+        .news-item.ai { border-left-color: #9333ea; }
+        .news-title { font-size: 1.1rem; font-weight: 600; color: #f8fafc; margin-bottom: 8px; }
+        .news-title a { color: #60a5fa; text-decoration: none; }
+        .news-title a:hover { text-decoration: underline; }
+        .news-desc { color: #cbd5e1; font-size: 0.95rem; margin-bottom: 10px; }
+        .news-meta { display: flex; gap: 15px; font-size: 0.8rem; color: #94a3b8; flex-wrap: wrap; }
+        .news-meta .source { font-weight: 500; }
+        .news-meta .time { font-style: italic; }
+        .footer { text-align: center; padding: 30px 0; color: #64748b; font-size: 0.85rem; border-top: 1px solid #334155; }
+        .summary { background: #1e293b; border-radius: 12px; padding: 25px; margin-bottom: 30px; }
+        .summary h3 { color: #f8fafc; margin-bottom: 15px; font-size: 1.2rem; }
+        .summary ul { list-style: none; }
+        .summary li { padding: 8px 0; padding-left: 24px; position: relative; color: #cbd5e1; }
+        .summary li::before { content: "→"; position: absolute; left: 0; color: #60a5fa; }
+        @media (max-width: 640px) {
+            .container { padding: 15px; }
+            h1 { font-size: 1.6rem; }
+            h2 { font-size: 1.2rem; }
+            .news-item { padding: 15px; }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>🌍 每日全球资讯简报</h1>
-            <div class="meta">
-                <span>📅 2026年7月14日 星期二</span>
-                <span>🕰️ SGT 07:15</span>
-                <span>📍 Asia/Singapore</span>
-            </div>
+            <h1>🌍 全球资讯简报</h1>
+            <p class="meta">2026年7月16日 星期四 · 新加坡时间 07:15 · 共24条新闻</p>
         </header>
 
-        <div class="stats-bar">
-            <div class="stat-card">
-                <div class="stat-value">$4,639</div>
-                <div class="stat-label">Drewry 40ft集装箱指数</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-value">3.5-3.75%</div>
-                <div class="stat-label">美国联邦基金利率</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-value">3.6%</div>
-                <div class="stat-label">美联储2026通胀预测</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-value">$15.94B</div>
-                <div class="stat-label">NVIDIA FY2026营收</div>
-            </div>
+        <div class="summary">
+            <h3>📌 今日要点</h3>
+            <ul>
+                <li>美伊冲突持续升级，美国恢复对伊朗港口的海军封锁，并对霍尔木兹海峡征收20%通行费</li>
+                <li>华尔街银行财报季强劲开局，高盛涨7.63%，BlackRock EPS超预期</li>
+                <li>中国出口激增27%，但GDP增长为疫情以来首次未达标</li>
+                <li>xAI发布Grok 4.5，基于1.5万亿参数模型，专为编程和智能体任务优化</li>
+                <li>波罗的海干散货指数BDI升至2,944点，VLCC运费飙升11.7%</li>
+                <li>人形机器人加速商用：1X NEO、Tesla Optimus Gen 3、R-noid等新品密集发布</li>
+            </ul>
         </div>
 
-        <section class="section">
-            <div class="section-header">
-                <span class="section-icon">🚢</span>
-                <h2 class="section-title">航运</h2>
-            </div>
-
-            <div class="news-item">
-                <div class="news-headline">Drewry全球集装箱指数升至$4,639，创2024年9月以来新高</div>
-                <div class="news-summary">Drewry World Container Index (WCI) 7月9日上涨2%至每40英尺集装箱4,639美元，主要受亚欧航线费率推动，为2024年9月以来最高水平。</div>
+        <!-- 航运 -->
+        <section>
+            <h2>🚢 航运</h2>
+            <div class="news-item shipping">
+                <div class="news-title">全球航运业对特朗普霍尔木兹收费计划发出警报</div>
+                <div class="news-desc">全球最大航运协会BIMCO警告称，任何美国征收的关税可能进一步减少霍尔木兹海峡的航运流量，该水道近几日已再次陷入停滞。</div>
                 <div class="news-meta">
-                    <a href="https://www.drewry.co.uk/supply-chain-advisors/supply-chain-expertise/world-container-index-assessed-by-drewry" class="source">Drewry</a>
-                    <span class="time">2026-07-09</span>
+                    <span class="source">来源：CNBC</span>
+                    <span class="time">2026-07-14</span>
+                    <a href="https://www.cnbc.com/2026/07/14/shipping-industry-trump-hormuz-toll-backfire.html" target="_blank">阅读全文 →</a>
                 </div>
             </div>
-
-            <div class="news-item">
-                <div class="news-headline">亚欧港口拥堵达四年高点，340万TEU运力滞留</div>
-                <div class="news-summary">欧洲和亚洲港口拥堵导致340万TEU集装箱船运力排队等候，承运商准备于7月再次大幅上调长途运费。上海港作为全球最繁忙港口，拥堵问题尤为严重。</div>
+            <div class="news-item shipping">
+                <div class="news-title">特朗普宣布对霍尔木兹海峡征收20%通行费</div>
+                <div class="news-desc">美国总统表示将对通过霍尔木兹海峡的航运征收20%费用，尽管官方声明称该费用违反国际法。此举加剧了中东地区的紧张局势。</div>
                 <div class="news-meta">
-                    <a href="https://theloadstar.com/carriers-eye-major-rate-hikes-for-july-even-as-port-congestion-strands-3-4m-teu/" class="source">The Loadstar</a>
-                    <span class="time">2026-06-23</span>
-                </div>
-            </div>
-
-            <div class="news-item">
-                <div class="news-headline">亚洲出口航线集装箱费率无视运力反弹继续上涨</div>
-                <div class="news-summary">尽管新运力持续投入，亚洲出口航线的集装箱运费仍保持坚挺，承运商成功推动费率上涨，凸显市场供需紧张的持续性。</div>
-                <div class="news-meta">
-                    <a href="https://www.seatrade-maritime.com/maritime-transportation/containers" class="source">Seatrade Maritime News</a>
-                    <span class="time">2026-07-06</span>
-                </div>
-            </div>
-
-            <div class="news-item">
-                <div class="news-headline">红海航运危机持续，胡塞武装袭击影响苏伊士运河通行</div>
-                <div class="news-summary">红海及苏伊士运河航运安全风险持续高企，商船被迫绕行好望角，导致燃油和船员成本增加。全球货运价格仍显著高于加沙战争前水平。</div>
-                <div class="news-meta">
-                    <a href="https://en.wikipedia.org/wiki/Red_Sea_crisis" class="source">Wikipedia / 多方来源</a>
-                    <span class="time">持续更新</span>
-                </div>
-            </div>
-
-            <div class="news-item">
-                <div class="news-headline">J.M. Rodgers发布7月货运市场更新：跨太平洋运费、空运趋势</div>
-                <div class="news-summary">最新货运市场报告涵盖跨太平洋航运费率、运力限制、集装箱短缺、空运趋势及货主指引，显示市场复杂性仍在加剧。</div>
-                <div class="news-meta">
-                    <a href="https://www.jmrodgers.com/july-2026-freight-market-update/" class="source">J.M. Rodgers Co.</a>
-                    <span class="time">2026-07-11</span>
-                </div>
-            </div>
-        </section>
-
-        <section class="section">
-            <div class="section-header">
-                <span class="section-icon">🌐</span>
-                <h2 class="section-title">时政</h2>
-            </div>
-
-            <div class="news-item">
-                <span class="tag tag-breaking">Breaking</span>
-                <div class="news-headline">伊朗最高领袖哈梅内伊葬礼在德黑兰举行，数百万人参加</div>
-                <div class="news-summary">伊朗已故最高领袖哈梅内伊（2月死于美以空袭）的葬礼于7月6日至9日举行，数百万民众在德黑兰及马什哈德参加哀悼。新任最高领袖为其子 Mojtaba Khamenei。</div>
-                <div class="news-meta">
-                    <a href="https://www.theguardian.com/world/live/2026/jul/06/iran-middle-east-crisis-funeral-supreme-leader-ali-khamenei-tehran-latest-news-updates" class="source">The Guardian</a>
-                    <span class="time">2026-07-06~09</span>
-                </div>
-            </div>
-
-            <div class="news-item">
-                <div class="news-headline">伊朗军队警告美以防务葬礼期间发动攻击</div>
-                <div class="news-summary">伊朗陆军将军在葬礼期间警告美国和以色列不要发动袭击，地区紧张局势持续高位。哈梅内伊之死被视为美以2月联合空袭的直接后果。</div>
-                <div class="news-meta">
-                    <a href="https://www.cnn.com/2026/07/03/world/live-news/iran-funeral-war-trump" class="source">CNN</a>
-                    <span class="time">2026-07-03</span>
-                </div>
-            </div>
-
-            <div class="news-item">
-                <div class="news-headline">俄罗斯乌克兰战争：基辅在北约峰会前夕遭袭，16人死亡</div>
-                <div class="news-summary">俄罗斯7月5日对乌克兰首都基辅发动大规模导弹和无人机袭击，造成16人死亡。乌克兰随后以无人机袭击俄罗斯西伯利亚最大的鄂木斯克炼油厂，为开战以来最远射程打击之一。</div>
-                <div class="news-meta">
-                    <a href="https://www.nytimes.com/2026/07/05/world/europe/kyiv-ukraine-russia-attack-nato.html" class="source">The New York Times</a>
-                    <span class="time">2026-07-05</span>
-                </div>
-            </div>
-
-            <div class="news-item">
-                <div class="news-headline">北约安卡拉峰会：北约拟投资400亿美元发展反无人机能力</div>
-                <div class="news-summary">北约领导人在安卡拉召开峰会，讨论乌克兰局势及军事投资。北约计划五年内向反无人机能力投入超400亿美元，以应对乌克兰无人机作战模式对战争形态的改变。</div>
-                <div class="news-meta">
-                    <a href="https://www.cnbc.com/2026/07/09/ukraine-drone-strikes-russia-nato.html" class="source">CNBC</a>
-                    <span class="time">2026-07-07</span>
-                </div>
-            </div>
-
-            <div class="news-item">
-                <div class="news-headline">俄罗斯宣传"与北约的战争"，普京与特朗普同意近期再通话</div>
-                <div class="news-summary">克里姆林宫表示普京与特朗普在周末通话中同意"近期"再次交谈，可能在北约峰会期间。俄罗斯正试图将乌克兰战争包装为与北约的对抗以维持国内支持。</div>
-                <div class="news-meta">
-                    <a href="https://www.aljazeera.com/news/2026/7/7/russia-touts-war-with-nato-amid-losses-in-ukraine" class="source">Al Jazeera</a>
-                    <span class="time">2026-07-07</span>
-                </div>
-            </div>
-
-            <div class="news-item">
-                <div class="news-headline">中美关税谈判持续，7月31日截止期限逼近</div>
-                <div class="news-summary">中美双方正就关税协议进行谈判，Polymarket预测市场显示7月31日前达成公开协议的可能性备受关注。双方目标是在农业产品关税减免上取得进展。</div>
-                <div class="news-meta">
-                    <a href="https://polymarket.com/event/us-x-china-tariff-agreement-by-july-31-20260626205549138" class="source">Polymarket</a>
-                    <span class="time">2026-07-02</span>
-                </div>
-            </div>
-
-            <div class="news-item">
-                <div class="news-headline">中国取消部分反制关税，暂停稀土出口限制一年</div>
-                <div class="news-summary">作为中美贸易谈判的一部分，中国已取消大部分反制关税，并暂停新的稀土出口限制及港口费用一年。这是自1979年以来双边贸易量最大降幅后的缓和迹象。</div>
-                <div class="news-meta">
-                    <a href="https://www.chinausfocus.com/finance-economy/china-us-trade-lessons-for-2026" class="source">China US Focus</a>
-                    <span class="time">2026-05</span>
-                </div>
-            </div>
-
-            <div class="news-item">
-                <div class="news-headline">美国贸易代表办公室就高达300亿美元的中国进口关税减免征求意见</div>
-                <div class="news-summary">USTR Ambassador Jamieson Greer 表示，在收到利益相关者意见后，将与中方谈判"互惠互利贸易"领域的关税减免。这是5月中美高层会晤后双方关系缓和的延续。</div>
-                <div class="news-meta">
-                    <a href="https://www.skadden.com/insights/publications/2026/06/a-rare-opportunity" class="source">Skadden</a>
-                    <span class="time">2026-06-10</span>
-                </div>
-            </div>
-        </section>
-
-        <section class="section">
-            <div class="section-header">
-                <span class="section-icon">💰</span>
-                <h2 class="section-title">财经</h2>
-            </div>
-
-            <div class="news-item">
-                <span class="tag tag-breaking">Breaking</span>
-                <div class="news-headline">华尔街大型银行今日发布财报：摩根大通、美银、高盛、花旗等</div>
-                <div class="news-summary">7月14日（周二），JPMorgan、Bank of America、Goldman Sachs、Wells Fargo 和 Citigroup 将发布季度财报。强劲结果可能提振市场对美国经济的信心，反之则可能引发对金融股的担忧。</div>
-                <div class="news-meta">
-                    <a href="https://www.fxleaders.com/news/2026/07/13/forex-signals-brief-july-14-jpmorgan-bac-gs-wfc-and-citigroup-earnings-preview-for-tuesday/" class="source">FX Leaders</a>
+                    <span class="source">来源：Washington Post</span>
                     <span class="time">2026-07-13</span>
+                    <a href="https://www.washingtonpost.com/world/2026/07/13/airstrikes-intensify-between-us-iran/" target="_blank">阅读全文 →</a>
                 </div>
             </div>
-
-            <div class="news-item">
-                <div class="news-headline">美联储维持利率不变，但大幅上调2026年通胀预测至3.6%</div>
-                <div class="news-summary">美联储6月议息会议维持联邦基金利率在3.5%-3.75%不变，但将2026年通胀预测从3月的2.7%大幅上调至3.6%（总体）和3.3%（核心）。市场担忧下半年可能加息。</div>
+            <div class="news-item shipping">
+                <div class="news-title">Capital Link发布2026年Q2航运洞察报告</div>
+                <div class="news-desc">该季度报告汇集了与航运业高管的独家访谈，深入探讨了行业领导力见解和未来趋势。报告涵盖干散货、油轮、集装箱等多个细分市场。</div>
                 <div class="news-meta">
-                    <a href="https://www.federalreserve.gov/newsevents/pressreleases/monetary20260617a.htm" class="source">Federal Reserve</a>
-                    <span class="time">2026-06-17</span>
+                    <span class="source">来源：Globe Newswire</span>
+                    <span class="time">2026-07-14</span>
+                    <a href="https://www.globenewswire.com/news-release/2026/07/14/3327176/20326/en/Navigating-the-Future-of-Shipping-Leadership-Insights-Q2-2026.html" target="_blank">阅读全文 →</a>
                 </div>
             </div>
-
-            <div class="news-item">
-                <div class="news-headline">美股投资者迎接财报季和6月通胀数据</div>
-                <div class="news-summary">本周市场关注焦点为财报季开启和6月通胀数据发布。美国与伊朗战争威胁再次浮现，为市场增添不确定性。分析师警告当前估值可能未充分反映下半年加息风险。</div>
+            <div class="news-item shipping">
+                <div class="news-title">USS Theodore Roosevelt离开珍珠港参加RIMPAC 2026演习</div>
+                <div class="news-desc">西奥多·罗斯福号航母（CVN 71）离开夏威夷珍珠港，准备参加2026年环太平洋军事演习海上阶段。值得注意的是，中型无人水面舰艇也参与了此次行动。</div>
                 <div class="news-meta">
-                    <a href="https://www.cnbc.com/2026/07/10/stock-market-next-week-outlook-for-july-13-17-2026.html" class="source">CNBC</a>
-                    <span class="time">2026-07-10</span>
+                    <span class="source">来源：The War Zone</span>
+                    <span class="time">2026-07-13</span>
+                    <a href="https://www.twz.com/sea/where-are-the-aircraft-carriers-july-13-2026" target="_blank">阅读全文 →</a>
                 </div>
             </div>
-
-            <div class="news-item">
-                <div class="news-headline">韩国KOSPI暴跌近7%，芯片股引领抛售潮</div>
-                <div class="news-summary">MSCI亚太指数下跌0.8%，韩国KOSPI一度暴跌近7%。AI相关芯片制造商领跌，Samsung Electronics和SK Hynix均跌超6%。日本Kioxia暴跌13%，此前年内涨幅超650%。</div>
+            <div class="news-item shipping">
+                <div class="news-title">巴拿马船舶注册处重返巴黎谅解备忘录白名单</div>
+                <div class="news-desc">巴拿马官员强调其船舶注册处成功重返巴黎谅解备忘录（Paris MoU）白名单，此前曾因合规问题被移出。这标志着巴拿马航运监管的重大改进。</div>
                 <div class="news-meta">
-                    <a href="https://features.financialjuice.com/2026/07/02/south-korea-joins-chip-selloff-oil-drops-asia-market-wrap/" class="source">FinancialJuice</a>
+                    <span class="source">来源：The Maritime Executive</span>
                     <span class="time">2026-07-02</span>
+                    <a href="https://maritime-executive.com/shipping-news" target="_blank">阅读全文 →</a>
                 </div>
             </div>
-
-            <div class="news-item">
-                <div class="news-headline">日本日元与韩国KOSPI成为投资者早期预警信号</div>
-                <div class="news-summary">Miller Tabak首席市场策略师Matt Maley指出，日元套利交易逆转和韩国KOSPI持续下跌可能预示全球风险偏好转变，投资者应密切关注这两个常被忽视的指标。</div>
+            <div class="news-item shipping">
+                <div class="news-title">波罗的海干散货指数BDI升至2,944点，VLCC运费飙升11.7%</div>
+                <div class="news-desc">波罗的海干散货指数（BDI）较前一周上涨8.4%至2,944点。超大型原油运输船（VLCC）运费飙升11.7%至137,248美元。大西洋航线MR型油轮运费也有所上涨。</div>
                 <div class="news-meta">
-                    <a href="https://247wallst.com/investing/2026/07/07/chief-market-strategist-says-japan-and-south-korea-could-be-flashing-early-warning-signs-for-investors/" class="source">247 Wall St.</a>
-                    <span class="time">2026-07-07</span>
-                </div>
-            </div>
-
-            <div class="news-item">
-                <div class="news-headline">AI芯片股2026年涨幅惊人，费城半导体指数飙升47%</div>
-                <div class="news-summary">AI芯片板块年内市值增加约2万亿美元，费城半导体指数(PHLX)涨幅超47%。NVIDIA继续主导AI GPU市场（份额70-80%），AMD和Intel正积极寻求突破。</div>
-                <div class="news-meta">
-                    <a href="https://intellectia.ai/blog/ai-semiconductor-stocks-rally-july-2026" class="source">Intellectia AI</a>
-                    <span class="time">2026-07-02</span>
+                    <span class="source">来源：Seoul Economic Daily / I3investor</span>
+                    <span class="time">2026-07-14</span>
+                    <a href="https://en.sedaily.com/finance/2026/07/14/sk-hynix-rally-over-chip-stocks-shed-1522-trillion-won" target="_blank">阅读全文 →</a>
                 </div>
             </div>
         </section>
 
-        <section class="section">
-            <div class="section-header">
-                <span class="section-icon">🤖</span>
-                <h2 class="section-title">AI & 机器人</h2>
-            </div>
-
-            <div class="news-item">
-                <span class="tag tag-update">Update</span>
-                <div class="news-headline">中国AI伴侣法规7月15日生效，3.45亿用户将受影响</div>
-                <div class="news-summary">中国首部AI拟人化交互服务监管框架将于7月15日生效。ByteDance的Doubao（中国最受欢迎AI聊天机器人）和Alibaba的Qwen已通知用户关闭AI伴侣/角色定制功能，影响约3.45亿用户。</div>
+        <!-- 时政 -->
+        <section>
+            <h2>🏛️ 时政</h2>
+            <div class="news-item politics">
+                <div class="news-title">美国恢复对伊朗港口的海军封锁</div>
+                <div class="news-desc">美国军方声明称已重新对伊朗港口实施海军封锁。此前美国已停止对伊朗的空袭数日，但伊朗持续袭击霍尔木兹海峡的商船促使美国恢复行动。</div>
                 <div class="news-meta">
-                    <a href="https://www.bloomberg.com/news/articles/2026-07-06/bytedance-alibaba-pull-ai-companions-as-beijing-tightens-rules" class="source">Bloomberg</a>
-                    <span class="time">2026-07-06</span>
+                    <span class="source">来源：CNN</span>
+                    <span class="time">2026-07-14</span>
+                    <a href="https://www.cnn.com/2026/07/14/world/live-news/iran-war-trump" target="_blank">阅读全文 →</a>
                 </div>
             </div>
-
-            <div class="news-item">
-                <div class="news-headline">Z.ai GLM-5.2模型引发中美AI竞赛新讨论</div>
-                <div class="news-summary">Z.ai发布的GLM-5.2模型成为热议焦点，分析师争论中国是否正在AI竞赛中真正追赶美国。该模型在多项基准测试中表现接近西方顶级模型。</div>
+            <div class="news-item politics">
+                <div class="news-title">美国对伊朗发动连续第三晚空袭</div>
+                <div class="news-desc">特朗普总统指示美国中央司令部对伊朗发动更多打击。伊朗军方称击毁了两艘"流氓超级油轮"，此前阿联酋表示伊朗导弹袭击了其在阿曼领海的油轮。</div>
                 <div class="news-meta">
-                    <a href="https://www.crescendo.ai/news/latest-ai-news-and-updates" class="source">Crescendo AI</a>
-                    <span class="time">2026-07-10</span>
+                    <span class="source">来源：CNN / New York Times</span>
+                    <span class="time">2026-07-13</span>
+                    <a href="https://www.nytimes.com/live/2026/07/13/world/iran-war-us-trump-hormuz" target="_blank">阅读全文 →</a>
                 </div>
             </div>
-
-            <div class="news-item">
-                <div class="news-headline">Five Eyes情报联盟警告：前沿AI将在"数月内"改变网络战格局</div>
-                <div class="news-summary">五眼联盟（美国、英国、加拿大、澳大利亚、新西兰）发布罕见联合警告，称前沿AI模型将"根本改变"进攻性和防御性网络能力，时间线不是"几年"而是"几个月"。</div>
+            <div class="news-item politics">
+                <div class="news-title">2026年伊朗战争持续升级，霍尔木兹海峡成为焦点</div>
+                <div class="news-desc">2026年伊朗战争始于2月28日，由美国和以色列发起，已颠覆了中东局势。双方争夺霍尔木兹海峡控制权，该海峡对全球石油运输至关重要。</div>
                 <div class="news-meta">
-                    <a href="https://www.aiapps.com/blog/top-ai-news-july-breakthroughs-launches-trends/" class="source">AIapps</a>
-                    <span class="time">2026-07-01</span>
+                    <span class="source">来源：Britannica</span>
+                    <span class="time">2026-07-14</span>
+                    <a href="https://www.britannica.com/event/2026-Iran-war" target="_blank">阅读全文 →</a>
                 </div>
             </div>
-
-            <div class="news-item">
-                <div class="news-headline">NVIDIA与ServiceNow扩大合作，推出企业级自主AI Agent</div>
-                <div class="news-summary">在ServiceNow Knowledge 2026大会上，NVIDIA与ServiceNow宣布扩大合作，推出Project Arc——长期运行的自主AI代理，为企业提供服务管理和工作流自动化。</div>
+            <div class="news-item politics">
+                <div class="news-title">特朗普支付E. Jean Carroll超500万美元诽谤判决金</div>
+                <div class="news-desc">E. Jean Carroll正式从特朗普处收到超过500万美元的性虐待和诽谤判决金。该案件历经数年法律诉讼，最终判决结果已执行。</div>
                 <div class="news-meta">
-                    <a href="https://dentro.de/ai/news/" class="source">Dentro AI</a>
-                    <span class="time">2026-07-10</span>
+                    <span class="source">来源：CNN</span>
+                    <span class="time">2026-07-15</span>
+                    <a href="https://edition.cnn.com/" target="_blank">阅读全文 →</a>
                 </div>
             </div>
-
-            <div class="news-item">
-                <div class="news-headline">Waymo每周服务约50万付费乘客，无安全员运营</div>
-                <div class="news-summary">Waymo目前每周在美国各地运送约50万名付费乘客，车辆无需安全员。该公司商业车队已接近4000辆，并正快速向新市场扩张付费服务。</div>
+            <div class="news-item politics">
+                <div class="news-title">美国大选将创历史最昂贵纪录</div>
+                <div class="news-desc">据Al Jazeera报道，美国即将举行的大选有望成为历史上最昂贵的选举之一。政治捐款和竞选支出持续攀升，反映了美国政治的高度两极化。</div>
                 <div class="news-meta">
-                    <a href="https://www.worldatnet.com/2026/07/autonomous-driving-in-2026.html" class="source">WorldatNet</a>
+                    <span class="source">来源：Al Jazeera</span>
+                    <span class="time">2026-07-14</span>
+                    <a href="https://www.aljazeera.com/tag/politics/" target="_blank">阅读全文 →</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 财经 -->
+        <section>
+            <h2>💰 财经</h2>
+            <div class="news-item finance">
+                <div class="news-title">标普500基本持平，芯片股下跌，通胀数据降温</div>
+                <div class="news-desc">周三标普500指数基本持平，芯片制造商遭受损失。交易员消化更多数据显示通胀正在降温，市场等待美联储下一步动向。</div>
+                <div class="news-meta">
+                    <span class="source">来源：CNBC</span>
+                    <span class="time">2026-07-15</span>
+                    <a href="https://www.cnbc.com/2026/07/14/stock-market-today-live-updates.html" target="_blank">阅读全文 →</a>
+                </div>
+            </div>
+            <div class="news-item finance">
+                <div class="news-title">华尔街银行财报强劲：高盛涨7.63%，摩根大通涨1.49%</div>
+                <div class="news-desc">周二华尔街大型银行财报普遍表现优异。高盛股价大涨7.63%，摩根大通上涨1.49%，美国银行上涨1.26%。6月通胀数据低于预期提振市场信心。</div>
+                <div class="news-meta">
+                    <span class="source">来源：TheStreet / CNBC</span>
+                    <span class="time">2026-07-14</span>
+                    <a href="https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-july-14-2026" target="_blank">阅读全文 →</a>
+                </div>
+            </div>
+            <div class="news-item finance">
+                <div class="news-title">BlackRock Q2 EPS 13.91美元，超预期</div>
+                <div class="news-desc">贝莱德第二季度每股收益13.91美元，超出FactSet分析师共识预期12.69美元。季度营收70.8亿美元，同样超出预期。资产管理规模受股市上涨推动持续增长。</div>
+                <div class="news-meta">
+                    <span class="source">来源：CNBC</span>
+                    <span class="time">2026-07-15</span>
+                    <a href="https://www.cnbc.com/2026/07/14/stock-market-today-live-updates.html" target="_blank">阅读全文 →</a>
+                </div>
+            </div>
+            <div class="news-item finance">
+                <div class="news-title">摩根士丹利Q2财富管理部门营收88.6亿美元</div>
+                <div class="news-desc">摩根士丹利财富管理部门营收增长14%至88.6亿美元，超出预期1.46亿美元。资产水平受股市上涨和存款贷款增长推动。美联储主席Warsh将出席国会听证会。</div>
+                <div class="news-meta">
+                    <span class="source">来源：CNBC</span>
+                    <span class="time">2026-07-15</span>
+                    <a href="https://www.cnbc.com/2026/07/15/morgan-stanley-ms-earnings-q2-2026-.html" target="_blank">阅读全文 →</a>
+                </div>
+            </div>
+            <div class="news-item finance">
+                <div class="news-title">中国Q2 GDP增长未达标，但出口激增27%</div>
+                <div class="news-desc">中国第二季度GDP增长为疫情以来首次未达标。但出口激增27%，超出分析师预期，主要受半导体和计算机零部件贸易强劲推动。6月贸易顺差超1250亿美元，为历史第二高。</div>
+                <div class="news-meta">
+                    <span class="source">来源：CNN / New York Times</span>
+                    <span class="time">2026-07-14/15</span>
+                    <a href="https://www.cnn.com/2026/07/14/business/china-q2-gdp-export-economy-intl-hnk" target="_blank">阅读全文 →</a>
+                </div>
+            </div>
+            <div class="news-item finance">
+                <div class="news-title">中国上半年外贸增长16.9%，达25.47万亿元</div>
+                <div class="news-desc">中国上半年外贸同比增长16.9%，总额达25.47万亿元（约3.75万亿美元）。其中AI相关产品出口是主要推动力，6月进口增长36%，为2021年以来最大增幅。</div>
+                <div class="news-meta">
+                    <span class="source">来源：Nikkei Asia / BigNewsNetwork</span>
+                    <span class="time">2026-07-14</span>
+                    <a href="https://asia.nikkei.com/economy/china-s-trade-expands-on-ai-boom-offsetting-weak-sectors" target="_blank">阅读全文 →</a>
+                </div>
+            </div>
+            <div class="news-item finance">
+                <div class="news-title">主要股指收盘上涨，企业财报季繁忙，通胀数据意外下降</div>
+                <div class="news-desc">周三主要股指收盘上涨，企业财报密集发布。6月批发通胀数据意外下降。据报道PayPal收到530亿美元收购要约，股价大涨。</div>
+                <div class="news-meta">
+                    <span class="source">来源：Investopedia</span>
+                    <span class="time">2026-07-15</span>
+                    <a href="https://www.investopedia.com/stock-market-today-dow-jones-s-and-p-500-07152026-12019579" target="_blank">阅读全文 →</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI&机器人 -->
+        <section>
+            <h2>🤖 AI & 机器人</h2>
+            <div class="news-item ai">
+                <div class="news-title">xAI发布Grok 4.5，专为编程和智能体任务优化</div>
+                <div class="news-desc">xAI于7月8日发布Grok 4.5，基于1.5万亿参数V9基础模型，使用Cursor编码数据训练。该模型在Terminal-Bench 2.1测试中达到83.3%准确率，API定价为2-6美元/百万token。</div>
+                <div class="news-meta">
+                    <span class="source">来源：Releasebot / BaseNor / ExplainX</span>
                     <span class="time">2026-07-08</span>
+                    <a href="https://www.basenor.com/blogs/news/groks-rise-explained-in-5-points" target="_blank">阅读全文 →</a>
                 </div>
             </div>
-
-            <div class="news-item">
-                <div class="news-headline">Tesla在迈阿密推出完全无人监督Robotaxi服务</div>
-                <div class="news-summary">Tesla在迈阿密推出完全无人监督的Robotaxi服务，尽管正值佛罗里达飓风季节，每日有季风级暴雨。NHTSA正在调查Tesla自动驾驶车辆的安全问题。Tesla累计自动驾驶里程已突破100亿英里。</div>
+            <div class="news-item ai">
+                <div class="news-title">量子计算与AI结合可大幅改善复杂系统预测</div>
+                <div class="news-desc">研究人员证明，将量子计算与AI结合可以显著改善对复杂混沌系统的预测。量子计算机能够识别数据中的隐藏模式，AI则利用这些模式进行更准确的预测。</div>
                 <div class="news-meta">
-                    <a href="https://finance.biggo.com/news/356587987c0c76b0" class="source">BigGo Finance</a>
-                    <span class="time">2026-07-11</span>
+                    <span class="source">来源：ScienceDaily</span>
+                    <span class="time">2026-07-17</span>
+                    <a href="https://www.sciencedaily.com/news/computers_math/artificial_intelligence/" target="_blank">阅读全文 →</a>
                 </div>
             </div>
-
-            <div class="news-item">
-                <div class="news-headline">Musk预测：2026年下半年完全自动驾驶车辆将在美国更常见</div>
-                <div class="news-summary">Tesla CEO Elon Musk在最新财报电话会上表示，预计不需要人类安全监督的完全自动驾驶车辆将在2026年下半年在美国变得更加普遍。然而Tesla在德州的车队规模仅为Waymo的十分之一。</div>
+            <div class="news-item ai">
+                <div class="news-title">三星预计利润增长18倍，受益于AI芯片需求激增</div>
+                <div class="news-desc">三星电子预计第二季度利润同比增长18倍，主要受益于AI需求对存储芯片的强劲拉动。SK海力士和台积电等芯片制造商也受益于AI热潮。</div>
                 <div class="news-meta">
-                    <a href="https://finance.yahoo.com/technology/ai/articles/tesla-meet-musks-2026-unsupervised-144700137.html" class="source">Yahoo Finance</a>
-                    <span class="time">2026-07-07</span>
+                    <span class="source">来源：Reuters</span>
+                    <span class="time">2026-07-02</span>
+                    <a href="https://www.reuters.com/technology/artificial-intelligence/" target="_blank">阅读全文 →</a>
                 </div>
             </div>
-
-            <div class="news-item">
-                <div class="news-headline">Gemini 3.5 Pro仍处于预览阶段，Google稳步推进</div>
-                <div class="news-summary">Google的Gemini 3.5 Pro模型仍在预览阶段，尚未全面开放。与此同时，中国AI模型竞争加剧，中美在AI大模型领域的竞赛进入白热化阶段。</div>
+            <div class="news-item ai">
+                <div class="news-title">1X NEO机器人发布全新肌腱驱动手掌，具备25个关节和触觉传感</div>
+                <div class="news-desc">1X于2026年7月发布了NEO机器人重新设计的肌腱驱动手掌，配备25个关节和触觉传感能力。公司表示该设计将在今年首批客户交付单元上搭载。</div>
                 <div class="news-meta">
-                    <a href="https://www.buildfastwithai.com/blogs/ai-news-today-july-6-2026" class="source">BuildFastWithAI</a>
-                    <span class="time">2026-07-06</span>
+                    <span class="source">来源：RoboZaps</span>
+                    <span class="time">2026-07-15</span>
+                    <a href="https://blog.robozaps.com/b/1x-neo-review" target="_blank">阅读全文 →</a>
+                </div>
+            </div>
+            <div class="news-item ai">
+                <div class="news-title">Tesla Optimus Gen 3预计7月/8月在Fremont工厂投产</div>
+                <div class="news-desc">Tesla Optimus第三代（V3/Gen 3）人形机器人尚未正式发布，但预计将于2026年7月或8月在Fremont工厂开始生产。该版本为完全重新设计，此前"Gen 3"曾指代2024年11月展示的22自由度手部。</div>
+                <div class="news-meta">
+                    <span class="source">来源：RoboZaps</span>
+                    <span class="time">2026-07-10</span>
+                    <a href="https://blog.robozaps.com/b/tesla-optimus-gen-3" target="_blank">阅读全文 →</a>
+                </div>
+            </div>
+            <div class="news-item ai">
+                <div class="news-title">SoftBank与安川电机、NVIDIA合作展示AI机器人操作系统</div>
+                <div class="news-desc">2026年7月，软银公司与安川电机和英伟达合作，使用其AI数据中心GPU云平台展示了可变形物体操纵系统。该系统展示了AI在工业机器人领域的最新应用。</div>
+                <div class="news-meta">
+                    <span class="source">来源：OpenPR</span>
+                    <span class="time">2026-07-15</span>
+                    <a href="https://www.openpr.com/news/4577911/united-states-humanoid-embodied-ai-robotics-market-2026" target="_blank">阅读全文 →</a>
+                </div>
+            </div>
+            <div class="news-item ai">
+                <div class="news-title">R-noid轮式人形机器人8周内部署，覆盖厨房、仓库和酒店</div>
+                <div class="news-desc">旧金山Robot.com公司于2026年6月推出的R-noid轮式人形机器人可在8周内部署到商业环境。该产品定位为厨房、仓库和酒店场景的即用人形机器人解决方案。</div>
+                <div class="news-meta">
+                    <span class="source">来源：TechTimes</span>
+                    <span class="time">2026-07-14</span>
+                    <a href="https://www.techtimes.com/articles/320472/20260714/humanoid-robots-now-deploy-eight-weeks-kitchens-warehouses-hotels.htm" target="_blank">阅读全文 →</a>
+                </div>
+            </div>
+            <div class="news-item ai">
+                <div class="news-title">AI News网站发布7月AI行业最新动态</div>
+                <div class="news-desc">7月AI领域涵盖了医疗AI、AI硬件与芯片、AI市场趋势、商业策略等多个领域。AI技术正加速渗透到各行各业，从医疗保健到企业基础设施。</div>
+                <div class="news-meta">
+                    <span class="source">来源：AI News / ArtificialIntelligence-News</span>
+                    <span class="time">2026-07-15</span>
+                    <a href="https://www.artificialintelligence-news.com/" target="_blank">阅读全文 →</a>
                 </div>
             </div>
         </section>
 
-        <footer>
-            <p>📡 每日全球资讯简报 | 由 AI 自动生成</p>
-            <p class="disclaimer">所有新闻条目均附带来源链接与时间戳，仅供参考。不构成任何投资建议。</p>
-            <p class="disclaimer">生成时间：2026-07-14 07:15 SGT | 数据来源：Drewry, Reuters, CNBC, Bloomberg, The New York Times, The Guardian, Al Jazeera, Federal Reserve, CNN, FX Leaders, Financial Times, TechTimes, Crescendo AI, Intellectia AI, Yahoo Finance, 247 Wall St.</p>
-        </footer>
+        <div class="footer">
+            <p>📅 生成时间：2026年7月16日 07:15 SGT | 数据来源：全球主流媒体实时报道</p>
+            <p style="margin-top: 8px;">⚠️ 本简报由AI自动整理，仅供资讯参考，不构成任何投资建议</p>
+        </div>
     </div>
 </body>
 </html>
