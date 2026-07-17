@@ -1,309 +1,221 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>全球资讯简报 — 2026年7月17日</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; background: #0f172a; color: #e2e8f0; line-height: 1.6; }
-        .container { max-width: 900px; margin: 0 auto; padding: 20px; }
-        header { text-align: center; padding: 40px 0; border-bottom: 2px solid #334155; margin-bottom: 30px; }
-        h1 { font-size: 2.2rem; color: #f8fafc; margin-bottom: 10px; }
-        .meta { color: #94a3b8; font-size: 0.95rem; }
-        .badge { display: inline-block; padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 600; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 0.5px; }
-        .badge-red { background: #dc2626; color: #fff; }
-        .badge-blue { background: #2563eb; color: #fff; }
-        .badge-green { background: #16a34a; color: #fff; }
-        .badge-purple { background: #9333ea; color: #fff; }
-        section { margin-bottom: 40px; }
-        h2 { font-size: 1.5rem; color: #f8fafc; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid #334155; display: flex; align-items: center; gap: 10px; }
-        .news-item { background: #1e293b; border-radius: 12px; padding: 20px; margin-bottom: 15px; border-left: 4px solid; transition: transform 0.2s; }
-        .news-item:hover { transform: translateX(4px); }
-        .news-item.shipping { border-left-color: #2563eb; }
-        .news-item.politics { border-left-color: #dc2626; }
-        .news-item.finance { border-left-color: #16a34a; }
-        .news-item.ai { border-left-color: #9333ea; }
-        .news-title { font-size: 1.1rem; font-weight: 600; color: #f8fafc; margin-bottom: 8px; }
-        .news-title a { color: #60a5fa; text-decoration: none; }
-        .news-title a:hover { text-decoration: underline; }
-        .news-desc { color: #cbd5e1; font-size: 0.95rem; margin-bottom: 10px; }
-        .news-meta { display: flex; gap: 15px; font-size: 0.8rem; color: #94a3b8; flex-wrap: wrap; }
-        .news-meta .source { font-weight: 500; }
-        .news-meta .time { font-style: italic; }
-        .footer { text-align: center; padding: 30px 0; color: #64748b; font-size: 0.85rem; border-top: 1px solid #334155; }
-        .summary { background: #1e293b; border-radius: 12px; padding: 25px; margin-bottom: 30px; }
-        .summary h3 { color: #f8fafc; margin-bottom: 15px; font-size: 1.2rem; }
-        .summary ul { list-style: none; }
-        .summary li { padding: 8px 0; padding-left: 24px; position: relative; color: #cbd5e1; }
-        .summary li::before { content: "→"; position: absolute; left: 0; color: #60a5fa; }
-        @media (max-width: 640px) {
-            .container { padding: 15px; }
-            h1 { font-size: 1.6rem; }
-            h2 { font-size: 1.2rem; }
-            .news-item { padding: 15px; }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>全球资讯简报 | 2026-07-18</title>
+  <style>
+    :root {
+      --bg: #f7f9fb;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --accent: #2563eb;
+      --border: #e5e7eb;
+      --shipping: #0ea5e9;
+      --politics: #dc2626;
+      --finance: #16a34a;
+      --ai: #9333ea;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    header {
+      background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+      color: #fff;
+      padding: 2.5rem 1rem;
+      text-align: center;
+    }
+    header h1 { margin: 0; font-size: 1.8rem; }
+    header .meta { margin-top: 0.5rem; opacity: 0.9; font-size: 0.95rem; }
+    .container { max-width: 900px; margin: 2rem auto; padding: 0 1rem; }
+    .section {
+      background: var(--card);
+      border-radius: 12px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      margin-bottom: 1.5rem;
+      overflow: hidden;
+      border-left: 6px solid var(--accent);
+    }
+    .section.shipping { border-left-color: var(--shipping); }
+    .section.politics { border-left-color: var(--politics); }
+    .section.finance { border-left-color: var(--finance); }
+    .section.ai { border-left-color: var(--ai); }
+    .section h2 {
+      margin: 0; padding: 1rem 1.25rem;
+      font-size: 1.15rem;
+      display: flex; align-items: center; gap: 0.5rem;
+      background: #f8fafc;
+    }
+    .section h2 .icon { font-size: 1.3rem; }
+    .news-list { list-style: none; margin: 0; padding: 0; }
+    .news-list li {
+      padding: 1rem 1.25rem;
+      border-top: 1px solid var(--border);
+    }
+    .news-list li:first-child { border-top: none; }
+    .news-title {
+      font-weight: 600;
+      color: var(--text);
+      text-decoration: none;
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+    .news-title:hover { color: var(--accent); text-decoration: underline; }
+    .news-meta {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+    .news-meta a { color: var(--muted); text-decoration: none; }
+    .news-meta a:hover { text-decoration: underline; color: var(--accent); }
+    footer {
+      text-align: center; padding: 2rem 1rem; color: var(--muted); font-size: 0.85rem;
+    }
+    @media (max-width: 640px) {
+      header h1 { font-size: 1.4rem; }
+      .section h2 { font-size: 1rem; }
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>🌍 全球资讯简报</h1>
-            <p class="meta">2026年7月17日 星期五 · 新加坡时间 07:15 · 共24条新闻</p>
-        </header>
+  <header>
+    <h1>🌍 今日全球资讯简报</h1>
+    <div class="meta">Saturday, 18 July 2026 · 07:15 SGT · 24 条精选</div>
+  </header>
 
-        <div class="summary">
-            <h3>📌 今日要点</h3>
-            <ul>
-                <li>美伊霍尔木兹海峡冲突升级：美国恢复对伊朗船只封锁，特朗普一度提出20%通行费</li>
-                <li>阿联酋油轮在阿曼水域遭袭，致1名印度船员死亡、8人受伤，加剧中东航运风险</li>
-                <li>美股震荡：7月16日标普500跌0.51%至7533.77，纳斯达克跌1.47%</li>
-                <li>Q2财报季预期强劲：标普500企业利润预计同比增长超23%</li>
-                <li>Anthropic与OpenAI在AI监管路线上的分歧公开化：州级严格监管 vs. 统一标准</li>
-                <li>Tesla Robotaxi服务扩展至迈阿密，为德州和加州以外首个城市</li>
-            </ul>
-        </div>
-
-        <!-- 航运 -->
-        <section>
-            <h2>🚢 航运</h2>
-            <div class="news-item shipping">
-                <div class="news-title">美国恢复对伊朗港口的海军封锁，霍尔木兹海峡航运放缓</div>
-                <div class="news-desc">美国总统特朗普宣布，美国将重新对伊朗船只实施霍尔木兹海峡封锁，并一度提议对所有通过该水道的货物征收20%费用。该海峡承载全球约五分之一石油运输，航运流量已显著下降。</div>
-                <div class="news-meta">
-                    <span class="source">来源：Fox News / USA Today</span>
-                    <span class="time">2026-07-14 / 2026-07-15</span>
-                    <a href="https://www.foxnews.com/live-news/iran-war-trump-israel-hormuz-oil-july-15-2026" target="_blank">阅读全文 →</a>
-                </div>
-            </div>
-            <div class="news-item shipping">
-                <div class="news-title">伊朗导弹袭击两艘阿联酋油轮，造成1死8伤</div>
-                <div class="news-desc">阿联酋谴责伊朗在阿曼领海对两艘油轮发动"厚颜无耻"的袭击。袭击造成一名印度船员死亡、八人受伤。美国随后对伊朗发动了连续第三晚的军事打击。</div>
-                <div class="news-meta">
-                    <span class="source">来源：BBC / New York Times / PBS</span>
-                    <span class="time">2026-07-13</span>
-                    <a href="https://www.bbc.com/news/articles/c8d2vn38dy1o" target="_blank">阅读全文 →</a>
-                </div>
-            </div>
-            <div class="news-item shipping">
-                <div class="news-title">美国中央司令部持续打击伊朗军事目标</div>
-                <div class="news-desc">美国军方表示，将继续对伊朗军队实施打击，削弱其攻击霍尔木兹海峡平民和商业航运的能力。伊朗则称击毁了两艘"流氓超级油轮"。</div>
-                <div class="news-meta">
-                    <span class="source">来源：PBS NewsHour</span>
-                    <span class="time">2026-07-13</span>
-                    <a href="https://www.pbs.org/newshour/world/trump-says-u-s-will-blockade-iran-in-the-strait-of-hormuz-and-will-charge-a-toll-for-safe-passage" target="_blank">阅读全文 →</a>
-                </div>
-            </div>
-            <div class="news-item shipping">
-                <div class="news-title">USTR费用可能使2026年前十大承运商损失32亿美元</div>
-                <div class="news-desc">根据Alphaliner分析，美国贸易代表办公室（USTR）针对中国船舶停靠美国港口提出的费用计划，可能在2026年给全球前十大集装箱航运公司带来约32亿美元额外成本。</div>
-                <div class="news-meta">
-                    <span class="source">来源：The Maritime Executive</span>
-                    <span class="time">2026-07-02</span>
-                    <a href="https://www.maritime-executive.com/" target="_blank">阅读全文 →</a>
-                </div>
-            </div>
-            <div class="news-item shipping">
-                <div class="news-title">巴拿马船舶注册处重返巴黎谅解备忘录白名单</div>
-                <div class="news-desc">巴拿马官员宣布其船舶注册处成功重返巴黎谅解备忘录（Paris MoU）白名单。此前该注册处曾因合规问题被移出，此次回归标志着监管和安全标准的重大改进。</div>
-                <div class="news-meta">
-                    <span class="source">来源：The Maritime Executive</span>
-                    <span class="time">2026-07-02</span>
-                    <a href="https://maritime-executive.com/shipping-news" target="_blank">阅读全文 →</a>
-                </div>
-            </div>
-            <div class="news-item shipping">
-                <div class="news-title">马士基：Section 122关税即将到期，美伊外交窗口带来不确定性</div>
-                <div class="news-desc">马士基北美市场报告指出，美国Section 122关税将于7月24日到期，带来不确定性。同时，美国与伊朗签署初步谅解备忘录并开启60天谈判窗口，暂时缓解了地区紧张局势。</div>
-                <div class="news-meta">
-                    <span class="source">来源：Maersk</span>
-                    <span class="time">2026-06-29</span>
-                    <a href="https://www.maersk.com/news/articles/2026/06/29/north-america-market-update-july" target="_blank">阅读全文 →</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- 时政 -->
-        <section>
-            <h2>🏛️ 时政</h2>
-            <div class="news-item politics">
-                <div class="news-title">伊朗在美伊战争期间加剧处决政治犯</div>
-                <div class="news-desc">人权组织数据显示，伊朗在与美国战争期间大幅加快了政治犯的处决速度。与此同时，国际社会的关注焦点集中在霍尔木兹海峡的军事冲突。</div>
-                <div class="news-meta">
-                    <span class="source">来源：CNN</span>
-                    <span class="time">2026-07-17</span>
-                    <a href="https://www.cnn.com/world" target="_blank">阅读全文 →</a>
-                </div>
-            </div>
-            <div class="news-item politics">
-                <div class="news-title">以色列通过一系列削弱司法监督的法律</div>
-                <div class="news-desc">总理内塔尼亚胡支持通过一系列法律，削弱对政府的司法监督，偏袒盟友媒体，并巩固极端正统派犹太教政党支持。此举引发国内大规模抗议。</div>
-                <div class="news-meta">
-                    <span class="source">来源：The New York Times</span>
-                    <span class="time">2026-07-14</span>
-                    <a href="https://www.nytimes.com/section/world" target="_blank">阅读全文 →</a>
-                </div>
-            </div>
-            <div class="news-item politics">
-                <div class="news-title">加沙地带停火以来已有至少1,072人死亡、3,463人受伤</div>
-                <div class="news-desc">加沙卫生部表示，自所谓"停火"生效以来，以色列军队违反停火协议的行为已导致至少1,072名巴勒斯坦人死亡、3,463人受伤。持续不断的袭击使该地区人道危机持续恶化。</div>
-                <div class="news-meta">
-                    <span class="source">来源：Al Jazeera</span>
-                    <span class="time">2026-07-06</span>
-                    <a href="https://www.aljazeera.com/news/2026/7/6/israeli-attacks-on-gaza-kill-at-least-6-as-ceasefire-violations-continue" target="_blank">阅读全文 →</a>
-                </div>
-            </div>
-            <div class="news-item politics">
-                <div class="news-title">联合国报告：以色列系统性地袭击加沙警察</div>
-                <div class="news-desc">联合国人权办公室（OHCHR）报告称，以色列袭击正在系统性地针对加沙警察。自2026年1月以来，已记录至少12次袭击，造成35名警务人员死亡，包括交通指挥和市场管理人员。</div>
-                <div class="news-meta">
-                    <span class="source">来源：Al Jazeera</span>
-                    <span class="time">2026-07-15</span>
-                    <a href="https://www.aljazeera.com/news/2026/7/15/cycle-of-chaos-israel-killing-gaza-civil-officials-to-derail-its-future" target="_blank">阅读全文 →</a>
-                </div>
-            </div>
-            <div class="news-item politics">
-                <div class="news-title">加沙战争进入第1,000天，超90%地区遭破坏</div>
-                <div class="news-desc">加沙当局表示，以色列战争已持续1,000天，超过90%的加沙地带已被摧毁，以色列控制约80%的领土。人道主义组织呼吁立即停火并恢复援助通道。</div>
-                <div class="news-meta">
-                    <span class="source">来源：Al Jazeera</span>
-                    <span class="time">2026-07-02</span>
-                    <a href="https://www.aljazeera.com/news/2026/7/2/gaza-wars-1000-days-90-of-strip-destroyed-80-seized-by-israel" target="_blank">阅读全文 →</a>
-                </div>
-            </div>
-            <div class="news-item politics">
-                <div class="news-title">东盟外长将与缅甸外长举行非正式会晤</div>
-                <div class="news-desc">东南亚国家联盟（ASEAN）外长将于7月12日在曼谷与缅甸外长举行非正式会晤。泰国和越南宣布了这一消息，旨在推动缅甸危机的政治解决。</div>
-                <div class="news-meta">
-                    <span class="source">来源：Reuters</span>
-                    <span class="time">2026-07-10</span>
-                    <a href="https://www.reuters.com/world/" target="_blank">阅读全文 →</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- 财经 -->
-        <section>
-            <h2>💰 财经</h2>
-            <div class="news-item finance">
-                <div class="news-title">7月16日美股收跌：科技股抛售抵消稳健财报</div>
-                <div class="news-desc">美国股市周四收跌。科技板块抛售压力抵消了稳健的财报和经济数据。标普500指数下跌0.51%，收于7,533.77点；纳斯达克综合指数下跌1.47%，至25,881.95点。</div>
-                <div class="news-meta">
-                    <span class="source">来源：CNBC</span>
-                    <span class="time">2026-07-16</span>
-                    <a href="https://www.cnbc.com/2026/07/15/stock-market-today-live-updates.html" target="_blank">阅读全文 →</a>
-                </div>
-            </div>
-            <div class="news-item finance">
-                <div class="news-title">7月15日美股收涨：通胀数据意外下降提振市场</div>
-                <div class="news-desc">周三美股收高。标普500指数上涨0.38%至7,572.40点，纳斯达克指数上涨0.62%至26,269.23点。6月通胀数据意外降温，提振了市场情绪。</div>
-                <div class="news-meta">
-                    <span class="source">来源：CNBC</span>
-                    <span class="time">2026-07-15</span>
-                    <a href="https://www.cnbc.com/2026/07/14/stock-market-today-live-updates.html" target="_blank">阅读全文 →</a>
-                </div>
-            </div>
-            <div class="news-item finance">
-                <div class="news-title">Q2财报季预期强劲：标普500利润预计增长超23%</div>
-                <div class="news-desc">FactSet数据显示，分析师预计第二季度标普500企业利润同比增长超过23%。Netflix、强生、联合健康等大型公司财报即将公布。</div>
-                <div class="news-meta">
-                    <span class="source">来源：CNBC</span>
-                    <span class="time">2026-07-13</span>
-                    <a href="https://www.cnbc.com/2026/07/12/stock-market-today-live-updates.html" target="_blank">阅读全文 →</a>
-                </div>
-            </div>
-            <div class="news-item finance">
-                <div class="news-title">7月17日美国经济日历：住房开工、工业产出与消费者信心</div>
-                <div class="news-desc">今日将公布6月新屋开工、建筑许可、工业生产，以及7月密歇根大学消费者信心指数初值。Travelers、Truist Financial和Fifth Third Bancorp将发布财报。</div>
-                <div class="news-meta">
-                    <span class="source">来源：Charles Schwab</span>
-                    <span class="time">2026-07-17</span>
-                    <a href="https://www.schwab.com/learn/story/stock-market-update-open" target="_blank">阅读全文 →</a>
-                </div>
-            </div>
-            <div class="news-item finance">
-                <div class="news-title">能源IPO热潮：投资者追逐AI boom投资机会</div>
-                <div class="news-desc">《金融时报》报道，能源行业首次公开募股（IPO）激增，投资者寻求从AI驱动的能源需求中获利。本世纪迄今，企业以创纪录速度筹集资金，但许多股票后续表现不佳。</div>
-                <div class="news-meta">
-                    <span class="source">来源：Financial Times</span>
-                    <span class="time">2026-07-15</span>
-                    <a href="https://www.ft.com/markets" target="_blank">阅读全文 →</a>
-                </div>
-            </div>
-            <div class="news-item finance">
-                <div class="news-desc">彭博社报道，对经济主权的担忧正在推动各国寻找Visa和万事达卡的替代方案。多国政府正推动本地支付网络发展，以减少对美国金融基础设施的依赖。</div>
-                <div class="news-title">经济主权担忧推动各国寻求Visa和万事达卡替代方案</div>
-                <div class="news-meta">
-                    <span class="source">来源：Bloomberg</span>
-                    <span class="time">2026-07-16</span>
-                    <a href="https://www.bloomberg.com/" target="_blank">阅读全文 →</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- AI&机器人 -->
-        <section>
-            <h2>🤖 AI & 机器人</h2>
-            <div class="news-item ai">
-                <div class="news-title">Anthropic采取州级AI监管策略，与OpenAI路线公开分歧</div>
-                <div class="news-desc">Anthropic正推动美国各州实施更严格的AI护栏，与OpenAI倡导的全国统一监管标准形成鲜明对比。此举可能塑造未来美国AI治理格局。</div>
-                <div class="news-meta">
-                    <span class="source">来源：Politico</span>
-                    <span class="time">2026-07-15</span>
-                    <a href="https://www.politico.com/news/2026/07/15/inside-anthropics-state-by-state-plan-to-ratchet-up-ai-rules-00998415" target="_blank">阅读全文 →</a>
-                </div>
-            </div>
-            <div class="news-item ai">
-                <div class="news-title">Anthropic与Blackstone押注：AI下一个万亿美元商机在于实施落地</div>
-                <div class="news-desc">TechCrunch报道，Anthropic和Blackstone认为，AI模型能力不断提升，但企业采纳的最大价值可能不在于模型本身，而在于实施、咨询和定制化服务。</div>
-                <div class="news-meta">
-                    <span class="source">来源：TechCrunch</span>
-                    <span class="time">2026-07-15</span>
-                    <a href="https://techcrunch.com/2026/07/15/anthropic-blackstone-bet-the-next-trillion-dollar-ai-business-is-implementation-not-models/" target="_blank">阅读全文 →</a>
-                </div>
-            </div>
-            <div class="news-item ai">
-                <div class="news-title">五眼联盟发布"谨慎采用智能体AI服务"联合指南</div>
-                <div class="news-desc">美国、澳大利亚、加拿大、新西兰和英国的网络安全与情报机构联合发布指南，针对关键基础设施和国防环境中部署的智能体AI系统提出安全风险建议。</div>
-                <div class="news-meta">
-                    <span class="source">来源：Crescendo AI</span>
-                    <span class="time">2026-07-10</span>
-                    <a href="https://www.crescendo.ai/news/latest-ai-news-and-updates" target="_blank">阅读全文 →</a>
-                </div>
-            </div>
-            <div class="news-item ai">
-                <div class="news-title">NVIDIA与ServiceNow扩大合作，推出企业自主AI智能体</div>
-                <div class="news-desc">在ServiceNow Knowledge 2026大会上，NVIDIA与ServiceNow扩大合作，推出受治理的企业自主AI智能体，并推出Project Arc长期运行项目。</div>
-                <div class="news-meta">
-                    <span class="source">来源：Dentro.de</span>
-                    <span class="time">2026-07-09</span>
-                    <a href="https://dentro.de/ai/news/" target="_blank">阅读全文 →</a>
-                </div>
-            </div>
-            <div class="news-item ai">
-                <div class="news-title">Tesla Robotaxi服务在迈阿密正式上线</div>
-                <div class="news-desc">Tesla于7月3日在迈阿密推出Robotaxi服务，这是德州和加州以外首个上线城市。分析认为佛罗里达州的强降雨将成为纯视觉FSD系统面临的最严峻测试。</div>
-                <div class="news-meta">
-                    <span class="source">来源：Reuters / TechTimes</span>
-                    <span class="time">2026-07-03</span>
-                    <a href="https://www.reuters.com/business/autos-transportation/tesla-rolls-out-robotaxi-service-miami-2026-07-03/" target="_blank">阅读全文 →</a>
-                </div>
-            </div>
-            <div class="news-item ai">
-                <div class="news-title">2026上半年全球初创企业融资创纪录达5,100亿美元</div>
-                <div class="news-desc">BuildFastWithAI报道，2026年上半年全球初创企业融资达创纪录的5,100亿美元，其中AI领域是主要驱动力。OpenAI和Anthropic两家公司占据了相当大份额。</div>
-                <div class="news-meta">
-                    <span class="source">来源：BuildFastWithAI</span>
-                    <span class="time">2026-07-14</span>
-                    <a href="https://www.buildfastwithai.com/blogs/ai-news-today-july-14-2026" target="_blank">阅读全文 →</a>
-                </div>
-            </div>
-        </section>
-
-        <div class="footer">
-            <p>📅 生成时间：2026年7月17日 07:15 SGT | 数据来源：全球主流媒体实时报道</p>
-            <p style="margin-top: 8px;">⚠️ 本简报由AI自动整理，仅供资讯参考，不构成任何投资建议</p>
-        </div>
+  <div class="container">
+    <!-- 航运 -->
+    <div class="section shipping">
+      <h2><span class="icon">🚢</span> 航运与海事</h2>
+      <ul class="news-list">
+        <li>
+          <a class="news-title" href="https://www.bbc.com/news/articles/clyqwkegqk0o" target="_blank">Strait of Hormuz: US fires at oil tanker as new Iran blockade begins</a>
+          <div class="news-meta">BBC News · 17 Jul 2026 · <a href="https://www.bbc.com/news/articles/clyqwkegqk0o">原文链接</a></div>
+        </li>
+        <li>
+          <a class="news-title" href="https://www.reuters.com/world/middle-east/some-ships-refusing-us-military-guided-hormuz-transits-after-attacks-sources-say-2026-07-15/" target="_blank">Some ships refusing US military-guided Hormuz transits after attacks</a>
+          <div class="news-meta">Reuters · 15 Jul 2026 · <a href="https://www.reuters.com/world/middle-east/some-ships-refusing-us-military-guided-hormuz-transits-after-attacks-sources-say-2026-07-15/">原文链接</a></div>
+        </li>
+        <li>
+          <a class="news-title" href="https://www.axios.com/2026/07/13/trump-iran-blockade-strait-hormuz" target="_blank">U.S. military to enforce new Iran blockade starting 4pm Tuesday</a>
+          <div class="news-meta">Axios · 13 Jul 2026 · <a href="https://www.axios.com/2026/07/13/trump-iran-blockade-strait-hormuz">原文链接</a></div>
+        </li>
+        <li>
+          <a class="news-title" href="https://www.aljazeera.com/news/2026/7/15/us-resumes-iran-ports-blockade-as-gulf-attacks-continue-whats-the-latest" target="_blank">US resumes Iran ports blockade as Gulf attacks continue</a>
+          <div class="news-meta">Al Jazeera · 15 Jul 2026 · <a href="https://www.aljazeera.com/news/2026/7/15/us-resumes-iran-ports-blockade-as-gulf-attacks-continue-whats-the-latest">原文链接</a></div>
+        </li>
+        <li>
+          <a class="news-title" href="https://maritime-executive.com/shipping-news" target="_blank">First half of 2026 saw overall strong decline in piracy and armed robbery incidents</a>
+          <div class="news-meta">The Maritime Executive · 17 Jul 2026 · <a href="https://maritime-executive.com/shipping-news">原文链接</a></div>
+        </li>
+        <li>
+          <a class="news-title" href="https://www.hellenicshippingnews.com/" target="_blank">Global grain shipments increased 13% year-on-year so far this year</a>
+          <div class="news-meta">Hellenic Shipping News · 16 Jul 2026 · <a href="https://www.hellenicshippingnews.com/">原文链接</a></div>
+        </li>
+      </ul>
     </div>
+
+    <!-- 时政 -->
+    <div class="section politics">
+      <h2><span class="icon">🏛️</span> 时政与国际</h2>
+      <ul class="news-list">
+        <li>
+          <a class="news-title" href="https://geopoliticalfutures.com/" target="_blank">Drone threat declared for first time in Russian regions of Novosibirsk and Omsk</a>
+          <div class="news-meta">Geopolitical Futures · 15 Jul 2026 · <a href="https://geopoliticalfutures.com/">原文链接</a></div>
+        </li>
+        <li>
+          <a class="news-title" href="https://foreignpolicy.com/" target="_blank">Hostilities renewed between Iran and the US, endangering June ceasefire memorandum</a>
+          <div class="news-meta">Foreign Policy · 15 Jul 2026 · <a href="https://foreignpolicy.com/">原文链接</a></div>
+        </li>
+        <li>
+          <a class="news-title" href="https://www.reuters.com/world/asia-pacific/trump-says-us-iran-agree-continue-talks-ceasefire-over-2026-07-11/" target="_blank">Trump says US, Iran agree to continue talks on ceasefire</a>
+          <div class="news-meta">Reuters · 11 Jul 2026 · <a href="https://www.reuters.com/world/asia-pacific/trump-says-us-iran-agree-continue-talks-ceasefire-over-2026-07-11/">原文链接</a></div>
+        </li>
+        <li>
+          <a class="news-title" href="https://www.reuters.com/world/beijing-is-looking-curbing-overseas-access-chinas-top-ai-models-sources-say-2026-07-07/" target="_blank">Beijing is looking at curbing overseas access to China's top AI models</a>
+          <div class="news-meta">Reuters · 07 Jul 2026 · <a href="https://www.reuters.com/world/beijing-is-looking-curbing-overseas-access-chinas-top-ai-models-sources-say-2026-07-07/">原文链接</a></div>
+        </li>
+        <li>
+          <a class="news-title" href="https://www.geopoliticalmonitor.com/" target="_blank">Canadian Patrol Submarine Project advances; NATO faces hostile Ankara summit; Iran war narrows to Hormuz struggle</a>
+          <div class="news-meta">Geopolitical Monitor · 13 Jul 2026 · <a href="https://www.geopoliticalmonitor.com/">原文链接</a></div>
+        </li>
+        <li>
+          <a class="news-title" href="https://www.csis.org/" target="_blank">Playbook or Rental? U.S. Counter-Drone Defense and the 2026 World Cup</a>
+          <div class="news-meta">CSIS · 11 Jul 2026 · <a href="https://www.csis.org/">原文链接</a></div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- 财经 -->
+    <div class="section finance">
+      <h2><span class="icon">💹</span> 财经与市场</h2>
+      <ul class="news-list">
+        <li>
+          <a class="news-title" href="https://www.ft.com/markets" target="_blank">Energy IPOs surge as investors hunt for ways to play AI boom; UK economy 2026 outlook</a>
+          <div class="news-meta">Financial Times · 17 Jul 2026 · <a href="https://www.ft.com/markets">原文链接</a></div>
+        </li>
+        <li>
+          <a class="news-title" href="https://www.reuters.com/business/" target="_blank">Morgan Stanley: weakness in U.S. semiconductor stocks signals broadening market gains</a>
+          <div class="news-meta">Reuters · 16 Jul 2026 · <a href="https://www.reuters.com/business/">原文链接</a></div>
+        </li>
+        <li>
+          <a class="news-title" href="https://www.schwab.com/learn/story/stock-market-update-open" target="_blank">Major indexes fell Thursday, on track for weekly declines</a>
+          <div class="news-meta">Charles Schwab · 17 Jul 2026 · <a href="https://www.schwab.com/learn/story/stock-market-update-open">原文链接</a></div>
+        </li>
+        <li>
+          <a class="news-title" href="https://www.cnbc.com/2026/07/13/stock-market-today-live-updates.html" target="_blank">S&P 500 rose on Tuesday after June inflation data came in weaker than expected</a>
+          <div class="news-meta">CNBC · 13 Jul 2026 · <a href="https://www.cnbc.com/2026/07/13/stock-market-today-live-updates.html">原文链接</a></div>
+        </li>
+        <li>
+          <a class="news-title" href="https://www.cnbc.com/" target="_blank">California billionaire tax: what's at risk for the biggest state economy in America</a>
+          <div class="news-meta">CNBC · 17 Jul 2026 · <a href="https://www.cnbc.com/">原文链接</a></div>
+        </li>
+        <li>
+          <a class="news-title" href="https://www.deloitte.com/us/en/insights/topics/economy/global-economic-outlook/weekly-update.html" target="_blank">New Fed Chair Kevin Warsh says he no longer wants to provide forward guidance on monetary policy</a>
+          <div class="news-meta">Deloitte Insights · 04 Jul 2026 · <a href="https://www.deloitte.com/us/en/insights/topics/economy/global-economic-outlook/weekly-update.html">原文链接</a></div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- AI & 机器人 -->
+    <div class="section ai">
+      <h2><span class="icon">🤖</span> AI & 机器人</h2>
+      <ul class="news-list">
+        <li>
+          <a class="news-title" href="https://www.reuters.com/technology/artificial-intelligence/" target="_blank">Latest AI headlines: regulation, ethics, business and global impact</a>
+          <div class="news-meta">Reuters · 17 Jul 2026 · <a href="https://www.reuters.com/technology/artificial-intelligence/">原文链接</a></div>
+        </li>
+        <li>
+          <a class="news-title" href="https://www.sciencedaily.com/news/computers_math/robotics/" target="_blank">Northwestern engineers print artificial neurons that can communicate with real neurons</a>
+          <div class="news-meta">ScienceDaily · 18 Jul 2026 · <a href="https://www.sciencedaily.com/news/computers_math/robotics/">原文链接</a></div>
+        </li>
+        <li>
+          <a class="news-title" href="https://apnews.com/hub/robotics" target="_blank">Humanoid robots emerge as biggest attraction on opening day of 2026 WAIC</a>
+          <div class="news-meta">AP News · 11 Jul 2026 · <a href="https://apnews.com/hub/robotics">原文链接</a></div>
+        </li>
+        <li>
+          <a class="news-title" href="https://news.mit.edu/topic/robotics" target="_blank">Three MIT teams take five top awards in the 2026 NASA RASC-AL Competition</a>
+          <div class="news-meta">MIT News · 11 Jul 2026 · <a href="https://news.mit.edu/topic/robotics">原文链接</a></div>
+        </li>
+        <li>
+          <a class="news-title" href="https://www.therobotreport.com/robotics-news/" target="_blank">GENISOM AI debuts deployable robotics platforms at ICRA 2026</a>
+          <div class="news-meta">The Robot Report · 11 Jul 2026 · <a href="https://www.therobotreport.com/robotics-news/">原文链接</a></div>
+        </li>
+        <li>
+          <a class="news-title" href="https://www.crescendo.ai/news/latest-ai-news-and-updates" target="_blank">Five Eyes agencies jointly issue guidance on careful adoption of agentic AI services</a>
+          <div class="news-meta">Crescendo AI · 11 Jul 2026 · <a href="https://www.crescendo.ai/news/latest-ai-news-and-updates">原文链接</a></div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <footer>
+    自动生成于 2026-07-18 07:15 SGT · 数据来源：公开网络检索 · 每日简报
+  </footer>
 </body>
 </html>
