@@ -1,242 +1,172 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>今日全球资讯简报 | Daily Global Briefing</title>
-    <style>
-        :root {
-            --bg: #f7f9fc;
-            --card: #ffffff;
-            --text: #1f2937;
-            --muted: #6b7280;
-            --accent: #2563eb;
-            --border: #e5e7eb;
-        }
-        * { box-sizing: border-box; }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            background: var(--bg);
-            color: var(--text);
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 2rem 1rem;
-        }
-        header {
-            text-align: center;
-            padding: 2rem 0;
-            border-bottom: 1px solid var(--border);
-            margin-bottom: 2rem;
-        }
-        h1 { margin: 0; font-size: 2rem; color: #111827; }
-        .datetime {
-            color: var(--muted);
-            font-size: 0.95rem;
-            margin-top: 0.5rem;
-        }
-        .section {
-            background: var(--card);
-            border-radius: 12px;
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
-        }
-        .section h2 {
-            margin-top: 0;
-            font-size: 1.25rem;
-            color: var(--accent);
-            border-left: 4px solid var(--accent);
-            padding-left: 0.75rem;
-        }
-        .news-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        .news-item {
-            padding: 1rem 0;
-            border-bottom: 1px solid var(--border);
-        }
-        .news-item:last-child { border-bottom: none; }
-        .news-title {
-            font-weight: 600;
-            margin-bottom: 0.35rem;
-        }
-        .news-title a {
-            color: var(--text);
-            text-decoration: none;
-        }
-        .news-title a:hover { color: var(--accent); text-decoration: underline; }
-        .news-meta {
-            font-size: 0.85rem;
-            color: var(--muted);
-        }
-        .news-meta a { color: var(--accent); text-decoration: none; }
-        .news-meta a:hover { text-decoration: underline; }
-        footer {
-            text-align: center;
-            color: var(--muted);
-            font-size: 0.85rem;
-            padding: 2rem 0;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>全球资讯简报 - 2026-07-22</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; margin: 0; background: #f5f7fa; color: #333; line-height: 1.6; }
+    .container { max-width: 960px; margin: 0 auto; padding: 2rem 1rem; }
+    header { text-align: center; margin-bottom: 2rem; }
+    h1 { margin: 0; font-size: 2rem; color: #1a202c; }
+    .meta { color: #718096; margin-top: 0.5rem; font-size: 0.95rem; }
+    .section { background: #fff; border-radius: 8px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+    h2 { border-bottom: 2px solid #e2e8f0; padding-bottom: 0.5rem; color: #2b6cb0; margin-top: 0; }
+    ul { list-style: none; padding: 0; margin: 0; }
+    li { border-bottom: 1px solid #edf2f7; padding: 1rem 0; }
+    li:last-child { border-bottom: none; }
+    .title { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.35rem; }
+    .title a { color: #2d3748; text-decoration: none; }
+    .title a:hover { color: #2b6cb0; text-decoration: underline; }
+    .meta-line { font-size: 0.9rem; color: #4a5568; }
+    .source { font-weight: 500; }
+    .time { color: #718096; }
+    footer { text-align: center; color: #a0aec0; font-size: 0.85rem; margin-top: 2rem; }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>🌍 今日全球资讯简报</h1>
-            <div class="datetime">Tuesday, July 21st, 2026 — 07:15 SGT (Asia/Singapore)</div>
-        </header>
+  <div class="container">
+    <header>
+      <h1>全球资讯简报</h1>
+      <div class="meta">2026-07-22 周三 · 新加坡时间 07:15</div>
+      <div class="meta">共 28 条 · 覆盖：航运 / 时政 / 财经 / AI & 机器人</div>
+    </header>
 
-        <div class="section">
-            <h2>🚢 航运</h2>
-            <ul class="news-list">
-                <li class="news-item">
-                    <div class="news-title"><a href="https://tradingeconomics.com/commodity/baltic" target="_blank">Baltic Dry Index 跌至 7 月初以来最低</a></div>
-                    <div class="news-meta">波罗的海干散货指数连续第二日下跌，跌幅约 3%，至 2,840 点，为 7 月 6 日以来最低，大型船型运费持续疲软。 — <a href="https://tradingeconomics.com/commodity/baltic">TradingEconomics</a> · 2026-07-17</div>
-                </li>
-                <li class="news-item">
-                    <div class="news-title"><a href="https://splash247.com/" target="_blank">HD Hyundai 与 Naver Cloud 共建造船 AI 生态</a></div>
-                    <div class="news-meta">HD Hyundai 与 Naver Cloud 联手推进造船业人工智能生态系统建设。 — <a href="https://splash247.com/">Splash 24/7</a> · 2026-07-20</div>
-                </li>
-                <li class="news-item">
-                    <div class="news-title"><a href="https://splash247.com/" target="_blank">DNV 认证为 VentoFoil 风帆推进系统推广扫清道路</a></div>
-                    <div class="news-meta">DNV 批准 VentoFoil 翼型风帆系统，有助于其在更多船舶上推广应用。 — <a href="https://splash247.com/">Splash 24/7</a> · 2026-07-17</div>
-                </li>
-                <li class="news-item">
-                    <div class="news-title"><a href="https://www.maritime-executive.com/" target="_blank">Alphaliner：USTR 费用或使前十大船公司 2026 年成本增加 32 亿美元</a></div>
-                    <div class="news-meta">美国贸易代表办公室（USTR）费用可能给前十大集装箱班轮公司带来总计 32 亿美元成本。 — <a href="https://www.maritime-executive.com/">The Maritime Executive</a> · 2026-07</div>
-                </li>
-                <li class="news-item">
-                    <div class="news-title"><a href="https://www.marinelink.com/" target="_blank">Marcura 收购 Fairway Maritime，成为最大 laytime 处理商</a></div>
-                    <div class="news-meta">Marcura 收购美国滞期费与海事索赔管理公司 Fairway Maritime 资产，继收购 HubSE 和 Shipdem 后，成为按处理量计最大的 laytime 处理商。 — <a href="https://www.marinelink.com/">MarineLink</a> · 2026-07-14</div>
-                </li>
-                <li class="news-item">
-                    <div class="news-title"><a href="https://safety4sea.com/" target="_blank">巴拿马运河管理局进一步收紧吃水限制</a></div>
-                    <div class="news-meta">巴拿马运河管理局（ACP）将 Neo-Panamax 船闸最大授权吃水从 7 月 24 日起降至 14.94 米，8 月 15 日起再降至 14.78 米。 — <a href="https://safety4sea.com/">Safety4Sea</a> · 2026-07-10</div>
-                </li>
-                <li class="news-item">
-                    <div class="news-title"><a href="https://www.seatrade-maritime.com/" target="_blank">恒力重工上半年斩获 207 艘新船订单</a></div>
-                    <div class="news-meta">恒力重工上半年新接订单达 207 艘，包括 8 艘超大型氨运输船，总订单量突破 500 艘。 — <a href="https://www.seatrade-maritime.com/">Seatrade Maritime</a> · 2026-07-03</div>
-                </li>
-                <li class="news-item">
-                    <div class="news-title"><a href="https://www.imo.org/en/mediacentre/pressbriefings/pages/imo-approves-netzero-regulations.aspx" target="_blank">IMO 批准全球航运净零法规</a></div>
-                    <div class="news-meta">国际海事组织（IMO）批准净零法规草案，设定强制性船用燃料标准与温室气体排放定价，以应对气候变化。 — <a href="https://www.imo.org/en/mediacentre/pressbriefings/pages/imo-approves-netzero-regulations.aspx">IMO</a> · 2026</div>
-                </li>
-            </ul>
-        </div>
+    <section class="section">
+      <h2>🚢 航运</h2>
+      <ul>
+        <li>
+          <div class="title"><a href="https://gcaptain.com/global-trade-faces-fresh-test-as-panama-canal-curbs-bookings/" target="_blank">Global Trade Faces Fresh Test as Panama Canal Curbs Bookings</a></div>
+          <div class="meta-line"><span class="source">来源：gCaptain</span> · <span class="time">7小时前</span></div>
+        </li>
+        <li>
+          <div class="title"><a href="https://english.uaevartha.com/us-conducts-10th-night-of-iran-airstrikes-as-irgc-claims-retaliatory-hits-in-gulf/" target="_blank">Oil tanker off Oman struck by unknown projectile, crew abandon ship</a></div>
+          <div class="meta-line"><span class="source">来源：UAE Vartha</span> · <span class="time">19小时前</span></div>
+        </li>
+        <li>
+          <div class="title"><a href="https://www.nytimes.com/live/2026/07/21/world/iran-war-strikes-trump-hormuz" target="_blank">Two oil tankers made U-turns after Houthi threat to another route</a></div>
+          <div class="meta-line"><span class="source">来源：The New York Times</span> · <span class="time">1小时前</span></div>
+        </li>
+        <li>
+          <div class="title"><a href="https://gulfnews.com/world/mena/us-launches-10th-night-of-iran-strikes-as-irgc-claims-attacks-on-bahrain-kuwait-1.500614721" target="_blank">US launches 10th night of Iran strikes as IRGC claims attacks on Bahrain, Kuwait</a></div>
+          <div class="meta-line"><span class="source">来源：Gulf News</span> · <span class="time">2026-07-22 00:06</span></div>
+        </li>
+        <li>
+          <div class="title"><a href="https://www.theguardian.com/world/live/2026/jul/21/us-iran-war-live-updates-strait-of-hormuz-attacks-houthis-blockade-red-sea-middle-east-crisis-latest-news" target="_blank">Tankers carrying Saudi oil turned back after Houthi threats</a></div>
+          <div class="meta-line"><span class="source">来源：The Guardian</span> · <span class="time">18分钟前</span></div>
+        </li>
+        <li>
+          <div class="title"><a href="https://english.uaevartha.com/ships-steering-system-damaged-in-attack-off-uae-coast/" target="_blank">Ship's steering system damaged in attack off UAE coast</a></div>
+          <div class="meta-line"><span class="source">来源：UAE Vartha</span> · <span class="time">13小时前</span></div>
+        </li>
+        <li>
+          <div class="title"><a href="https://www.arabnews.com/node/2651820/saudi-arabia" target="_blank">Saudi foreign minister and European counterparts discuss threats to shipping in Red Sea and Gulf</a></div>
+          <div class="meta-line"><span class="source">来源：Arab News</span> · <span class="time">2小时前</span></div>
+        </li>
+      </ul>
+    </section>
 
-        <div class="section">
-            <h2>🌐 时政</h2>
-            <ul class="news-list">
-                <li class="news-item">
-                    <div class="news-title"><a href="https://www.foxnews.com/live-news/iran-war-trump-israel-hormuz-oil-july-15-2026" target="_blank">美国恢复对伊朗封锁并发动打击</a></div>
-                    <div class="news-meta">美以继续协调地区安全，美国恢复对伊朗封锁，并针对霍尔木兹海峡商业航运袭击发动打击。 — <a href="https://www.foxnews.com/live-news/iran-war-trump-israel-hormuz-oil-july-15-2026">Fox News</a> · 2026-07-15</div>
-                </li>
-                <li class="news-item">
-                    <div class="news-title"><a href="https://www.theguardian.com/world/2026/jul/13/us-iran-war-missile-strikes-news-attacks-strait-of-hormuz" target="_blank">特朗普威胁控制霍尔木兹海峡</a></div>
-                    <div class="news-meta">特朗普宣布水道上开放，并要求征收通行费，同时美伊双方进行激烈无人机与导弹交火。 — <a href="https://www.theguardian.com/world/2026/jul/13/us-iran-war-missile-strikes-news-attacks-strait-of-hormuz">The Guardian</a> · 2026-07-13</div>
-                </li>
-                <li class="news-item">
-                    <div class="news-title"><a href="https://www.foxnews.com/live-news/iran-war-trump-israel-hormuz-oil-july-18-2026" target="_blank">两名美军在约旦伊朗袭击中阵亡</a></div>
-                    <div class="news-meta">中央司令部（CENTCOM）确认，两名美军在约旦的伊朗袭击中阵亡，另有一人失踪，这是当前冲突恢复以来首次确认的美军战斗死亡。 — <a href="https://www.foxnews.com/live-news/iran-war-trump-israel-hormuz-oil-july-18-2026">Fox News</a> · 2026-07-18</div>
-                </li>
-                <li class="news-item">
-                    <div class="news-title"><a href="https://www.foxnews.com/live-news/iran-war-trump-israel-hormuz-oil-july-17-2026" target="_blank">伊朗首次四个月来直接袭击沙特美军基地</a></div>
-                    <div class="news-meta">美国官员向 Axios 透露，伊朗用弹道导弹打击沙特境内一处美军基地，为四个月内首次直接攻击沙特。 — <a href="https://www.foxnews.com/live-news/iran-war-trump-israel-hormuz-oil-july-17-2026">Fox News</a> · 2026-07-17</div>
-                </li>
-                <li class="news-item">
-                    <div class="news-title"><a href="https://www.aljazeera.com/news/2026/7/8/nato-pledges-70-billion-euros-for-ukraine-as-trump-praises-peace-progress" target="_blank">北约承诺 2026 年向乌克兰提供 700 亿欧元军援</a></div>
-                    <div class="news-meta">北约安卡拉峰会宣言承诺 2026 年向乌克兰提供 700 亿欧元军事装备、援助与训练，并承诺 2027 年保持同等水平。 — <a href="https://www.aljazeera.com/news/2026/7/8/nato-pledges-70-billion-euros-for-ukraine-as-trump-praises-peace-progress">Al Jazeera</a> · 2026-07-08</div>
-                </li>
-                <li class="news-item">
-                    <div class="news-title"><a href="https://www.cnbc.com/2026/07/20/nato-russia-ukraine-war-missile-attacks-drone-europe-defense-.html" target="_blank">俄军猛攻基辅，北约警告俄勿攻击波罗的海国家</a></div>
-                    <div class="news-meta">北约军事委员会主席表示，北约已准备好应对俄罗斯任何举动，包括“触碰波兰”。乌克兰无人机袭击摧毁俄罗斯两座仓库和一座油库。 — <a href="https://www.cnbc.com/2026/07/20/nato-russia-ukraine-war-missile-attacks-drone-europe-defense-.html">CNBC</a> · 2026-07-20</div>
-                </li>
-            </ul>
-        </div>
+    <section class="section">
+      <h2>🌍 时政</h2>
+      <ul>
+        <li>
+          <div class="title"><a href="https://www.npr.org/2026/07/19/nx-s1-5895993/andy-burnham-prime-minister-keir-starmer" target="_blank">Andy Burnham succeeds Keir Starmer as the UK’s 7th prime minister in 10 years</a></div>
+          <div class="meta-line"><span class="source">来源：NPR</span> · <span class="time">2026-07-19</span></div>
+        </li>
+        <li>
+          <div class="title"><a href="https://www.aljazeera.com/news/2026/7/20/trump-vows-iran-will-pay-for-killing-us-soldiers" target="_blank">Trump vows Iran will 'pay' for killing US soldiers</a></div>
+          <div class="meta-line"><span class="source">来源：Al Jazeera</span> · <span class="time">2026-07-20</span></div>
+        </li>
+        <li>
+          <div class="title"><a href="https://www.aljazeera.com/news/2026/7/21/can-mediators-broker-a-truce-between-the-us-and-iran" target="_blank">Can mediators broker a truce between the US and Iran?</a></div>
+          <div class="meta-line"><span class="source">来源：Al Jazeera</span> · <span class="time">3小时前</span></div>
+        </li>
+        <li>
+          <div class="title"><a href="https://www.nytimes.com/live/2026/07/21/world/iran-war-strikes-trump-hormuz" target="_blank">As U.S. and Iran trade strikes, nearly 100 U.S. troops injured in past two weeks</a></div>
+          <div class="meta-line"><span class="source">来源：The New York Times</span> · <span class="time">1小时前</span></div>
+        </li>
+        <li>
+          <div class="title"><a href="https://www.foxnews.com/live-news/us-iran-war-strikes-07-20-26" target="_blank">Trump weighs Iran war expansion as fresh US strikes target Hormuz shipping threats</a></div>
+          <div class="meta-line"><span class="source">来源：Fox News</span> · <span class="time">13小时前</span></div>
+        </li>
+        <li>
+          <div class="title"><a href="https://thediplomat.com/2026/07/asean-foreign-ministers-hold-icebreaker-meeting-with-myanmar-counterpart/" target="_blank">ASEAN foreign ministers hold 'icebreaker' meeting with Myanmar counterpart</a></div>
+          <div class="meta-line"><span class="source">来源：The Diplomat</span> · <span class="time">1天前</span></div>
+        </li>
+      </ul>
+    </section>
 
-        <div class="section">
-            <h2>💰 财经</h2>
-            <ul class="news-list">
-                <li class="news-item">
-                    <div class="news-title"><a href="https://www.cnbc.com/2026/07/16/stock-market-today-live-updates.html" target="_blank">S&P 500 因芯片股下跌收跌</a></div>
-                    <div class="news-meta">7 月 16 日，芯片股下滑拖累标普 500 指数收跌，尽管企业财报整体稳健。 — <a href="https://www.cnbc.com/2026/07/16/stock-market-today-live-updates.html">CNBC</a> · 2026-07-16</div>
-                </li>
-                <li class="news-item">
-                    <div class="news-title"><a href="https://www.cnbc.com/2026/07/13/stock-market-today-live-updates.html" target="_blank">通胀降温推动标普 500 上涨</a></div>
-                    <div class="news-meta">6 月通胀数据低于预期，标普 500 上涨 0.38% 至 7,543.59，纳斯达克涨 0.9% 至 26,107.01。 — <a href="https://www.cnbc.com/2026/07/13/stock-market-today-live-updates.html">CNBC</a> · 2026-07-14</div>
-                </li>
-                <li class="news-item">
-                    <div class="news-title"><a href="https://www.schwab.com/learn/story/stock-market-update-open" target="_blank">Netflix 财报后大跌 10%，市场承压</a></div>
-                    <div class="news-meta">芯片股抛售、中东紧张局势推高油价、Netflix 财报后下跌 10% 三重压力拖累早盘市场。 — <a href="https://www.schwab.com/learn/story/stock-market-update-open">Charles Schwab</a> · 2026-07-17</div>
-                </li>
-                <li class="news-item">
-                    <div class="news-title"><a href="https://www.investopedia.com/stock-market-today-dow-jones-s-and-p-500-07172026-12021361" target="_blank">比特币约 64,100 美元，美元指数基本持平</a></div>
-                    <div class="news-meta">7 月 17 日比特币交易在 64,100 美元附近，过去 24 小时小幅下跌；美元指数基本持平于 100.74。 — <a href="https://www.investopedia.com/stock-market-today-dow-jones-s-and-p-500-07172026-12021361">Investopedia</a> · 2026-07-17</div>
-                </li>
-                <li class="news-item">
-                    <div class="news-title"><a href="https://taxfoundation.org/research/all/federal/trump-tariffs-trade-war/" target="_blank">2026 年特朗普关税将使美国家庭年均增税约 700 美元</a></div>
-                    <div class="news-meta">税务基金会估计，新宣布并实施的第 122 条和第 232 条关税将在 2026 年使每个美国家庭平均增税约 700 美元。 — <a href="https://taxfoundation.org/research/all/federal/trump-tariffs-trade-war/">Tax Foundation</a> · 2026-05-21</div>
-                </li>
-                <li class="news-item">
-                    <div class="news-title"><a href="https://www.bbc.com/news/articles/czejp3gep63o" target="_blank">五轮谈判后，中美关税壁垒仍高于特朗普二次上任之初</a></div>
-                    <div class="news-meta">尽管经过五轮贸易谈判，世界两大经济体之间仍维持着比特朗普上任时更多的关税和贸易限制。 — <a href="https://www.bbc.com/news/articles/czejp3gep63o">BBC</a> · 2026-01-08</div>
-                </li>
-            </ul>
-        </div>
+    <section class="section">
+      <h2>💰 财经</h2>
+      <ul>
+        <li>
+          <div class="title"><a href="https://www.schwab.com/learn/story/stock-market-update-open" target="_blank">Chips, Broader Market Up Early on Peace Talk Hopes</a></div>
+          <div class="meta-line"><span class="source">来源：Charles Schwab</span> · <span class="time">1天前</span></div>
+        </li>
+        <li>
+          <div class="title"><a href="https://finance.yahoo.com/markets/live/stock-market-today-tuesday-july-21-dow-sp-500-nasdaq-084631499.html" target="_blank">Stock market today: Dow, S&P 500, Nasdaq jump as semiconductor stocks surge</a></div>
+          <div class="meta-line"><span class="source">来源：Yahoo Finance</span> · <span class="time">2小时前</span></div>
+        </li>
+        <li>
+          <div class="title"><a href="https://www.theguardian.com/global/live/2026/jul/21/burnham-cuts-vat-electricity-bills-uk-borrowing-debt-economy-news-latest" target="_blank">Oil price rises above $90 as US and Iran exchange fire and Houthis threaten blockade</a></div>
+          <div class="meta-line"><span class="source">来源：The Guardian</span> · <span class="time">9小时前</span></div>
+        </li>
+        <li>
+          <div class="title"><a href="https://www.reuters.com/world/judge-orders-paramount-temporarily-pause-warner-bros-acquisition-2026-07-20/" target="_blank">Judge orders Paramount to temporarily pause Warner Bros. acquisition</a></div>
+          <div class="meta-line"><span class="source">来源：Reuters</span> · <span class="time">1天前</span></div>
+        </li>
+        <li>
+          <div class="title"><a href="https://economictimes.indiatimes.com/markets/us-stocks/news/dow-jones-stock-market-live-updates-nasdaq-sp-500-us-iran-israel-war-hormuz-deal-brent-crude-oil-earnings-forecast-nvidia-intel-3m-nebius-stock-price-news-21-july-2026/liveblog/132536325.cms" target="_blank">Senior Senate Democrat urges investigation into CFTC staffing reductions</a></div>
+          <div class="meta-line"><span class="source">来源：The Economic Times</span> · <span class="time">2026-07-22 01:12 IST</span></div>
+        </li>
+        <li>
+          <div class="title"><a href="https://www.bloomberg.com/news/articles/2026-07-20/oklo-x-energy-join-trump-effort-to-speed-new-nuclear-reactors-for-ai" target="_blank">Oklo, X-Energy Join Trump Effort to Speed New Nuclear Reactors for AI</a></div>
+          <div class="meta-line"><span class="source">来源：Bloomberg</span> · <span class="time">2026-07-21</span></div>
+        </li>
+        <li>
+          <div class="title"><a href="https://www.cnbc.com/2026/07/19/stock-market-today-live-updates.html" target="_blank">Hyundai Motor shares fell 6.6% as union extends partial strike</a></div>
+          <div class="meta-line"><span class="source">来源：CNBC</span> · <span class="time">1天前</span></div>
+        </li>
+      </ul>
+    </section>
 
-        <div class="section">
-            <h2>🤖 AI & 机器人</h2>
-            <ul class="news-list">
-                <li class="news-item">
-                    <div class="news-title"><a href="https://aitoolsrecap.com/Blog/ai-news-july-16-2026" target="_blank">Google 从头重建 Gemini 3.5 Pro</a></div>
-                    <div class="news-meta">Google DeepMind 放弃原有 2.5 Pro 架构，从头重建 Gemini 3.5 Pro，旨在提升数学推理、SVG 场景生成等能力。 — <a href="https://aitoolsrecap.com/Blog/ai-news-july-16-2026">AIToolsRecap</a> · 2026-07-16</div>
-                </li>
-                <li class="news-item">
-                    <div class="news-title"><a href="https://dentro.de/ai/news/" target="_blank">Anthropic 发布 Claude Sonnet 5，Google 发布 Nano Banana 2 Lite 与 Gemini Omni Flash</a></div>
-                    <div class="news-meta">7 月 3 日起，Anthropic 推出 Claude Sonnet 5，Google 同步发布 Nano Banana 2 Lite 和 Gemini Omni Flash。 — <a href="https://dentro.de/ai/news/">dentro.de/ai</a> · 2026-07-03</div>
-                </li>
-                <li class="news-item">
-                    <div class="news-title"><a href="https://thursdai.news/releases/2026-07" target="_blank">Google 扩展 Gemini API 托管智能体功能</a></div>
-                    <div class="news-meta">Google 在 Gemini API 中扩展 Managed Agents，支持后台任务、远程 MCP 与函数调用、网络凭据刷新，并在免费层提供。 — <a href="https://thursdai.news/releases/2026-07">ThursdAI</a> · 2026-07</div>
-                </li>
-                <li class="news-item">
-                    <div class="news-title"><a href="https://www.buildfastwithai.com/blogs/ai-news-today-july-15-2026" target="_blank">Andrej Karpathy 加入 Anthropic</a></div>
-                    <div class="news-meta">前特斯拉 AI 总监、OpenAI 创始成员 Andrej Karpathy  reportedly 加入 Anthropic，加入 AI 计算团队；Monzo 联合创始人 Tom Blomfield 也一同加入。 — <a href="https://www.buildfastwithai.com/blogs/ai-news-today-july-15-2026">BuildFastWithAI</a> · 2026-07-15</div>
-                </li>
-                <li class="news-item">
-                    <div class="news-title"><a href="https://www.buildfastwithai.com/blogs/ai-news-today-july-14-2026" target="_blank">2026 上半年全球初创公司融资创纪录达 5,100 亿美元</a></div>
-                    <div class="news-meta">AI 热潮推动全球初创公司在 2026 年上半年融资 5,100 亿美元，OpenAI 和 Anthropic 占据很大份额。 — <a href="https://www.buildfastwithai.com/blogs/ai-news-today-july-14-2026">BuildFastWithAI</a> · 2026-07-14</div>
-                </li>
-                <li class="news-item">
-                    <div class="news-title"><a href="https://news.mit.edu/topic/artificial-intelligence2" target="_blank">MIT 发布 SceneSmith：协作 AI 智能体生成 3D 环境</a></div>
-                    <div class="news-meta">MIT SceneSmith 系统利用协作 AI 智能体创建厨房、酒店、客厅等逼真 3D 环境，用于机器人日常任务模拟。 — <a href="https://news.mit.edu/topic/artificial-intelligence2">MIT News</a> · 2026-07-13</div>
-                </li>
-                <li class="news-item">
-                    <div class="news-title"><a href="https://www.technology.org/2026/07/18/humanoid-robots-in-2026-what-is-actually-deployed/" target="_blank">Tesla Optimus 年底计划扩产至数千台</a></div>
-                    <div class="news-meta">Tesla Optimus 已进入生产线改造阶段，计划年底前将工厂产线机器人数量扩至数千台，并开始对外销售。 — <a href="https://www.technology.org/2026/07/18/humanoid-robots-in-2026-what-is-actually-deployed/">Technology.org</a> · 2026-07-18</div>
-                </li>
-                <li class="news-item">
-                    <div class="news-title"><a href="https://dentro.de/ai/news/" target="_blank">NVIDIA 与 ServiceNow 推出企业自主 AI 智能体</a></div>
-                    <div class="news-meta">NVIDIA 与 ServiceNow 在 ServiceNow Knowledge 2026 上扩大合作，推出 Project Arc，提供可治理的企业自主 AI 智能体。 — <a href="https://dentro.de/ai/news/">dentro.de/ai</a> · 2026-07</div>
-                </li>
-                <li class="news-item">
-                    <div class="news-title"><a href="https://www.crescendo.ai/news/latest-ai-news-and-updates" target="_blank">五眼联盟发布“谨慎采用智能体 AI 服务”联合指南</a></div>
-                    <div class="news-meta">美国、澳大利亚、加拿大、新西兰、英国网络安全与情报机构联合发布指南，针对关键基础设施和国防环境中智能体 AI 的安全风险提出建议。 — <a href="https://www.crescendo.ai/news/latest-ai-news-and-updates">Crescendo.ai</a> · 2026-07</div>
-                </li>
-            </ul>
-        </div>
+    <section class="section">
+      <h2>🤖 AI & 机器人</h2>
+      <ul>
+        <li>
+          <div class="title"><a href="https://www.bloomberg.com/news/articles/2026-07-20/blackstone-agrees-to-invest-in-korean-robotics-supplier-futronic" target="_blank">Blackstone agrees to invest in South Korean robotics supplier Futronic</a></div>
+          <div class="meta-line"><span class="source">来源：Bloomberg</span> · <span class="time">1天前</span></div>
+        </li>
+        <li>
+          <div class="title"><a href="https://blogs.nvidia.com/blog/japan-ecosystem-2026/" target="_blank">NVIDIA and Japan Bring Full-Stack AI and Robotics to Every Industry</a></div>
+          <div class="meta-line"><span class="source">来源：NVIDIA Blog</span> · <span class="time">1天前</span></div>
+        </li>
+        <li>
+          <div class="title"><a href="https://the-decoder.com/xiaomi-robotics-1-shows-that-more-data-beats-bigger-models-when-training-robots-to-move/" target="_blank">Xiaomi-Robotics-1: Scaling robot models with over 100K hours of real-world data</a></div>
+          <div class="meta-line"><span class="source">来源：The Decoder</span> · <span class="time">14小时前</span></div>
+        </li>
+        <li>
+          <div class="title"><a href="https://openai.com/index/gpt-5-6-preferred-model-microsoft-365-copilot/" target="_blank">GPT-5.6 is now the preferred model in Microsoft 365 Copilot</a></div>
+          <div class="meta-line"><span class="source">来源：OpenAI</span> · <span class="time">2026-07-09</span></div>
+        </li>
+        <li>
+          <div class="title"><a href="https://www.reuters.com/business/autos-transportation/tesla-rolls-out-robotaxi-service-miami-2026-07-03/" target="_blank">Tesla rolls out robotaxi service in Miami</a></div>
+          <div class="meta-line"><span class="source">来源：Reuters</span> · <span class="time">2026-07-03</span></div>
+        </li>
+        <li>
+          <div class="title"><a href="https://www.nbcnews.com/tech/tech-news/china-world-ai-conference-robot-police-chips-xi-rcna588339" target="_blank">Inside China’s big AI show: Robot police, dancing humanoids and a roof collapse</a></div>
+          <div class="meta-line"><span class="source">来源：NBC News</span> · <span class="time">1天前</span></div>
+        </li>
+        <li>
+          <div class="title"><a href="https://www.sciencedaily.com/releases/2026/03/260331001104.htm" target="_blank">DNA robots could deliver drugs and hunt viruses inside your body</a></div>
+          <div class="meta-line"><span class="source">来源：ScienceDaily</span> · <span class="time">2026-03-31</span></div>
+        </li>
+      </ul>
+    </section>
 
-        <footer>
-            自动生成 · 来源：公开网络新闻 · 每日更新<br>
-            Generated for /home/steven/.openclaw/workspace/daily-report
-        </footer>
-    </div>
+    <footer>
+      Generated by OpenClaw · Deployed to GitHub Pages · 2026-07-22 SGT
+    </footer>
+  </div>
 </body>
 </html>
