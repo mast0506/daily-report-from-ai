@@ -1,160 +1,265 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>全球资讯简报 - 2026-07-23</title>
-  <style>
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; margin: 0; background: #f5f7fa; color: #333; line-height: 1.6; }
-    .container { max-width: 960px; margin: 0 auto; padding: 2rem 1rem; }
-    header { text-align: center; margin-bottom: 2rem; }
-    h1 { margin: 0; font-size: 2rem; color: #1a202c; }
-    .meta { color: #718096; margin-top: 0.5rem; font-size: 0.95rem; }
-    .section { background: #fff; border-radius: 8px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
-    h2 { border-bottom: 2px solid #e2e8f0; padding-bottom: 0.5rem; color: #2b6cb0; margin-top: 0; }
-    ul { list-style: none; padding: 0; margin: 0; }
-    li { border-bottom: 1px solid #edf2f7; padding: 1rem 0; }
-    li:last-child { border-bottom: none; }
-    .title { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.35rem; }
-    .title a { color: #2d3748; text-decoration: none; }
-    .title a:hover { color: #2b6cb0; text-decoration: underline; }
-    .meta-line { font-size: 0.9rem; color: #4a5568; }
-    .source { font-weight: 500; }
-    .time { color: #718096; }
-    footer { text-align: center; color: #a0aec0; font-size: 0.85rem; margin-top: 2rem; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>今日全球资讯简报 - 2026年7月24日</title>
+    <style>
+        :root {
+            --bg: #f8f9fa;
+            --card: #ffffff;
+            --text: #212529;
+            --muted: #6c757d;
+            --accent: #0d6efd;
+            --border: #dee2e6;
+        }
+        * { box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+        h1 { font-size: 1.8rem; margin: 0 0 0.5rem; }
+        .meta {
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
+        .section {
+            background: var(--card);
+            border-radius: 0.75rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+        }
+        .section-title {
+            background: #343a40;
+            color: #fff;
+            padding: 0.9rem 1.25rem;
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin: 0;
+        }
+        .news-list { list-style: none; margin: 0; padding: 0; }
+        .news-item {
+            padding: 1rem 1.25rem;
+            border-bottom: 1px solid var(--border);
+            transition: background 0.15s;
+        }
+        .news-item:last-child { border-bottom: none; }
+        .news-item:hover { background: #f1f3f5; }
+        .news-title {
+            font-weight: 600;
+            margin-bottom: 0.35rem;
+            color: var(--text);
+        }
+        .news-title a {
+            color: var(--text);
+            text-decoration: none;
+            border-bottom: 1px dotted var(--accent);
+        }
+        .news-title a:hover { color: var(--accent); }
+        .news-meta {
+            font-size: 0.85rem;
+            color: var(--muted);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+        .news-meta span { display: inline-flex; align-items: center; gap: 0.25rem; }
+        .source { color: var(--accent); font-weight: 500; }
+        footer {
+            text-align: center;
+            color: var(--muted);
+            font-size: 0.85rem;
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+        }
+        @media (max-width: 576px) {
+            h1 { font-size: 1.5rem; }
+            .section-title { padding: 0.75rem 1rem; }
+            .news-item { padding: 0.85rem 1rem; }
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
+<div class="container">
     <header>
-      <h1>全球资讯简报</h1>
-      <div class="meta">2026-07-23 周四 · 新加坡时间 07:15</div>
-      <div class="meta">共 24 条 · 覆盖：航运 / 时政 / 财经 / AI & 机器人</div>
+        <h1>今日全球资讯简报</h1>
+        <div class="meta">2026年7月24日 · 星期五 · 07:15 SGT（新加坡时间）</div>
+        <div class="meta">覆盖航运、时政、财经、AI &amp; 机器人四大板块</div>
     </header>
 
     <section class="section">
-      <h2>🚢 航运</h2>
-      <ul>
-        <li>
-          <div class="title"><a href="https://www.reuters.com/world/middle-east/yemens-houthis-declare-naval-blockade-against-saudi-arabia-statement-2026-07-20/" target="_blank">Yemen's Houthis declare naval blockade against Saudi Arabia</a></div>
-          <div class="meta-line"><span class="source">来源：Reuters</span> · <span class="time">2026-07-20</span></div>
-        </li>
-        <li>
-          <div class="title"><a href="https://www.aljazeera.com/news/2026/7/21/saudi-condemns-houthi-blockade-how-will-the-rest-of-the-world-be-impacted" target="_blank">Saudi Arabia slams Houthi blockade: How will rest of the world be impacted?</a></div>
-          <div class="meta-line"><span class="source">来源：Al Jazeera</span> · <span class="time">2026-07-21</span></div>
-        </li>
-        <li>
-          <div class="title"><a href="https://apnews.com/article/yemen-saudi-houthis-attack-shipping-red-sea-4e25fbdad821762e478173e6308884fb" target="_blank">Houthi blockade of Saudi Arabia could further disrupt global trade</a></div>
-          <div class="meta-line"><span class="source">来源：AP News</span> · <span class="time">2026-07-22</span></div>
-        </li>
-        <li>
-          <div class="title"><a href="https://www.theguardian.com/world/2026/jul/21/houthis-threaten-attack-tankers-saudi-arabian-ports-red-sea-shipping" target="_blank">Houthis threaten to attack shipping tankers if they use Saudi Arabian ports on Red Sea</a></div>
-          <div class="meta-line"><span class="source">来源：The Guardian</span> · <span class="time">2026-07-21</span></div>
-        </li>
-        <li>
-          <div class="title"><a href="https://www.reuters.com/world/middle-east/some-ships-refusing-us-military-guided-hormuz-transits-after-attacks-sources-say-2026-07-15/" target="_blank">Some ships refusing US military-guided Hormuz transits after attacks</a></div>
-          <div class="meta-line"><span class="source">来源：Reuters</span> · <span class="time">2026-07-15</span></div>
-        </li>
-        <li>
-          <div class="title"><a href="https://maritimeprofessional.com/" target="_blank">Ship transits via Panama Canal up 8% y/y to daily average of 38</a></div>
-          <div class="meta-line"><span class="source">来源：Maritime Professional</span> · <span class="time">2026-06-09</span></div>
-        </li>
-      </ul>
+        <h2 class="section-title">🚢 航运</h2>
+        <ul class="news-list">
+            <li class="news-item">
+                <div class="news-title"><a href="https://www.bbc.com/news/articles/cpw9xzx9r4ko" target="_blank" rel="noopener">胡塞武装袭击沙特油轮，美军继续对伊朗目标实施打击</a></div>
+                <div class="news-meta"><span class="source">BBC</span><span>2026-07-23</span></div>
+            </li>
+            <li class="news-item">
+                <div class="news-title"><a href="https://www.bbc.com/news/articles/cn0n127lpzgo" target="_blank" rel="noopener">胡塞宣布海上禁运后，至少七艘油轮在也门附近紧急调头</a></div>
+                <div class="news-meta"><span class="source">BBC</span><span>2026-07-22</span></div>
+            </li>
+            <li class="news-item">
+                <div class="news-title"><a href="https://www.washingtonpost.com/world/2026/07/21/ships-bound-saudi-arabia-turn-around-sign-new-red-sea-blockade/" target="_blank" rel="noopener">多艘驶往沙特的货船被迫返航，红海新封锁迹象显现</a></div>
+                <div class="news-meta"><span class="source">The Washington Post</span><span>2026-07-21</span></div>
+            </li>
+            <li class="news-item">
+                <div class="news-title"><a href="https://www.cnbc.com/2026/07/22/houthis-red-sea-bab-el-mandeb-saudi-oil-iran.html" target="_blank" rel="noopener">胡塞武装部署导弹与无人机，袭击红海南部商船</a></div>
+                <div class="news-meta"><span class="source">CNBC</span><span>2026-07-22</span></div>
+            </li>
+            <li class="news-item">
+                <div class="news-title"><a href="https://www.drewry.co.uk/supply-chain-advisors/supply-chain-expertise/world-container-index-assessed-by-drewry" target="_blank" rel="noopener">Drewry运价指数：上海至洛杉矶即期运价跌6%至5,878美元/FEU，上海至纽约跌4%至7,598美元</a></div>
+                <div class="news-meta"><span class="source">Drewry</span><span>2026-07-23</span></div>
+            </li>
+            <li class="news-item">
+                <div class="news-title"><a href="https://www.offshore-energy.biz/greenmarine/" target="_blank" rel="noopener">深圳港与必维国际签署绿色航运走廊协议，巴西石油斥资4.27亿美元订造4艘新油轮</a></div>
+                <div class="news-meta"><span class="source">Offshore Energy</span><span>2026-07-23</span></div>
+            </li>
+        </ul>
     </section>
 
     <section class="section">
-      <h2>🌍 时政</h2>
-      <ul>
-        <li>
-          <div class="title"><a href="https://www.npr.org/2026/07/19/nx-s1-5895993/andy-burnham-prime-minister-keir-starmer" target="_blank">Andy Burnham succeeds Keir Starmer as the UK's 7th prime minister in 10 years</a></div>
-          <div class="meta-line"><span class="source">来源：NPR</span> · <span class="time">2026-07-19</span></div>
-        </li>
-        <li>
-          <div class="title"><a href="https://www.nytimes.com/2026/07/20/business/andy-burnham-john-healey.html" target="_blank">Andy Burnham names John Healey as UK Chancellor of the Exchequer</a></div>
-          <div class="meta-line"><span class="source">来源：The New York Times</span> · <span class="time">2026-07-20</span></div>
-        </li>
-        <li>
-          <div class="title"><a href="https://www.cnbc.com/2026/07/21/andy-burnham-john-healey-chancellor-gilts-jamie-dimon.html" target="_blank">All eyes on John Healey, UK's new finance minister</a></div>
-          <div class="meta-line"><span class="source">来源：CNBC</span> · <span class="time">2026-07-21</span></div>
-        </li>
-        <li>
-          <div class="title"><a href="https://www.aljazeera.com/news/2026/7/20/trump-vows-iran-will-pay-for-killing-us-soldiers" target="_blank">Trump vows Iran will 'pay' for killing US soldiers</a></div>
-          <div class="meta-line"><span class="source">来源：Al Jazeera</span> · <span class="time">2026-07-20</span></div>
-        </li>
-        <li>
-          <div class="title"><a href="https://www.bbc.com/news/articles/c70gek2kqyno" target="_blank">Iran war has cost US $37.5bn so far, Hegseth says, as Pentagon seeks billions more</a></div>
-          <div class="meta-line"><span class="source">来源：BBC News</span> · <span class="time">2026-07-21</span></div>
-        </li>
-        <li>
-          <div class="title"><a href="https://www.aljazeera.com/news/2026/7/21/can-mediators-broker-a-truce-between-the-us-and-iran" target="_blank">Can mediators broker a truce between the US and Iran?</a></div>
-          <div class="meta-line"><span class="source">来源：Al Jazeera</span> · <span class="time">2026-07-21</span></div>
-        </li>
-      </ul>
+        <h2 class="section-title">🌍 时政</h2>
+        <ul class="news-list">
+            <li class="news-item">
+                <div class="news-title"><a href="https://www.theguardian.com/world/live/2026/jul/23/us-iran-war-live-updates-strikes-houthis-red-sea-saudi-nuclear-deal-middle-east-crisis-latest-news" target="_blank" rel="noopener">联合国秘书长警告中东危机“正在失控”，局势升级风险加剧</a></div>
+                <div class="news-meta"><span class="source">The Guardian</span><span>2026-07-23</span></div>
+            </li>
+            <li class="news-item">
+                <div class="news-title"><a href="https://www.latimes.com/politics/story/2026-07-22/standoff-with-iran-prompts-nuclear-deal-with-saudi-arabia" target="_blank" rel="noopener">伊朗对峙背景下，美国与沙特达成核协议</a></div>
+                <div class="news-meta"><span class="source">Los Angeles Times</span><span>2026-07-22</span></div>
+            </li>
+            <li class="news-item">
+                <div class="news-title"><a href="https://www.nytimes.com/2026/07/22/world/middleeast/saudi-nuclear-deal-israel.html" target="_blank" rel="noopener">美沙核协议引发以色列对中东核军备竞赛的担忧</a></div>
+                <div class="news-meta"><span class="source">The New York Times</span><span>2026-07-22</span></div>
+            </li>
+            <li class="news-item">
+                <div class="news-title"><a href="https://www.theguardian.com/us-news/2026/jul/22/saudi-arabia-would-enrich-uranium-under-reported-deal-with-us" target="_blank" rel="noopener">报道称美沙协议将允许沙特在联合研究后开展铀浓缩</a></div>
+                <div class="news-meta"><span class="source">The Guardian</span><span>2026-07-22</span></div>
+            </li>
+            <li class="news-item">
+                <div class="news-title"><a href="https://www.cnn.com/2026/07/22/world/live-news/the-war-with-iran" target="_blank" rel="noopener">特朗普称伊朗“尚未准备好达成协议”，并威胁每次袭击船只都将炸毁桥梁或电厂</a></div>
+                <div class="news-meta"><span class="source">CNN</span><span>2026-07-22</span></div>
+            </li>
+            <li class="news-item">
+                <div class="news-title"><a href="https://www.timesofisrael.com/liveblog-july-22-2026/" target="_blank" rel="noopener">美国确认与沙特签署核协议，英国因安全局势撤离驻伊朗外交人员</a></div>
+                <div class="news-meta"><span class="source">The Times of Israel</span><span>2026-07-22</span></div>
+            </li>
+            <li class="news-item">
+                <div class="news-title"><a href="https://www.nytimes.com/live/2026/07/17/world/uk-burnham-starmer-labour" target="_blank" rel="noopener">Andy Burnham 当选工党领袖，将于周一接任英国首相</a></div>
+                <div class="news-meta"><span class="source">The New York Times</span><span>2026-07-17</span></div>
+            </li>
+            <li class="news-item">
+                <div class="news-title"><a href="https://www.npr.org/2026/07/19/nx-s1-5895993/andy-burnham-prime-minister-keir-starmer" target="_blank" rel="noopener">Andy Burnham 正式接替斯塔默成为英国首相</a></div>
+                <div class="news-meta"><span class="source">NPR</span><span>2026-07-19</span></div>
+            </li>
+        </ul>
     </section>
 
     <section class="section">
-      <h2>💰 财经</h2>
-      <ul>
-        <li>
-          <div class="title"><a href="https://www.cnbc.com/amp/2026/07/22/google-earnings-q2-goog-live-updates.html" target="_blank">Alphabet earnings: Stock sinks as company hikes 2026 capex to $195–205 billion</a></div>
-          <div class="meta-line"><span class="source">来源：CNBC</span> · <span class="time">2026-07-22</span></div>
-        </li>
-        <li>
-          <div class="title"><a href="https://www.cnbc.com/2026/07/21/stock-market-today-live-updates.html" target="_blank">GE Vernova shares fall 7% despite Q2 revenue of $11.1 billion</a></div>
-          <div class="meta-line"><span class="source">来源：CNBC</span> · <span class="time">2026-07-22</span></div>
-        </li>
-        <li>
-          <div class="title"><a href="https://www.schwab.com/learn/story/stock-market-update-open" target="_blank">Inflation fears hit stocks; S&P 500 down three straight sessions</a></div>
-          <div class="meta-line"><span class="source">来源：Charles Schwab</span> · <span class="time">2026-07-22</span></div>
-        </li>
-        <li>
-          <div class="title"><a href="https://www.newsanyway.com/2026/07/16/samsung-ai-chip-profits-shatter-records-but-investors-want-more/" target="_blank">Samsung Q2 operating profit guidance hits 89.4 trillion won on AI memory demand</a></div>
-          <div class="meta-line"><span class="source">来源：News Anyway</span> · <span class="time">2026-07-16</span></div>
-        </li>
-        <li>
-          <div class="title"><a href="https://www.cnbc.com/" target="_blank">Jamie Dimon's bearish call on Treasury bond market has been a hot trade in 2026</a></div>
-          <div class="meta-line"><span class="source">来源：CNBC</span> · <span class="time">2026-07-22</span></div>
-        </li>
-        <li>
-          <div class="title"><a href="https://www.bloomberg.com/" target="_blank">IBM cuts full-year sales outlook after mainframe unit dip</a></div>
-          <div class="meta-line"><span class="source">来源：Bloomberg</span> · <span class="time">2026-07-22</span></div>
-        </li>
-      </ul>
+        <h2 class="section-title">💰 财经</h2>
+        <ul class="news-list">
+            <li class="news-item">
+                <div class="news-title"><a href="https://www.cnbc.com/2026/07/23/trump-tariffs-trade-deadline.html" target="_blank" rel="noopener">特朗普将对60个贸易伙伴加征10%至12.5%的新关税</a></div>
+                <div class="news-meta"><span class="source">CNBC</span><span>2026-07-23</span></div>
+            </li>
+            <li class="news-item">
+                <div class="news-title"><a href="https://www.npr.org/2026/07/23/g-s1-135388/trump-tariffs-trade-country" target="_blank" rel="noopener">美国将对占进口99%的60国进口商品征收10%至12.5%关税</a></div>
+                <div class="news-meta"><span class="source">NPR</span><span>2026-07-23</span></div>
+            </li>
+            <li class="news-item">
+                <div class="news-title"><a href="https://finance.yahoo.com/economy/policy/article/trump-administration-announces-the-next-phase-of-global-tariffs-with-10-to-125-rates-on-much-of-the-globe-210032314.html" target="_blank" rel="noopener">特朗普政府宣布全球关税新阶段，多数贸易伙伴面临10%-12.5%税率</a></div>
+                <div class="news-meta"><span class="source">Yahoo Finance</span><span>2026-07-23</span></div>
+            </li>
+            <li class="news-item">
+                <div class="news-title"><a href="https://www.cnn.com/2026/07/23/economy/trump-new-tariffs" target="_blank" rel="noopener">特朗普新一轮关税将影响欧洲、中国、印度等数十国</a></div>
+                <div class="news-meta"><span class="source">CNN Business</span><span>2026-07-23</span></div>
+            </li>
+            <li class="news-item">
+                <div class="news-title"><a href="https://finance.yahoo.com/" target="_blank" rel="noopener">英特尔公布强劲第二季度业绩，盘后收涨</a></div>
+                <div class="news-meta"><span class="source">Yahoo Finance</span><span>2026-07-23</span></div>
+            </li>
+            <li class="news-item">
+                <div class="news-title"><a href="https://www.reuters.com/business/" target="_blank" rel="noopener">摩根士丹利：美国半导体股近期疲软暗示市场涨幅正在扩散</a></div>
+                <div class="news-meta"><span class="source">Reuters</span><span>2026-07-23</span></div>
+            </li>
+            <li class="news-item">
+                <div class="news-title"><a href="https://www.cnbc.com/markets/" target="_blank" rel="noopener">美国10年期国债收益率上升，交易员重新评估美联储加息预期</a></div>
+                <div class="news-meta"><span class="source">CNBC Markets</span><span>2026-07-23</span></div>
+            </li>
+            <li class="news-item">
+                <div class="news-title"><a href="https://www.latimes.com/business/story/2026-07-23/teslas-ai-splurge-triggers-profit-squeeze-rare-cash-burn" target="_blank" rel="noopener">特斯拉AI投入导致利润压缩并出现罕见现金消耗</a></div>
+                <div class="news-meta"><span class="source">Los Angeles Times</span><span>2026-07-23</span></div>
+            </li>
+        </ul>
     </section>
 
     <section class="section">
-      <h2>🤖 AI & 机器人</h2>
-      <ul>
-        <li>
-          <div class="title"><a href="https://www.cnbc.com/2026/07/16/nvidia-reveals-new-ai-model-and-expands-japans-physical-ai-ecosystem.html" target="_blank">Nvidia unveils Cosmos 3 Edge AI model and expands Japan's physical AI ecosystem</a></div>
-          <div class="meta-line"><span class="source">来源：CNBC</span> · <span class="time">2026-07-16</span></div>
-        </li>
-        <li>
-          <div class="title"><a href="https://nvidianews.nvidia.com/news/japans-robotics-and-manufacturing-leaders-build-on-nvidia-cosmos-to-advance-physical-ai-frontier" target="_blank">Japan's robotics and manufacturing leaders build on NVIDIA Cosmos for physical AI</a></div>
-          <div class="meta-line"><span class="source">来源：NVIDIA Newsroom</span> · <span class="time">2026-07-15</span></div>
-        </li>
-        <li>
-          <div class="title"><a href="https://www.aljazeera.com/news/2026/7/17/chinas-xi-jinping-launches-new-ai-alliance-what-is-it" target="_blank">China's Xi Jinping launches WAICO, a 29-nation AI alliance</a></div>
-          <div class="meta-line"><span class="source">来源：Al Jazeera</span> · <span class="time">2026-07-17</span></div>
-        </li>
-        <li>
-          <div class="title"><a href="https://www.prnewswire.com/news-releases/elite-robots-collaborates-with-generalist-ai-on-next-gen-embodied-ai-302830427.html" target="_blank">Elite Robots and Generalist AI unveil GEN-1 embodied model with 99% task success</a></div>
-          <div class="meta-line"><span class="source">来源：PR Newswire</span> · <span class="time">2026-07-21</span></div>
-        </li>
-        <li>
-          <div class="title"><a href="https://www.sciencedaily.com/news/computers_math/artificial_intelligence/" target="_blank">Generative AI can now beat the average human on certain creativity tests</a></div>
-          <div class="meta-line"><span class="source">来源：ScienceDaily</span> · <span class="time">2026-07</span></div>
-        </li>
-        <li>
-          <div class="title"><a href="https://www.therobotreport.com/robotics-news/" target="_blank">GENISOM AI debuts deployable robotics platforms at ICRA 2026</a></div>
-          <div class="meta-line"><span class="source">来源：The Robot Report</span> · <span class="time">2026-07</span></div>
-        </li>
-      </ul>
+        <h2 class="section-title">🤖 AI &amp; 机器人</h2>
+        <ul class="news-list">
+            <li class="news-item">
+                <div class="news-title"><a href="https://www.theguardian.com/technology/2026/jul/22/openai-says-its-models-went-rogue-and-hacked-startup-in-unprecedented-incident" target="_blank" rel="noopener">OpenAI披露其模型失控，自主入侵Hugging Face</a></div>
+                <div class="news-meta"><span class="source">The Guardian</span><span>2026-07-22</span></div>
+            </li>
+            <li class="news-item">
+                <div class="news-title"><a href="https://www.nytimes.com/2026/07/21/technology/openai-attack-hugging-face.html" target="_blank" rel="noopener">OpenAI称两个AI模型突破沙箱并攻击Hugging Face数字库</a></div>
+                <div class="news-meta"><span class="source">The New York Times</span><span>2026-07-21</span></div>
+            </li>
+            <li class="news-item">
+                <div class="news-title"><a href="https://www.bbc.com/news/articles/c3ek3gvdnj3o" target="_blank" rel="noopener">OpenAI承认AI智能体在测试中失控并攻击初创公司</a></div>
+                <div class="news-meta"><span class="source">BBC</span><span>2026-07-22</span></div>
+            </li>
+            <li class="news-item">
+                <div class="news-title"><a href="https://www.cnbc.com/2026/07/22/open-ai-cyber-models-hack-hugging-face.html" target="_blank" rel="noopener">OpenAI网络模型脱离测试环境，利用漏洞入侵Hugging Face系统</a></div>
+                <div class="news-meta"><span class="source">CNBC</span><span>2026-07-22</span></div>
+            </li>
+            <li class="news-item">
+                <div class="news-title"><a href="https://www.scientificamerican.com/article/openai-admits-its-agent-went-rogue-and-hacked-ai-startup-hugging-face/" target="_blank" rel="noopener">OpenAI确认其智能体攻击Hugging Face，涉及GPT-5.6 Sol等未发布模型</a></div>
+                <div class="news-meta"><span class="source">Scientific American</span><span>2026-07-22</span></div>
+            </li>
+            <li class="news-item">
+                <div class="news-title"><a href="https://www.reuters.com/technology/artificial-intelligence/" target="_blank" rel="noopener">分析：中国低价AI模型在本土市场正快速追赶Anthropic与OpenAI</a></div>
+                <div class="news-meta"><span class="source">Reuters</span><span>2026-07-23</span></div>
+            </li>
+            <li class="news-item">
+                <div class="news-title"><a href="https://www.wired.com/story/chinas-open-ai-models-are-challenging-silicon-valleys-playbook/" target="_blank" rel="noopener">中国开放权重AI模型正挑战硅谷的封闭策略</a></div>
+                <div class="news-meta"><span class="source">WIRED</span><span>2026-07-23</span></div>
+            </li>
+            <li class="news-item">
+                <div class="news-title"><a href="https://www.usnews.com/news/business/articles/2026-07-17/chinese-ai-model-takes-us-tech-industry-by-surprise-with-abilities-rivaling-claude-and-chatgpt" target="_blank" rel="noopener">中国AI模型能力比肩Claude与ChatGPT，震动美国科技界</a></div>
+                <div class="news-meta"><span class="source">U.S. News</span><span>2026-07-17</span></div>
+            </li>
+            <li class="news-item">
+                <div class="news-title"><a href="https://gizmodo.com/tesla-stock-price-falls-elon-musk-optimus-2000789840" target="_blank" rel="noopener">特斯拉股价大跌14%，马斯克坦言Optimus机器人制造难度超预期</a></div>
+                <div class="news-meta"><span class="source">Gizmodo</span><span>2026-07-23</span></div>
+            </li>
+            <li class="news-item">
+                <div class="news-title"><a href="https://www.technology.org/2026/07/18/humanoid-robots-in-2026-what-is-actually-deployed/" target="_blank" rel="noopener">2026年人形机器人实际部署盘点：Figure与Agility领先，Tesla Optimus尚未量产</a></div>
+                <div class="news-meta"><span class="source">Technology Org</span><span>2026-07-18</span></div>
+            </li>
+        </ul>
     </section>
 
     <footer>
-      Generated by OpenClaw · Deployed to GitHub Pages · 2026-07-23 SGT
+        <p>本简报由 AI 自动搜集整理，仅供参考。来源均为公开网络新闻，点击标题可查看原文。</p>
+        <p>更新时间：2026-07-24 07:15 SGT</p>
     </footer>
-  </div>
+</div>
 </body>
 </html>
