@@ -3,17 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>全球资讯简报 | 2026-07-29</title>
+  <title>全球资讯简报 | 2026-07-30</title>
   <style>
     :root {
-      --bg: #f7f8fa;
-      --card: #ffffff;
-      --text: #1f2937;
-      --muted: #6b7280;
-      --accent: #2563eb;
-      --accent-light: #dbeafe;
-      --border: #e5e7eb;
-      --shadow: 0 4px 6px -1px rgba(0,0,0,0.05), 0 10px 15px -3px rgba(0,0,0,0.05);
+      --bg: #0f172a;
+      --card: #1e293b;
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --accent: #38bdf8;
+      --border: #334155;
     }
     * { box-sizing: border-box; }
     body {
@@ -24,415 +22,248 @@
       line-height: 1.6;
     }
     header {
-      background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
-      color: white;
+      background: linear-gradient(135deg, #0ea5e9 0%, #2563eb 100%);
       padding: 2.5rem 1rem;
       text-align: center;
     }
-    header h1 { margin: 0; font-size: 1.75rem; font-weight: 700; }
-    header .meta { margin-top: 0.5rem; opacity: 0.9; font-size: 0.95rem; }
-    .container { max-width: 960px; margin: 0 auto; padding: 1.5rem 1rem; }
-    .summary {
-      background: var(--card);
-      border-radius: 12px;
-      padding: 1.25rem 1.5rem;
-      margin-bottom: 1.5rem;
-      box-shadow: var(--shadow);
+    header h1 { margin: 0; font-size: 2rem; }
+    header p { margin: 0.5rem 0 0; opacity: 0.9; }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 1.5rem 1rem 3rem;
+    }
+    .section {
+      margin-bottom: 2.5rem;
+    }
+    .section h2 {
+      font-size: 1.4rem;
       border-left: 4px solid var(--accent);
-    }
-    .summary h2 { margin: 0 0 0.5rem 0; font-size: 1.15rem; }
-    .summary p { margin: 0; color: var(--muted); font-size: 0.95rem; }
-    .section { margin-bottom: 2rem; }
-    .section-title {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-size: 1.25rem;
-      font-weight: 700;
+      padding-left: 0.75rem;
       margin-bottom: 1rem;
-      padding-bottom: 0.5rem;
-      border-bottom: 2px solid var(--border);
-    }
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 28px;
-      height: 28px;
-      border-radius: 50%;
-      background: var(--accent-light);
       color: var(--accent);
-      font-size: 0.9rem;
     }
-    .news-card {
+    .item {
       background: var(--card);
-      border-radius: 12px;
-      padding: 1.25rem 1.5rem;
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      padding: 1rem 1.25rem;
       margin-bottom: 1rem;
-      box-shadow: var(--shadow);
-      transition: transform 0.15s ease;
+      transition: transform 0.1s ease;
     }
-    .news-card:hover { transform: translateY(-2px); }
-    .news-card h3 {
-      margin: 0 0 0.5rem 0;
+    .item:hover { transform: translateY(-2px); }
+    .item a {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 600;
       font-size: 1.05rem;
-      line-height: 1.4;
     }
-    .news-card h3 a { color: var(--text); text-decoration: none; }
-    .news-card h3 a:hover { color: var(--accent); text-decoration: underline; }
-    .news-card p { margin: 0 0 0.75rem 0; color: var(--muted); font-size: 0.93rem; }
-    .news-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      font-size: 0.8rem;
+    .item a:hover { color: var(--accent); text-decoration: underline; }
+    .meta {
+      font-size: 0.85rem;
       color: var(--muted);
+      margin-top: 0.5rem;
     }
-    .news-meta span { display: inline-flex; align-items: center; gap: 0.25rem; }
-    .tag {
-      background: #f3f4f6;
-      color: #374151;
-      padding: 0.15rem 0.5rem;
-      border-radius: 9999px;
-      font-size: 0.75rem;
-    }
+    .meta span { margin-right: 1rem; }
     footer {
       text-align: center;
-      padding: 2rem 1rem;
       color: var(--muted);
       font-size: 0.85rem;
+      padding: 2rem 1rem;
+      border-top: 1px solid var(--border);
     }
-    @media (max-width: 640px) {
-      header h1 { font-size: 1.45rem; }
-      .news-card { padding: 1rem; }
+    @media (max-width: 600px) {
+      header h1 { font-size: 1.5rem; }
+      .section h2 { font-size: 1.2rem; }
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>🌍 全球资讯简报</h1>
-    <div class="meta">2026年7月29日 · 星期三 · 07:15 SGT</div>
+    <h1>🌍 今日全球资讯简报</h1>
+    <p>2026年7月30日 星期四 · 新加坡时间 07:15 · 共 26 条</p>
   </header>
 
   <div class="container">
-    <div class="summary">
-      <h2>📌 今日要点</h2>
-      <p>中东局势仍是全球市场焦点，霍尔木兹海峡航运恢复带动原油运输量回升；美联储在通胀与关税压力下面临加息抉择；集装箱运费高位震荡；AI与机器人赛道新品密集发布，AGIBOT、Anthropic等动作频频。</p>
-    </div>
-
     <!-- 航运 -->
-    <div class="section">
-      <div class="section-title"><span class="badge">🚢</span> 航运</div>
-      <div class="news-card">
-        <h3><a href="https://www.drewry.co.uk/supply-chain-advisors/supply-chain-expertise/world-container-index-assessed-by-drewry" target="_blank">Drewry世界集装箱指数降至 4,374 美元/40英尺柜</a></h3>
-        <p>7月23日当周，Drewry WCI 环比下降4%，主要因亚欧及跨太平洋航线运价回落，但仍处于历史相对高位。</p>
-        <div class="news-meta">
-          <span>📰 Drewry</span>
-          <span>🔗 <a href="https://www.drewry.co.uk/supply-chain-advisors/supply-chain-expertise/world-container-index-assessed-by-drewry" target="_blank">原文</a></span>
-          <span>🕒 2026-07-23</span>
-          <span class="tag">集装箱运价</span>
-        </div>
-      </div>
-      <div class="news-card">
-        <h3><a href="https://container-news.com/freightos-weekly-update-ocean-rates-ease-on-early-peak-season-cooling-and-capacity-additions/" target="_blank">Freightos：旺季提前降温，新增运力令海运费率回落</a></h3>
-        <p>承运人取消月中涨价计划，显示6月至7月初的提前旺季需求正在回落；同时额外加班船涌入市场，加剧运力供给。</p>
-        <div class="news-meta">
-          <span>📰 Container News</span>
-          <span>🔗 <a href="https://container-news.com/freightos-weekly-update-ocean-rates-ease-on-early-peak-season-cooling-and-capacity-additions/" target="_blank">原文</a></span>
-          <span>🕒 2026-07-22</span>
-          <span class="tag">运力</span>
-        </div>
-      </div>
-      <div class="news-card">
-        <h3><a href="https://southernstarnavigation.com/july-2026-freight-and-trade-updates/" target="_blank">美西港口箱量同比增长高个位数，进口商提前出货规避关税</a></h3>
-        <p>部分进口商因担忧下半年可能出现的关税上调而提前发运，美西洛杉矶、长滩方向的集装箱船舶数量明显增加。</p>
-        <div class="news-meta">
-          <span>📰 Southern Star Navigation</span>
-          <span>🔗 <a href="https://southernstarnavigation.com/july-2026-freight-and-trade-updates/" target="_blank">原文</a></span>
-          <span>🕒 2026-07-08</span>
-          <span class="tag">北美贸易</span>
-        </div>
-      </div>
-      <div class="news-card">
-        <h3><a href="https://mundomaritimo.net/noticias/container-shipping-market-braces-for-further-freight-rate-increases-though-at-a-slower-pace-than-earlier-this-month" target="_blank">集装箱航运市场继续涨价，但增速放缓</a></h3>
-        <p>7月14日报告指出，现货运价出现初步企稳迹象，霍尔木兹海峡危机持续仍是支撑运费的关键地缘因素。</p>
-        <div class="news-meta">
-          <span>📰 MundoMaritimo</span>
-          <span>🔗 <a href="https://mundomaritimo.net/noticias/container-shipping-market-braces-for-further-freight-rate-increases-though-at-a-slower-pace-than-earlier-this-month" target="_blank">原文</a></span>
-          <span>🕒 2026-07-14</span>
-          <span class="tag">中东</span>
-        </div>
-      </div>
-      <div class="news-card">
-        <h3><a href="https://container-news.com/freightos-weekly-update-ocean-rates-steady-as-shippers-brace-for-july-hikes/" target="_blank">严重港口拥堵吸收运力，远东、欧洲、南亚延误加剧</a></h3>
-        <p>南亚、远东及欧洲主要枢纽的港口拥堵造成船舶延误，降低有效运力，进一步推动即期运费上行。</p>
-        <div class="news-meta">
-          <span>📰 Container News</span>
-          <span>🔗 <a href="https://container-news.com/freightos-weekly-update-ocean-rates-steady-as-shippers-brace-for-july-hikes/" target="_blank">原文</a></span>
-          <span>🕒 2026-07-01</span>
-          <span class="tag">港口</span>
-        </div>
-      </div>
-      <div class="news-card">
-        <h3><a href="https://www.ft.com/content/8bf7cfa4-5412-41d3-b84e-e89f84265fe8" target="_blank">FT：运费成本因企业抢跑新关税而飙升至2024年红海危机以来最高</a></h3>
-        <p>企业为规避美国新一轮关税而提前出货，推高全球货运成本，部分航线运费已回到2024年红海危机时的高位。</p>
-        <div class="news-meta">
-          <span>📰 Financial Times</span>
-          <span>🔗 <a href="https://www.ft.com/content/8bf7cfa4-5412-41d3-b84e-e89f84265fe8" target="_blank">原文</a></span>
-          <span>🕒 2026-06-24</span>
-          <span class="tag">关税</span>
-        </div>
-      </div>
-      <div class="news-card">
-        <h3><a href="https://www.ft.com/content/23737db5-4e47-486d-9b70-d531cff083c5" target="_blank">油轮费率翻倍，船东避开霍尔木兹海峡</a></h3>
-        <p>以色列对伊朗打击后，从波斯湾到中国的原油运输成本大幅攀升，船东倾向绕开或加价通过霍尔木兹海峡。</p>
-        <div class="news-meta">
-          <span>📰 Financial Times</span>
-          <span>🔗 <a href="https://www.ft.com/content/23737db5-4e47-486d-9b70-d531cff083c5" target="_blank">原文</a></span>
-          <span>🕒 2026-06-19</span>
-          <span class="tag">油轮</span>
-        </div>
-      </div>
-    </div>
+    <section class="section" id="shipping">
+      <h2>🚢 航运</h2>
+
+      <article class="item">
+        <a href="https://www.wionews.com/world/saudi-arabia-seeks-global-coalition-to-shield-red-sea-shipping-from-houthi-attacks-1785364381260" target="_blank">沙特寻求组建国际联盟保护红海航运免受胡塞武装袭击</a>
+        <div class="meta"><span>📰 WION</span><span>🕒 2026-07-30 04:18 IST</span></div>
+      </article>
+
+      <article class="item">
+        <a href="https://www.tribuneindia.com/news/usa-news/us-accuses-irans-irgc-of-threatening-ships-in-strait-of-hormuz-maintains-sea-route-remains-open/amp/" target="_blank">美国指责伊朗革命卫队威胁霍尔木兹海峡商船，但强调航道仍开放</a>
+        <div class="meta"><span>📰 The Tribune India</span><span>🕒 2026-07-30</span></div>
+      </article>
+
+      <article class="item">
+        <a href="https://www.moneycontrol.com/world/ships-are-returning-to-bab-el-mandeb-despite-houthi-threats-here-s-why-shipping-firms-are-taking-the-risk-article-13987499.html/amp" target="_blank">尽管胡塞威胁，船只仍返回曼德海峡——航运公司为何冒险</a>
+        <div class="meta"><span>📰 Moneycontrol</span><span>🕒 2026-07-29</span></div>
+      </article>
+
+      <article class="item">
+        <a href="https://www.lloydslist.com/" target="_blank">阿曼提出仿照马六甲海峡模式，推动恢复霍尔木兹海峡航运方案</a>
+        <div class="meta"><span>📰 Lloyd's List</span><span>🕒 2026-07-29</span></div>
+      </article>
+
+      <article class="item">
+        <a href="https://www.nytimes.com/live/2026/07/28/world/iran-us-strikes-iraq-trump/heres-the-latest" target="_blank">霍尔木兹海峡与红海曼德海峡航运风险同步上升</a>
+        <div class="meta"><span>📰 The New York Times</span><span>🕒 2026-07-29 06:29 ET</span></div>
+      </article>
+
+      <article class="item">
+        <a href="https://eximpe.com/trade-insights/india-import-export-news-july-28-2026" target="_blank">CMA CGM 与 MSC 等船公司加收 500–1500 美元拥堵及旺季附加费</a>
+        <div class="meta"><span>📰 EximPe</span><span>🕒 2026-07-28</span></div>
+      </article>
+
+      <article class="item">
+        <a href="https://bworldonline.com/economy/2026/07/28/766492/port-congestion-deterring-ordering-by-meat-importers/" target="_blank">马尼拉港口拥堵导致肉类进口商减少订单，每箱成本增加至少 5 万比索</a>
+        <div class="meta"><span>📰 BusinessWorld Online</span><span>🕒 2026-07-28</span></div>
+      </article>
+
+      <article class="item">
+        <a href="https://seasnews.net/" target="_blank">美国萨凡纳港 6 月处理 483,684 TEU，同比增长 18%</a>
+        <div class="meta"><span>📰 SeasNews</span><span>🕒 2026-07-29</span></div>
+      </article>
+    </section>
 
     <!-- 时政 -->
-    <div class="section">
-      <div class="section-title"><span class="badge">🌐</span> 时政</div>
-      <div class="news-card">
-        <h3><a href="https://reuters.com/world/asia-pacific/iran-will-halt-attacks-long-us-maintains-pause-iranian-source-says-after-trump-2026-07-26" target="_blank">伊朗表示只要美国暂停轰炸，就会停止袭击</a></h3>
-        <p>伊朗消息人士称，若美方维持轰炸暂停，伊朗将停止对美军及地区目标的打击，为外交留出窗口。</p>
-        <div class="news-meta">
-          <span>📰 Reuters</span>
-          <span>🔗 <a href="https://reuters.com/world/asia-pacific/iran-will-halt-attacks-long-us-maintains-pause-iranian-source-says-after-trump-2026-07-26" target="_blank">原文</a></span>
-          <span>🕒 2026-07-26</span>
-          <span class="tag">伊美</span>
-        </div>
-      </div>
-      <div class="news-card">
-        <h3><a href="https://reuters.com/world/middle-east/mediators-propose-10-day-ceasefire-revive-iran-us-interim-deal-senior-iranian-2026-07-20" target="_blank">调解人提议10天停火以恢复伊美临时协议</a></h3>
-        <p>多方调解者提出10天临时停火方案，旨在重启伊朗与美国之间的临时核协议谈判，避免冲突进一步升级。</p>
-        <div class="news-meta">
-          <span>📰 Reuters</span>
-          <span>🔗 <a href="https://reuters.com/world/middle-east/mediators-propose-10-day-ceasefire-revive-iran-us-interim-deal-senior-iranian-2026-07-20" target="_blank">原文</a></span>
-          <span>🕒 2026-07-20</span>
-          <span class="tag">中东</span>
-        </div>
-      </div>
-      <div class="news-card">
-        <h3><a href="https://www.reuters.com/world/iran/" target="_blank">霍尔木兹海峡原油运输量升至冲突以来最高</a></h3>
-        <p>数据显示，在停火协议重新开放水道后，本周通过霍尔木兹海峡的原油运输量升至美以与伊朗冲突爆发以来最高水平。</p>
-        <div class="news-meta">
-          <span>📰 Reuters</span>
-          <span>🔗 <a href="https://www.reuters.com/world/iran/" target="_blank">原文</a></span>
-          <span>🕒 2026-07-29</span>
-          <span class="tag">能源</span>
-        </div>
-      </div>
-      <div class="news-card">
-        <h3><a href="https://www.fdd.org/overnight-brief/july-21-2026/" target="_blank">东南亚外长对中东冲突升级表示担忧，美中俄欧齐聚马尼拉</a></h3>
-        <p>菲律宾首都举行的东盟外长会议吸引美国国务卿Rubio、中国外长王毅、俄罗斯外长拉夫罗夫等出席，各方关注中东及南海局势。</p>
-        <div class="news-meta">
-          <span>📰 FDD</span>
-          <span>🔗 <a href="https://www.fdd.org/overnight-brief/july-21-2026/" target="_blank">原文</a></span>
-          <span>🕒 2026-07-21</span>
-          <span class="tag">东盟</span>
-        </div>
-      </div>
-      <div class="news-card">
-        <h3><a href="https://www.theasiacable.com/p/asia-daily-july-16-2026?action=share" target="_blank">欧盟战略文件指责中俄试图重塑全球秩序</a></h3>
-        <p>欧盟通过新战略文件，称中国和俄罗斯正试图重塑全球秩序并恢复势力范围政治，措辞明显趋于强硬。</p>
-        <div class="news-meta">
-          <span>📰 The Asia Cable</span>
-          <span>🔗 <a href="https://www.theasiacable.com/p/asia-daily-july-16-2026?action=share" target="_blank">原文</a></span>
-          <span>🕒 2026-07-16</span>
-          <span class="tag">欧中</span>
-        </div>
-      </div>
-      <div class="news-card">
-        <h3><a href="https://www.spglobal.com/market-intelligence/en/news-insights/research/2026/07/geopolitical-risk-brief-july-2026" target="_blank">S&P：中东冲突、乌克兰战争、委内瑞拉危机构成全球风险</a></h3>
-        <p>S&P 7月地缘政治风险简报指出，中东紧张局势、乌克兰战争关键阶段及委内瑞拉人道危机共同塑造动荡格局。</p>
-        <div class="news-meta">
-          <span>📰 S&P Global</span>
-          <span>🔗 <a href="https://www.spglobal.com/market-intelligence/en/news-insights/research/2026/07/geopolitical-risk-brief-july-2026" target="_blank">原文</a></span>
-          <span>🕒 2026-07-24</span>
-          <span class="tag">风险</span>
-        </div>
-      </div>
-      <div class="news-card">
-        <h3><a href="https://www.10things.news/p/10-things-global-news-21st-july-2026" target="_blank">中东局势波及区域贸易、能源与粮食安全</a></h3>
-        <p>各方声明将中东持续紧张与区域贸易、能源和粮食安全联系起来，呼吁立即停火，并关注对全球供应链的连锁影响。</p>
-        <div class="news-meta">
-          <span>📰 10 Things News</span>
-          <span>🔗 <a href="https://www.10things.news/p/10-things-global-news-21st-july-2026" target="_blank">原文</a></span>
-          <span>🕒 2026-07-21</span>
-          <span class="tag">安全</span>
-        </div>
-      </div>
-    </div>
+    <section class="section" id="politics">
+      <h2>🏛️ 时政</h2>
+
+      <article class="item">
+        <a href="https://www.livemint.com/news/world/total-world-latest-news-on-july-30-2026-live-updates-11785355866128.html" target="_blank">俄罗斯指控 Telegram 创始人 Pavel Durov 涉乌克兰间谍行动</a>
+        <div class="meta"><span>📰 Livemint</span><span>🕒 2026-07-30</span></div>
+      </article>
+
+      <article class="item">
+        <a href="https://www.politico.com/" target="_blank">乌克兰总统泽连斯基转而争取昔日共和党批评者支持</a>
+        <div class="meta"><span>📰 POLITICO</span><span>🕒 2026-07-29</span></div>
+      </article>
+
+      <article class="item">
+        <a href="https://www.justsecurity.org/150319/early-edition-july-29-2026/" target="_blank">泽连斯基在华盛顿会见特朗普，提出共享反无人机经验并请求爱国者导弹</a>
+        <div class="meta"><span>📰 Just Security</span><span>🕒 2026-07-29</span></div>
+      </article>
+
+      <article class="item">
+        <a href="https://www.nytimes.com/live/2026/07/28/us/trump-news" target="_blank">特朗普同时会见内塔尼亚胡与泽连斯基，中东与乌克兰战争持续</a>
+        <div class="meta"><span>📰 The New York Times</span><span>🕒 2026-07-28</span></div>
+      </article>
+
+      <article class="item">
+        <a href="https://www.democracynow.org/2026/7/29/headlines" target="_blank">美国与伊朗谈判陷入停滞，伊朗拒绝与阿曼共管霍尔木兹海峡提案</a>
+        <div class="meta"><span>📰 Democracy Now!</span><span>🕒 2026-07-29</span></div>
+      </article>
+
+      <article class="item">
+        <a href="https://www.livemint.com/news/world/total-world-latest-news-on-july-29-2026-live-updates-11785272113904.html" target="_blank">美国参议院跨党派推动法案，授权制裁主要俄伊石油进口国</a>
+        <div class="meta"><span>📰 Livemint</span><span>🕒 2026-07-29</span></div>
+      </article>
+
+      <article class="item">
+        <a href="https://gulfnews.com/world/mena/iran-fires-missile-at-us-base-in-jordan-us-saudi-forces-strike-iran-backed-militias-in-iraq-1.500623392" target="_blank">伊朗向约旦美军基地发射导弹，美沙联合打击伊拉克亲伊朗民兵</a>
+        <div class="meta"><span>📰 Gulf News</span><span>🕒 2026-07-30</span></div>
+      </article>
+    </section>
 
     <!-- 财经 -->
-    <div class="section">
-      <div class="section-title"><span class="badge">💰</span> 财经</div>
-      <div class="news-card">
-        <h3><a href="https://www.bloomberg.com/news/articles/2026-07-26/fed-faces-growing-pressure-to-hike-rates-as-price-risks-rebound" target="_blank">美联储面临加息压力，因价格风险反弹</a></h3>
-        <p>AI需求繁荣、特朗普政府新关税及中东油价波动叠加，市场开始关注7月28-29日美联储会议是否会出现 dissent（反对意见）。</p>
-        <div class="news-meta">
-          <span>📰 Bloomberg</span>
-          <span>🔗 <a href="https://www.bloomberg.com/news/articles/2026-07-26/fed-faces-growing-pressure-to-hike-rates-as-price-risks-rebound" target="_blank">原文</a></span>
-          <span>🕒 2026-07-26</span>
-          <span class="tag">美联储</span>
-        </div>
-      </div>
-      <div class="news-card">
-        <h3><a href="https://www.bloomberg.com/news/articles/2026-07-26/bond-traders-on-edge-as-risks-of-fed-rate-hike-this-week-mount" target="_blank">债市交易员预计本周美联储加息概率约三分之一</a></h3>
-        <p>中东紧张局势推高油价与美国国债收益率，交易员对7月加息的押注显著上升，市场情绪紧张。</p>
-        <div class="news-meta">
-          <span>📰 Bloomberg</span>
-          <span>🔗 <a href="https://www.bloomberg.com/news/articles/2026-07-26/bond-traders-on-edge-as-risks-of-fed-rate-hike-this-week-mount" target="_blank">原文</a></span>
-          <span>🕒 2026-07-26</span>
-          <span class="tag">债市</span>
-        </div>
-      </div>
-      <div class="news-card">
-        <h3><a href="https://www.ft.com/content/4f01c358-9bddd-5ae" target="_blank">特朗普威胁对欧盟加征新关税，报复美科技集团罚款</a></h3>
-        <p>特朗普表示华盛顿将对欧盟发起新的贸易调查，可能进一步加剧跨大西洋贸易紧张局势。</p>
-        <div class="news-meta">
-          <span>📰 Financial Times</span>
-          <span>🔗 <a href="https://www.ft.com/global-economy" target="_blank">原文</a></span>
-          <span>🕒 2026-07-24</span>
-          <span class="tag">美欧</span>
-        </div>
-      </div>
-      <div class="news-card">
-        <h3><a href="https://www.troweprice.com/personal-investing/resources/insights/global-markets-weekly-update.html" target="_blank">美国宣布对欧盟、英国等加征新关税，欧央行维持利率不变</a></h3>
-        <p>全球股市反应分化：德国DAX涨1.08%，英国FTSE 100涨1.28%，欧洲央行管理委员会维持三大关键利率不变。</p>
-        <div class="news-meta">
-          <span>📰 T. Rowe Price</span>
-          <span>🔗 <a href="https://www.troweprice.com/personal-investing/resources/insights/global-markets-weekly-update.html" target="_blank">原文</a></span>
-          <span>🕒 2026-07-24</span>
-          <span class="tag">欧股</span>
-        </div>
-      </div>
-      <div class="news-card">
-        <h3><a href="https://www.reuters.com/world/china/global-markets-wrapup-1-2026-07-27/" target="_blank">伊美停火消息推动股市波动，油价与国债收益率回落</a></h3>
-        <p>7月27日，伊美停火预期令风险资产波动，油价和国债收益率双双下跌，全球股市表现不一。</p>
-        <div class="news-meta">
-          <span>📰 Reuters</span>
-          <span>🔗 <a href="https://www.reuters.com/world/china/global-markets-wrapup-1-2026-07-27/" target="_blank">原文</a></span>
-          <span>🕒 2026-07-27</span>
-          <span class="tag">全球市场</span>
-        </div>
-      </div>
-      <div class="news-card">
-        <h3><a href="https://www.reuters.com/commentary/reuters-open-interest/global-markets-trading-day-2026-07-06/" target="_blank">芯片股反弹，油价回落</a></h3>
-        <p>7月6日交易日，半导体板块反弹带动科技股走强，而原油价格因需求担忧而回落，市场焦点重回企业盈利。</p>
-        <div class="news-meta">
-          <span>📰 Reuters</span>
-          <span>🔗 <a href="https://www.reuters.com/commentary/reuters-open-interest/global-markets-trading-day-2026-07-06/" target="_blank">原文</a></span>
-          <span>🕒 2026-07-06</span>
-          <span class="tag">芯片</span>
-        </div>
-      </div>
-      <div class="news-card">
-        <h3><a href="https://www.bloomberg.com/news/articles/2026-07-14/treasuries-rally-as-cool-cpi-data-cuts-july-fed-hike-bets-to-20" target="_blank">CPI降温压低7月加息预期至20%</a></h3>
-        <p>美国消费者价格指数低于预期，国债收益率下滑，市场对7月美联储加息的押注从高位回落至约20%。</p>
-        <div class="news-meta">
-          <span>📰 Bloomberg</span>
-          <span>🔗 <a href="https://www.bloomberg.com/news/articles/2026-07-14/treasuries-rally-as-cool-cpi-data-cuts-july-fed-hike-bets-to-20" target="_blank">原文</a></span>
-          <span>🕒 2026-07-14</span>
-          <span class="tag">通胀</span>
-        </div>
-      </div>
-    </div>
+    <section class="section" id="finance">
+      <h2>💰 财经</h2>
+
+      <article class="item">
+        <a href="https://www.cnbc.com/2026/07/29/fed-rate-decision-july-2026.html" target="_blank">美联储 9:3 投票维持利率在 3.5%–3.75% 不变</a>
+        <div class="meta"><span>📰 CNBC</span><span>🕒 2026-07-29</span></div>
+      </article>
+
+      <article class="item">
+        <a href="https://www.npr.org/2026/07/29/nx-s1-5910558/federal-reserve-interest-rates-inflation" target="_blank">美联储因通胀顽固而按兵不动，内部意见分歧明显</a>
+        <div class="meta"><span>📰 NPR</span><span>🕒 2026-07-29</span></div>
+      </article>
+
+      <article class="item">
+        <a href="https://tradingeconomics.com/united-states/interest-rate" target="_blank">市场预期美联储 7 月连续第五次维持利率不变，加息概率约 30%</a>
+        <div class="meta"><span>📰 Trading Economics</span><span>🕒 2026-07-29</span></div>
+      </article>
+
+      <article class="item">
+        <a href="https://www.cbsnews.com/news/fed-interest-rate-decision-july-meeting/" target="_blank">分析师称若美伊冲突推升通胀，2026 年下半年加息概率将上升</a>
+        <div class="meta"><span>📰 CBS News</span><span>🕒 2026-07-29</span></div>
+      </article>
+
+      <article class="item">
+        <a href="https://www.cnbc.com/2026/07/28/stock-market-today-live-updates.html" target="_blank">道指结束四连涨，沃什讲话未能安抚市场对利率与通胀的担忧</a>
+        <div class="meta"><span>📰 CNBC</span><span>🕒 2026-07-28</span></div>
+      </article>
+
+      <article class="item">
+        <a href="https://ts2.tech/en/stock-market-today-29-07-2026/" target="_blank">布伦特原油大涨 7.3% 突破 88 美元，AI 股拖累美股下跌</a>
+        <div class="meta"><span>📰 TS2</span><span>🕒 2026-07-29</span></div>
+      </article>
+
+      <article class="item">
+        <a href="https://www.bloomberg.com/news/articles/2026-07-29/stock-market-today-dow-s-p-live-updates" target="_blank">亚洲股市追随华尔街走低，长期美债收益率升至近二十年高位</a>
+        <div class="meta"><span>📰 Bloomberg</span><span>🕒 2026-07-29</span></div>
+      </article>
+
+      <article class="item">
+        <a href="https://finance.yahoo.com/" target="_blank">科技巨头盈利不及预期但营收超预期，将 2026 年资本支出下限上调至 1350 亿美元</a>
+        <div class="meta"><span>📰 Yahoo Finance</span><span>🕒 2026-07-29</span></div>
+      </article>
+    </section>
 
     <!-- AI & 机器人 -->
-    <div class="section">
-      <div class="section-title"><span class="badge">🤖</span> AI & 机器人</div>
-      <div class="news-card">
-        <h3><a href="https://www.prnewswire.com/apac/news-releases/agibot-unveils-four-new-products-at-waic-2026-showcasing-embodied-ai-in-real-world-operations-302829347.html" target="_blank">AGIBOT 在世界人工智能大会2026发布四款新品</a></h3>
-        <p>AGIBOT 在上海WAIC 2026发布 A3 Ultra、X2 Edu、G2 Max 及 OmniHand 3 Ultra-M，展示具身智能在真实场景中的运营能力。</p>
-        <div class="news-meta">
-          <span>📰 PRNewswire / AGIBOT</span>
-          <span>🔗 <a href="https://www.prnewswire.com/apac/news-releases/agibot-unveils-four-new-products-at-waic-2026-showcasing-embodied-ai-in-real-world-operations-302829347.html" target="_blank">原文</a></span>
-          <span>🕒 2026-07-20</span>
-          <span class="tag">具身智能</span>
-        </div>
-      </div>
-      <div class="news-card">
-        <h3><a href="https://www.globenewswire.com/news-release/2026/07/28/3333986/0/en/Humanoid-Global-Provides-Update-on-Agility-Robotics-Public-Listing-Opens-Silicon-Valley-AI-Hub-to-Scale-Digit-Deployments.html" target="_blank">Humanoid Global 更新 Agility Robotics 上市进展并开设硅谷AI中心</a></h3>
-        <p>Humanoid Global 公布 Agility Robotics 公开上市最新进展，并在硅谷开设AI中心以扩大Digit人形机器人部署规模。</p>
-        <div class="news-meta">
-          <span>📰 GlobeNewswire</span>
-          <span>🔗 <a href="https://www.globenewswire.com/news-release/2026/07/28/3333986/0/en/Humanoid-Global-Provides-Update-on-Agility-Robotics-Public-Listing-Opens-Silicon-Valley-AI-Hub-to-Scale-Digit-Deployments.html" target="_blank">原文</a></span>
-          <span>🕒 2026-07-28</span>
-          <span class="tag">人形机器人</span>
-        </div>
-      </div>
-      <div class="news-card">
-        <h3><a href="https://interestingengineering.com/ai-robotics/china-agibot-humanoid-robot" target="_blank">AGIBOT A3 Ultra 人形机器人亮相WAIC 2026</a></h3>
-        <p>A3 Ultra 定位为商业、服务及工业应用的人形机器人，代表中国厂商在人形机器人领域的加速布局。</p>
-        <div class="news-meta">
-          <span>📰 Interesting Engineering</span>
-          <span>🔗 <a href="https://interestingengineering.com/ai-robotics/china-agibot-humanoid-robot" target="_blank">原文</a></span>
-          <span>🕒 2026-07-22</span>
-          <span class="tag">人形机器人</span>
-        </div>
-      </div>
-      <div class="news-card">
-        <h3><a href="https://www.globaltimes.cn/page/202607/1366238.shtml" target="_blank">中国人形机器人制造商瞄准全球扩张</a></h3>
-        <p>2026 WAIC 期间，中国行业领袖表示在具身AI价值链关键环节正取得优势，并计划加速海外拓展。</p>
-        <div class="news-meta">
-          <span>📰 Global Times</span>
-          <span>🔗 <a href="https://www.globaltimes.cn/page/202607/1366238.shtml" target="_blank">原文</a></span>
-          <span>🕒 2026-07-17</span>
-          <span class="tag">出海</span>
-        </div>
-      </div>
-      <div class="news-card">
-        <h3><a href="https://arstechnica.com/ai/2026/07/robot-workers-rising-how-ai-may-drive-general-purpose-autonomy-in-robotics/" target="_blank">AI 推动通用机器人自主能力进入工作场所</a></h3>
-        <p>Agility Robotics 的 Digit 人形机器人已在工厂“工作单元”中实际运行，AI 正使自主机器人逐步具备通用作业能力。</p>
-        <div class="news-meta">
-          <span>📰 Ars Technica</span>
-          <span>🔗 <a href="https://arstechnica.com/ai/2026/07/robot-workers-rising-how-ai-may-drive-general-purpose-autonomy-in-robotics/" target="_blank">原文</a></span>
-          <span>🕒 2026-07-08</span>
-          <span class="tag">工厂</span>
-        </div>
-      </div>
-      <div class="news-card">
-        <h3><a href="https://www.techbriefs.com/component/content/article/55477-doc-9948" target="_blank">桥接人形机器人仿真到现实差距</a></h3>
-        <p>视觉语言模型与仿真技术进步，使人形机器人能更好将在虚拟环境学到的技能迁移到真实世界，提升可靠性与实用性。</p>
-        <div class="news-meta">
-          <span>📰 Tech Briefs</span>
-          <span>🔗 <a href="https://www.techbriefs.com/component/content/article/55477-doc-9948" target="_blank">原文</a></span>
-          <span>🕒 2026-07-01</span>
-          <span class="tag">Sim2Real</span>
-        </div>
-      </div>
-      <div class="news-card">
-        <h3><a href="https://www.axios.com/2026/07/23/googles-deep-mind-ai-model-race" target="_blank">Axios：Google DeepMind 员工士气低落导致模型发布延迟</a></h3>
-        <p>据多名现任及前任员工透露，DeepMind 内部士气问题正在影响新模型发布节奏，使其在与 OpenAI、Anthropic 的竞争中承压。</p>
-        <div class="news-meta">
-          <span>📰 Axios</span>
-          <span>🔗 <a href="https://www.axios.com/2026/07/23/googles-deep-mind-ai-model-race" target="_blank">原文</a></span>
-          <span>🕒 2026-07-23</span>
-          <span class="tag">谷歌</span>
-        </div>
-      </div>
-      <div class="news-card">
-        <h3><a href="https://aireleasetracker.com/latest" target="_blank">Anthropic 发布 Claude Opus 5</a></h3>
-        <p>AI Release Tracker 显示，Anthropic 于7月24日发布最新旗舰模型 Claude Opus 5，继续推进前沿模型竞争。</p>
-        <div class="news-meta">
-          <span>📰 AI Release Tracker</span>
-          <span>🔗 <a href="https://aireleasetracker.com/latest" target="_blank">原文</a></span>
-          <span>🕒 2026-07-24</span>
-          <span class="tag">大模型</span>
-        </div>
-      </div>
-    </div>
+    <section class="section" id="ai">
+      <h2>🤖 AI & 机器人</h2>
+
+      <article class="item">
+        <a href="https://www.nytimes.com/interactive/2026/07/29/technology/ai-chips-data-center-boom.html" target="_blank">AI 算力洪潮即将上线，推动重大技术跃迁</a>
+        <div class="meta"><span>📰 The New York Times</span><span>🕒 2026-07-29</span></div>
+      </article>
+
+      <article class="item">
+        <a href="https://www.taipeitimes.com/News/biz/archives/2026/07/30/2003861602" target="_blank">美国 FCC 禁止进口新的外国制造人形机器人，矛头指向中国</a>
+        <div class="meta"><span>📰 Taipei Times</span><span>🕒 2026-07-30</span></div>
+      </article>
+
+      <article class="item">
+        <a href="https://www.cnn.com/2026/07/29/tech/us-china-robot-ban-intl-hnk" target="_blank">中国供应全球大多数人形机器人，美国禁令切断其最大出口市场</a>
+        <div class="meta"><span>📰 CNN Business</span><span>🕒 2026-07-29</span></div>
+      </article>
+
+      <article class="item">
+        <a href="https://www.sciencedaily.com/news/computers_math/artificial_intelligence/" target="_blank">大规模研究：生成式 AI 在特定创造力测试中已超越普通人类</a>
+        <div class="meta"><span>📰 ScienceDaily</span><span>🕒 2026-07-25</span></div>
+      </article>
+
+      <article class="item">
+        <a href="https://aiagentstore.ai/ai-agent-news/this-week" target="_blank">AI Agent 进入端到端流程执行阶段，NVIDIA 推动 Agent 与机器人、创意工具连接</a>
+        <div class="meta"><span>📰 AI Agent Store</span><span>🕒 2026-07-29</span></div>
+      </article>
+
+      <article class="item">
+        <a href="https://www.therobotreport.com/" target="_blank">人形机器人开始在与人共享空间中近距离协作并实时响应非结构化行为</a>
+        <div class="meta"><span>📰 The Robot Report</span><span>🕒 2026-07-29</span></div>
+      </article>
+
+      <article class="item">
+        <a href="https://ca.finance.yahoo.com/news/chinese-robot-army-transforming-uks-220834592.html" target="_blank">中国机器人军团正在改变英国零售业，AgiBot 与 Unitree 等投资数十亿人形机器人</a>
+        <div class="meta"><span>📰 Yahoo Finance Canada</span><span>🕒 2026-07-30</span></div>
+      </article>
+
+      <article class="item">
+        <a href="https://wwd.com/sourcing-journal/industry-news/humanoid-robotics-entering-apparel-workforce-1239085526/" target="_blank">人形机器人进军服装制造业，每小时搬运 60 箱并完成八小时轮班</a>
+        <div class="meta"><span>📰 WWD</span><span>🕒 2026-07-29</span></div>
+      </article>
+    </section>
   </div>
 
   <footer>
-    <p>Generated by OpenClaw · 数据源：Drewry, Reuters, Bloomberg, FT, S&P Global, Axios 等 · 部署于 GitHub Pages</p>
+    <p>每日自动简报 · 来源：公开网络搜索 · 生成于 2026-07-30 07:15 SGT</p>
+    <p>部署于 GitHub Pages · repo: mast0506/daily-report-from-ai</p>
   </footer>
 </body>
 </html>
