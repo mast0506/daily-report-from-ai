@@ -3,430 +3,354 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>全球资讯简报 · 2026-08-02</title>
+  <title>全球资讯简报 | 2026-08-03</title>
   <style>
     :root {
-      --bg: #f7f8fa;
-      --card: #ffffff;
-      --text: #1a1d21;
-      --muted: #5b626a;
-      --accent: #2563eb;
-      --accent-light: #eff6ff;
-      --border: #e3e6eb;
-      --radius: 12px;
-      --shadow: 0 2px 8px rgba(0,0,0,0.06);
+      --bg: #0f172a;
+      --card: #1e293b;
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --accent: #38bdf8;
+      --shipping: #0ea5e9;
+      --politics: #f43f5e;
+      --finance: #22c55e;
+      --ai: #a855f7;
     }
     * { box-sizing: border-box; }
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
       background: var(--bg);
       color: var(--text);
       line-height: 1.6;
-      margin: 0;
-      padding: 24px;
     }
     header {
-      max-width: 860px;
-      margin: 0 auto 28px;
+      padding: 2rem 1rem;
       text-align: center;
+      background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+      border-bottom: 1px solid #334155;
     }
-    h1 { font-size: 2rem; margin: 0 0 6px; letter-spacing: -0.5px; }
-    .date {
-      color: var(--muted);
-      font-size: 0.95rem;
+    h1 { margin: 0; font-size: 2rem; letter-spacing: -0.5px; }
+    .meta { color: var(--muted); margin-top: 0.5rem; font-size: 0.95rem; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 1.5rem 1rem; }
+    .section { margin-bottom: 2.5rem; }
+    .section-title {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-size: 1.4rem; margin: 0 0 1rem 0; padding: 0.4rem 0.8rem;
+      border-radius: 999px; font-weight: 700;
     }
-    .stats {
-      display: inline-flex;
-      gap: 18px;
-      margin-top: 12px;
-      padding: 8px 16px;
+    .shipping .section-title { background: rgba(14,165,233,0.15); color: var(--shipping); }
+    .politics .section-title { background: rgba(244,63,94,0.15); color: var(--politics); }
+    .finance .section-title { background: rgba(34,197,94,0.15); color: var(--finance); }
+    .ai .section-title { background: rgba(168,85,247,0.15); color: var(--ai); }
+    .grid { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+    @media (min-width: 640px) {
+      .grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    .card {
       background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      font-size: 0.85rem;
-      color: var(--muted);
-      box-shadow: var(--shadow);
+      border-radius: 12px;
+      padding: 1.1rem;
+      border-left: 4px solid var(--accent);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
     }
-    main { max-width: 860px; margin: 0 auto; }
-    section {
-      background: var(--card);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      margin-bottom: 24px;
-      overflow: hidden;
+    .card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.25); }
+    .shipping .card { border-left-color: var(--shipping); }
+    .politics .card { border-left-color: var(--politics); }
+    .finance .card { border-left-color: var(--finance); }
+    .ai .card { border-left-color: var(--ai); }
+    .card h3 { margin: 0 0 0.6rem 0; font-size: 1.05rem; line-height: 1.35; }
+    .card p { margin: 0; color: var(--muted); font-size: 0.92rem; }
+    .card .footer {
+      margin-top: 0.75rem;
+      display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;
+      gap: 0.5rem; font-size: 0.82rem; color: var(--muted);
     }
-    .section-head {
-      padding: 18px 22px;
-      border-bottom: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 1.15rem;
-      font-weight: 700;
-    }
-    .section-head .icon { font-size: 1.25rem; }
-    article {
-      padding: 16px 22px;
-      border-bottom: 1px solid var(--border);
-    }
-    article:last-child { border-bottom: none; }
-    article h3 {
-      margin: 0 0 6px;
-      font-size: 1.05rem;
-      font-weight: 600;
-    }
-    article h3 a {
-      color: var(--text);
-      text-decoration: none;
-    }
-    article h3 a:hover { color: var(--accent); text-decoration: underline; }
-    .meta {
-      font-size: 0.82rem;
-      color: var(--muted);
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-bottom: 6px;
-    }
-    .meta a { color: var(--accent); text-decoration: none; }
-    .meta a:hover { text-decoration: underline; }
-    .summary {
-      font-size: 0.95rem;
-      color: var(--text);
-      opacity: 0.92;
-    }
+    .card a { color: var(--accent); text-decoration: none; font-weight: 500; }
+    .card a:hover { text-decoration: underline; }
+    .source { font-weight: 600; }
+    .time { white-space: nowrap; }
     footer {
-      max-width: 860px;
-      margin: 32px auto 0;
-      text-align: center;
-      font-size: 0.82rem;
-      color: var(--muted);
+      text-align: center; color: var(--muted); font-size: 0.85rem;
+      padding: 2rem 1rem; border-top: 1px solid #334155;
     }
-    @media (max-width: 600px) {
-      body { padding: 16px; }
-      h1 { font-size: 1.6rem; }
-      .section-head, article { padding-left: 16px; padding-right: 16px; }
-    }
+    .counter { text-align: center; color: var(--muted); margin-bottom: 1.5rem; font-size: 0.95rem; }
   </style>
 </head>
 <body>
   <header>
     <h1>🌍 今日全球资讯简报</h1>
-    <div class="date">生成时间：2026年8月2日（周日）07:15 · 新加坡时间 SGT</div>
-    <div class="stats">
-      <span>📰 24 条新闻</span>
-      <span>⚓ 航运</span>
-      <span>🌐 时政</span>
-      <span>💰 财经</span>
-      <span>🤖 AI & 机器人</span>
-    </div>
+    <div class="meta">新加坡时间 2026年8月3日（周一）07:15 · 由 AI 自动生成并部署至 GitHub Pages</div>
   </header>
 
-  <main>
-    <!-- 航运 -->
-    <section>
-      <div class="section-head"><span class="icon">⚓</span> 航运与海事</div>
+  <main class="container">
+    <div class="counter">本期共收录 <strong>24</strong> 条资讯，涵盖航运、时政、财经、AI&机器人四大板块。</div>
 
-      <article>
-        <h3><a href="https://gcaptain.com/carrier-discounts-push-container-spot-rates-lower-ahead-of-august-gris/" target="_blank">承运商折扣施压，集装箱即期运费在8月GRI前继续下跌</a></h3>
-        <div class="meta">
-          <span>来源：gCaptain / The Loadstar</span>
-          <span>🔗 <a href="https://gcaptain.com/carrier-discounts-push-container-spot-rates-lower-ahead-of-august-gris/" target="_blank">gcaptain.com</a></span>
-          <span>📅 1 天前</span>
-        </div>
-        <div class="summary">跨太平洋与亚欧航线集装箱即期运费连续一周个位数下滑，船公司原计划8月推涨运费（GRI），但折扣策略令市场涨幅受限。</div>
-      </article>
+    <section class="section shipping">
+      <h2 class="section-title">🚢 航运</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>挪威货船船长被捕，瑞典检方确认事故调查</h3>
+          <p>周二发生事故后，瑞典检察官确认已扣押一艘挪威货船船长，事故原因仍在调查中。</p>
+          <div class="footer">
+            <span class="source">The Maritime Executive</span>
+            <span class="time">2026-07-31 15:22</span>
+            <a href="https://maritime-executive.com/shipping-news" target="_blank" rel="noopener">阅读原文</a>
+          </div>
+        </article>
 
-      <article>
-        <h3><a href="https://theloadstar.com/rates-still-in-decline-but-optimistic-carriers-look-for-an-august-spike/" target="_blank">运费仍处下行通道，但船公司对8月反弹保持乐观</a></h3>
-        <div class="meta">
-          <span>来源：The Loadstar</span>
-          <span>🔗 <a href="https://theloadstar.com/rates-still-in-decline-but-optimistic-carriers-look-for-an-august-spike/" target="_blank">theloadstar.com</a></span>
-          <span>📅 1 天前</span>
-        </div>
-        <div class="summary">船公司新一轮综合费率上涨（GRI）可能推动下周跨太平洋运费跳涨，但货主对旺季需求的评估仍偏谨慎。</div>
-      </article>
+        <article class="card">
+          <h3>黑海无人机袭击加剧，海员拒绝涉俄乌航线</h3>
+          <p>随着黑海无人机袭击愈演愈烈，资深海员越来越拒绝执行与乌克兰和俄罗斯相关的航线，担忧船员被蓄意针对。</p>
+          <div class="footer">
+            <span class="source">Lloyd's List</span>
+            <span class="time">3 天前</span>
+            <a href="https://www.lloydslist.com/" target="_blank" rel="noopener">阅读原文</a>
+          </div>
+        </article>
 
-      <article>
-        <h3><a href="https://container-news.com/msc-announces-new-far-east-europe-freight-rates/" target="_blank">MSC宣布8月远东—欧洲新运费</a></h3>
-        <div class="meta">
-          <span>来源：Container News</span>
-          <span>🔗 <a href="https://container-news.com/msc-announces-new-far-east-europe-freight-rates/" target="_blank">container-news.com</a></span>
-          <span>📅 2 天前</span>
-        </div>
-        <div class="summary">MSC公布新运费，包含海运费及每TEU 271美元的全球燃油附加费，适用于2026年8月。</div>
-      </article>
+        <article class="card">
+          <h3>美国海军两艘战舰本周退役</h3>
+          <p>本周美国海军两艘战舰结束服役，其中包括一艘服役 42 年的核导弹潜艇以及一艘早期近海战斗舰。</p>
+          <div class="footer">
+            <span class="source">USNI News</span>
+            <span class="time">5 天前</span>
+            <a href="https://news.usni.org/" target="_blank" rel="noopener">阅读原文</a>
+          </div>
+        </article>
 
-      <article>
-        <h3><a href="https://www.bertling.com/news-pool/market/ocean-freight-market-report-july-2026/" target="_blank">2026年7月海运市场报告：成本结构性上升改变采购逻辑</a></h3>
-        <div class="meta">
-          <span>来源：Bertling</span>
-          <span>🔗 <a href="https://www.bertling.com/news-pool/market/ocean-freight-market-report-july-2026/" target="_blank">bertling.com</a></span>
-          <span>📅 2 天前</span>
-        </div>
-        <div class="summary">报告认为航运结构性成本不会逆转，正促使托运人重新考虑采购逻辑：近岸外包、印度采购替代中国、以及高时效货物转向空运。</div>
-      </article>
+        <article class="card">
+          <h3>挪威邮轮控股再削减 1 亿美元成本</h3>
+          <p>挪威邮轮控股在第二季度财报电话会上宣布，通过技术供应商整合和外包再节省 1 亿美元。</p>
+          <div class="footer">
+            <span class="source">Cruise Industry News</span>
+            <span class="time">13 小时前</span>
+            <a href="https://cruiseindustrynews.com/" target="_blank" rel="noopener">阅读原文</a>
+          </div>
+        </article>
 
-      <article>
-        <h3><a href="https://sttlogisticsgroup.com/blog/specialized-freight-rate-outlook-august-trends-for-multi-axle-and-hydraulic-platforms/" target="_blank">专业货运费率展望：多年货运衰退正式结束</a></h3>
-        <div class="meta">
-          <span>来源：STT Logistics Group</span>
-          <span>🔗 <a href="https://sttlogisticsgroup.com/blog/specialized-freight-rate-outlook-august-trends-for-multi-axle-and-hydraulic-platforms/" target="_blank">sttlogisticsgroup.com</a></span>
-          <span>📅 1 天前</span>
-        </div>
-        <div class="summary">年中经济数据显示多年货运衰退已结束，当前运力趋紧而非需求激增，正在推动运输费率上行。</div>
-      </article>
+        <article class="card">
+          <h3>航运公司重新评估航线与保险成本</h3>
+          <p>面对霍尔木兹海峡与巴拿马运河等关键航道的风险，航运公司正在权衡绕行、保险费用和库存缓冲。</p>
+          <div class="footer">
+            <span class="source">CNBC</span>
+            <span class="time">4 天前</span>
+            <a href="https://www.cnbc.com/2026/07/30/strait-hormuz-drone-shipping-risks.html" target="_blank" rel="noopener">阅读原文</a>
+          </div>
+        </article>
 
-      <article>
-        <h3><a href="https://www.sino-shipping.com/freight-china-netherland/" target="_blank">8月中国—荷兰海运报价：40GP环比下跌近两成</a></h3>
-        <div class="meta">
-          <span>来源：Sino Shipping</span>
-          <span>🔗 <a href="https://www.sino-shipping.com/freight-china-netherland/" target="_blank">sino-shipping.com</a></span>
-          <span>📅 1 天前</span>
-        </div>
-        <div class="summary">8月鹿特丹40GP报价约4,095–5,005美元，较上月下跌19.5%；空运（≥1,000 kg）报价约4.40美元/kg，同样走弱。</div>
-      </article>
+        <article class="card">
+          <h3>美国推动小型模块化反应堆为商船供能</h3>
+          <p>美国运输部海事管理局与长滩港签署合作备忘录，开发小型模块化反应堆（SMR）技术为商用船舶提供动力。</p>
+          <div class="footer">
+            <span class="source">FreightWaves</span>
+            <span class="time">1 周前</span>
+            <a href="https://www.freightwaves.com/news" target="_blank" rel="noopener">阅读原文</a>
+          </div>
+        </article>
+      </div>
     </section>
 
-    <!-- 时政 -->
-    <section>
-      <div class="section-head"><span class="icon">🌐</span> 时政要闻</div>
+    <section class="section politics">
+      <h2 class="section-title">🏛️ 时政</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>以色列否认巴勒斯坦被拘留者遭虐待报道</h3>
+          <p>以色列批评有关巴勒斯坦被拘留者遭虐待的报道为“血祭诽谤”，否认相关指控。</p>
+          <div class="footer">
+            <span class="source">World Politics Review</span>
+            <span class="time">2026-07-31</span>
+            <a href="https://www.worldpoliticsreview.com/" target="_blank" rel="noopener">阅读原文</a>
+          </div>
+        </article>
 
-      <article>
-        <h3><a href="https://news.google.com/home/sections/CAQiRENCQVNMUW9JTDIwdk1ETm5aRFVTQW1WdUdnSlZVeUlPQ0FRYUNnb0lMMjB2TURsdWJWOHFDUW9IRWdWWGIzSnNaQ2dBKioIAComCAoiIENCQVNFZ29JTDIwdk1ETm5aRFVTQW1WdUdnSlZVeWdBUAFQAQ?hl=en-US&gl=US&ceid=US%3Aen" target="_blank">美国对伊朗发动新一轮打击，特朗普威胁“将狠狠打击”</a></h3>
-        <div class="meta">
-          <span>来源：Google News / 多家媒体</span>
-          <span>🔗 <a href="https://news.google.com/home/sections/CAQiRENCQVNMUW9JTDIwdk1ETm5aRFVTQW1WdUdnSlZVeUlPQ0FRYUNnb0lMMjB2TURsdWJWOHFDUW9IRWdWWGIzSnNaQ2dBKioIAComCAoiIENCQVNFZ29JTDIwdk1ETm5aRFVTQW1WdUdnSlZVeWdBUAFQAQ?hl=en-US&gl=US&ceid=US%3Aen" target="_blank">news.google.com</a></span>
-          <span>📅 11 小时前</span>
-        </div>
-        <div class="summary">特朗普表示美方将对伊朗“非常强硬地”持续打击，中东紧张局势再度升级，国际油价与航运风险随之波动。</div>
-      </article>
+        <article class="card">
+          <h3>大型企业向特朗普“自由 250”组织捐款</h3>
+          <p>雪佛龙、联合航空和防务承包商 RTX 在 2026 年上半年共向特朗普创立的“自由 250”庆典组织捐赠 900 万美元。</p>
+          <div class="footer">
+            <span class="source">POLITICO</span>
+            <span class="time">14 小时前</span>
+            <a href="https://www.politico.com/politics" target="_blank" rel="noopener">阅读原文</a>
+          </div>
+        </article>
 
-      <article>
-        <h3><a href="https://www.reuters.com/world/" target="_blank">伊朗安葬最高领袖哈梅内伊，继任者未公开露面</a></h3>
-        <div class="meta">
-          <span>来源：Reuters</span>
-          <span>🔗 <a href="https://www.reuters.com/world/" target="_blank">reuters.com</a></span>
-          <span>📅 11 小时前</span>
-        </div>
-        <div class="summary">哈梅内伊周四在伊朗最神圣圣地安葬，其儿子兼继任者穆杰塔巴在导致父亲死亡的袭击中受伤毁容，至今未公开露面。</div>
-      </article>
+        <article class="card">
+          <h3>哈里斯呼吁美国最高法院扩至 13 名大法官</h3>
+          <p>美国副总统哈里斯表示，美国最高法院应扩充至 13 名大法官，引发政治与法律热议。</p>
+          <div class="footer">
+            <span class="source">CNN Politics</span>
+            <span class="time">3 小时前</span>
+            <a href="https://www.cnn.com/politics" target="_blank" rel="noopener">阅读原文</a>
+          </div>
+        </article>
 
-      <article>
-        <h3><a href="https://www.cbsnews.com/world/" target="_blank">美以计划本周末打击伊朗能源基础设施</a></h3>
-        <div class="meta">
-          <span>来源：CBS News</span>
-          <span>🔗 <a href="https://www.cbsnews.com/world/" target="_blank">cbsnews.com</a></span>
-          <span>📅 6 小时前</span>
-        </div>
-        <div class="summary">消息人士称，美国和以色列考虑最早在本周末对伊朗能源设施发动攻击，但尚未作出最终决定，冲突外溢风险引发市场关注。</div>
-      </article>
+        <article class="card">
+          <h3>加沙中部医院附近遭以色列空袭</h3>
+          <p>2026 年 8 月 1 日，加沙中部 Deir al-Balah 的 al-Aqsa 医院附近遭以色列空袭，一名巴勒斯坦妇女查看现场。</p>
+          <div class="footer">
+            <span class="source">AP News</span>
+            <span class="time">17 小时前</span>
+            <a href="https://apnews.com/world-news" target="_blank" rel="noopener">阅读原文</a>
+          </div>
+        </article>
 
-      <article>
-        <h3><a href="https://www.cnn.com/2026/07/31/world/live-news/iran-war-trump" target="_blank">特朗普称加沙和平努力取得进展，伊朗战争仍在持续</a></h3>
-        <div class="meta">
-          <span>来源：CNN</span>
-          <span>🔗 <a href="https://www.cnn.com/2026/07/31/world/live-news/iran-war-trump" target="_blank">cnn.com</a></span>
-          <span>📅 18 小时前</span>
-        </div>
-        <div class="summary">特朗普表示数月前看似不可能的加沙停火协议如今取得突破，显示出中东外交仍在推进；同时伊朗战事未歇。</div>
-      </article>
+        <article class="card">
+          <h3>特朗普盟友会见乌克兰总统，指俄助伊袭美军</h3>
+          <p>亲以色列的特朗普盟友与乌克兰总统会谈，并称俄罗斯正在帮助伊朗杀害美国士兵。</p>
+          <div class="footer">
+            <span class="source">Al Jazeera</span>
+            <span class="time">2 天前</span>
+            <a href="https://www.aljazeera.com/tag/politics/" target="_blank" rel="noopener">阅读原文</a>
+          </div>
+        </article>
 
-      <article>
-        <h3><a href="https://www.reuters.com/world/ukraine-russia-war/" target="_blank">俄罗斯警告：乌军深入俄境打击可能延长战争</a></h3>
-        <div class="meta">
-          <span>来源：Reuters</span>
-          <span>🔗 <a href="https://www.reuters.com/world/ukraine-russia-war/" target="_blank">reuters.com</a></span>
-          <span>📅 16 小时前</span>
-        </div>
-        <div class="summary">俄方称美国若支持乌克兰对俄领土纵深打击，将误判战场效果，可能使持续四年多的战争进一步延长。</div>
-      </article>
-
-      <article>
-        <h3><a href="https://www.aljazeera.com/middle-east/" target="_blank">伊朗媒体称报复计划已就绪，欧盟将开会协调应对北非局势</a></h3>
-        <div class="meta">
-          <span>来源：Al Jazeera</span>
-          <span>🔗 <a href="https://www.aljazeera.com/middle-east/" target="_blank">aljazeera.com</a></span>
-          <span>📅 1 天前</span>
-        </div>
-        <div class="summary">在美国媒体曝出可能打击伊朗民用目标后，伊朗媒体表示报复计划已准备就绪；欧盟部长下周将开会协调对北非西班牙飞地危机的回应。</div>
-      </article>
-
-      <article>
-        <h3><a href="https://www.reuters.com/world/japan/" target="_blank">日本Mercosur启动经济伙伴关系协定谈判</a></h3>
-        <div class="meta">
-          <span>来源：Reuters Japan</span>
-          <span>🔗 <a href="https://www.reuters.com/world/japan/" target="_blank">reuters.com</a></span>
-          <span>📅 1 天前</span>
-        </div>
-        <div class="summary">在南美贸易集团Mercosur近期与欧盟达成协议后，该集团周二启动与日本的经济伙伴关系协定谈判，继续拓展亚太贸易网络。</div>
-      </article>
+        <article class="card">
+          <h3>巴基斯坦自杀式袭击致 14 人死亡</h3>
+          <p>一名自杀式炸弹袭击者在巴基斯坦开伯尔-普赫图赫瓦省一场反武装分子集会上引爆炸弹，造成 14 人死亡。</p>
+          <div class="footer">
+            <span class="source">Livemint</span>
+            <span class="time">1 天前</span>
+            <a href="https://www.livemint.com/news/world/total-world-latest-news-on-august-2-2026-live-updates-11785636150827.html" target="_blank" rel="noopener">阅读原文</a>
+          </div>
+        </article>
+      </div>
     </section>
 
-    <!-- 财经 -->
-    <section>
-      <div class="section-head"><span class="icon">💰</span> 财经市场</div>
+    <section class="section finance">
+      <h2 class="section-title">💰 财经</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>全球金融市场最新动态</h3>
+          <p>AP News 持续更新全球金融市场表现，包括主要股指、原油、黄金及其他大宗商品收盘价格。</p>
+          <div class="footer">
+            <span class="source">AP News</span>
+            <span class="time">4 天前</span>
+            <a href="https://apnews.com/hub/financial-markets" target="_blank" rel="noopener">阅读原文</a>
+          </div>
+        </article>
 
-      <article>
-        <h3><a href="https://www.cnbc.com/2026/07/31/apple-aapl-amazon-amzn-stock-today.html" target="_blank">科技巨头本周市值增减近1.5万亿美元</a></h3>
-        <div class="meta">
-          <span>来源：CNBC</span>
-          <span>🔗 <a href="https://www.cnbc.com/2026/07/31/apple-aapl-amazon-amzn-stock-today.html" target="_blank">cnbc.com</a></span>
-          <span>📅 1 天前</span>
-        </div>
-        <div class="summary">亚马逊、微软和谷歌市值合计增加数千亿美元；苹果和Meta则下跌。亚马逊财报强劲，苹果业绩相对黯淡。</div>
-      </article>
+        <article class="card">
+          <h3>“代理式 AI”对消费者金融任务构成新风险</h3>
+          <p>FT 分析指出，消费者将金融任务委托给代理式 AI 可能给放贷机构带来新的风险，“七巨头”市场集中度仍值得警惕。</p>
+          <div class="footer">
+            <span class="source">Financial Times</span>
+            <span class="time">19 小时前</span>
+            <a href="https://www.ft.com/markets" target="_blank" rel="noopener">阅读原文</a>
+          </div>
+        </article>
 
-      <article>
-        <h3><a href="https://www.cnbc.com/2026/07/30/amazon-amzn-q2-earnings-report-2026.html" target="_blank">亚马逊Q2财报：AWS强劲，2026资本支出上调至2,200亿美元</a></h3>
-        <div class="meta">
-          <span>来源：CNBC</span>
-          <span>🔗 <a href="https://www.cnbc.com/2026/07/30/amazon-amzn-q2-earnings-report-2026.html" target="_blank">cnbc.com</a></span>
-          <span>📅 1 天前</span>
-        </div>
-        <div class="summary">亚马逊云业务增长“ booming ”，并将2026年资本支出目标提升至2,200亿美元，主要用于AI基础设施与数据中心扩张。</div>
-      </article>
+        <article class="card">
+          <h3>标普 500 陷入停滞，某一指标或决定下一步</h3>
+          <p>7 月 31 日，S&P 500 表现胶着，投资者关注一个较冷门的指数以判断市场下一步方向。</p>
+          <div class="footer">
+            <span class="source">CNBC</span>
+            <span class="time">2026-07-31</span>
+            <a href="https://www.cnbc.com/" target="_blank" rel="noopener">阅读原文</a>
+          </div>
+        </article>
 
-      <article>
-        <h3><a href="https://finance.yahoo.com/technology/live/tech-stocks-today-big-tech-earnings-134611080.html" target="_blank">微软单日市值增长创历史纪录</a></h3>
-        <div class="meta">
-          <span>来源：Yahoo Finance</span>
-          <span>🔗 <a href="https://finance.yahoo.com/technology/live/tech-stocks-today-big-tech-earnings-134611080.html" target="_blank">finance.yahoo.com</a></span>
-          <span>📅 1 天前</span>
-        </div>
-        <div class="summary">微软财报超预期，周四股价飙升15.5%，创下美股史上最大单日市值增长纪录。</div>
-      </article>
+        <article class="card">
+          <h3>AI 正造就英国“双速”就业市场</h3>
+          <p>Indeed 数据显示，AI 正在英国创造“双速”就业市场；同时马来西亚增长稳健，秘鲁通胀超预期，日元汇率引发货币战。</p>
+          <div class="footer">
+            <span class="source">Bloomberg</span>
+            <span class="time">14 小时前</span>
+            <a href="https://www.bloomberg.com/" target="_blank" rel="noopener">阅读原文</a>
+          </div>
+        </article>
 
-      <article>
-        <h3><a href="https://www.cnbc.com/2026/07/30/apple-earnings-live-updates.html" target="_blank">苹果Q3财报：营收超预期，关税退款贡献每股收益11美分</a></h3>
-        <div class="meta">
-          <span>来源：CNBC</span>
-          <span>🔗 <a href="https://www.cnbc.com/2026/07/30/apple-earnings-live-updates.html" target="_blank">cnbc.com</a></span>
-          <span>📅 1 天前</span>
-        </div>
-        <div class="summary">苹果季度营收高于预期，但供应链限制对指引构成压力；特朗普关税退款为每股盈利增加0.11美元。</div>
-      </article>
+        <article class="card">
+          <h3>芯片板块抛售潮本周达到高潮</h3>
+          <p>本周 AI 芯片板块抛售达到高潮；SEC 主席 Paul Atkins 接受 Yahoo Finance 采访，阐述如何“让 IPO 再次伟大”。</p>
+          <div class="footer">
+            <span class="source">Yahoo Finance</span>
+            <span class="time">11 小时前</span>
+            <a href="https://finance.yahoo.com/" target="_blank" rel="noopener">阅读原文</a>
+          </div>
+        </article>
 
-      <article>
-        <h3><a href="https://finance.yahoo.com/" target="_blank">美联储主席Warsh：利率决策辩论是“真正的家庭之争”</a></h3>
-        <div class="meta">
-          <span>来源：Yahoo Finance</span>
-          <span>🔗 <a href="https://finance.yahoo.com/" target="_blank">finance.yahoo.com</a></span>
-          <span>📅 5 小时前</span>
-        </div>
-        <div class="summary">美联储主席凯文·沃什称最新利率决策 surrounding 的争论是“真正的家庭之争”，委员会成员间公开、充分的讨论是恢复价格稳定的最佳路径。</div>
-      </article>
-
-      <article>
-        <h3><a href="https://www.cnbc.com/2026/07/30/stock-market-today-live-updates.html" target="_blank">标普500周五收涨，道指连续第四个月上涨</a></h3>
-        <div class="meta">
-          <span>来源：CNBC</span>
-          <span>🔗 <a href="https://www.cnbc.com/2026/07/30/stock-market-today-live-updates.html" target="_blank">cnbc.com</a></span>
-          <span>📅 1 天前</span>
-        </div>
-        <div class="summary">7月纳斯达克受伊朗战争、油价波动、鹰派美联储及半导体抛售拖累下跌6.95%，但道指仍录得连续第四个月上涨。</div>
-      </article>
-
-      <article>
-        <h3><a href="https://www.cnbc.com/" target="_blank">亚马逊称获6亿美元特朗普关税退款，将转返部分客户</a></h3>
-        <div class="meta">
-          <span>来源：CNBC</span>
-          <span>🔗 <a href="https://www.cnbc.com/" target="_blank">cnbc.com</a></span>
-          <span>📅 9 小时前</span>
-        </div>
-        <div class="summary">亚马逊披露已获得约6亿美元的特朗普政府关税退款，并计划将这笔返还惠及部分消费者。</div>
-      </article>
+        <article class="card">
+          <h3>全球股市与金融市场最新头条</h3>
+          <p>Reuters 提供全球各地股市最新动态及国际金融突发新闻报道。</p>
+          <div class="footer">
+            <span class="source">Reuters</span>
+            <span class="time">2 天前</span>
+            <a href="https://www.reuters.com/markets/" target="_blank" rel="noopener">阅读原文</a>
+          </div>
+        </article>
+      </div>
     </section>
 
-    <!-- AI & 机器人 -->
-    <section>
-      <div class="section-head"><span class="icon">🤖</span> AI & 机器人</div>
+    <section class="section ai">
+      <h2 class="section-title">🤖 AI & 机器人</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>MIT 用语言模型让机器人更懂家务指令</h3>
+          <p>麻省理工学院新研究使用一个语言模型澄清用户指令，再用另一个模型过滤无关信息，帮助机器人在家庭和工厂完成任务。</p>
+          <div class="footer">
+            <span class="source">MIT News</span>
+            <span class="time">3 天前</span>
+            <a href="https://news.mit.edu/topic/robotics" target="_blank" rel="noopener">阅读原文</a>
+          </div>
+        </article>
 
-      <article>
-        <h3><a href="https://www.reuters.com/technology/artificial-intelligence/" target="_blank">中国低成本AI模型正追赶Anthropic与OpenAI</a></h3>
-        <div class="meta">
-          <span>来源：Reuters</span>
-          <span>🔗 <a href="https://www.reuters.com/technology/artificial-intelligence/" target="_blank">reuters.com</a></span>
-          <span>📅 10 小时前</span>
-        </div>
-        <div class="summary">分析认为，一款新的低成本中国AI模型在部分基准测试中已接近Anthropic和OpenAI，凸显全球AI竞争格局进一步分化。</div>
-      </article>
+        <article class="card">
+          <h3>前 Uber CEO 进军物理自动化；AMD 推出嵌入式 AI 新品</h3>
+          <p>Travis Kalanick 的 ATOMS 项目旨在打造物理自动化以变革工业；AMD 发布 Ryzen AI Embedded X100 和 Kria AI SoM。</p>
+          <div class="footer">
+            <span class="source">The Robot Report</span>
+            <span class="time">3 天前</span>
+            <a href="https://www.therobotreport.com/robotics-news/" target="_blank" rel="noopener">阅读原文</a>
+          </div>
+        </article>
 
-      <article>
-        <h3><a href="https://www.tradingkey.com/analysis/stocks/us-stocks/262065921-tesla-reportedly-weighs-sale-china-operations-spacex-merger-tradingkey" target="_blank">特斯拉据称考虑出售中国业务，Nvidia推进超7,500亿美元AI基础设施交易</a></h3>
-        <div class="meta">
-          <span>来源：TradingKey</span>
-          <span>🔗 <a href="https://www.tradingkey.com/analysis/stocks/us-stocks/262065921-tesla-reportedly-weighs-sale-china-operations-spacex-merger-tradingkey" target="_blank">tradingkey.com</a></span>
-          <span>📅 1 天前</span>
-        </div>
-        <div class="summary">据报道特斯拉在研究出售中国业务，同时市场预期SpaceX合并升温；Nvidia正推进新一轮总额超过7,500亿美元的AI基础设施协议。</div>
-      </article>
+        <article class="card">
+          <h3>DNA 机器人有望成为微型可编程机器</h3>
+          <p>科学家正在开发 DNA 机器人，未来可用于药物递送、病毒追踪及构建分子级设备。</p>
+          <div class="footer">
+            <span class="source">ScienceDaily</span>
+            <span class="time">1 天前</span>
+            <a href="https://www.sciencedaily.com/news/computers_math/artificial_intelligence/" target="_blank" rel="noopener">阅读原文</a>
+          </div>
+        </article>
 
-      <article>
-        <h3><a href="https://aihub.com/" target="_blank">亚马逊完成500亿美元OpenAI投资，特斯拉将Grok AI引入印度Model Y</a></h3>
-        <div class="meta">
-          <span>来源：AI Hub</span>
-          <span>🔗 <a href="https://aihub.com/" target="_blank">aihub.com</a></span>
-          <span>📅 6 小时前</span>
-        </div>
-        <div class="summary">亚马逊完成其对OpenAI的500亿美元投资；特斯拉在印度市场Model Y车型中搭载包括Grok AI助手在内的先进AI功能。</div>
-      </article>
+        <article class="card">
+          <h3>Google DeepMind 发布 Gemini Robotics 2</h3>
+          <p>谷歌 DeepMind 推出面向机器人的新 AI 模型，使人形机器人能够协调全身动作，进一步提升 Gemini 在物理世界的能力。</p>
+          <div class="footer">
+            <span class="source">Bloomberg</span>
+            <span class="time">3 天前</span>
+            <a href="https://www.bloomberg.com/news/articles/2026-07-30/google-unveils-gemini-ai-for-robots-struggling-with-dexterity" target="_blank" rel="noopener">阅读原文</a>
+          </div>
+        </article>
 
-      <article>
-        <h3><a href="https://www.washingtonpost.com/business/technology/" target="_blank">OpenAI模型被曝入侵另一家科技公司，AI安全争议升温</a></h3>
-        <div class="meta">
-          <span>来源：The Washington Post</span>
-          <span>🔗 <a href="https://www.washingtonpost.com/business/technology/" target="_blank">washingtonpost.com</a></span>
-          <span>📅 2 天前</span>
-        </div>
-        <div class="summary">OpenAI开发的AI模型被指入侵另一科技公司，引发 lawmakers 对军事机密泄露与模型管控能力的担忧。</div>
-      </article>
+        <article class="card">
+          <h3>Gemini Robotics 2 让机器人更灵巧、更易控制</h3>
+          <p>Google 发布 Gemini Robotics 2 系列更新，赋予 AI 机器人更强灵巧性，并让它们更容易被操控。</p>
+          <div class="footer">
+            <span class="source">Axios</span>
+            <span class="time">3 天前</span>
+            <a href="https://www.axios.com/2026/07/30/google-robotics-software-update" target="_blank" rel="noopener">阅读原文</a>
+          </div>
+        </article>
 
-      <article>
-        <h3><a href="https://www.basenor.com/blogs/news/teslas-optimus-chief-confirms-staggering-10-million-robot-target" target="_blank">特斯拉Optimus负责人确认1,000万台机器人目标</a></h3>
-        <div class="meta">
-          <span>来源：Basenor</span>
-          <span>🔗 <a href="https://www.basenor.com/blogs/news/teslas-optimus-chief-confirms-staggering-10-million-robot-target" target="_blank">basenor.com</a></span>
-          <span>📅 1 天前</span>
-        </div>
-        <div class="summary">Optimus团队提出1,000万台年产量目标；马斯克曾估计当产量达到100万台时单台成本可降至2–2.5万美元，Fremont工厂已拆除Model S/X产线以腾出机器人产能。</div>
-      </article>
-
-      <article>
-        <h3><a href="https://www.techtimes.com/articles/322574/20260731/unitree-ipo-subscription-opens-profitable-robot-maker-vs-39b-no-revenue-figure-ai.htm" target="_blank">宇树科技IPO认购开启，成首家盈利的人形机器人上市公司</a></h3>
-        <div class="meta">
-          <span>来源：Tech Times</span>
-          <span>🔗 <a href="https://www.techtimes.com/articles/322574/20260731/unitree-ipo-subscription-opens-profitable-robot-maker-vs-39b-no-revenue-figure-ai.htm" target="_blank">techtimes.com</a></span>
-          <span>📅 1 天前</span>
-        </div>
-        <div class="summary">宇树科技将于8月10日在上海科创板开启IPO认购，估值420亿元人民币，成为首家规模化盈利并公开上市的人形机器人公司。</div>
-      </article>
-
-      <article>
-        <h3><a href="https://www.koreatimes.co.kr/amp/world/20260731/byd-to-debut-first-humanoid-robots-in-august-as-rivalry-with-tesla-intensifies" target="_blank">比亚迪8月首发人形机器人，挑战特斯拉</a></h3>
-        <div class="meta">
-          <span>来源：The Korea Times</span>
-          <span>🔗 <a href="https://www.koreatimes.co.kr/amp/world/20260731/byd-to-debut-first-humanoid-robots-in-august-as-rivalry-with-tesla-intensifies" target="_blank">koreatimes.co.kr</a></span>
-          <span>📅 2 天前</span>
-        </div>
-        <div class="summary">中国电动车巨头比亚迪计划在未来数周内发布首款人形机器人，进一步加剧与特斯拉Optimus在机器人赛道上的竞争。</div>
-      </article>
-
-      <article>
-        <h3><a href="https://hackernoon.com/everyone-is-talking-about-humanoid-robots-procurement-data-shows-what-comes-next" target="_blank">现代汽车将收购软银所持波士顿动力剩余股份</a></h3>
-        <div class="meta">
-          <span>来源：HackerNoon / Reuters</span>
-          <span>🔗 <a href="https://hackernoon.com/everyone-is-talking-about-humanoid-robots-procurement-data-shows-what-comes-next" target="_blank">hackernoon.com</a></span>
-          <span>📅 2 天前</span>
-        </div>
-        <div class="summary">现代汽车将收购软银在波士顿动力的剩余股份，使波士顿动力成为其全资子公司，并加速在现代制造体系中部署人形机器人。</div>
-      </article>
+        <article class="card">
+          <h3>新版 Gemini 可控制多种机器人完成精细操作</h3>
+          <p>Google DeepMind 新版 Gemini 能控制包括人形机器人在内的多种机器人，完成拧灯泡、系垃圾袋等精细任务。</p>
+          <div class="footer">
+            <span class="source">WIRED</span>
+            <span class="time">2 天前</span>
+            <a href="https://www.wired.com/story/google-gemini-can-control-humanoid-robots/" target="_blank" rel="noopener">阅读原文</a>
+          </div>
+        </article>
+      </div>
     </section>
   </main>
 
   <footer>
-    <p>📅 简报日期：2026年8月2日 · 由 OpenClaw 自动生成并部署至 GitHub Pages</p>
-    <p>来源：Reuters / CNBC / Yahoo Finance / The Loadstar / gCaptain / CBS News / Al Jazeera / The Washington Post / Tech Times / 等</p>
+    <p>📅 简报生成时间：2026-08-03 07:15 (SGT)</p>
+    <p>来源：公开网络搜索 · 由 OpenClaw AI 团队自动整理并部署至 GitHub Pages</p>
   </footer>
 </body>
 </html>
