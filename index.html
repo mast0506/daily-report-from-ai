@@ -48,206 +48,270 @@
             background: var(--card);
             border-radius: 12px;
             box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-            margin-bottom: 1.5rem;
-            overflow: hidden;
             border: 1px solid var(--border);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
         }
-        .section-header {
-            padding: 1rem 1.25rem;
-            font-weight: 700;
-            font-size: 1.1rem;
-            color: #fff;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
+        .section h2 {
+            font-size: 1.35rem;
+            margin: 0 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--border);
         }
-        .section-header.shipping { background: var(--shipping); }
-        .section-header.politics { background: var(--politics); }
-        .section-header.finance { background: var(--finance); }
-        .section-header.ai { background: var(--ai); }
-        .news-list {
-            list-style: none;
-            margin: 0;
-            padding: 0;
+        .section.shipping h2 { color: var(--shipping); }
+        .section.politics h2 { color: var(--politics); }
+        .section.finance h2 { color: var(--finance); }
+        .section.ai h2 { color: var(--ai); }
+        .news-item {
+            padding: 0.9rem 0;
+            border-bottom: 1px dashed var(--border);
         }
-        .news-list li {
-            padding: 1rem 1.25rem;
-            border-bottom: 1px solid var(--border);
+        .news-item:last-child { border-bottom: none; }
+        .news-item h3 {
+            font-size: 1.02rem;
+            margin: 0 0 0.35rem;
+            color: #111827;
         }
-        .news-list li:last-child { border-bottom: none; }
-        .news-title {
-            font-weight: 600;
-            margin-bottom: 0.35rem;
-        }
-        .news-title a {
+        .news-item p {
+            margin: 0 0 0.4rem;
+            font-size: 0.93rem;
             color: var(--text);
-            text-decoration: none;
         }
-        .news-title a:hover { color: var(--accent); text-decoration: underline; }
-        .news-meta {
-            font-size: 0.85rem;
+        .source {
+            font-size: 0.82rem;
             color: var(--muted);
         }
-        .news-meta .source { font-weight: 600; }
+        .source a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .source a:hover { text-decoration: underline; }
+        .badge {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.1rem 0.55rem;
+            border-radius: 999px;
+            color: #fff;
+            margin-right: 0.4rem;
+        }
+        .badge.shipping { background: var(--shipping); }
+        .badge.politics { background: var(--politics); }
+        .badge.finance { background: var(--finance); }
+        .badge.ai { background: var(--ai); }
         footer {
             text-align: center;
             color: var(--muted);
             font-size: 0.85rem;
             margin-top: 2rem;
-        }
-        .count {
-            background: rgba(255,255,255,0.2);
-            padding: 0.15rem 0.5rem;
-            border-radius: 999px;
-            font-size: 0.8rem;
-            margin-left: auto;
+            padding-bottom: 1rem;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>🌍 今日全球资讯简报</h1>
-            <p class="meta">新加坡时间 2026年8月15日 07:15 | Saturday, August 15, 2026 — 7:15 AM SGT</p>
-            <p class="meta">航运 · 时政 · 财经 · AI&机器人</p>
-        </header>
+<div class="container">
+    <header>
+        <h1>🌍 今日全球资讯简报</h1>
+        <div class="meta">2026年8月16日（星期日）· SGT 07:15 · 航运 / 时政 / 财经 / AI&机器人</div>
+    </header>
 
-        <section class="section">
-            <div class="section-header shipping">
-                <span>🚢</span> 航运海事 <span class="count">6</span>
-            </div>
-            <ul class="news-list">
-                <li>
-                    <div class="news-title"><a href="https://www.nytimes.com/2026/08/11/world/middleeast/deadly-houthi-strike-red-sea.html" target="_blank">胡塞武装袭击红海货船，造成6人死亡</a></div>
-                    <div class="news-meta"><span class="source">The New York Times</span> · 2026-08-11 · 也门政府称，胡塞武装在曼德海峡袭击一艘货船，造成至少6人死亡，其中包括救援人员，为一年来首次致命袭击。</div>
-                </li>
-                <li>
-                    <div class="news-title"><a href="https://www.reuters.com/world/asia-pacific/cargo-ship-attacked-red-sea-sources-say-2026-08-11/" target="_blank">红海货船遇袭，航运安全再引担忧</a></div>
-                    <div class="news-meta"><span class="source">Reuters</span> · 2026-08-11 · 红海一艘小型货船遭导弹袭击，造成人员伤亡，进一步加剧全球供应链的不确定性。</div>
-                </li>
-                <li>
-                    <div class="news-title"><a href="https://news.un.org/en/story/2026/08/1168121" target="_blank">红海商船致命袭击威胁全球贸易</a></div>
-                    <div class="news-meta"><span class="source">UN News</span> · 2026-08-11 · 联合国称，也门附近一艘商船遭袭导致多名海员死亡，在美伊战争持续、霍尔木兹海峡航运受阻背景下，重燃对全球贸易的深切担忧。</div>
-                </li>
-                <li>
-                    <div class="news-title"><a href="https://www.seatrade-maritime.com/maritime-transportation" target="_blank">霍尔木兹海峡：LNG运输船遭袭，油轮险些相撞</a></div>
-                    <div class="news-meta"><span class="source">Seatrade Maritime News</span> · 2026-08-01 · 报道称霍尔木兹海峡一艘液化天然气（LNG）运输船被击中，另有一艘油轮发生惊险擦碰，地区航运风险持续上升。</div>
-                </li>
-                <li>
-                    <div class="news-title"><a href="https://gcaptain.com/category/shipping/" target="_blank">土耳其恢复允许船只经海峡前往黑海</a></div>
-                    <div class="news-meta"><span class="source">gCaptain / Bloomberg</span> · 2026-08-09 · 土耳其已恢复允许船只通过其海峡前往黑海，此前相关通行限制对区域航运造成扰动。</div>
-                </li>
-                <li>
-                    <div class="news-title"><a href="https://splash247.com/" target="_blank">乌克兰呼吁停止袭击黑海民用航运</a></div>
-                    <div class="news-meta"><span class="source">Splash 24/7</span> · 2026-08-14 · 乌克兰寻求制止俄罗斯对其黑海港口民用船只的导弹和无人机袭击，该国农业部长称替代谷物出口路线最快8月底才能达到所需运力。</div>
-                </li>
-            </ul>
-        </section>
+    <!-- 航运 -->
+    <div class="section shipping">
+        <h2>🚢 航运物流</h2>
 
-        <section class="section">
-            <div class="section-header politics">
-                <span>🌐</span> 时政要闻 <span class="count">7</span>
-            </div>
-            <ul class="news-list">
-                <li>
-                    <div class="news-title"><a href="https://www.cnn.com/2026/08/12/world/live-news/iran-war-trump" target="_blank">特朗普称美国“完全控制”霍尔木兹海峡，伊朗警告或延长战争</a></div>
-                    <div class="news-meta"><span class="source">CNN</span> · 2026-08-12 · 特朗普宣称美国已完全控制霍尔木兹海峡，伊朗驳斥并称该海峡能否通航取决于美方是否满足伊朗条件，双方对峙加剧。</div>
-                </li>
-                <li>
-                    <div class="news-title"><a href="https://www.cnn.com/2026/08/08/world/live-news/iran-war-trump" target="_blank">伊朗与阿曼就霍尔木兹通航协议释放积极信号</a></div>
-                    <div class="news-meta"><span class="source">CNN</span> · 2026-08-08 · 伊朗和阿曼均对达成霍尔木兹海峡通航协议表示乐观，但伊朗国家安全首脑强调，除非美国结束战争、撤军并支付赔偿，否则航道不会立即恢复。</div>
-                </li>
-                <li>
-                    <div class="news-title"><a href="https://www.cnn.com/2026/08/13/world/live-news/iran-war-trump" target="_blank">阿联酋ADNOC两艘船只在霍尔木兹海峡遇袭</a></div>
-                    <div class="news-meta"><span class="source">CNN</span> · 2026-08-13 · 阿布扎比国家石油公司（ADNOC）表示，其两艘油轮周四晚间在穿越霍尔木兹海峡时遭到袭击，凸显航道安全持续恶化。</div>
-                </li>
-                <li>
-                    <div class="news-title"><a href="https://www.economist.com/the-world-this-week/2026/08/13/politics" target="_blank">巴基斯坦、土耳其和沙特阿拉伯签署防务协议</a></div>
-                    <div class="news-meta"><span class="source">The Economist</span> · 2026-08-13 · 三国签署防务协议，标志着中东及南亚安全格局出现新的多边合作动向。</div>
-                </li>
-                <li>
-                    <div class="news-title"><a href="https://www.aljazeera.com/news/2026/7/29/china-puts-squeeze-on-taiwan-with-new-maritime-patrols" target="_blank">中国通过对台海上巡逻施加压力</a></div>
-                    <div class="news-meta"><span class="source">Al Jazeera</span> · 2026-07-29 · 中国海警在台湾周边加强巡逻，分析人士称这是北京“蟒蛇战略”的一部分，逐步压缩台湾活动空间。</div>
-                </li>
-                <li>
-                    <div class="news-title"><a href="https://www.cfr.org/global-conflict-tracker/conflict/confrontation-over-taiwan" target="_blank">台湾民防演习首次模拟降低移动网络速度</a></div>
-                    <div class="news-meta"><span class="source">Council on Foreign Relations / Reuters</span> · 2026-08-14 · 台湾将在8月举行的民防演习中首次故意降低移动网速，模拟潜在冲突中带宽受限情景，测试民众通信应对能力。</div>
-                </li>
-                <li>
-                    <div class="news-title"><a href="https://www.npr.org/sections/world/" target="_blank">普京访问千岛群岛，日本主张北方领土主权</a></div>
-                    <div class="news-meta"><span class="source">NPR</span> · 2026-08-13 · 俄罗斯总统普京访问千岛群岛中的择捉岛，日本对南千岛群岛（日方称“北方领土”）的主权主张再次引发关注。</div>
-                </li>
-            </ul>
-        </section>
+        <div class="news-item">
+            <h3><span class="badge shipping">航运</span>亚洲—美东航线运价创2026年新高</h3>
+            <p>受需求强劲与巴拿马运河附加费推动，亚洲至美东的即期集装箱运价升至2026年以来最高水平。承运人通过停航（blank sailing）限制运力，市场预期旺季运价仍有上行空间。</p>
+            <div class="source">来源：WWD Sourcing Journal · 2026-08-15 · <a href="https://wwd.com/sourcing-journal/logistics/asia-us-east-coast-freight-rates-hit-2026-high-panama-canal-surcharges-1239125730/" target="_blank">链接</a></div>
+        </div>
 
-        <section class="section">
-            <div class="section-header finance">
-                <span>📈</span> 财经市场 <span class="count">6</span>
-            </div>
-            <ul class="news-list">
-                <li>
-                    <div class="news-title"><a href="https://www.bloomberg.com/" target="_blank">华尔街本周收跌，经济放缓信号强化</a></div>
-                    <div class="news-meta"><span class="source">Bloomberg</span> · 2026-08-14 · 美股本周收低，经济主要引擎放缓的迹象增强了市场对美联储维持利率不变的押注。</div>
-                </li>
-                <li>
-                    <div class="news-title"><a href="https://www.schwab.com/learn/story/stock-market-update-open" target="_blank">美国7月PPI环比持平，核心PPI上涨0.2%</a></div>
-                    <div class="news-meta"><span class="source">Charles Schwab</span> · 2026-08-13 · 美国7月生产者价格指数（PPI） headline 环比持平，核心PPI上涨0.2%，低于预期，但美联储青睐的通胀指标相关分项有所上升。</div>
-                </li>
-                <li>
-                    <div class="news-title"><a href="https://www.cnbc.com/2026/08/12/stock-market-today-live-updates.html" target="_blank">标普500创盘中历史新高</a></div>
-                    <div class="news-meta"><span class="source">CNBC</span> · 2026-08-13 · 随着油价下跌及通胀数据出炉，标普500指数周四创下新的盘中历史新高，市场情绪在数据清淡期保持谨慎。</div>
-                </li>
-                <li>
-                    <div class="news-title"><a href="https://finance.yahoo.com/calendar/economic/" target="_blank">全球市场数据一览</a></div>
-                    <div class="news-meta"><span class="source">Yahoo Finance</span> · 2026-08-15 · 标普500约7785点，道指约53732点，纳斯达克约26729点；黄金约4432美元，比特币约62849美元，原油约82美元/桶。</div>
-                </li>
-                <li>
-                    <div class="news-title"><a href="https://oilprice.com/Latest-Energy-News/World-News/Oil-Prices-Fall-as-OPEC-and-IEA-Slash-2026-Demand-Outlooks.html" target="_blank">OPEC与IEA下调2026年石油需求预期，油价下跌</a></div>
-                    <div class="news-meta"><span class="source">OilPrice.com</span> · 2026-08-13 · 由于OPEC和国际能源署（IEA）下调2026年石油需求展望，原油价格承压下跌，市场关注美伊僵局对供应端的持续影响。</div>
-                </li>
-                <li>
-                    <div class="news-title"><a href="https://www.eia.gov/outlooks/steo/" target="_blank">EIA：布伦特原油预计维持85美元/桶左右</a></div>
-                    <div class="news-meta"><span class="source">U.S. Energy Information Administration</span> · 2026-08-11 · 美国能源信息署称，霍尔木兹海峡石油运输减少将在未来数月进一步压低全球库存，预计布伦特原油均价维持在每桶85美元附近。</div>
-                </li>
-            </ul>
-        </section>
+        <div class="news-item">
+            <h3><span class="badge shipping">航运</span>美线运价跳涨：纽约 +10% 至 $8,706/FEU</h3>
+            <p>运力收紧叠加全球扰动持续，纽约航线运价一周上涨10%至每FEU 8,706美元；上海—洛杉矶上涨6%至6,244美元。船公司下计划再取消7班航线，运力供给持续收紧。</p>
+            <div class="source">来源：Interior Daily · 2026-08-14 · <a href="https://www.interiordaily.com/article/9863229/us-bound-freight-rates-jump-as-capacity-tightens-and-global-disruptions-persist/" target="_blank">链接</a></div>
+        </div>
 
-        <section class="section">
-            <div class="section-header ai">
-                <span>🤖</span> AI & 机器人 <span class="count">6</span>
-            </div>
-            <ul class="news-list">
-                <li>
-                    <div class="news-title"><a href="https://llmgateway.io/timeline" target="_blank">Google 发布 Gemini 3.7 Flash</a></div>
-                    <div class="news-meta"><span class="source">LLM Gateway</span> · 2026-08-13 · 2026年8月至今已有10款新AI模型发布，Google 的 Gemini 3.7 Flash 于8月13日推出，继续推动大模型迭代竞赛。</div>
-                </li>
-                <li>
-                    <div class="news-title"><a href="https://aireleasetracker.com/latest" target="_blank">DeepSeek 发布 V4-Pro-0813</a></div>
-                    <div class="news-meta"><span class="source">AI Release Tracker</span> · 2026-08-13 · DeepSeek 于8月13日发布最新前沿模型 DeepSeek-V4-Pro-0813，加入8月模型发布浪潮。</div>
-                </li>
-                <li>
-                    <div class="news-title"><a href="https://radicaldatascience.wordpress.com/2026/08/04/ai-news-briefs-bulletin-board-for-august-2026/" target="_blank">小米发布机器人基础模型 Xiaomi-Robotics-1</a></div>
-                    <div class="news-meta"><span class="source">Radical Data Science</span> · 2026-08-03 · Xiaomi-Robotics-1 是一款可直接使用的机器人基础模型，训练数据超过10万小时真实操作，适用于复杂 manipulation 任务。</div>
-                </li>
-                <li>
-                    <div class="news-title"><a href="https://www.therobotreport.com/robotics-news/" target="_blank">Avnet 与 Weston Robot 推出工业自主巡检平台</a></div>
-                    <div class="news-meta"><span class="source">The Robot Report</span> · 2026-08-12 · 双方合作推出面向复杂工业环境的AI驱动自主巡检平台，提升工业场景下的自动化检测能力。</div>
-                </li>
-                <li>
-                    <div class="news-title"><a href="https://www.quantinuum.com/press-releases/quantinuum-announces-generative-quantum-ai-breakthrough-with-massive-commercial-potential" target="_blank">Quantinuum 与 Oracle 达成量子云计算战略合作</a></div>
-                    <div class="news-meta"><span class="source">Quantinuum</span> · 2026-08-11 · 量子计算公司 Quantinuum 与 Oracle 宣布多年战略合作，将量子计算引入 Oracle 云基础设施（OCI），推动企业级量子应用。</div>
-                </li>
-                <li>
-                    <div class="news-title"><a href="https://etcjournal.com/2026/08/01/august-2026-where-ai-is-headed-in-next-5-years/" target="_blank">欧洲全面AI识别规则生效</a></div>
-                    <div class="news-meta"><span class="source">Educational Technology and Change Journal</span> · 2026-08-02 · 欧洲于8月初启动首个覆盖全大洲的AI系统识别规则，要求AI在与人类交互时明确标识自身身份，强化AI透明度监管。</div>
-                </li>
-            </ul>
-        </section>
+        <div class="news-item">
+            <h3><span class="badge shipping">航运</span>Drewry 亚洲内贸箱运指数一周涨6%，创六周新高</h3>
+            <p>Drewry 亚洲内贸集装箱指数（IACI）本周上涨6%至每40尺柜1,028美元。中东地区动荡引发的市场紧张进一步推高运价，采购团队被建议尽早订舱并预留额外提前期。</p>
+            <div class="source">来源：FreshPlaza（引 Drewry）· 2026-08-15 · <a href="https://www.freshplaza.com/north-america/article/9863199/asian-container-freight-rates-rise-6-to-six-week-high/" target="_blank">链接</a></div>
+        </div>
 
-        <footer>
-            <p>由 OpenClaw AI 自动生成 · 数据来源：公开网络搜索 · 共25条新闻</p>
-            <p>更新时间：2026-08-15 07:15 SGT</p>
-        </footer>
+        <div class="news-item">
+            <h3><span class="badge shipping">航运</span>马士基欧洲市场月报：鹿特丹MV2因高温关闭闸口</h3>
+            <p>马士基8月欧洲市场更新显示，鹿特丹Maasvlakte II（MV2）码头因极端高温（超30°C）多次关闭闸口，作业受阻。马士基同时上线LCL（拼箱）附加费专用信息页，统一披露最新收费与生效日期。</p>
+            <div class="source">来源：Maersk Newsroom · 2026-08-14 · <a href="https://www.maersk.com/news/articles/2026/08/14/europe-market-update-august" target="_blank">链接</a></div>
+        </div>
+
+        <div class="news-item">
+            <h3><span class="badge shipping">航运</span>中东战事外溢：长期航线箱运价格被推高</h3>
+            <p>市场评论指出即期运价已升至每FEU约4,103美元，期现价差扩大给了承运人在长期合同市场持续提价的底气——"火正从即期市场向长期市场蔓延"。</p>
+            <div class="source">来源：Riviera Maritime Media · 2026-08-14 · <a href="https://www.rivieramm.com/news-content-hub/middle-east-war-pushes-long-term-box-ship-rates-up-fire-spreading-from-the-short-term-market-89684" target="_blank">链接</a></div>
+        </div>
     </div>
+
+    <!-- 时政 -->
+    <div class="section politics">
+        <h2>🏛️ 国际时政</h2>
+
+        <div class="news-item">
+            <h3><span class="badge politics">时政</span>美伊冲突：霍尔木兹海峡僵局持续</h3>
+            <p>CNN实时报道：在双方连续数日相互威胁发动新攻击后，特朗普近期表现出的降级姿态成为战事最新变数。围绕霍尔木兹海峡的外交努力仍陷僵局，市场密切关注局势走向。</p>
+            <div class="source">来源：CNN Live Updates · 2026-08-15 · <a href="https://www.cnn.com/2026/08/15/world/live-news/iran-war-trump" target="_blank">链接</a></div>
+        </div>
+
+        <div class="news-item">
+            <h3><span class="badge politics">时政</span>胡塞武装袭击也门Mokha港，港口暂停运营</h3>
+            <p>也门港口总监周六证实，Mokha港因伊朗支持的胡塞武装袭击已暂停作业。红海—亚丁湾航线安全风险再度上升，直接推高该区域航运保费与绕行成本。</p>
+            <div class="source">来源：Reuters（经CNN直播报道）· 2026-08-15 · <a href="https://www.cnn.com/2026/08/15/world/live-news/iran-war-trump" target="_blank">链接</a></div>
+        </div>
+
+        <div class="news-item">
+            <h3><span class="badge politics">时政</span>印尼近海7.7级强震，至少38人遇难</h3>
+            <p>一场7.7级强震周六凌晨袭击印尼沿海，造成至少38人死亡，多栋建筑倒塌。震区位于地震频发地带，救援工作仍在进行，余震风险未除。</p>
+            <div class="source">来源：NPR / AP · 2026-08-15 · <a href="https://www.npr.org/sections/world/" target="_blank">链接</a></div>
+        </div>
+
+        <div class="news-item">
+            <h3><span class="badge politics">时政</span>黎巴嫩南部Ansar村遭以军空袭，民宅被毁</h3>
+            <p>美联社周六报道，以色列空袭命中黎巴嫩南部Ansar村一处住宅废墟，当地局势持续紧张；同日约旦河西岸多地爆发对峙，定居者暴力事件令巴以局势雪上加霜。</p>
+            <div class="source">来源：AP News · 2026-08-15 · <a href="https://apnews.com/world-news" target="_blank">链接</a></div>
+        </div>
+
+        <div class="news-item">
+            <h3><span class="badge politics">时政</span>克罗地亚Adriatic海岸野火逼近Omis海滩</h3>
+            <p>周五清晨，一场野火逼近克罗地亚南部Adriatic海岸Omis附近海滩。欧洲高温干旱天气持续，多国进入防火紧急状态，沿海旅游与居民疏散受到威胁。</p>
+            <div class="source">来源：ABC News（AP图）· 2026-08-14 · <a href="https://abcnews.com/" target="_blank">链接</a></div>
+        </div>
+
+        <div class="news-item">
+            <h3><span class="badge politics">时政</span>柏林"Rave the Planet"电音音乐节高安保举行</h3>
+            <p>继上月致命恐袭事件后，柏林大型电音音乐节"Rave the Planet"在高度安保下举行。观众为恐袭受害者默哀，德国安全部门持续评估大型聚集活动风险。</p>
+            <div class="source">来源：DW（德国之声）· 2026-08-15 · <a href="https://www.dw.com/en/germany-berlin-techno-fans-pause-for-pride-attack-victims/live-78378773" target="_blank">链接</a></div>
+        </div>
+
+        <div class="news-item">
+            <h3><span class="badge politics">时政</span>美国印第安纳波利斯北部暴雨成灾</h3>
+            <p>周六印第安纳波利斯北部出现严重洪涝，消防部门发布航拍图显示多处社区被淹。极端天气频发正成为美国中部城市基础设施的新压力测试。</p>
+            <div class="source">来源：AP News · 2026-08-15 · <a href="https://apnews.com/" target="_blank">链接</a></div>
+        </div>
+    </div>
+
+    <!-- 财经 -->
+    <div class="section finance">
+        <h2>📈 财经市场</h2>
+
+        <div class="news-item">
+            <h3><span class="badge finance">财经</span>美股收跌：芯片股反弹夭折，标普500与纳指走低</h3>
+            <p>周五美股三大指数收盘，标普500与纳指下跌，此前芯片股板块的反弹未能延续。AI基础设施支出与估值压力仍是市场主要分歧点。</p>
+            <div class="source">来源：CNBC · 2026-08-15 · <a href="https://www.cnbc.com/markets/" target="_blank">链接</a></div>
+        </div>
+
+        <div class="news-item">
+            <h3><span class="badge finance">财经</span>美债收益率回落：10年期约4.65%，9月加息概率大降</h3>
+            <p>软于预期的通胀数据令美联储近期加息压力减轻，市场对9月加息25bp的定价概率从一周前的55%降至约35%。10年期美债收益率周五徘徊在4.65%附近，2年期收于4.17%。</p>
+            <div class="source">来源：Trading Economics · 2026-08-15 · <a href="https://tradingeconomics.com/united-states/government-bond-yield" target="_blank">链接</a></div>
+        </div>
+
+        <div class="news-item">
+            <h3><span class="badge finance">财经</span>英伟达13F披露：持有SpaceX约$210亿、Intel约$300亿</h3>
+            <p>英伟达8月14日提交的SEC 13F显示，截至6月30日其持有SpaceX 1.228亿股（约209.8亿美元）与Intel 2.148亿股（约299.9亿美元），合计占其634.4亿美元股票组合的80%。</p>
+            <div class="source">来源：AI Weekly（引SEC 13F）· 2026-08-14 · <a href="https://aiweekly.co/ai-news-today" target="_blank">链接</a></div>
+        </div>
+
+        <div class="news-item">
+            <h3><span class="badge finance">财经</span>伯克希尔将Alphabet增持至前三大持仓</h3>
+            <p>伯克希尔哈撒韦最新持仓显示其将Alphabet（谷歌母公司）提升至前三大重仓股，同时加仓达美航空并扩大住房相关押注，反映其对AI与消费基本面的双重配置。</p>
+            <div class="source">来源：CNBC · 2026-08-15 · <a href="https://www.cnbc.com/" target="_blank">链接</a></div>
+        </div>
+
+        <div class="news-item">
+            <h3><span class="badge finance">财经</span>特朗普家族加密公司World Liberty获有条件银行牌照</h3>
+            <p>监管机构批准特朗普家族支持的加密企业World Liberty Finance获得有条件银行牌照，成为传统金融与加密行业融合的最新标志性事件，监管与政治边界问题再度引发讨论。</p>
+            <div class="source">来源：CNBC · 2026-08-15 · <a href="https://www.cnbc.com/" target="_blank">链接</a></div>
+        </div>
+
+        <div class="news-item">
+            <h3><span class="badge finance">财经</span>科技巨头发债潮推高加元、瑞郎、英镑市场成本</h3>
+            <p>《金融时报》报道，亚马逊、Alphabet等发起的大规模债券发行潮正推高加元、瑞郎和英镑市场的融资成本，AI资本开支驱动的债务扩张正在重塑全球债市供需格局。</p>
+            <div class="source">来源：Financial Times · 2026-08-15 · <a href="https://www.ft.com/markets" target="_blank">链接</a></div>
+        </div>
+
+        <div class="news-item">
+            <h3><span class="badge finance">财经</span>ONEOK签$1亿燃气协议，为1GW级AI数据中心供电</h3>
+            <p>管道运营商ONEOK 8月14日披露，已签署1亿美元协议为一座服务于AI数据中心的1吉瓦级电厂供应天然气——首批"管道直达"AI基建协议之一。公司称正与另外两家公司洽谈类似机会。</p>
+            <div class="source">来源：Yahoo Finance · 2026-08-15 · <a href="https://finance.yahoo.com/energy/articles/boring-pipeline-stock-just-signed-125000583.html" target="_blank">链接</a></div>
+        </div>
+
+        <div class="news-item">
+            <h3><span class="badge finance">财经</span>Tepper旗下Appaloosa Q2卖出AI存储股、加仓Magnificent Seven</h3>
+            <p>知名对冲基金Appaloosa Management二季度13F显示，其减持AI存储（内存）相关股票，同时加仓"七巨头"（Magnificent Seven）核心持仓，显示顶级资金对AI价值链不同环节的再平衡。</p>
+            <div class="source">来源：CNBC · 2026-08-15 · <a href="https://www.cnbc.com/" target="_blank">链接</a></div>
+        </div>
+    </div>
+
+    <!-- AI & 机器人 -->
+    <div class="section ai">
+        <h2>🤖 AI & 机器人</h2>
+
+        <div class="news-item">
+            <h3><span class="badge ai">AI</span>Z.ai 发布 GLM-5.3：编码与Agent能力大幅跃升</h3>
+            <p>智谱Z.ai 8月14日发布GLM-5.3，在GLM-5.2基础上完成规模化后训练：Terminal-Bench 3.0从4.6跃升至28.3，DeepSWE v1.1从46.2升至66.9。Reuters另分析指出一款廉价中国AI模型正在"主场"追赶OpenAI与Anthropic。</p>
+            <div class="source">来源：AI Weekly / Reuters · 2026-08-14 · <a href="https://aiweekly.co/ai-news-today" target="_blank">链接</a></div>
+        </div>
+
+        <div class="news-item">
+            <h3><span class="badge ai">AI</span>马斯克：SpaceX全员将是Grok的"父母"，AI收入将超火箭业务</h3>
+            <p>SpaceX全员大会上，马斯克称Grok将基于"SpaceX全部信息总和"训练，员工的工作与贡献都将成为其养料；他预测AI业务最快9月即可超过火箭业务营收，并估算10GW AI算力对应3000–5000亿美元年收入潜力。</p>
+            <div class="source">来源：AI Weekly（引Fortune）· 2026-08-15 · <a href="https://aiweekly.co/ai-news-today" target="_blank">链接</a></div>
+        </div>
+
+        <div class="news-item">
+            <h3><span class="badge ai">AI</span>英伟达洽谈向软银SB Energy投资最高$30亿</h3>
+            <p>The Information报道，英伟达正洽谈向软银旗下数据中心电力开发商SB Energy投资至多30亿美元。SB Energy正在为OpenAI租赁的俄亥俄巨型园区建设供电设施，已融资约18亿美元并筹备IPO——GPU产能竞争正演变为"电力竞争"。</p>
+            <div class="source">来源：AI Weekly（引The Information）· 2026-08-15 · <a href="https://aiweekly.co/ai-news-today" target="_blank">链接</a></div>
+        </div>
+
+        <div class="news-item">
+            <h3><span class="badge ai">AI</span>Mercor"挖坟"倒闭创业公司Slack日志，训练AI Agent</h3>
+            <p>The Information披露，Mercor及竞争数据商正积极收购倒闭/被并购创业公司的Slack存档、工单历史与流程录像，用于构建"强化学习健身房"，供OpenAI、Anthropic、Google训练企业级Agent。创始人的"身后资产"正成为独立的AI训练商品。</p>
+            <div class="source">来源：AI Weekly（引The Information）· 2026-08-15 · <a href="https://aiweekly.co/ai-news-today" target="_blank">链接</a></div>
+        </div>
+
+        <div class="news-item">
+            <h3><span class="badge ai">AI</span>Anthropic公布Claude隐形文字水印技术原理与局限</h3>
+            <p>Anthropic发布技术说明：其不可见文字水印对读者无感、成本中性，但在事实性段落与代码等"必须精确token"的场景中检测强度骤降，且在人写文本校对或完整重写后消失。官方定位是"证明Claude很可能参与"，而非作者归属证明。</p>
+            <div class="source">来源：AI Weekly · 2026-08-15 · <a href="https://aiweekly.co/ai-news-today" target="_blank">链接</a></div>
+        </div>
+
+        <div class="news-item">
+            <h3><span class="badge ai">AI</span>特斯拉将Fremont产线改产Optimus人形机器人，年目标100万台</h3>
+            <p>特斯拉把弗里蒙特工厂电动车产线转向Optimus人形机器人制造，远期目标年产100万台；马斯克称特斯拉+SpaceX的芯片需求已超全球供应。CNBC同日报道中国宇树（Unitree）冲刺IPO，中国人形机器人商业化竞速升温。</p>
+            <div class="source">来源：CNBC / Teslarati · 2026-08-14 · <a href="https://www.cnbc.com/2026/08/14/china-humanoid-robots-unitree-ipo-tesla-optimus.html" target="_blank">链接</a></div>
+        </div>
+
+        <div class="news-item">
+            <h3><span class="badge ai">AI</span>LG官宣2027年Q1发布首款双足人形机器人，深化与英伟达合作</h3>
+            <p>LG Energy Solution已拿下Tesla、Boston Dynamics、Figure AI三大美国人形机器人龙头的电池供应大单，并与英伟达加强联盟，计划2027年一季度推出其首款双足人形机器人——韩系供应链全面切入人形机器人赛道。</p>
+            <div class="source">来源：KED Global · 2026-08-14 · <a href="https://www.kedglobal.com/robotics/newsView/ked202608140008" target="_blank">链接</a></div>
+        </div>
+
+        <div class="news-item">
+            <h3><span class="badge ai">AI</span>Agility Robotics的Digit在GXO仓库跨越10万托盘商业运营里程碑</h3>
+            <p>Agility Robotics宣布其Digit人形机器人在GXO物流中心以Robots-as-a-Service模式运营，累计搬运量突破10万托——人形机器人商业化"上班"的真实案例。麦肯锡同期报告指出人形机器人部署中"工人反弹"正在成为新的管理难题。</p>
+            <div class="source">来源：CNBC TV18（引Agility/GXO）· 2026-08-14 · <a href="https://www.cnbctv18.com/technology/humanoid-robots-are-clocking-in-workers-are-pushing-back-19969244.htm" target="_blank">链接</a></div>
+        </div>
+
+        <div class="news-item">
+            <h3><span class="badge ai">AI</span>百万人级研究显示：生成式AI在部分创造力测试上已超平均人类</h3>
+            <p>一项比较超过10万人与当前最先进AI系统的大规模研究带来意外结论：生成式AI在特定创造力测试维度上已能击败普通人类平均水平，引发对创意行业人力结构的新一轮讨论。</p>
+            <div class="source">来源：ScienceDaily · 2026-08-15 · <a href="https://www.sciencedaily.com/news/computers_math/artificial_intelligence/" target="_blank">链接</a></div>
+        </div>
+    </div>
+
+    <footer>
+        由 AI 团队自动搜集整理 · 生成时间 2026-08-16 07:15 SGT · 数据均来自公开新闻源，点击链接查看原文
+    </footer>
+</div>
 </body>
 </html>
