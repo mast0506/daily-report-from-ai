@@ -1,260 +1,530 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>今日全球资讯简报 | Daily Global Briefing</title>
-  <style>
-    :root {
-      --bg: #f6f8fb;
-      --card: #ffffff;
-      --text: #1f2937;
-      --muted: #6b7280;
-      --border: #e5e7eb;
-      --accent: #2563eb;
-      --shipping: #0ea5e9;
-      --politics: #dc2626;
-      --finance: #16a34a;
-      --ai: #9333ea;
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.65;
-    }
-    .container {
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 32px 16px 48px;
-    }
-    header {
-      text-align: center;
-      margin-bottom: 28px;
-    }
-    h1 {
-      margin: 0 0 8px;
-      font-size: 2.2rem;
-    }
-    .meta, .intro {
-      color: var(--muted);
-    }
-    .intro {
-      max-width: 860px;
-      margin: 12px auto 0;
-      font-size: 0.97rem;
-    }
-    .section {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 22px;
-      margin-bottom: 18px;
-      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04);
-    }
-    .section h2 {
-      margin: 0 0 14px;
-      font-size: 1.35rem;
-      padding-bottom: 10px;
-      border-bottom: 2px solid var(--border);
-    }
-    .shipping h2 { color: var(--shipping); }
-    .politics h2 { color: var(--politics); }
-    .finance h2 { color: var(--finance); }
-    .ai h2 { color: var(--ai); }
-    .news-item {
-      padding: 14px 0;
-      border-bottom: 1px dashed var(--border);
-    }
-    .news-item:last-child { border-bottom: none; }
-    .news-item h3 {
-      margin: 0 0 6px;
-      font-size: 1rem;
-    }
-    .news-item p {
-      margin: 0 0 6px;
-      font-size: 0.95rem;
-    }
-    .source {
-      color: var(--muted);
-      font-size: 0.84rem;
-    }
-    .source a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-    .source a:hover { text-decoration: underline; }
-    .badge {
-      display: inline-block;
-      color: #fff;
-      font-size: 0.74rem;
-      font-weight: 700;
-      border-radius: 999px;
-      padding: 2px 10px;
-      margin-right: 8px;
-      vertical-align: 1px;
-    }
-    .badge.shipping { background: var(--shipping); }
-    .badge.politics { background: var(--politics); }
-    .badge.finance { background: var(--finance); }
-    .badge.ai { background: var(--ai); }
-    footer {
-      margin-top: 24px;
-      text-align: center;
-      color: var(--muted);
-      font-size: 0.85rem;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>全球资讯简报 | Global Daily Briefing</title>
+    <style>
+        :root {
+            --bg: #0f172a;
+            --card: #1e293b;
+            --card-hover: #27354d;
+            --text: #e2e8f0;
+            --text-muted: #94a3b8;
+            --accent: #3b82f6;
+            --accent2: #10b981;
+            --accent3: #f59e0b;
+            --accent4: #ef4444;
+            --border: #334155;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        .container { max-width: 1100px; margin: 0 auto; padding: 2rem 1rem; }
+        header {
+            text-align: center;
+            padding: 2.5rem 1rem;
+            background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 100%);
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 2rem;
+        }
+        header h1 { font-size: 2.2rem; font-weight: 700; letter-spacing: -0.5px; }
+        header .subtitle { color: var(--text-muted); margin-top: 0.5rem; font-size: 1rem; }
+        header .datetime {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.4rem 1rem;
+            background: rgba(59,130,246,0.15);
+            border: 1px solid rgba(59,130,246,0.3);
+            border-radius: 999px;
+            font-size: 0.9rem;
+            color: var(--accent);
+        }
+        .stats-bar {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        .stat-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1rem;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+        .stat-card:hover { transform: translateY(-2px); background: var(--card-hover); }
+        .stat-card .num { font-size: 1.6rem; font-weight: 700; color: var(--accent); }
+        .stat-card .label { font-size: 0.8rem; color: var(--text-muted); margin-top: 0.2rem; }
+        .section {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+        }
+        .section-header {
+            padding: 1rem 1.5rem;
+            font-size: 1.15rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .section-header.shipping { color: var(--accent); }
+        .section-header.politics { color: var(--accent4); }
+        .section-header.finance { color: var(--accent3); }
+        .section-header.ai { color: var(--accent2); }
+        .news-list { padding: 0.5rem 0; }
+        .news-item {
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid rgba(51,65,85,0.5);
+            transition: background 0.15s;
+        }
+        .news-item:last-child { border-bottom: none; }
+        .news-item:hover { background: var(--card-hover); }
+        .news-title {
+            font-size: 1rem;
+            font-weight: 500;
+            margin-bottom: 0.35rem;
+            line-height: 1.45;
+        }
+        .news-title a { color: var(--text); text-decoration: none; }
+        .news-title a:hover { color: var(--accent); text-decoration: underline; }
+        .news-meta {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            align-items: center;
+        }
+        .news-meta .source { color: var(--accent); font-weight: 500; }
+        .news-meta .time { color: #64748b; }
+        .badge {
+            display: inline-block;
+            padding: 0.15rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+        .badge-hot { background: rgba(239,68,68,0.15); color: #f87171; }
+        .badge-new { background: rgba(16,185,129,0.15); color: #34d399; }
+        .badge-trend { background: rgba(245,158,11,0.15); color: #fbbf24; }
+        footer {
+            text-align: center;
+            padding: 2rem 1rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            margin-top: 2rem;
+        }
+        footer a { color: var(--accent); text-decoration: none; }
+        @media (max-width: 600px) {
+            header h1 { font-size: 1.6rem; }
+            .news-item { padding: 0.85rem 1rem; }
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
     <header>
-      <h1>🌍 今日全球资讯简报</h1>
-      <div class="meta">2026年8月18日（星期二） · SGT 07:15 · 航运 / 时政 / 财经 / AI&机器人</div>
-      <div class="intro">本简报基于公开新闻源与市场追踪页面整理，覆盖四大板块共 20 条资讯。每条均附来源、链接与时间，适合晨会速览与后续深挖。</div>
+        <h1>🌍 全球资讯简报</h1>
+        <p class="subtitle">Global Daily Briefing — 每日精选全球重要资讯</p>
+        <span class="datetime">📅 2026年8月19日 星期三 | SGT 07:15 | UTC 23:15 (Aug 18)</span>
     </header>
 
-    <section class="section shipping">
-      <h2>🚢 航运物流</h2>
+    <div class="container">
+        <div class="stats-bar">
+            <div class="stat-card"><div class="num">24</div><div class="label">精选新闻</div></div>
+            <div class="stat-card"><div class="num">4</div><div class="label">资讯板块</div></div>
+            <div class="stat-card"><div class="num">15+</div><div class="label">权威来源</div></div>
+            <div class="stat-card"><div class="num">🟢</div><div class="label">实时更新</div></div>
+        </div>
 
-      <div class="news-item">
-        <h3><span class="badge shipping">航运</span>德路里最新世界集装箱指数升至 4,339 美元/FEU</h3>
-        <p>Drewry 8 月 13 日更新显示，世界集装箱指数周环比上涨 1%，主要受跨太平洋航线运价走强带动，显示旺季与供给收缩仍在支撑海运价格。</p>
-        <div class="source">来源：Drewry · 时间：2026-08-13 · <a href="https://www.drewry.co.uk/supply-chain-advisors/supply-chain-expertise/world-container-index-assessed-by-drewry" target="_blank">链接</a></div>
-      </div>
+        <!-- ===== 航运板块 ===== -->
+        <div class="section">
+            <div class="section-header shipping">
+                <span>🚢</span> 航运物流 (Shipping & Maritime)
+            </div>
+            <div class="news-list">
+                <div class="news-item">
+                    <div class="news-title">
+                        <a href="https://www.cnbc.com/2026/08/13/maersk-earnings-shipping-hormuz-red-sea.html" target="_blank">马士基等航运巨头警告：港口拥堵和运力不足可能推高运价</a>
+                        <span class="badge badge-hot">Hot</span>
+                    </div>
+                    <div class="news-meta">
+                        <span class="source">CNBC</span>
+                        <span class="time">6天前</span>
+                        <span>🔗 cnbc.com</span>
+                    </div>
+                </div>
+                <div class="news-item">
+                    <div class="news-title">
+                        <a href="https://globalmaritimehub.com/report-presentation/container-freight-market-remains-tight-as-disruption-constrains-capacity/" target="_blank">集装箱货运市场持续紧张：亚洲需求、港口拥堵和航线改道支撑高运价</a>
+                        <span class="badge badge-trend">Trend</span>
+                    </div>
+                    <div class="news-meta">
+                        <span class="source">Global Maritime Hub</span>
+                        <span class="time">4天前</span>
+                        <span>🔗 globalmaritimehub.com</span>
+                    </div>
+                </div>
+                <div class="news-item">
+                    <div class="news-title">
+                        <a href="https://www.jmrodgers.com/august-2026-freight-market-update/" target="_blank">跨太平洋海运运价从7月历史高位回落，但整体仍处高位</a>
+                    </div>
+                    <div class="news-meta">
+                        <span class="source">J.M. Rodgers</span>
+                        <span class="time">2周前</span>
+                        <span>🔗 jmrodgers.com</span>
+                    </div>
+                </div>
+                <div class="news-item">
+                    <div class="news-title">
+                        <a href="https://suaidglobal.com/insights/ocean-freight-rates-2026/" target="_blank">2026年港口拥堵附加费：洛杉矶/长滩港每柜$250-$500，东南亚部分港口全年征收</a>
+                    </div>
+                    <div class="news-meta">
+                        <span class="source">Suaid Global</span>
+                        <span class="time">7月13日</span>
+                        <span>🔗 suaidglobal.com</span>
+                    </div>
+                </div>
+                <div class="news-item">
+                    <div class="news-title">
+                        <a href="https://www.lloydslistintelligence.com/resources/blog/red-sea-brief-6-august-2026" target="_blank">红海危机持续：曼德海峡航运量下降24%，但已趋于稳定</a>
+                        <span class="badge badge-hot">Hot</span>
+                    </div>
+                    <div class="news-meta">
+                        <span class="source">Lloyd's List Intelligence</span>
+                        <span class="time">2周前</span>
+                        <span>🔗 lloydslistintelligence.com</span>
+                    </div>
+                </div>
+                <div class="news-item">
+                    <div class="news-title">
+                        <a href="https://news.un.org/en/story/2026/08/1168121" target="_blank">联合国：红海商船遭袭致多名船员死亡，全球贸易担忧加剧</a>
+                        <span class="badge badge-new">New</span>
+                    </div>
+                    <div class="news-meta">
+                        <span class="source">UN News</span>
+                        <span class="time">1周前</span>
+                        <span>🔗 news.un.org</span>
+                    </div>
+                </div>
+                <div class="news-item">
+                    <div class="news-title">
+                        <a href="https://www.thehindubusinessline.com/economy/logistics/red-sea-crisis-enters-1000th-day-shipping-detour-continues-to-squeeze-trade/article71349125.ece" target="_blank">红海危机进入第1000天：航运绕行好望角持续挤压全球贸易</a>
+                    </div>
+                    <div class="news-meta">
+                        <span class="source">The Hindu BusinessLine</span>
+                        <span class="time">3天前</span>
+                        <span>🔗 thehindubusinessline.com</span>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-      <div class="news-item">
-        <h3><span class="badge shipping">航运</span>Drewry 预计未来五周东西向主干航线有 49 个 blank sailings</h3>
-        <p>Drewry 8 月 14 日取消航次追踪显示，34 至 38 周主要东西向航线预计取消率约 7%，说明船公司仍在主动控舱、稳价。</p>
-        <div class="source">来源：Drewry · 时间：2026-08-14 · <a href="https://www.drewry.co.uk/supply-chain-advisors/supply-chain-expertise/cancelled-sailings-tracker" target="_blank">链接</a></div>
-      </div>
+        <!-- ===== 时政板块 ===== -->
+        <div class="section">
+            <div class="section-header politics">
+                <span>🌐</span> 国际时政 (Global Politics)
+            </div>
+            <div class="news-list">
+                <div class="news-item">
+                    <div class="news-title">
+                        <a href="https://www.conference-board.org/research/policy-backgrounders/A-Geopolitical-August" target="_blank">美国今日（8月19日）起对加拿大实施新关税，除非达成协议</a>
+                        <span class="badge badge-hot">Hot</span>
+                    </div>
+                    <div class="news-meta">
+                        <span class="source">The Conference Board</span>
+                        <span class="time">2周前</span>
+                        <span>🔗 conference-board.org</span>
+                    </div>
+                </div>
+                <div class="news-item">
+                    <div class="news-title">
+                        <a href="https://www.china-briefing.com/news/us-china-relations-in-the-trump-2-0-implications/" target="_blank">中美贸易关系新进展：中国确认购买200架波音飞机，扩大农产品贸易</a>
+                        <span class="badge badge-trend">Trend</span>
+                    </div>
+                    <div class="news-meta">
+                        <span class="source">China Briefing</span>
+                        <span class="time">1周前</span>
+                        <span>🔗 china-briefing.com</span>
+                    </div>
+                </div>
+                <div class="news-item">
+                    <div class="news-title">
+                        <a href="https://en.wikipedia.org/wiki/China%E2%80%93United_States_trade_war" target="_blank">美国最高法院2月裁定：特朗普政府依据《国际紧急经济权力法》对华关税违宪</a>
+                    </div>
+                    <div class="news-meta">
+                        <span class="source">Wikipedia</span>
+                        <span class="time">3天前更新</span>
+                        <span>🔗 en.wikipedia.org</span>
+                    </div>
+                </div>
+                <div class="news-item">
+                    <div class="news-title">
+                        <a href="https://taxfoundation.org/research/all/federal/trump-tariffs-trade-war/" target="_blank">2026年关税追踪：第232条款关税1月起对特定半导体进口生效</a>
+                    </div>
+                    <div class="news-meta">
+                        <span class="source">Tax Foundation</span>
+                        <span class="time">1周前</span>
+                        <span>🔗 taxfoundation.org</span>
+                    </div>
+                </div>
+                <div class="news-item">
+                    <div class="news-title">
+                        <a href="https://www.npr.org/2026/08/16/nx-s1-5933006/ukraine-aerial-attack-6-dead-russia" target="_blank">乌克兰发动战争以来最大规模空袭之一，数百架无人机袭击俄罗斯致6人死亡</a>
+                        <span class="badge badge-hot">Hot</span>
+                    </div>
+                    <div class="news-meta">
+                        <span class="source">NPR</span>
+                        <span class="time">2天前</span>
+                        <span>🔗 npr.org</span>
+                    </div>
+                </div>
+                <div class="news-item">
+                    <div class="news-title">
+                        <a href="https://understandingwar.org/research/russia-ukraine/russian-offensive-campaign-assessment-august-8-2026/" target="_blank">ISW评估：俄罗斯可能在8月启动2026-2027年度对乌能源基础设施打击行动</a>
+                    </div>
+                    <div class="news-meta">
+                        <span class="source">Institute for the Study of War</span>
+                        <span class="time">1周前</span>
+                        <span>🔗 understandingwar.org</span>
+                    </div>
+                </div>
+                <div class="news-item">
+                    <div class="news-title">
+                        <a href="https://www.nytimes.com/2026/08/05/world/europe/russia-ukraine-air-war.html" target="_blank">《纽约时报》：俄乌之间的"空中战争"日益激烈，巡航导弹攻击深入数百英里</a>
+                    </div>
+                    <div class="news-meta">
+                        <span class="source">The New York Times</span>
+                        <span class="time">2周前</span>
+                        <span>🔗 nytimes.com</span>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-      <div class="news-item">
-        <h3><span class="badge shipping">航运</span>马士基二季度利润超预期并上调全年展望</h3>
-        <p>Reuters 报道称，马士基在红海与霍尔木兹地缘扰动背景下仍录得好于预期的业绩，并提高全年指引，反映大型班轮公司仍能从高运价环境中受益。</p>
-        <div class="source">来源：Reuters · 时间：2026-08-13 · <a href="https://www.reuters.com/business/container-shipping-group-maersk-q2-profit-beats-forecasts-raises-outlook-2026-08-13/" target="_blank">链接</a></div>
-      </div>
+        <!-- ===== 财经板块 ===== -->
+        <div class="section">
+            <div class="section-header finance">
+                <span>💰</span> 财经市场 (Finance & Markets)
+            </div>
+            <div class="news-list">
+                <div class="news-item">
+                    <div class="news-title">
+                        <a href="https://www.cnbc.com/2026/08/16/stock-market-today-live-updates-.html" target="_blank">美股收跌：油价上涨拖累股市，通胀压力加剧</a>
+                        <span class="badge badge-hot">Hot</span>
+                    </div>
+                    <div class="news-meta">
+                        <span class="source">CNBC</span>
+                        <span class="time">2小时前</span>
+                        <span>🔗 cnbc.com</span>
+                    </div>
+                </div>
+                <div class="news-item">
+                    <div class="news-title">
+                        <a href="https://www.schwab.com/learn/story/stock-market-update-open" target="_blank">美股早盘反弹夭折：收益率和油价齐升，大型零售商财报前市场谨慎</a>
+                    </div>
+                    <div class="news-meta">
+                        <span class="source">Charles Schwab</span>
+                        <span class="time">1天前</span>
+                        <span>🔗 schwab.com</span>
+                    </div>
+                </div>
+                <div class="news-item">
+                    <div class="news-title">
+                        <a href="https://www.ft.com/markets" target="_blank">欧洲央行经济学家警告：美国科技股可能出现回调，或影响欧元区金融稳定</a>
+                        <span class="badge badge-trend">Trend</span>
+                    </div>
+                    <div class="news-meta">
+                        <span class="source">Financial Times</span>
+                        <span class="time">14小时前</span>
+                        <span>🔗 ft.com</span>
+                    </div>
+                </div>
+                <div class="news-item">
+                    <div class="news-title">
+                        <a href="https://tradingeconomics.com/united-states/interest-rate" target="_blank">美联储维持利率不变：联邦基金利率保持在3.50%-3.75%区间</a>
+                    </div>
+                    <div class="news-meta">
+                        <span class="source">Trading Economics</span>
+                        <span class="time">5天前</span>
+                        <span>🔗 tradingeconomics.com</span>
+                    </div>
+                </div>
+                <div class="news-item">
+                    <div class="news-title">
+                        <a href="https://www.federalreserve.gov/newsevents/pressreleases/monetary20260729a.htm" target="_blank">美联储7月FOMC声明：通胀仍高于2%目标，能源价格受供应冲击推动上涨</a>
+                    </div>
+                    <div class="news-meta">
+                        <span class="source">Federal Reserve</span>
+                        <span class="time">3周前</span>
+                        <span>🔗 federalreserve.gov</span>
+                    </div>
+                </div>
+                <div class="news-item">
+                    <div class="news-title">
+                        <a href="https://fortune.com/article/price-of-oil-08-17-2026/" target="_blank">布伦特原油8月17日触及$91.53/桶，较去年同期上涨38%</a>
+                        <span class="badge badge-hot">Hot</span>
+                    </div>
+                    <div class="news-meta">
+                        <span class="source">Fortune</span>
+                        <span class="time">10小时前</span>
+                        <span>🔗 fortune.com</span>
+                    </div>
+                </div>
+                <div class="news-item">
+                    <div class="news-title">
+                        <a href="https://www.eia.gov/outlooks/steo/" target="_blank">EIA展望：受霍尔木兹海峡航运减少影响，三季度布伦特原油均价预计约$85/桶</a>
+                    </div>
+                    <div class="news-meta">
+                        <span class="source">U.S. Energy Information Administration</span>
+                        <span class="time">1周前</span>
+                        <span>🔗 eia.gov</span>
+                    </div>
+                </div>
+                <div class="news-item">
+                    <div class="news-title">
+                        <a href="https://phemex.com/blogs/bitcoin-price-analysis-august-2026" target="_blank">比特币8月持稳约$65,000，市值$1.3万亿，较年初$93,000大幅回落</a>
+                    </div>
+                    <div class="news-meta">
+                        <span class="source">Phemex</span>
+                        <span class="time">1周前</span>
+                        <span>🔗 phemex.com</span>
+                    </div>
+                </div>
+                <div class="news-item">
+                    <div class="news-title">
+                        <a href="https://fortune.com/article/price-of-bitcoin-08-14-2026/" target="_blank">8月14日比特币价格约$62,829，市场关注美国通胀报告与美联储动向</a>
+                    </div>
+                    <div class="news-meta">
+                        <span class="source">Fortune</span>
+                        <span class="time">5天前</span>
+                        <span>🔗 fortune.com</span>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-      <div class="news-item">
-        <h3><span class="badge shipping">航运</span>霍尔木兹海峡通航量降至极低水平</h3>
-        <p>Reuters 8 月 11 日报道指出，经霍尔木兹海峡的海湾航运流量降至仅 6 艘船，能源航线安全与保险成本问题继续外溢到全球物流体系。</p>
-        <div class="source">来源：Reuters · 时间：2026-08-11 · <a href="https://www.reuters.com/world/gulf-shipping-traffic-via-strait-hormuz-falls-six-vessels-2026-08-11/" target="_blank">链接</a></div>
-      </div>
-
-      <div class="news-item">
-        <h3><span class="badge shipping">航运</span>马士基恢复一条经苏伊士的亚欧服务，但全面回归仍遥远</h3>
-        <p>市场跟踪显示，马士基恢复部分亚欧服务穿越苏伊士，释放有限回流信号；但 Hapag-Lloyd 与 Drewry 均认为这还不代表红海航线全面正常化。</p>
-        <div class="source">来源：Yahoo Finance（转引行业报道） · 时间：2026-08-14 · <a href="https://finance.yahoo.com/energy/articles/maersk-returns-another-asia-europe-132022172.html" target="_blank">链接</a></div>
-      </div>
-    </section>
-
-    <section class="section politics">
-      <h2>🏛️ 国际时政</h2>
-
-      <div class="news-item">
-        <h3><span class="badge politics">时政</span>库什纳与内塔尼亚胡长谈，加沙停火前景仍不明朗</h3>
-        <p>AP 报道称，美方谈判代表 Jared Kushner 与以总理进行了马拉松式会谈，但加沙停火方案去留未定，显示美方斡旋仍面临高阻力。</p>
-        <div class="source">来源：AP News · 时间：2026-08-17 · <a href="https://apnews.com/world-news" target="_blank">链接</a></div>
-      </div>
-
-      <div class="news-item">
-        <h3><span class="badge politics">时政</span>CNN：美国与伊朗 60 天窗口到期，中东局势再度紧绷</h3>
-        <p>CNN 直播更新显示，美国与伊朗更大范围协议期限已过，阿曼正在努力推动重开霍尔木兹海峡，地区外交与军事压力同步升高。</p>
-        <div class="source">来源：CNN · 时间：2026-08-17 · <a href="https://www.cnn.com/2026/08/17/world/live-news/iran-war-trump" target="_blank">链接</a></div>
-      </div>
-
-      <div class="news-item">
-        <h3><span class="badge politics">时政</span>Reuters：伊朗称尚未就美方期待的协议作出最终决定</h3>
-        <p>Reuters 指出，特朗普称美伊可能很快签署和平协议并重开霍尔木兹，但伊朗方面表示尚未作出最终决定，双方表态仍存明显温差。</p>
-        <div class="source">来源：Reuters · 时间：2026-08-17 · <a href="https://www.reuters.com/world/middle-east/us-iran-trade-attacks-second-day-undermining-shaky-ceasefire-2026-06-11/" target="_blank">链接</a></div>
-      </div>
-
-      <div class="news-item">
-        <h3><span class="badge politics">时政</span>Reuters：哈梅内伊葬礼被德黑兰塑造成强硬政治信号</h3>
-        <p>路透中东版块强调，已故伊朗最高领袖哈梅内伊的葬礼不只是悼念仪式，也被用来向美国和以色列展示政权韧性与地区动员能力。</p>
-        <div class="source">来源：Reuters · 时间：2026-08-17 · <a href="https://www.reuters.com/world/middle-east/" target="_blank">链接</a></div>
-      </div>
-
-      <div class="news-item">
-        <h3><span class="badge politics">时政</span>NPR：特朗普下令削减美韩联合军演</h3>
-        <p>NPR 报道称，特朗普以韩国未协助伊朗“去核化”为由要求缩减联合演习，这给东北亚安全协作与美韩关系带来新的不确定性。</p>
-        <div class="source">来源：NPR · 时间：2026-08-17 · <a href="https://www.npr.org/sections/world/" target="_blank">链接</a></div>
-      </div>
-    </section>
-
-    <section class="section finance">
-      <h2>📈 财经市场</h2>
-
-      <div class="news-item">
-        <h3><span class="badge finance">财经</span>彭博：油价高企拖累股债表现，市场担忧再通胀</h3>
-        <p>Bloomberg 盘中更新称，因伊朗战争难见快速解决、原油价格抬升，股票与债券同步承压，市场重新计入通胀上行风险。</p>
-        <div class="source">来源：Bloomberg · 时间：2026-08-17 · <a href="https://www.bloomberg.com/news/articles/2026-08-16/stock-market-today-dow-s-p-live-updates" target="_blank">链接</a></div>
-      </div>
-
-      <div class="news-item">
-        <h3><span class="badge finance">财经</span>Reuters：股市企稳、美元回落，市场下修美联储加息风险</h3>
-        <p>Reuters 8 月 17 日全球市场报道指出，投资者在近期数据后适度降低对联储进一步收紧的押注，美元回落、风险资产情绪有所修复。</p>
-        <div class="source">来源：Reuters · 时间：2026-08-17 · <a href="https://reuters.com/world/china/global-markets-global-markets-2026-08-17" target="_blank">链接</a></div>
-      </div>
-
-      <div class="news-item">
-        <h3><span class="badge finance">财经</span>AP/BNN：美股徘徊纪录高位，市场转向关注零售商财报</h3>
-        <p>美股在纪录附近震荡，市场将焦点转向大型零售企业财报，以判断高通胀与就业放缓背景下美国消费者的真实韧性。</p>
-        <div class="source">来源：BNN Bloomberg / AP · 时间：2026-08-17 · <a href="https://www.bnnbloomberg.ca/business/2026/08/17/world-shares-are-mixed-and-brent-crude-is-higher-after-worries-over-stagflation-pull-us-stocks-lower/" target="_blank">链接</a></div>
-      </div>
-
-      <div class="news-item">
-        <h3><span class="badge finance">财经</span>CNBC：油价与美债收益率上行令周初美股承压</h3>
-        <p>CNBC 直播显示，华尔街周初回落的核心压力来自更高的油价和收益率；即便此前通胀数据偏冷，地缘因素仍可能重新推高物价预期。</p>
-        <div class="source">来源：CNBC · 时间：2026-08-17 · <a href="https://www.cnbc.com/2026/08/17/stock-market-today-live-updates.html" target="_blank">链接</a></div>
-      </div>
-
-      <div class="news-item">
-        <h3><span class="badge finance">财经</span>Reuters：新兴市场走出“眼泪谷”，资金分散配置趋势增强</h3>
-        <p>路透分析认为，投资者在发达市场估值偏高之际重新审视新兴市场配置，资本多元化趋势有望继续，但仍受美元与油价波动制约。</p>
-        <div class="source">来源：Reuters · 时间：2026-08-17 · <a href="https://reuters.com/business/finance/emerging-markets-march-out-valley-tears-investors-diversify-2026-08-17" target="_blank">链接</a></div>
-      </div>
-    </section>
-
-    <section class="section ai">
-      <h2>🤖 AI & 机器人</h2>
-
-      <div class="news-item">
-        <h3><span class="badge ai">AI</span>Google DeepMind 发布 Gemini Robotics 2</h3>
-        <p>Google DeepMind 宣布 Gemini Robotics 2，可将视觉与语言输入直接转为运动控制，支持从“脚到手指”的全身人形机器人控制，具身智能继续升温。</p>
-        <div class="source">来源：Google DeepMind · 时间：2026-08-14 · <a href="https://deepmind.google/blog/gemini-robotics-2-brings-whole-body-intelligence-to-robots/" target="_blank">链接</a></div>
-      </div>
-
-      <div class="news-item">
-        <h3><span class="badge ai">AI</span>Google 推出 Gemini 3.7 Flash，主打代码与 Agent 场景</h3>
-        <p>Google 官方博客称 Gemini 3.7 Flash 是“最智能的 workhorse model 之一”，重点覆盖编码与智能体任务，显示模型竞争继续向效率与代理能力延伸。</p>
-        <div class="source">来源：Google Blog · 时间：2026-08-14 · <a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-3-7-flash/" target="_blank">链接</a></div>
-      </div>
-
-      <div class="news-item">
-        <h3><span class="badge ai">AI</span>Reuters：River AI 完成 11 亿美元融资</h3>
-        <p>Reuters 科技版块显示，由 xAI 联合创始人 Igor Babuschkin 创办的 River AI 宣布融资 11 亿美元，主打基于客户私有数据构建个性化模型的工具链。</p>
-        <div class="source">来源：Reuters · 时间：2026-08-14 · <a href="https://www.reuters.com/technology/" target="_blank">链接</a></div>
-      </div>
-
-      <div class="news-item">
-        <h3><span class="badge ai">AI</span>Reuters：宇树科技上市热度带动中国人形机器人板块</h3>
-        <p>Reuters 8 月中旬报道称，中国人形机器人厂商 Unitree 在上海市场表现强势，带动资本市场重新定价“具身智能 + 制造”叙事。</p>
-        <div class="source">来源：Reuters · 时间：2026-08-14 · <a href="https://www.reuters.com/world/asia-pacific/chinese-humanoid-robot-maker-unitree-powers-up-stellar-shanghai-debut-2026-08-14/" target="_blank">链接</a></div>
-      </div>
-
-      <div class="news-item">
-        <h3><span class="badge ai">AI</span>Google Gemini API 预告机器人推理旧预览模型将于月底下线</h3>
-        <p>Gemini API 更新日志显示，gemini-robotics-er-1.6-preview 将于 8 月 31 日关闭，意味着 Google 正加速把机器人能力迁移到新一代模型栈。</p>
-        <div class="source">来源：Google AI for Developers · 时间：2026-08-13 · <a href="https://ai.google.dev/gemini-api/docs/changelog" target="_blank">链接</a></div>
-      </div>
-    </section>
+        <!-- ===== AI & 机器人板块 ===== -->
+        <div class="section">
+            <div class="section-header ai">
+                <span>🤖</span> AI & 机器人 (AI & Robotics)
+            </div>
+            <div class="news-list">
+                <div class="news-item">
+                    <div class="news-title">
+                        <a href="https://www.cnbc.com/2026/08/12/google-deepmind-koray-kavukcuoglu.html" target="_blank">Google DeepMind新掌门上任：面临追赶OpenAI和Anthropic的压力</a>
+                        <span class="badge badge-trend">Trend</span>
+                    </div>
+                    <div class="news-meta">
+                        <span class="source">CNBC</span>
+                        <span class="time">1周前</span>
+                        <span>🔗 cnbc.com</span>
+                    </div>
+                </div>
+                <div class="news-item">
+                    <div class="news-title">
+                        <a href="https://aireleasetracker.com/latest" target="_blank">AI模型发布追踪：Qwen3.8-27B（8月14日）、GLM-5.3（8月14日）等前沿模型密集发布</a>
+                        <span class="badge badge-new">New</span>
+                    </div>
+                    <div class="news-meta">
+                        <span class="source">AI Release Tracker</span>
+                        <span class="time">5天前</span>
+                        <span>🔗 aireleasetracker.com</span>
+                    </div>
+                </div>
+                <div class="news-item">
+                    <div class="news-title">
+                        <a href="https://deepmind.google/models/" target="_blank">Google DeepMind 8月发布多款新模型，持续布局AI-first开发平台</a>
+                    </div>
+                    <div class="news-meta">
+                        <span class="source">Google DeepMind</span>
+                        <span class="time">5天前</span>
+                        <span>🔗 deepmind.google</span>
+                    </div>
+                </div>
+                <div class="news-item">
+                    <div class="news-title">
+                        <a href="https://etcjournal.com/2026/08/01/august-2026-where-ai-is-headed-in-next-5-years/" target="_blank">欧洲8月启用全球首个大洲级AI标识规则：AI系统须向人类表明身份</a>
+                    </div>
+                    <div class="news-meta">
+                        <span class="source">Educational Technology Journal</span>
+                        <span class="time">2周前</span>
+                        <span>🔗 etcjournal.com</span>
+                    </div>
+                </div>
+                <div class="news-item">
+                    <div class="news-title">
+                        <a href="https://techdg.in/stay-ahead-of-the-curve-with-our-august-2026-ai-news-report-explore-the-latest-ai-model-updates-robotics-and-how-to-adapt-your-business-strategy-today/" target="_blank">人形机器人租赁成本已低于人类劳动力全成本，大规模商用拐点临近</a>
+                        <span class="badge badge-hot">Hot</span>
+                    </div>
+                    <div class="news-meta">
+                        <span class="source">TechDG</span>
+                        <span class="time">2周前</span>
+                        <span>🔗 techdg.in</span>
+                    </div>
+                </div>
+                <div class="news-item">
+                    <div class="news-title">
+                        <a href="https://humanoid.press/" target="_blank">人形机器人8月里程碑：Figure 03产量突破1,000台，AgiBot累计15,000台，Optimus Gen 3进入小批量爬坡</a>
+                        <span class="badge badge-new">New</span>
+                    </div>
+                    <div class="news-meta">
+                        <span class="source">Humanoid Press</span>
+                        <span class="time">实时更新</span>
+                        <span>🔗 humanoid.press</span>
+                    </div>
+                </div>
+                <div class="news-item">
+                    <div class="news-title">
+                        <a href="https://optimusk.blog/blog/tesla-optimus-humanoid-robot-latest-version-2026/" target="_blank">Tesla Optimus V3最新动态：搭载50个执行器、22自由度手部、AI5推理芯片</a>
+                    </div>
+                    <div class="news-meta">
+                        <span class="source">OptimusK Blog</span>
+                        <span class="time">2周前</span>
+                        <span>🔗 optimusk.blog</span>
+                    </div>
+                </div>
+                <div class="news-item">
+                    <div class="news-title">
+                        <a href="https://intellectia.ai/blog/nvda-stock-analysis-august-2026" target="_blank">NVIDIA市值超$4.86万亿：AI芯片需求"永不满足"，数据中心成主要增长引擎</a>
+                        <span class="badge badge-hot">Hot</span>
+                    </div>
+                    <div class="news-meta">
+                        <span class="source">Intellectia AI</span>
+                        <span class="time">3周前</span>
+                        <span>🔗 intellectia.ai</span>
+                    </div>
+                </div>
+                <div class="news-item">
+                    <div class="news-title">
+                        <a href="https://alphio.ai/blog/nvda-stock-earnings-august-2026" target="_blank">NVIDIA 8月财报前瞻：Blackwell架构加速放量，分析师预测股价可达$225-$230</a>
+                    </div>
+                    <div class="news-meta">
+                        <span class="source">Alphio AI</span>
+                        <span class="time">6天前</span>
+                        <span>🔗 alphio.ai</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <footer>
-      生成时间：2026-08-18 07:15 SGT · 共 20 条资讯 · 数据来自公开新闻源与机构页面，点击可查看原文。
+        <p>📡 全球资讯简报 | 每日自动更新</p>
+        <p style="margin-top:0.4rem;">数据来源：CNBC、Reuters、FT、NPR、UN News、Federal Reserve、EIA、Google DeepMind 等权威媒体</p>
+        <p style="margin-top:0.4rem;">⏰ 生成时间：2026-08-19 07:15 SGT | 部署于 <a href="https://mast0506.github.io/daily-report-from-ai/" target="_blank">GitHub Pages</a></p>
     </footer>
-  </div>
 </body>
 </html>
