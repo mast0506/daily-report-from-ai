@@ -3,388 +3,578 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>全球资讯简报 - 2026年8月24日</title>
+    <title>全球资讯简报 | 2026年8月25日</title>
     <style>
         :root {
-            --bg: #0f1117;
-            --card: #161b22;
-            --border: #30363d;
-            --text: #c9d1d9;
-            --text-muted: #8b949e;
-            --accent: #58a6ff;
-            --accent2: #f0883e;
-            --shipping: #3fb950;
-            --politics: #f85149;
-            --finance: #d29922;
-            --ai: #a371f7;
+            --primary: #1a1a2e;
+            --secondary: #16213e;
+            --accent: #0f3460;
+            --highlight: #e94560;
+            --text: #f5f5f5;
+            --text-muted: #b0b0b0;
+            --card-bg: #1e1e3f;
+            --border: #2a2a4a;
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            background: var(--bg);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+            background: var(--primary);
             color: var(--text);
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            line-height: 1.6;
+            line-height: 1.7;
         }
-        .container { max-width: 960px; margin: 0 auto; padding: 24px 16px; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
         header {
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--accent) 100%);
+            padding: 60px 0 40px;
             text-align: center;
-            padding: 32px 0 24px;
+            border-bottom: 3px solid var(--highlight);
+        }
+        header h1 { font-size: 2.5rem; font-weight: 700; margin-bottom: 10px; letter-spacing: 2px; }
+        header .subtitle { color: var(--text-muted); font-size: 1rem; }
+        header .datetime { 
+            display: inline-block; 
+            background: rgba(233, 69, 96, 0.2); 
+            padding: 8px 20px; 
+            border-radius: 20px; 
+            margin-top: 15px;
+            font-size: 0.9rem;
+            color: var(--highlight);
+        }
+        .nav-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            padding: 20px 0;
+            background: var(--secondary);
+            position: sticky;
+            top: 0;
+            z-index: 100;
             border-bottom: 1px solid var(--border);
-            margin-bottom: 24px;
         }
-        header h1 { font-size: 2rem; color: var(--accent); margin-bottom: 8px; }
-        header .meta { color: var(--text-muted); font-size: 0.9rem; }
-        header .badge {
-            display: inline-block;
-            background: var(--card);
+        .nav-tab {
+            padding: 10px 24px;
+            border-radius: 25px;
+            background: var(--accent);
+            color: var(--text);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s;
             border: 1px solid var(--border);
-            border-radius: 20px;
-            padding: 4px 14px;
-            font-size: 0.8rem;
-            margin-top: 10px;
-            color: var(--accent2);
         }
-        .section { margin-bottom: 32px; }
+        .nav-tab:hover, .nav-tab.active {
+            background: var(--highlight);
+            border-color: var(--highlight);
+        }
+        .section { padding: 40px 0; border-bottom: 1px solid var(--border); }
         .section-title {
-            font-size: 1.25rem;
-            font-weight: 600;
-            padding: 10px 16px;
-            border-radius: 8px;
-            margin-bottom: 16px;
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            padding-left: 15px;
+            border-left: 4px solid var(--highlight);
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
         }
-        .section-title.shipping { background: rgba(63,185,80,0.1); color: var(--shipping); border-left: 4px solid var(--shipping); }
-        .section-title.politics { background: rgba(248,81,73,0.1); color: var(--politics); border-left: 4px solid var(--politics); }
-        .section-title.finance { background: rgba(210,153,34,0.1); color: var(--finance); border-left: 4px solid var(--finance); }
-        .section-title.ai { background: rgba(163,113,247,0.1); color: var(--ai); border-left: 4px solid var(--ai); }
-        .news-item {
-            background: var(--card);
+        .section-title .icon { font-size: 1.5rem; }
+        .news-grid { display: grid; gap: 20px; }
+        .news-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 24px;
             border: 1px solid var(--border);
-            border-radius: 10px;
-            padding: 16px 18px;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+        .news-card:hover {
+            transform: translateY(-2px);
+            border-color: var(--highlight);
+        }
+        .news-card h3 {
+            font-size: 1.1rem;
             margin-bottom: 12px;
-            transition: transform 0.15s;
-        }
-        .news-item:hover { transform: translateX(4px); border-color: var(--accent); }
-        .news-item .headline {
-            font-size: 1rem;
-            font-weight: 500;
-            margin-bottom: 6px;
             color: var(--text);
+            line-height: 1.5;
         }
-        .news-item .summary {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            margin-bottom: 8px;
-        }
-        .news-item .source {
-            font-size: 0.78rem;
-            color: var(--text-muted);
+        .news-card .meta {
             display: flex;
-            gap: 12px;
             flex-wrap: wrap;
-        }
-        .news-item .source a {
-            color: var(--accent);
-            text-decoration: none;
-        }
-        .news-item .source a:hover { text-decoration: underline; }
-        .news-item .tag {
-            display: inline-block;
-            font-size: 0.7rem;
-            padding: 2px 8px;
-            border-radius: 4px;
-            background: var(--bg);
+            gap: 12px;
+            font-size: 0.8rem;
             color: var(--text-muted);
+            margin-bottom: 12px;
+        }
+        .news-card .meta span {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .news-card .source {
+            color: var(--highlight);
+            font-weight: 500;
+        }
+        .news-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+        .news-card a {
+            color: var(--highlight);
+            text-decoration: none;
+            word-break: break-all;
+        }
+        .news-card a:hover { text-decoration: underline; }
+        .tag {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            background: rgba(233, 69, 96, 0.15);
+            color: var(--highlight);
+            margin-right: 6px;
+        }
+        .summary-box {
+            background: linear-gradient(135deg, var(--accent) 0%, var(--secondary) 100%);
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 30px;
+            border: 1px solid var(--border);
+        }
+        .summary-box h3 { font-size: 1.2rem; margin-bottom: 15px; color: var(--highlight); }
+        .summary-box ul { list-style: none; }
+        .summary-box li {
+            padding: 8px 0;
+            padding-left: 20px;
+            position: relative;
+            color: var(--text-muted);
+        }
+        .summary-box li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--highlight);
         }
         footer {
             text-align: center;
-            padding: 24px;
-            border-top: 1px solid var(--border);
+            padding: 40px 0;
             color: var(--text-muted);
             font-size: 0.85rem;
         }
-        @media (max-width: 600px) {
-            header h1 { font-size: 1.5rem; }
-            .news-item { padding: 14px; }
+        footer a { color: var(--highlight); }
+        @media (max-width: 768px) {
+            header h1 { font-size: 1.8rem; }
+            .nav-tabs { flex-wrap: wrap; gap: 8px; }
+            .nav-tab { padding: 8px 16px; font-size: 0.85rem; }
+            .section-title { font-size: 1.4rem; }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
+    <header>
+        <div class="container">
             <h1>🌍 全球资讯简报</h1>
-            <div class="meta">📅 2026年8月24日（周一）07:15 SGT &nbsp;|&nbsp; 🕐 2026-08-23 23:15 UTC</div>
-            <div class="badge">📰 共 24 条精选资讯</div>
-        </header>
+            <p class="subtitle">Daily Global Briefing</p>
+            <div class="datetime">📅 2026年8月25日 星期二 | SGT 07:15 | UTC 23:15 (8月24日)</div>
+        </div>
+    </header>
 
-        <!-- ===== 航运 ===== -->
-        <section class="section">
-            <div class="section-title shipping">🚢 航运物流</div>
+    <nav class="nav-tabs">
+        <a href="#shipping" class="nav-tab">🚢 航运</a>
+        <a href="#politics" class="nav-tab">🌐 时政</a>
+        <a href="#finance" class="nav-tab">💰 财经</a>
+        <a href="#ai" class="nav-tab">🤖 AI & 机器人</a>
+    </nav>
 
-            <div class="news-item">
-                <div class="headline">韩国首艘集装箱货轮经北极航线驶往欧洲</div>
-                <div class="summary">集装箱船"Panstar Acro"于8月22日从釜山新港启航，经北极航线前往欧洲，测试该航线的商业可行性。这是继中国之后，韩国首次尝试利用北极航线，因中东航运持续受阻而备受关注。</div>
-                <div class="source">
-                    <span>来源：<a href="https://english.aawsat.com/business/5309774-south-korea-send-first-container-ship-through-arctic-route" target="_blank">Asharq Al-Awsat</a></span>
-                    <span>时间：2026-08-22</span>
-                    <span class="tag">北极航线</span>
-                </div>
+    <main class="container">
+        <!-- 航运板块 -->
+        <section id="shipping" class="section">
+            <h2 class="section-title"><span class="icon">🚢</span> 航运物流</h2>
+            
+            <div class="summary-box">
+                <h3>📌 板块要点</h3>
+                <ul>
+                    <li>霍尔木兹海峡局势持续紧张，商船遇袭事件频发，航运安全风险上升</li>
+                    <li>Drewry世界集装箱指数上涨4%至$4,526/40ft，跨太平洋航线费率走高</li>
+                    <li>中国港口吞吐量持续破纪录，亚洲/非洲集装箱需求激增22.6%</li>
+                    <li>全球贸易量预计2026年增长2.5%-3.5%，但新船运力过剩压力仍存</li>
+                </ul>
             </div>
 
-            <div class="news-item">
-                <div class="headline">一艘货船支付400万美元跳过巴拿马运河排队</div>
-                <div class="summary">受厄尔尼诺现象导致的干旱影响，巴拿马运河通行能力受限。8月10日，一艘大型集装箱船支付了高达400万美元的费用以快速通行，创下 Canal 插队费纪录，凸显全球航运瓶颈加剧。</div>
-                <div class="source">
-                    <span>来源：<a href="https://www.cnn.com/2026/08/21/climate/el-nino-panama-canal-drought-price-increase-consumers" target="_blank">CNN</a></span>
-                    <span>时间：2026-08-21</span>
-                    <span class="tag">巴拿马运河</span>
-                </div>
-            </div>
+            <div class="news-grid">
+                <article class="news-card">
+                    <h3>🔴 霍尔木兹海峡商船再遇袭，美伊停火期满局势升温</h3>
+                    <div class="meta">
+                        <span class="source">📰 联合早报 / 大纪元</span>
+                        <span>🕐 2026-08-18</span>
+                        <span>🔗 <a href="https://www.zaobao.com.sg/news/world/story20260808-9489821">原文链接</a></span>
+                    </div>
+                    <p>美伊60天临时停火期满之际，霍尔木兹海峡局势再度升温。8月18日一艘货船在穿越海峡时遭不明发射物击中，轮机舱受损并造成船员伤亡。布伦特原油价格连续上涨至每桶91美元以上，海峡航运量维持在极低水平。</p>
+                </article>
 
-            <div class="news-item">
-                <div class="headline">TransNamib与MSC合作提升纳米比亚铁路集装箱货运量</div>
-                <div class="summary">TransNamib与全球航运巨头地中海航运公司（MSC）建立战略合作伙伴关系，预计将显著增加沃尔维斯湾港与温得和克之间的铁路集装箱货运量，推动南部非洲物流基础设施升级。</div>
-                <div class="source">
-                    <span>来源：<a href="https://www.namibtimes.net/transnamib-and-msc-target-major-increase-in-container-cargo-by-rail/" target="_blank">Namib Times</a></span>
-                    <span>时间：2026-08-23</span>
-                    <span class="tag">非洲物流</span>
-                </div>
-            </div>
+                <article class="news-card">
+                    <h3>📈 Drewry世界集装箱指数上涨4%至$4,526/40ft</h3>
+                    <div class="meta">
+                        <span class="source">📰 Drewry</span>
+                        <span>🕐 2026-08-20</span>
+                        <span>🔗 <a href="https://www.drewry.co.uk/supply-chain-advisors/supply-chain-expertise/world-container-index-assessed-by-drewry">原文链接</a></span>
+                    </div>
+                    <p>8月20日Drewry世界集装箱指数（WCI）上涨4%至每40英尺集装箱4,526美元，主要受跨太平洋贸易航线费率上涨推动。亚欧航线费率也呈现稳中有升态势。</p>
+                </article>
 
-            <div class="news-item">
-                <div class="headline">航运股关注清单：Viking、ZIM、Frontline等七家公司</div>
-                <div class="summary">MarketBeat 股票筛选工具列出当前值得关注的七只航运股，包括Viking、Almonty Industries、Star Bulk Carriers、Frontline、ZIM Integrated Shipping Services、Golar LNG和Scorpio Tankers。</div>
-                <div class="source">
-                    <span>来源：<a href="https://www.themarketsdaily.com/2026/08/23/promising-shipping-stocks-to-follow-now-august-23rd.html" target="_blank">Markets Daily</a></span>
-                    <span>时间：2026-08-23</span>
-                    <span class="tag">航运股</span>
-                </div>
-            </div>
+                <article class="news-card">
+                    <h3>🌏 中国港口吞吐量破纪录，重构全球航运棋局</h3>
+                    <div class="meta">
+                        <span class="source">📰 21经济网</span>
+                        <span>🕐 2026-01-09</span>
+                        <span>🔗 <a href="https://www.21jingji.com/article/20260109/herald/51d2300304cb515ed2e5628c24e8dac7.html">原文链接</a></span>
+                    </div>
+                    <p>据Sea-Intelligence数据，2019年至2025年间亚洲/非洲集装箱需求激增22.6%，几乎是全球其他地区增长水平的三倍。RCEP生效第四年，区域一体化持续推动航运需求增长。青岛港集装箱吞吐量达3,420万TEU，同比增长6.3%。</p>
+                </article>
 
-            <div class="news-item">
-                <div class="headline">广州至图瓦卢国际物流攻略更新（2026版）</div>
-                <div class="summary">图瓦卢海关对滚装船入境车辆查验率较低，平均2天即可放行；集装箱货物需开箱查验，文件不符容易滞留3-5天。文件准备齐全比砍价更重要。</div>
-                <div class="source">
-                    <span>来源：<a href="https://www.9656556.com/wuliu/3390.html" target="_blank">鑫汉物流</a></span>
-                    <span>时间：2026-08-23</span>
-                    <span class="tag">太平洋航线</span>
-                </div>
-            </div>
+                <article class="news-card">
+                    <h3>⚠️ 全球航运2026：需求回落、费率高企、咽喉要道风险上升</h3>
+                    <div class="meta">
+                        <span class="source">📰 Investing.com</span>
+                        <span>🕐 2026-08-21</span>
+                        <span>🔗 <a href="https://www.investing.com/news/stock-market-news/global-shipping-in-2026-falling-demand-elevated-rates-and-rising-chokepoint-risks-93CH-4871313">原文链接</a></span>
+                    </div>
+                    <p>全球航运系统面临双重压力：前期抢运需求 surge 正在快速消退（8月美国集装箱量预计同比下降4.2%），但结构性高运费率仍将持续。BIMCO预计2026年全球贸易量增长约2.5%-3.5%，但新船运力涌入市场可能加剧供需失衡。</p>
+                </article>
 
-            <div class="news-item">
-                <div class="headline">中国大件家具海运至欧洲操作指南更新</div>
-                <div class="summary">针对中国至欧洲的大件货物运输，最新攻略涵盖集运、报关与门到门费用详解，强调实际价格需根据尺寸、重量、城市和具体船期重新核算。</div>
-                <div class="source">
-                    <span>来源：<a href="https://www.9656556.com/wuliu/15849.html" target="_blank">鑫汉物流</a></span>
-                    <span>时间：2026-08-23</span>
-                    <span class="tag">中欧海运</span>
-                </div>
-            </div>
-        </section>
+                <article class="news-card">
+                    <h3>🇦🇺 澳大利亚黑德兰港罢工风险，BHP修订薪资方案</h3>
+                    <div class="meta">
+                        <span class="source">📰 琴路捷Cello Square</span>
+                        <span>🕐 2026-08-07</span>
+                        <span>🔗 <a href="https://www.cellosquare.cn/resource/market/86.html">原文链接</a></span>
+                    </div>
+                    <p>BHP黑德兰港工人定于8月8-9日举行24小时装船中断及全面罢工，预计影响16艘铁矿石船货。BHP将于8月18日提交修订版薪资方案，若被拒绝，8-9月旺季可能爆发进一步罢工行动。建议大宗商品贸易商提前协调装港窗口期。</p>
+                </article>
 
-        <!-- ===== 时政 ===== -->
-        <section class="section">
-            <div class="section-title politics">🌐 国际时政</div>
-
-            <div class="news-item">
-                <div class="headline">欧洲领导人齐聚基辅重申对乌克兰支持</div>
-                <div class="summary">8月23日，欧洲多国领导人齐聚基辅，在俄罗斯持续攻击和乌克兰扩大远程打击的背景下，重申对乌克兰的支持。乌克兰军队近期加强了对俄罗斯后勤和工业基础设施的打击。</div>
-                <div class="source">
-                    <span>来源：<a href="https://www.ir-ia.com/news/european-leaders-gather-in-kyiv-to-reaffirm-support-as-ukraine-faces-renewed-russian-attacks/" target="_blank">IRIA News</a></span>
-                    <span>时间：2026-08-23</span>
-                    <span class="tag">俄乌冲突</span>
-                </div>
-            </div>
-
-            <div class="news-item">
-                <div class="headline">美国宣布将对伊朗实施"史上最严厉制裁"</div>
-                <div class="summary">美国表示将对伊朗实施史上最严厉的新制裁，影响全球贸易伙伴。霍尔木兹海峡的石油运输几乎停滞，伊朗维持其战略杠杆，中东紧张局势持续升级。</div>
-                <div class="source">
-                    <span>来源：<a href="https://www.reuters.com/world/middle-east/us-says-it-will-impose-toughest-sanctions-history-iran-2026-08-20/" target="_blank">Reuters</a></span>
-                    <span>时间：2026-08-20</span>
-                    <span class="tag">美伊关系</span>
-                </div>
-            </div>
-
-            <div class="news-item">
-                <div class="headline">沙特-法国建立战略伙伴关系推动全球外交稳定</div>
-                <div class="summary">沙特阿拉伯与法国签署协议建立战略伙伴关系委员会，为两国在政治、经济、安全和文化合作方面提供更结构化的框架，共同影响区域稳定和国际安全议题。</div>
-                <div class="source">
-                    <span>来源：<a href="https://weeklyblitz.net/2026/08/24/saudi-france-partnership-a-new-force-for-global-diplomacy-and-stability/" target="_blank">BLiTZ</a></span>
-                    <span>时间：2026-08-24</span>
-                    <span class="tag">中东外交</span>
-                </div>
-            </div>
-
-            <div class="news-item">
-                <div class="headline">朝鲜无视美韩军演缩减决定继续发射活动</div>
-                <div class="summary">朝鲜于8月20日进行疑似发射活动，此前一天美国决定缩减与韩国的联合军演，试图恢复外交对话。朝鲜此举表明其对美外交姿态的冷淡回应。</div>
-                <div class="source">
-                    <span>来源：<a href="https://www.npr.org/sections/world/" target="_blank">NPR</a></span>
-                    <span>时间：2026-08-20</span>
-                    <span class="tag">朝鲜半岛</span>
-                </div>
-            </div>
-
-            <div class="news-item">
-                <div class="headline">刚果（金）埃博拉疫情呈指数级蔓延</div>
-                <div class="summary">联合国报告刚果民主共和国埃博拉疫情呈指数级蔓延态势，国际刑事法院强烈反对美国新的制裁指令，哥伦比亚地震灾区120万人亟需援助。</div>
-                <div class="source">
-                    <span>来源：<a href="https://news.un.org/zh/story/2026/08/1142672" target="_blank">联合国新闻</a></span>
-                    <span>时间：2026-08-21</span>
-                    <span class="tag">全球卫生</span>
-                </div>
-            </div>
-
-            <div class="news-item">
-                <div class="headline">加沙地带94%居民需要住所援助</div>
-                <div class="summary">巴勒斯坦人在加沙地带Deir al-Balah的垃圾堆中搜寻可燃材料作为烹饪燃料，因烹饪用燃气严重短缺。联合国数据显示加沙94%的居民需要住所援助。</div>
-                <div class="source">
-                    <span>来源：<a href="https://apnews.com/world-news" target="_blank">AP News</a></span>
-                    <span>时间：2026-08-22</span>
-                    <span class="tag">巴以冲突</span>
-                </div>
+                <article class="news-card">
+                    <h3>📦 招商能源航运拟收购安通控股，整合国内集装箱运力</h3>
+                    <div class="meta">
+                        <span class="source">📰 Container News</span>
+                        <span>🕐 2026-08-20</span>
+                        <span>🔗 <a href="https://container-news.com/">原文链接</a></span>
+                    </div>
+                    <p>据DynaLiners报道，招商能源航运（CMES）正计划收购中国国内集装箱承运商安通控股。安通控股是国内重要的内贸集装箱运输企业，此次收购将进一步整合中国国内航运资源。</p>
+                </article>
             </div>
         </section>
 
-        <!-- ===== 财经 ===== -->
-        <section class="section">
-            <div class="section-title finance">💰 财经市场</div>
-
-            <div class="news-item">
-                <div class="headline">美股周五反弹，道指上涨517点</div>
-                <div class="summary">8月21日，美股在国债收益率飙升引发的剧烈抛售后反弹。道指收于53,277.01点（+0.98%），标普500收于7,674.37点（+0.43%），纳指收于26,180.46点（+0.43%）。</div>
-                <div class="source">
-                    <span>来源：<a href="https://www.cnbc.com/2026/08/20/stock-market-today-live-updates.html" target="_blank">CNBC</a></span>
-                    <span>时间：2026-08-21</span>
-                    <span class="tag">美股</span>
-                </div>
+        <!-- 时政板块 -->
+        <section id="politics" class="section">
+            <h2 class="section-title"><span class="icon">🌐</span> 国际时政</h2>
+            
+            <div class="summary-box">
+                <h3>📌 板块要点</h3>
+                <ul>
+                    <li>习近平同约旦国王阿卜杜拉二世举行会谈，深化中约战略伙伴关系</li>
+                    <li>美伊停火协议到期，霍尔木兹海峡局势再度紧张</li>
+                    <li>中美经贸磋商达成初步成果，双方就关税问题深入沟通</li>
+                    <li>朝鲜警告日本若军事扩张将遭毁灭性打击</li>
+                </ul>
             </div>
 
-            <div class="news-item">
-                <div class="headline">美加贸易谈判破裂，加拿大宣布9月起实施报复性关税</div>
-                <div class="summary">8月22日，美国与加拿大之间的贸易谈判宣告破裂。加拿大总理卡尼表示，报复性关税将于9月开始实施，北美贸易关系面临新一轮紧张。</div>
-                <div class="source">
-                    <span>来源：<a href="https://www.cnbc.com/" target="_blank">CNBC</a></span>
-                    <span>时间：2026-08-22</span>
-                    <span class="tag">贸易摩擦</span>
-                </div>
-            </div>
+            <div class="news-grid">
+                <article class="news-card">
+                    <h3>🤝 习近平同约旦国王阿卜杜拉二世举行会谈</h3>
+                    <div class="meta">
+                        <span class="source">📰 外交部官网</span>
+                        <span>🕐 2026-08-24</span>
+                        <span>🔗 <a href="https://www.mfa.gov.cn/zyxw/202608/t20260824_12009272.shtml">原文链接</a></span>
+                    </div>
+                    <p>8月24日下午，国家主席习近平在北京人民大会堂同来华进行国事访问的约旦国王阿卜杜拉二世举行会谈。习近平指出，中约建交以来始终相互尊重、平等相待、互利合作，双方要弘扬传统友好，深化互利合作，推动中约战略伙伴关系得到更大发展。</p>
+                </article>
 
-            <div class="news-item">
-                <div class="headline">8月市场回顾：地缘政治碎片仍嵌入市场</div>
-                <div class="summary">Investing.com月度市场简报指出，8月开局时伊朗冲突（现已淡出头条）导致系统性趋势跟踪基金（CTAs）在月前半段低配股票。债券市场因大规模AI债务销售、财政困境和通胀担忧而承压。</div>
-                <div class="source">
-                    <span>来源：<a href="https://www.investing.com/news/stock-market-news/monthly-market-brief-equities-bonds-crypto-and-commodities-in-august-2026-93CH-4872374" target="_blank">Investing.com</a></span>
-                    <span>时间：2026-08-23</span>
-                    <span class="tag">市场分析</span>
-                </div>
-            </div>
+                <article class="news-card">
+                    <h3>🇰🇵 金与正警告：日本若军事扩张将遭毁灭性打击</h3>
+                    <div class="meta">
+                        <span class="source">📰 联合早报</span>
+                        <span>🕐 2026-08-05</span>
+                        <span>🔗 <a href="https://zaobao.com.cn/world">原文链接</a></span>
+                    </div>
+                    <p>据朝中社报道，8月5日朝鲜劳动党中央委员会部长金与正发表谈话，警告日本若继续推进军事扩张政策将遭到"毁灭性打击"。此举被视为对日本政府近期增加防卫预算、强化日美同盟关系的回应。</p>
+                </article>
 
-            <div class="news-item">
-                <div class="headline">标普500本周下跌约1.5%，跌破7,700点</div>
-                <div class="summary">纽约证券交易所数据显示，股市在本周大部分时间内走低，周五反弹。标普500本周下跌约1.5%，跌破7,700点，但技术上未造成实质性损害。</div>
-                <div class="source">
-                    <span>来源：<a href="https://www.nyse.com/index" target="_blank">NYSE</a></span>
-                    <span>时间：2026-08-21</span>
-                    <span class="tag">美股周报</span>
-                </div>
-            </div>
+                <article class="news-card">
+                    <h3>🇺🇸🇨🇳 中美经贸磋商达成初步成果，双方就关税问题深入沟通</h3>
+                    <div class="meta">
+                        <span class="source">📰 商务部</span>
+                        <span>🕐 2026-05-21</span>
+                        <span>🔗 <a href="https://www.mofcom.gov.cn/syxwfb/art/2026/art_3e89743a8d5d4a95bccdda685830afbd.html">原文链接</a></span>
+                    </div>
+                    <p>中美经贸团队围绕关税问题深入沟通，双方原则同意在贸易理事会项下讨论同等规模产品对等降税框架安排，规模各为300亿美元或更多。双方经贸团队将保持密切沟通，商定具体安排并尽快推动实施。</p>
+                </article>
 
-            <div class="news-item">
-                <div class="headline">高盛：中国经济增长4%，宽松预期重燃</div>
-                <div class="summary">高盛分析师表示，随着中国经济增长达到4%，市场对中国进一步宽松政策的预期重新升温。美联储卡什卡利表示国债市场仍在"正常运转"。</div>
-                <div class="source">
-                    <span>来源：<a href="https://www.bloomberg.com/" target="_blank">Bloomberg</a></span>
-                    <span>时间：2026-08-21</span>
-                    <span class="tag">中国经济</span>
-                </div>
-            </div>
+                <article class="news-card">
+                    <h3>🌍 大马士革坚持任何安排必须尊重叙利亚主权</h3>
+                    <div class="meta">
+                        <span class="source">📰 10 Things Global News</span>
+                        <span>🕐 2026-08-24</span>
+                        <span>🔗 <a href="https://www.10things.news/p/10-things-global-news-24th-august">原文链接</a></span>
+                    </div>
+                    <p>叙利亚政府强调任何地区安排必须尊重叙利亚主权、领土完整及其自主决定联盟的权利，同时坚持戈兰高地仍为叙利亚领土。这一表态涉及叙利亚与以色列及地区各方的复杂关系。</p>
+                </article>
 
-            <div class="news-item">
-                <div class="headline">孙正义蝉联日本"股长"榜首，AI战略奏效</div>
-                <div class="summary">日经新闻调查显示，软银集团（SBG）会长兼社长孙正义持有的自社股市值连续位居日本上市企业高管首位，AI战略奏效推动股价上扬。</div>
-                <div class="source">
-                    <span>来源：<a href="https://www.nikkei.com/" target="_blank">日本经济新闻</a></span>
-                    <span>时间：2026-08-23</span>
-                    <span class="tag">日本股市</span>
-                </div>
-            </div>
-        </section>
+                <article class="news-card">
+                    <h3>🇮🇱🇦🇿 以色列-阿塞拜疆关系稳健但基本非正式</h3>
+                    <div class="meta">
+                        <span class="source">📰 Geopolitical Monitor</span>
+                        <span>🕐 2026-08-24</span>
+                        <span>🔗 <a href="https://www.geopoliticalmonitor.com/">原文链接</a></span>
+                    </div>
+                    <p>分析指出以色列与阿塞拜疆的关系虽然稳健，但很大程度上保持非正式状态。在伊朗战争背景下，两国在能源安全、军事合作等领域的互动备受关注。</p>
+                </article>
 
-        <!-- ===== AI & 机器人 ===== -->
-        <section class="section">
-            <div class="section-title ai">🤖 AI & 机器人</div>
-
-            <div class="news-item">
-                <div class="headline">2026世界机器人大会在北京开幕，373家企业参展</div>
-                <div class="summary">8月19-23日，2026世界机器人大会（WRC）在北京亦庄举办，以"人机共生，产需共融"为主题。373家国内外企业带来3000余件创新产品，311款新品集中亮相，机器人产业正从"展示平台"加速走向"交易平台"。</div>
-                <div class="source">
-                    <span>来源：<a href="https://finance.sina.cn/stock/jdts/2026-08-22/detail-inipeyiq3039072.d.html" target="_blank">新浪财经/华夏时报</a></span>
-                    <span>时间：2026-08-22</span>
-                    <span class="tag">WRC2026</span>
-                </div>
-            </div>
-
-            <div class="news-item">
-                <div class="headline">全球首场人机网球赛开战，国产机器人对战郑洁</div>
-                <div class="summary">世界人形机器人运动会上，国产人形机器人同网球名将郑洁展开全球首场人机对抗，展示极限救球与跌倒自恢复能力，具身智能大模型实现战术思考与肢体执行融合。</div>
-                <div class="source">
-                    <span>来源：<a href="https://vibex.iflow.cn/t/topic/6627" target="_blank">心流AI交流社区</a></span>
-                    <span>时间：2026-08-23</span>
-                    <span class="tag">人形机器人</span>
-                </div>
-            </div>
-
-            <div class="news-item">
-                <div class="headline">科沃斯发布全栈开源具身智能机器人"八界"</div>
-                <div class="summary">科沃斯在WRC2026上携全栈开源具身智能机器人"八界"亮相智造馆，以全栈开放、层层可编程的开源理念，展示具身智能普惠生态新范式。集团董事长钱东奇提出"机器人定义权正在从厂商交还给用户"。</div>
-                <div class="source">
-                    <span>来源：<a href="https://k.sina.com.cn/article_7857201856_1d45362c001908kio0.html" target="_blank">新浪科技/雷科技</a></span>
-                    <span>时间：2026-08-23</span>
-                    <span class="tag">开源机器人</span>
-                </div>
-            </div>
-
-            <div class="news-item">
-                <div class="headline">宇树科技展示多类型机器人协同与全自主AI集群表演</div>
-                <div class="summary">宇树科技在WRC2026上展示了群舞、格斗及遥操作等多形式演示，通过多类型机器人协同、全自主AI集群表演，直观呈现行业演进：机器人正从单体智能迈向群体智能。</div>
-                <div class="source">
-                    <span>来源：<a href="http://finance.people.com.cn/n1/2026/0823/c1004-40784415.html" target="_blank">人民网</a></span>
-                    <span>时间：2026-08-23</span>
-                    <span class="tag">群体智能</span>
-                </div>
-            </div>
-
-            <div class="news-item">
-                <div class="headline">8月成AI史上最快发布月：11+模型在20天内发布</div>
-                <div class="summary">包括OX Alpha神秘模型、Gemini 3.7 Flash、Muse Code开源权重、Seed 2.1 Turbo和Claude Opus 5重大更新在内的11个以上AI模型在20天内发布，创下AI史上最快发布纪录。</div>
-                <div class="source">
-                    <span>来源：<a href="https://local-ai-zone.github.io/blog/ai-updates-august-2026.html" target="_blank">Local AI Zone</a></span>
-                    <span>时间：2026-08-22</span>
-                    <span class="tag">AI模型</span>
-                </div>
-            </div>
-
-            <div class="news-item">
-                <div class="headline">阿里支持的机器人公司寻求30亿美元估值融资</div>
-                <div class="summary">据Bloomberg报道，阿里巴巴支持的机器人公司正在寻求新一轮融资，目标估值达30亿美元，显示资本市场对机器人赛道的持续看好。</div>
-                <div class="source">
-                    <span>来源：<a href="https://www.bloomberg.com/ai" target="_blank">Bloomberg</a></span>
-                    <span>时间：2026-08-21</span>
-                    <span class="tag">融资</span>
-                </div>
+                <article class="news-card">
+                    <h3>🇺🇸 白宫报告：中国通过40多国转运货物规避关税</h3>
+                    <div class="meta">
+                        <span class="source">📰 美国之音</span>
+                        <span>🕐 2026-08-13</span>
+                        <span>🔗 <a href="https://www.voachinese.com/z/5412">原文链接</a></span>
+                    </div>
+                    <p>白宫8月13日公布新报告指出，各国通过第三国转口贸易躲避美国关税，特别提到中国通过向40多个国家转运货物来逃避特朗普加征的关税。美国司法部同日宣布对中国航空工业集团（AVIC）相关案件采取行动。</p>
+                </article>
             </div>
         </section>
 
-        <footer>
-            <p>📡 全球资讯简报 | 自动生成于 2026-08-24 07:15 SGT</p>
-            <p>数据来源：Reuters, CNBC, Bloomberg, CNN, BBC, AP News, 联合国新闻, 人民网, 新浪财经 等</p>
-            <p style="margin-top:8px; font-size:0.75rem;">⚠️ 本简报仅供信息参考，不构成任何投资或决策建议</p>
-        </footer>
-    </div>
+        <!-- 财经板块 -->
+        <section id="finance" class="section">
+            <h2 class="section-title"><span class="icon">💰</span> 财经金融</h2>
+            
+            <div class="summary-box">
+                <h3>📌 板块要点</h3>
+                <ul>
+                    <li>全球股市多数上涨，美股道指涨0.98%，但A股、港股下跌</li>
+                    <li>阿里巴巴800亿港元新股配售完成，获近3倍超额认购</li>
+                    <li>英伟达AI芯片因内存成本飙升涨价超15%</li>
+                    <li>美联储主席鲍威尔将在杰克逊霍尔年会上发表讲话，市场关注加息信号</li>
+                </ul>
+            </div>
+
+            <div class="news-grid">
+                <article class="news-card">
+                    <h3>📊 8月24日全球股市行情：多数上涨，A股港股承压</h3>
+                    <div class="meta">
+                        <span class="source">📰 金投网</span>
+                        <span>🕐 2026-08-24</span>
+                        <span>🔗 <a href="https://stock.cngold.org/c/2026-08-24/c10711975.html">原文链接</a></span>
+                    </div>
+                    <p>8月24日全球股市指数多数上涨：上证指数下跌0.59%报3882.01点；恒生指数下跌1.89%收报25517.33点；日经225下跌0.74%；英国富时100上涨0.64%；德国DAX30上涨1.16%；道琼斯上涨0.98%；标普500上涨0.43%。A股光模块三巨头"易中天"集体暴跌超7%。</p>
+                </article>
+
+                <article class="news-card">
+                    <h3>💹 阿里巴巴800亿港元配售定价112.70港元，获近3倍超额认购</h3>
+                    <div class="meta">
+                        <span class="source">📰 新浪财经</span>
+                        <span>🕐 2026-08-24</span>
+                        <span>🔗 <a href="https://finance.sina.com.cn/stock/estate/integration/2026-08-24/doc-inipkrka3037147.shtml">原文链接</a></span>
+                    </div>
+                    <p>阿里巴巴800亿港元新股配售定价落定，每股112.70港元折价8.37%，获长线投资者近3倍超额认购。机构分析称摊薄仅3.7%可控。配售资金将投向AI基础设施建设。但阿里巴巴港股8月24日低开逾8%，受配股及Burry清仓双重施压。</p>
+                </article>
+
+                <article class="news-card">
+                    <h3>🖥️ 英伟达AI芯片被曝涨价15%，内存成本飙升为主因</h3>
+                    <div class="meta">
+                        <span class="source">📰 华盛通 / 新浪财经</span>
+                        <span>🕐 2026-08-24</span>
+                        <span>🔗 <a href="https://www.hstong.com/news/detail/26082407470675662">原文链接</a></span>
+                    </div>
+                    <p>多家"英伟达最大客户"已被告知，由于内存芯片成本飙升，搭载英伟达人工智能芯片的服务器价格将上涨超15%。涨价适用于2027年初出货的系统，包括搭载Vera Rubin和Grace Blackwell芯片组合的服务器。</p>
+                </article>
+
+                <article class="news-card">
+                    <h3>🏦 杰克逊霍尔全球央行年会开幕，鲍威尔讲话成焦点</h3>
+                    <div class="meta">
+                        <span class="source">📰 新浪财经 / 金融界</span>
+                        <span>🕐 2026-08-22</span>
+                        <span>🔗 <a href="https://finance.sina.com.cn/stock/hkstock/hkstocknews/2026-08-22/doc-inipeccu0838116.shtml">原文链接</a></span>
+                    </div>
+                    <p>8月22日，杰克逊霍尔全球央行年会在怀俄明州开幕。美联储主席鲍威尔将于8月28日发表讲话，这是其任期内的最后一次杰克逊霍尔演讲。市场关注美联储9月加息预期——期货市场预估9月加息25个基点概率约30%。7月PCE物价指数将于8月26日公布。</p>
+                </article>
+
+                <article class="news-card">
+                    <h3>📈 A股半年报：1716家公司披露，产业新动能成长壮大</h3>
+                    <div class="meta">
+                        <span class="source">📰 中国证券报 / 新浪财经</span>
+                        <span>🕐 2026-08-24</span>
+                        <span>🔗 <a href="https://finance.sina.com.cn/stock/y/2026-08-24/doc-inipkeue6372144.shtml">原文链接</a></span>
+                    </div>
+                    <p>截至8月23日，已有1716家上市公司公布2026年半年报。从利润增速、海外业务、研发投入等角度观察，中国经济向新向优态势明显，产业新动能正成长壮大。多家A股发布业绩公告净利最高增超2100%。</p>
+                </article>
+
+                <article class="news-card">
+                    <h3>🚀 Palantir Q2营收同比增93%，成最抗跌AI概念股</h3>
+                    <div class="meta">
+                        <span class="source">📰 TradingKey / 新浪财经</span>
+                        <span>🕐 2026-08-04</span>
+                        <span>🔗 <a href="https://www.tradingkey.com/zh-hans/analysis/stocks/us-stock/262123910-is-palantir-stock-buy-now-deep-dive-aip-valuation-risks-price-targets-tradingkey">原文链接</a></span>
+                    </div>
+                    <p>Palantir Q2营收同比增长93%至19.35亿美元，美国商业收入增长149%，政府收入增长90%。强劲财报推动股价8月4日上涨约29%，随后一周累计涨幅接近40%。公司计划于9月23日被纳入标普500指数。</p>
+                </article>
+
+                <article class="news-card">
+                    <h3>📉 美债收益率波动，2年期国债收益率降至4.15%</h3>
+                    <div class="meta">
+                        <span class="source">📰 CNBC</span>
+                        <span>🕐 2026-08-16</span>
+                        <span>🔗 <a href="https://www.cnbc.com/2026/08/16/stock-market-today-live-updates-.html">原文链接</a></span>
+                    </div>
+                    <p>2年期美国国债收益率下跌超1个基点至4.1542%，30年期国债收益率对地缘政治敏感。 Treasury Department可能使用其1万亿美元普通账户为债券回购计划提供资金，这一消息帮助美股缩减跌幅。</p>
+                </article>
+
+                <article class="news-card">
+                    <h3>🇨🇳 人民日报：上半年经济增长4.7%是富有后劲的增速</h3>
+                    <div class="meta">
+                        <span class="source">📰 人民日报 / 网易</span>
+                        <span>🕐 2026-08-24</span>
+                        <span>🔗 <a href="https://www.163.com/dy/article/L535G0HG05568W0A.html">原文链接</a></span>
+                    </div>
+                    <p>人民日报刊发钟才文署名文章指出，上半年我国经济增长4.7%是富有后劲的增速。随着研发投入持续加码，原始创新能力日益增强，科技创新与产业创新深度融合，将持续支撑经济高质量发展。全国统一大市场建设向纵深推进，重点整治地方违规招商引资、市场准入壁垒等突出问题。</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- AI & 机器人板块 -->
+        <section id="ai" class="section">
+            <h2 class="section-title"><span class="icon">🤖</span> AI & 机器人</h2>
+            
+            <div class="summary-box">
+                <h3>📌 板块要点</h3>
+                <ul>
+                    <li>2026世界机器人大会在北京闭幕，首发新品超150件</li>
+                    <li>中国电子学会世界模型专家委员会成立，王坚院士任主任委员</li>
+                    <li>Anthropic Q2营收首超OpenAI并实现盈利，年化营收突破650亿美元</li>
+                    <li>鹿明机器人发布具身智能进化引擎Lumos NexCore</li>
+                </ul>
+            </div>
+
+            <div class="news-grid">
+                <article class="news-card">
+                    <h3>🎉 2026世界机器人大会在北京闭幕，首发新品超150件</h3>
+                    <div class="meta">
+                        <span class="source">📰 中新网</span>
+                        <span>🕐 2026-08-23</span>
+                        <span>🔗 <a href="https://www.chinanews.com.cn/cj/2026/08-24/10683046.shtml">原文链接</a></span>
+                    </div>
+                    <p>2026世界机器人大会于8月19-23日在北京举办，以"人机共生，产需共融"为主题。大会设置7场主论坛和71场同期活动，汇聚1000余位国内外专家，发布44项新技术新方案。大会首发新品超150件，落地场景日益丰富，涵盖工业、农业、医疗、应急等多个领域。</p>
+                </article>
+
+                <article class="news-card">
+                    <h3>🧠 中国电子学会世界模型专家委员会成立，王坚院士任主任</h3>
+                    <div class="meta">
+                        <span class="source">📰 新华网 / 新华社</span>
+                        <span>🕐 2026-08-21</span>
+                        <span>🔗 <a href="http://www.news.cn/digital/20260824/354e43d8503541c79b2e69e2b3d3f851/c.html">原文链接</a></span>
+                    </div>
+                    <p>8月21日，在2026世界机器人大会主论坛，中国电子学会世界模型专家委员会正式成立，王坚院士受聘担任主任委员，并主持"世界模型到服务人类的现实距离"主题圆桌。八位来自产业一线的专委会委员共同剖析技术路线、产业痛点与落地路径。世界模型被视为机器人"看懂世界"和"改变世界"的关键技术底座。</p>
+                </article>
+
+                <article class="news-card">
+                    <h3>🏆 AI竞赛进入"ROI决胜期"：Anthropic营收首超OpenAI并实现盈利</h3>
+                    <div class="meta">
+                        <span class="source">📰 新浪财经 / 网易</span>
+                        <span>🕐 2026-08-19</span>
+                        <span>🔗 <a href="https://finance.sina.com.cn/roll/2026-08-19/doc-ininvshr7115146.shtml">原文链接</a></span>
+                    </div>
+                    <p>Anthropic Q2营收达116亿美元，首次超过OpenAI，调整后营业利润约5.59亿美元，运营利润率约5%。年化营收运行率已突破650亿美元。相比之下，OpenAI收入增长18%但亏损扩大。Anthropic预计10月冲击史上最大IPO。</p>
+                </article>
+
+                <article class="news-card">
+                    <h3>🦾 鹿明机器人发布具身智能进化引擎Lumos NexCore</h3>
+                    <div class="meta">
+                        <span class="source">📰 新浪科技</span>
+                        <span>🕐 2026-08-19</span>
+                        <span>🔗 <a href="https://finance.sina.com.cn/tech/roll/2026-08-19/doc-ininvfss8421886.shtml">原文链接</a></span>
+                    </div>
+                    <p>8月19日，鹿明机器人在2026世界机器人大会开幕当天发布具身智能进化引擎Lumos NexCore，定位为产业"技能基础设施"。平台整合数据资产、模型训练、评测验证、技能封装与设备运营，能让机器人能力像软件一样快速迭代升级。公司核心团队来自清华、上海交大、港中文等顶尖高校。</p>
+                </article>
+
+                <article class="news-card">
+                    <h3>🤖 北京人形机器人发布"慧思开物"平台，实现"一脑多机"</h3>
+                    <div class="meta">
+                        <span class="source">📰 中新网</span>
+                        <span>🕐 2026-08-20</span>
+                        <span>🔗 <a href="https://www.chinanews.com.cn/cj/2026/08-20/10681138.shtml">原文链接</a></span>
+                    </div>
+                    <p>北京人形机器人在2026世界机器人大会以"具身觉醒 慧生万象"为主题，发布自研"慧思开物"通用具身智能平台。该平台打破传统机器人"单一场景、专项开发"模式，实现"一脑多能、一脑多机"，由AI大模型驱动，可适配多种机器人本体完成不同任务。</p>
+                </article>
+
+                <article class="news-card">
+                    <h3>🔬 北京通研院发布"通小宇"通用智能机器人和"通像"表情机器人</h3>
+                    <div class="meta">
+                        <span class="source">📰 中新网</span>
+                        <span>🕐 2026-08-23</span>
+                        <span>🔗 <a href="https://www.chinanews.com.cn/cj/2026/08-23/10682625.shtml">原文链接</a></span>
+                    </div>
+                    <p>北京通用人工智能研究院在2026世界机器人大会期间发布两大具身实体成果——通用智能机器人"通小宇"和智能表情机器人"通像"。基于HiPHI训练的控制策略已成功部署在真实人形机器人上，实现跑步、坐下、爬行、搬运箱子和拖拉行李箱等动作。</p>
+                </article>
+
+                <article class="news-card">
+                    <h3>🔒 OpenAI与Anthropic展开企业隐私保护竞争</h3>
+                    <div class="meta">
+                        <span class="source">📰 TechCrunch</span>
+                        <span>🕐 2026-08-19</span>
+                        <span>🔗 <a href="https://techcrunch.com/2026/08/19/openai-seeks-to-one-up-anthropic-with-new-customer-privacy-protections/">原文链接</a></span>
+                    </div>
+                    <p>OpenAI与Anthropic正就企业客户数据隐私保护展开竞争，双方都在推出更严格的数据保护措施以争取企业客户。这场竞争反映了AI商业化进入深水区后，数据安全和隐私合规成为企业采购AI服务的关键考量因素。</p>
+                </article>
+
+                <article class="news-card">
+                    <h3>🌐 英伟达牵头成立开放AI产业联盟，OpenAI/Google缺席</h3>
+                    <div class="meta">
+                        <span class="source">📰 TechCrunch</span>
+                        <span>🕐 2026-08-04</span>
+                        <span>🔗 <a href="https://techcrunch.com/2026/08/04/nvidia-doesnt-mess-around-a-week-after-open-ai-industry-group-formed-its-already-showing-progress/">原文链接</a></span>
+                    </div>
+                    <p>英伟达牵头成立的开放AI产业联盟已吸纳Adobe、BlackRock、Cisco、Intel、Microsoft、Visa等巨头加入，但Anthropic、OpenAI和Google等AI原生公司缺席。该联盟旨在推动AI技术的开放标准和互操作性。</p>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>📰 全球资讯简报 | Daily Global Briefing</p>
+            <p>生成时间：2026年8月25日 07:15 SGT | 数据来源：公开网络资讯</p>
+            <p style="margin-top: 10px;">
+                <a href="https://github.com/mast0506/daily-report-from-ai" target="_blank">🔗 GitHub 仓库</a> |
+                <span>自动更新</span>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // 平滑滚动
+        document.querySelectorAll('.nav-tab').forEach(tab => {
+            tab.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // 高亮当前板块
+        const sections = document.querySelectorAll('.section');
+        const tabs = document.querySelectorAll('.nav-tab');
+        
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (scrollY >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+            tabs.forEach(tab => {
+                tab.classList.remove('active');
+                if (tab.getAttribute('href') === '#' + current) {
+                    tab.classList.add('active');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
