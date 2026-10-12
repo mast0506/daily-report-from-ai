@@ -1,204 +1,429 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>全球资讯简报 · 2026-10-12</title>
-<style>
-  :root{
-    --bg:#0b1220; --card:#111a2e; --card2:#16213a; --text:#e8ecf5; --muted:#94a3c0;
-    --accent:#5aa9ff; --accent2:#7ee0c2; --warn:#ffb454; --danger:#ff6b6b;
-    --border:#22304f;
-  }
-  *{box-sizing:border-box}
-  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"PingFang SC","Microsoft YaHei",sans-serif;background:linear-gradient(180deg,#0b1220 0%,#0d1526 100%);color:var(--text);line-height:1.65;}
-  .wrap{max-width:1080px;margin:0 auto;padding:32px 20px 64px;}
-  header.hero{padding:28px;border:1px solid var(--border);border-radius:18px;background:radial-gradient(1200px 400px at 20% 0%, rgba(90,169,255,.25), transparent 60%),radial-gradient(800px 300px at 80% 0%, rgba(126,224,194,.18), transparent 55%),var(--card);}
-  h1{margin:0 0 6px;font-size:28px;letter-spacing:.5px}
-  .sub{color:var(--muted);font-size:14px}
-  .meta{margin-top:14px;display:flex;flex-wrap:wrap;gap:10px}
-  .pill{display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border-radius:999px;border:1px solid var(--border);background:rgba(255,255,255,.03);font-size:12px;color:var(--muted)}
-  .grid{display:grid;grid-template-columns:1fr;gap:18px;margin-top:18px}
-  @media(min-width:900px){.grid{grid-template-columns:1fr 1fr}}
-  section{border:1px solid var(--border);border-radius:16px;background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0)), var(--card);overflow:hidden}
-  .sec-head{display:flex;align-items:center;justify-content:space-between;padding:16px 18px;border-bottom:1px solid var(--border);background:rgba(255,255,255,.02)}
-  .sec-title{font-size:16px;font-weight:700;display:flex;align-items:center;gap:10px}
-  .dot{width:10px;height:10px;border-radius:50%;display:inline-block}
-  .dot.shipping{background:var(--accent)}
-  .dot.politics{background:var(--danger)}
-  .dot.finance{background:var(--warn)}
-  .dot.ai{background:var(--accent2)}
-  .count{font-size:12px;color:var(--muted)}
-  ul.news{list-style:none;margin:0;padding:10px 12px 14px}
-  li.item{padding:12px 10px;border-bottom:1px dashed rgba(255,255,255,.06)}
-  li.item:last-child{border-bottom:none}
-  .title{font-size:14px;font-weight:600}
-  .title a{color:var(--text);text-decoration:none}
-  .title a:hover{color:var(--accent);text-decoration:underline}
-  .meta-line{margin-top:6px;font-size:12px;color:var(--muted);display:flex;flex-wrap:wrap;gap:8px}
-  .tag{padding:2px 8px;border-radius:999px;border:1px solid var(--border);background:rgba(255,255,255,.03)}
-  .src{color:var(--accent2)}
-  .time{color:var(--muted)}
-  footer{margin-top:18px;color:var(--muted);font-size:12px;text-align:center}
-  .note{margin-top:10px;font-size:12px;color:var(--muted)}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>全球资讯简报 - 2026年10月13日</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        .header h1 { font-size: 2.5em; margin-bottom: 10px; font-weight: 700; }
+        .header .date { font-size: 1.2em; opacity: 0.9; }
+        .header .time { font-size: 0.9em; opacity: 0.8; margin-top: 5px; }
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-bottom: 1px solid #e9ecef;
+        }
+        .stat-item { text-align: center; }
+        .stat-number { font-size: 2em; font-weight: bold; color: #667eea; }
+        .stat-label { font-size: 0.9em; color: #666; margin-top: 5px; }
+        .section {
+            padding: 30px 40px;
+            border-bottom: 1px solid #e9ecef;
+        }
+        .section:last-child { border-bottom: none; }
+        .section-title {
+            font-size: 1.5em;
+            color: #333;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .section-icon { font-size: 1.3em; }
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 20px;
+        }
+        .news-card {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 20px;
+            border-left: 4px solid #667eea;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .news-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .news-title {
+            font-size: 1.1em;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+        .news-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            font-size: 0.85em;
+            color: #666;
+        }
+        .news-source {
+            background: #667eea;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+        .news-time { color: #888; }
+        .news-link {
+            color: #667eea;
+            text-decoration: none;
+            font-size: 0.85em;
+            margin-top: 8px;
+            display: inline-block;
+        }
+        .news-link:hover { text-decoration: underline; }
+        .footer {
+            background: #f8f9fa;
+            padding: 30px;
+            text-align: center;
+            color: #666;
+            font-size: 0.9em;
+        }
+        .footer a { color: #667eea; text-decoration: none; }
+        .tag {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.75em;
+            font-weight: 600;
+            margin-left: 8px;
+        }
+        .tag-breaking { background: #ff4757; color: white; }
+        .tag-important { background: #ffa502; color: white; }
+        .tag-new { background: #2ed573; color: white; }
+        @media (max-width: 768px) {
+            .header h1 { font-size: 1.8em; }
+            .section { padding: 20px; }
+            .news-grid { grid-template-columns: 1fr; }
+            .stats { gap: 20px; }
+        }
+    </style>
 </head>
 <body>
-<div class="wrap">
-  <header class="hero">
-    <h1>🌐 全球资讯简报</h1>
-    <div class="sub">每日精选 · 航运 / 时政 / 财经 / AI & 机器人</div>
-    <div class="meta">
-      <span class="pill">📅 2026年10月12日 · 星期一</span>
-      <span class="pill">🕖 SGT 07:15</span>
-      <span class="pill">🌍 UTC 2026-10-11 23:15</span>
-      <span class="pill">📰 共 24 条</span>
+    <div class="container">
+        <div class="header">
+            <h1>🌍 全球资讯简报</h1>
+            <div class="date">2026年10月13日 星期二</div>
+            <div class="time">SGT 07:15 | UTC 23:15</div>
+        </div>
+
+        <div class="stats">
+            <div class="stat-item">
+                <div class="stat-number">24</div>
+                <div class="stat-label">总新闻数</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">4</div>
+                <div class="stat-label">资讯板块</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">12+</div>
+                <div class="stat-label">新闻来源</div>
+            </div>
+        </div>
+
+        <!-- 航运板块 -->
+        <div class="section">
+            <div class="section-title">
+                <span class="section-icon">🚢</span>
+                航运资讯
+            </div>
+            <div class="news-grid">
+                <div class="news-card">
+                    <div class="news-title">Matson在韩华费城船厂命名首艘Aloha级集装箱船 <span class="tag tag-new">NEW</span></div>
+                    <div class="news-meta">
+                        <span class="news-source">gCaptain</span>
+                        <span class="news-time">Oct 12, 2026</span>
+                    </div>
+                    <a href="https://gcaptain.com/matson-christens-first-of-three-new-aloha-class-containerships-at-hanwha-philly-shipyard/" class="news-link" target="_blank">阅读原文 →</a>
+                </div>
+                <div class="news-card">
+                    <div class="news-title">韩国集装箱船完成北极航线示范航行 <span class="tag tag-important">重要</span></div>
+                    <div class="news-meta">
+                        <span class="news-source">Maritime Executive</span>
+                        <span class="news-time">Oct 12, 2026 16:29</span>
+                    </div>
+                    <a href="https://maritime-executive.com/article/south-korean-containership-completes-demonstration-arctic-voyage" class="news-link" target="_blank">阅读原文 →</a>
+                </div>
+                <div class="news-card">
+                    <div class="news-title">MSC集装箱船定位并救援落水邮轮乘客（20小时后） <span class="tag tag-breaking">突发</span></div>
+                    <div class="news-meta">
+                        <span class="news-source">Maritime Executive</span>
+                        <span class="news-time">Oct 12, 2026 12:30</span>
+                    </div>
+                    <a href="https://maritime-executive.com/article/video-msc-containership-locates-overboard-cruise-passenger-after-20-hours" class="news-link" target="_blank">阅读原文 →</a>
+                </div>
+                <div class="news-card">
+                    <div class="news-title">瑞典释放被扣押7个月的中国籍油轮</div>
+                    <div class="news-meta">
+                        <span class="news-source">Maritime Executive</span>
+                        <span class="news-time">Oct 12, 2026 11:37</span>
+                    </div>
+                    <a href="https://maritime-executive.com/article/sweden-releases-sanctioned-tanker-after-seven-month-detention" class="news-link" target="_blank">阅读原文 →</a>
+                </div>
+                <div class="news-card">
+                    <div class="news-title">伊朗在霍尔木兹海峡袭击另一艘油轮，一周内6艘船遇袭</div>
+                    <div class="news-meta">
+                        <span class="news-source">Maritime Executive</span>
+                        <span class="news-time">Oct 12, 2026</span>
+                    </div>
+                    <a href="https://maritime-executive.com/shipping-news" class="news-link" target="_blank">阅读原文 →</a>
+                </div>
+                <div class="news-card">
+                    <div class="news-title">CMA CGM Gold加入甲醇动力船队</div>
+                    <div class="news-meta">
+                        <span class="news-source">Ship & Bunker</span>
+                        <span class="news-time">Oct 8, 2026</span>
+                    </div>
+                    <a href="https://shipandbunker.com/" class="news-link" target="_blank">阅读原文 →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 时政板块 -->
+        <div class="section">
+            <div class="section-title">
+                <span class="section-icon">🌐</span>
+                时政要闻
+            </div>
+            <div class="news-grid">
+                <div class="news-card">
+                    <div class="news-title">韩国驻美使馆国会审计：康京和承认"与白宫沟通存在局限" <span class="tag tag-important">重要</span></div>
+                    <div class="news-meta">
+                        <span class="news-source">SBS News</span>
+                        <span class="news-time">Oct 13, 2026 06:07</span>
+                    </div>
+                    <a href="https://news.sbs.co.kr/english/article.do?news_id=N1008794210" class="news-link" target="_blank">阅读原文 →</a>
+                </div>
+                <div class="news-card">
+                    <div class="news-title">爱沙尼亚确保Solikamsk镁厂被排除在新制裁方案外</div>
+                    <div class="news-meta">
+                        <span class="news-source">Pravda USA</span>
+                        <span class="news-time">Oct 12, 2026 18:22 EST</span>
+                    </div>
+                    <a href="https://usa.news-pravda.com/world/2026/10/12/911810.html" class="news-link" target="_blank">阅读原文 →</a>
+                </div>
+                <div class="news-card">
+                    <div class="news-title">美国被指"逃离欧洲和北约"，战略灾难或临联盟</div>
+                    <div class="news-meta">
+                        <span class="news-source">The Hill</span>
+                        <span class="news-time">Oct 12, 2026</span>
+                    </div>
+                    <a href="https://thehill.com/opinion/national-security/6141464-us-military-vulnerability-threats/" class="news-link" target="_blank">阅读原文 →</a>
+                </div>
+                <div class="news-card">
+                    <div class="news-title">以色列加沙战争三周年：地区冲突持续蔓延</div>
+                    <div class="news-meta">
+                        <span class="news-source">Reuters</span>
+                        <span class="news-time">Oct 7, 2026</span>
+                    </div>
+                    <a href="https://www.reuters.com/world/middle-east/israelis-mark-three-years-since-hamas-attack-that-set-off-gaza-assault-2026-10-07/" class="news-link" target="_blank">阅读原文 →</a>
+                </div>
+                <div class="news-card">
+                    <div class="news-title">Guardian评论：以色列战争改变中东与世界格局</div>
+                    <div class="news-meta">
+                        <span class="news-source">The Guardian</span>
+                        <span class="news-time">Oct 10, 2026</span>
+                    </div>
+                    <a href="https://www.theguardian.com/commentisfree/2026/oct/10/israel-war-gaza-middle-east-world-violence" class="news-link" target="_blank">阅读原文 →</a>
+                </div>
+                <div class="news-card">
+                    <div class="news-title">俄罗斯坦克或可通过另一剧本抵达基辅</div>
+                    <div class="news-meta">
+                        <span class="news-source">Advance</span>
+                        <span class="news-time">Oct 12, 2026</span>
+                    </div>
+                    <a href="https://www.advance.hr/tekstovi/znanost/vojne-strategije/moze-li-rusija-doista-ponovno-na-kijev" class="news-link" target="_blank">阅读原文 →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 财经板块 -->
+        <div class="section">
+            <div class="section-title">
+                <span class="section-icon">💰</span>
+                财经动态
+            </div>
+            <div class="news-grid">
+                <div class="news-card">
+                    <div class="news-title">IMF发布2026年10月世界经济展望报告 <span class="tag tag-breaking">重磅</span></div>
+                    <div class="news-meta">
+                        <span class="news-source">IMF</span>
+                        <span class="news-time">Oct 13, 2026</span>
+                    </div>
+                    <a href="https://www.imf.org/en/publications/weo/issues/2026/10/13/world-economic-outlook-october-2026" class="news-link" target="_blank">阅读原文 →</a>
+                </div>
+                <div class="news-card">
+                    <div class="news-title">美股财报季开启：摩根大通、高盛、富国银行等今日发布财报 <span class="tag tag-important">重要</span></div>
+                    <div class="news-meta">
+                        <span class="news-source">Charles Schwab</span>
+                        <span class="news-time">Oct 13, 2026</span>
+                    </div>
+                    <a href="https://www.schwab.com/learn/story/stock-market-update-open" class="news-link" target="_blank">阅读原文 →</a>
+                </div>
+                <div class="news-card">
+                    <div class="news-title">亚市开盘：芯片股抛售拖累股市，关注美国CPI数据</div>
+                    <div class="news-meta">
+                        <span class="news-source">Bloomberg</span>
+                        <span class="news-time">Oct 13, 2026</span>
+                    </div>
+                    <a href="https://www.bloomberg.com/news/articles/2026-10-12/stock-market-today-dow-s-p-live-updates" class="news-link" target="_blank">阅读原文 →</a>
+                </div>
+                <div class="news-card">
+                    <div class="news-title">澳大利亚联储9月会议纪要今日公布，Westpac预测12月或加息至4.85%</div>
+                    <div class="news-meta">
+                        <span class="news-source">InvestingLive</span>
+                        <span class="news-time">Oct 13, 2026 08:29</span>
+                    </div>
+                    <a href="https://investinglive.com/news/economic-and-event-calendar-in-asia-tuesday-october-13-2026-rba-minutes-due/" class="news-link" target="_blank">阅读原文 →</a>
+                </div>
+                <div class="news-card">
+                    <div class="news-title">原油突破93美元，中东局势推升油价三连涨</div>
+                    <div class="news-meta">
+                        <span class="news-source">Trading Economics</span>
+                        <span class="news-time">Oct 12, 2026</span>
+                    </div>
+                    <a href="https://tradingeconomics.com/commodity/crude-oil" class="news-link" target="_blank">阅读原文 →</a>
+                </div>
+                <div class="news-card">
+                    <div class="news-title">中国央行：无意通过人民币贬值获取贸易优势</div>
+                    <div class="news-meta">
+                        <span class="news-source">Reuters</span>
+                        <span class="news-time">Oct 8, 2026</span>
+                    </div>
+                    <a href="https://www.reuters.com/world/asia-pacific/china-has-no-need-or-intention-weaken-yuan-trade-edge-central-bank-says-2026-10-08/" class="news-link" target="_blank">阅读原文 →</a>
+                </div>
+                <div class="news-card">
+                    <div class="news-title">中国推出刺激方案确保2026年增长达标，但或加剧失衡</div>
+                    <div class="news-meta">
+                        <span class="news-source">Bloomberg</span>
+                        <span class="news-time">Oct 8, 2026</span>
+                    </div>
+                    <a href="https://www.bloomberg.com/news/newsletters/2026-10-08/china-s-stimulus-may-shore-up-gdp-while-reinforcing-imbalances" class="news-link" target="_blank">阅读原文 →</a>
+                </div>
+                <div class="news-card">
+                    <div class="news-title">美联储10月日程：主席Warsh与IMF总裁对话，多位官员讲话</div>
+                    <div class="news-meta">
+                        <span class="news-source">Federal Reserve</span>
+                        <span class="news-time">Oct 13, 2026</span>
+                    </div>
+                    <a href="https://www.federalreserve.gov/newsevents/2026-october.htm" class="news-link" target="_blank">阅读原文 →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- AI & 机器人板块 -->
+        <div class="section">
+            <div class="section-title">
+                <span class="section-icon">🤖</span>
+                AI & 机器人
+            </div>
+            <div class="news-grid">
+                <div class="news-card">
+                    <div class="news-title">OpenAI发布GPT-6及智能UI，GPT-6 Sol/Luna更新 <span class="tag tag-breaking">重磅</span></div>
+                    <div class="news-meta">
+                        <span class="news-source">OpenAI</span>
+                        <span class="news-time">Oct 7, 2026</span>
+                    </div>
+                    <a href="https://openai.com/news/" class="news-link" target="_blank">阅读原文 →</a>
+                </div>
+                <div class="news-card">
+                    <div class="news-title">Meta发布Muse Wonder模型，AA指数排名第二 <span class="tag tag-new">NEW</span></div>
+                    <div class="news-meta">
+                        <span class="news-source">Meta AI</span>
+                        <span class="news-time">Oct 12, 2026</span>
+                    </div>
+                    <a href="https://research.meta.ai/blog/muse-wonder" class="news-link" target="_blank">阅读原文 →</a>
+                </div>
+                <div class="news-card">
+                    <div class="news-title">微软发布Maia 300推理芯片：288GB HBM4，性能提升2.5倍</div>
+                    <div class="news-meta">
+                        <span class="news-source">Microsoft Azure</span>
+                        <span class="news-time">Oct 12, 2026</span>
+                    </div>
+                    <a href="https://azure.microsoft.com/en-us/blog/" class="news-link" target="_blank">阅读原文 →</a>
+                </div>
+                <div class="news-card">
+                    <div class="news-title">Tesla Optimus目标每周生产1000台，加速量产 <span class="tag tag-important">重要</span></div>
+                    <div class="news-meta">
+                        <span class="news-source">BGR</span>
+                        <span class="news-time">Oct 7, 2026</span>
+                    </div>
+                    <a href="https://www.bgr.com/2279995/tesla-optimus-robot-production-ramp-up/" class="news-link" target="_blank">阅读原文 →</a>
+                </div>
+                <div class="news-card">
+                    <div class="news-title">MIT评论：AI机器人突破短期内不会改变生活</div>
+                    <div class="news-meta">
+                        <span class="news-source">MIT Tech Review</span>
+                        <span class="news-time">Oct 8, 2026</span>
+                    </div>
+                    <a href="https://www.technologyreview.com/2026/10/08/1145923/ai-breakthroughs-in-robotics-wont-change-your-life-any-time-soon/" class="news-link" target="_blank">阅读原文 →</a>
+                </div>
+                <div class="news-card">
+                    <div class="news-title">NVIDIA展示物理AI研究突破，机器人技术进入实际工业应用</div>
+                    <div class="news-meta">
+                        <span class="news-source">NVIDIA</span>
+                        <span class="news-time">Oct 2026</span>
+                    </div>
+                    <a href="https://blogs.nvidia.com/blog/national-robotics-week-2026/" class="news-link" target="_blank">阅读原文 →</a>
+                </div>
+                <div class="news-card">
+                    <div class="news-title">芬兰叫停Google数据中心：环境影响评估未完成</div>
+                    <div class="news-meta">
+                        <span class="news-source">AI Weekly</span>
+                        <span class="news-time">Oct 12, 2026</span>
+                    </div>
+                    <a href="https://aiweekly.co/ai-news-today" class="news-link" target="_blank">阅读原文 →</a>
+                </div>
+                <div class="news-card">
+                    <div class="news-title">Teradyne与Bright Machines合作整合机器人测试技术</div>
+                    <div class="news-meta">
+                        <span class="news-source">The Robot Report</span>
+                        <span class="news-time">Oct 5, 2026</span>
+                    </div>
+                    <a href="https://www.therobotreport.com/robotics-news/" class="news-link" target="_blank">阅读原文 →</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>📧 本简报由AI自动生成 | 每日更新</p>
+            <p>数据来源：gCaptain, Maritime Executive, Reuters, Bloomberg, IMF, OpenAI, Meta AI, NVIDIA等</p>
+            <p style="margin-top: 10px;">
+                <a href="https://github.com/mast0506/daily-report-from-ai" target="_blank">GitHub Repository</a>
+            </p>
+        </div>
     </div>
-    <div class="note">本简报由 AI 自动汇总公开新闻来源生成，仅供快速参考；关键决策请核对原始报道。</div>
-  </header>
-
-  <div class="grid">
-    <!-- 航运 -->
-    <section>
-      <div class="sec-head">
-        <div class="sec-title"><span class="dot shipping"></span>🚢 航运海事</div>
-        <div class="count">6 条</div>
-      </div>
-      <ul class="news">
-        <li class="item">
-          <div class="title"><a href="https://gcaptain.com/more-tankers-hit-in-hormuz-as-u-s-strikes-cargo-ship/" target="_blank" rel="noopener">更多油轮在霍尔木兹遇袭，美军在阿曼湾打击货船</a></div>
-          <div class="meta-line"><span class="tag src">gCaptain</span><span class="time">2026-10-11</span></div>
-        </li>
-        <li class="item">
-          <div class="title"><a href="https://www.koreaherald.com/article/10898455" target="_blank" rel="noopener">韩国完成首次北极—欧洲商业往返航程，计划定期服务</a></div>
-          <div class="meta-line"><span class="tag src">Korea Herald</span><span class="time">2026-10-11</span></div>
-        </li>
-        <li class="item">
-          <div class="title"><a href="https://www.ft.com/content/f9b9f937-97b0-4a03-90f6-05d7c7344ab9" target="_blank" rel="noopener">美军在阿曼湾击中一艘试图突破伊朗封锁的商业货船</a></div>
-          <div class="meta-line"><span class="tag src">Financial Times</span><span class="time">2026-10-11</span></div>
-        </li>
-        <li class="item">
-          <div class="title"><a href="https://www.bloomberg.com/news/articles/2026-10-09/dutch-propose-law-to-crack-down-on-russian-shadow-fleet" target="_blank" rel="noopener">荷兰提议立法打击俄罗斯“影子船队”</a></div>
-          <div class="meta-line"><span class="tag src">Bloomberg / gCaptain</span><span class="time">2026-10-09</span></div>
-        </li>
-        <li class="item">
-          <div class="title"><a href="https://www.seatrade-maritime.com/regulations/us-customs-proposes-low-value-shipment-rule-change" target="_blank" rel="noopener">美国海关提议修改低值货物（≤$2,500）进口规则</a></div>
-          <div class="meta-line"><span class="tag src">Seatrade Maritime</span><span class="time">2026-10-08</span></div>
-        </li>
-        <li class="item">
-          <div class="title"><a href="http://www.maritime-executive.com/article/ustr-fees-could-cost-top-10-carriers-3-2b-in-2026-says-alphaliner" target="_blank" rel="noopener">Alphaliner：USTR费用或使前十大承运人2026年损失32亿美元</a></div>
-          <div class="meta-line"><span class="tag src">Maritime Executive</span><span class="time">2026-10-01</span></div>
-        </li>
-      </ul>
-    </section>
-
-    <!-- 时政 -->
-    <section>
-      <div class="sec-head">
-        <div class="sec-title"><span class="dot politics"></span>🌍 时政要闻</div>
-        <div class="count">6 条</div>
-      </div>
-      <ul class="news">
-        <li class="item">
-          <div class="title"><a href="https://www.ft.com/content/a01776ea-4a12-4195-8820-e43a885ba5fe" target="_blank" rel="noopener">利雅得机场导弹袭击致12死，石油高管退出世界石油大会</a></div>
-          <div class="meta-line"><span class="tag src">Financial Times</span><span class="time">2026-10-11</span></div>
-        </li>
-        <li class="item">
-          <div class="title"><a href="https://www.nytimes.com/2026/10/10/world/middleeast/riyadh-airport-attack-energy-congress.html" target="_blank" rel="noopener">利雅得机场再遭胡塞袭击，为海湾国家自美伊冲突以来最致命攻击</a></div>
-          <div class="meta-line"><span class="tag src">The New York Times</span><span class="time">2026-10-10</span></div>
-        </li>
-        <li class="item">
-          <div class="title"><a href="https://www.cnbc.com/2026/10/09/iran-war-strait-hormuz-tanker-attack-oil.html" target="_blank" rel="noopener">霍尔木兹油轮袭击升至战时高位，伊朗试图封锁石油出口</a></div>
-          <div class="meta-line"><span class="tag src">CNBC</span><span class="time">2026-10-09</span></div>
-        </li>
-        <li class="item">
-          <div class="title"><a href="https://www.aljazeera.com/news/2026/10/8/tanker-hit-by-multiple-projectiles-off-north-coast-of-qatar-ukmto-says" target="_blank" rel="noopener">卡塔尔北部海域油轮遭多枚抛射物击中</a></div>
-          <div class="meta-line"><span class="tag src">Al Jazeera</span><span class="time">2026-10-08</span></div>
-        </li>
-        <li class="item">
-          <div class="title"><a href="https://www.bbc.com/news/articles/cqlydk7796wdo" target="_blank" rel="noopener">英国海事机构确认“Acers”号油轮在阿拉伯湾遇袭</a></div>
-          <div class="meta-line"><span class="tag src">BBC</span><span class="time">2026-10-08</span></div>
-        </li>
-        <li class="item">
-          <div class="title"><a href="https://www.aljazeera.com/news/2026/10/7/oman-evacuates-injured-crew-from-attacked-tanker-in-strait-of-hormuz" target="_blank" rel="noopener">阿曼空军从霍尔木兹遇袭油轮撤离10名船员</a></div>
-          <div class="meta-line"><span class="tag src">Al Jazeera</span><span class="time">2026-10-07</span></div>
-        </li>
-      </ul>
-    </section>
-
-    <!-- 财经 -->
-    <section>
-      <div class="sec-head">
-        <div class="sec-title"><span class="dot finance"></span>💹 财经市场</div>
-        <div class="count">6 条</div>
-      </div>
-      <ul class="news">
-        <li class="item">
-          <div class="title"><a href="https://www.theguardian.com/business/2026/oct/08/oil-prices-rise-middle-east-tensions-us-hurricane-threat" target="_blank" rel="noopener">油价因中东紧张与美国飓风威胁跳涨5%</a></div>
-          <div class="meta-line"><span class="tag src">The Guardian</span><span class="time">2026-10-08</span></div>
-        </li>
-        <li class="item">
-          <div class="title"><a href="https://www.reuters.com/business/energy/oil-rises-middle-east-supply-concerns-persist-amid-shipping-attacks-2026-10-08/" target="_blank" rel="noopener">中东供应担忧持续，油价上涨4%</a></div>
-          <div class="meta-line"><span class="tag src">Reuters</span><span class="time">2026-10-08</span></div>
-        </li>
-        <li class="item">
-          <div class="title"><a href="https://www.nbcnews.com/business/markets/treasury-yields-hit-24-year-highs-global-sell-accelerates-rcna602045" target="_blank" rel="noopener">美债收益率创24年新高，10年期触及5.36%</a></div>
-          <div class="meta-line"><span class="tag src">NBC News</span><span class="time">2026-10-07</span></div>
-        </li>
-        <li class="item">
-          <div class="title"><a href="https://www.forbes.com/sites/garthfriesen/2026/10/07/why-the-10-year-treasury-yield-just-hit-a-24-year-high/" target="_blank" rel="noopener">10年期美债收益率为何创24年新高</a></div>
-          <div class="meta-line"><span class="tag src">Forbes</span><span class="time">2026-10-07</span></div>
-        </li>
-        <li class="item">
-          <div class="title"><a href="https://www.investopedia.com/stock-market-today-dow-jones-s-and-p-500-10012026-12151047" target="_blank" rel="noopener">美股10月开局小幅走高，10年期收益率从24年高位回落</a></div>
-          <div class="meta-line"><span class="tag src">Investopedia</span><span class="time">2026-10-01</span></div>
-        </li>
-        <li class="item">
-          <div class="title"><a href="https://www.schwab.com/learn/story/stock-market-update-open" target="_blank" rel="noopener">AI紧张情绪缓解，美股早盘反弹；能源板块涨近3%</a></div>
-          <div class="meta-line"><span class="tag src">Charles Schwab</span><span class="time">2026-10-09</span></div>
-        </li>
-      </ul>
-    </section>
-
-    <!-- AI & 机器人 -->
-    <section>
-      <div class="sec-head">
-        <div class="sec-title"><span class="dot ai"></span>🤖 AI & 机器人</div>
-        <div class="count">6 条</div>
-      </div>
-      <ul class="news">
-        <li class="item">
-          <div class="title"><a href="https://openai.com/index/introducing-gpt-6-1-sol/" target="_blank" rel="noopener">OpenAI 发布 GPT-6.1 Sol：成本仅为 Astra 五分之一，接近其智能水平</a></div>
-          <div class="meta-line"><span class="tag src">OpenAI</span><span class="time">2026-10-09</span></div>
-        </li>
-        <li class="item">
-          <div class="title"><a href="https://techcrunch.com/2026/10/07/nous-research-confirms-it-hit-1-5b-valuation-launches-ai-agents-for-business-users/" target="_blank" rel="noopener">Nous Research 确认15亿美元估值，推出企业版 Hermes Agent</a></div>
-          <div class="meta-line"><span class="tag src">TechCrunch</span><span class="time">2026-10-07</span></div>
-        </li>
-        <li class="item">
-          <div class="title"><a href="https://www.microsoft.com/en-us/dynamics-365/blog/it-professional/2026/09/25/work-iq-business-and-workplace-intelligence-in-the-flow-of-work/" target="_blank" rel="noopener">微软 Work IQ 上线：连接 Copilot 与 Dynamics 365 实时业务数据</a></div>
-          <div class="meta-line"><span class="tag src">Microsoft</span><span class="time">2026-09-25（10月持续推出）</span></div>
-        </li>
-        <li class="item">
-          <div class="title"><a href="https://www.sciencedaily.com/releases/2026/09/260921081114.htm" target="_blank" rel="noopener">MIT 微型飞行机器人借助 AI 提速约450%，可连续空翻</a></div>
-          <div class="meta-line"><span class="tag src">ScienceDaily</span><span class="time">2026-09-21</span></div>
-        </li>
-        <li class="item">
-          <div class="title"><a href="https://news.futureofai.org/2026/10/building-ai-for-reliable-execution.html" target="_blank" rel="noopener">Standard Bots：工业机器人从演示中学习工厂任务</a></div>
-          <div class="meta-line"><span class="tag src">Future of AI</span><span class="time">2026-10</span></div>
-        </li>
-        <li class="item">
-          <div class="title"><a href="https://www.sciencedaily.com/releases/2026/09/260912222856.htm" target="_blank" rel="noopener">AI 分析40万条 Reddit 帖子，发现 Ozempic 潜在副作用</a></div>
-          <div class="meta-line"><span class="tag src">ScienceDaily</span><span class="time">2026-09-12</span></div>
-        </li>
-      </ul>
-    </section>
-  </div>
-
-  <footer>
-    <div>生成时间：2026-10-12 07:15 SGT · 来源：公开网络新闻检索</div>
-    <div class="note">部署：GitHub Pages · Repository: mast0506/daily-report-from-ai</div>
-  </footer>
-</div>
 </body>
 </html>
