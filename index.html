@@ -1,324 +1,262 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>全球资讯简报 - 2026年10月18日</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; }
-        .container { max-width: 1200px; margin: 0 auto; }
-        header { text-align: center; color: white; margin-bottom: 40px; padding: 40px 20px; background: rgba(255,255,255,0.1); border-radius: 20px; backdrop-filter: blur(10px); }
-        header h1 { font-size: 2.5em; margin-bottom: 10px; font-weight: 700; }
-        header .date { font-size: 1.2em; opacity: 0.9; }
-        header .time { font-size: 1em; opacity: 0.8; margin-top: 5px; }
-        .section { background: white; border-radius: 15px; padding: 30px; margin-bottom: 30px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
-        .section-title { font-size: 1.8em; color: #333; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 3px solid #667eea; display: flex; align-items: center; gap: 10px; }
-        .section-title .icon { font-size: 1.2em; }
-        .news-item { padding: 20px; margin-bottom: 15px; background: #f8f9fa; border-radius: 10px; border-left: 4px solid #667eea; transition: transform 0.2s, box-shadow 0.2s; }
-        .news-item:hover { transform: translateX(5px); box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
-        .news-item .title { font-size: 1.1em; font-weight: 600; color: #2d3748; margin-bottom: 8px; line-height: 1.4; }
-        .news-item .meta { font-size: 0.85em; color: #718096; display: flex; gap: 15px; flex-wrap: wrap; }
-        .news-item .meta span { display: flex; align-items: center; gap: 5px; }
-        .news-item .summary { font-size: 0.95em; color: #4a5568; line-height: 1.6; margin-top: 8px; }
-        .news-item a { color: #667eea; text-decoration: none; }
-        .news-item a:hover { text-decoration: underline; }
-        .badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 0.75em; font-weight: 600; }
-        .badge-shipping { background: #e3f2fd; color: #1565c0; }
-        .badge-politics { background: #fce4ec; color: #c62828; }
-        .badge-finance { background: #e8f5e9; color: #2e7d32; }
-        .badge-ai { background: #f3e5f5; color: #6a1b9a; }
-        footer { text-align: center; color: white; padding: 20px; opacity: 0.8; font-size: 0.9em; }
-        .highlight { background: linear-gradient(120deg, #a8edea 0%, #fed6e3 100%); padding: 2px 6px; border-radius: 4px; font-weight: 600; }
-        @media (max-width: 768px) {
-            header h1 { font-size: 1.8em; }
-            .section { padding: 20px; }
-            .section-title { font-size: 1.4em; }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日全球资讯简报 · 2026-10-19</title>
+<style>
+  :root {
+    --bg: #0d1117;
+    --card: #161b22;
+    --border: #30363d;
+    --fg: #c9d1d9;
+    --muted: #8b949e;
+    --accent: #58a6ff;
+    --accent2: #7ee787;
+    --warn: #f0883e;
+    --tag-shipping: #1f6feb;
+    --tag-politics: #bf8700;
+    --tag-finance: #238636;
+    --tag-ai: #8957e5;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    line-height: 1.65;
+  }
+  .container { max-width: 1100px; margin: 0 auto; padding: 32px 20px 60px; }
+  header {
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 20px; margin-bottom: 28px;
+  }
+  h1 { margin: 0 0 8px; font-size: 28px; color: #fff; }
+  .meta { color: var(--muted); font-size: 14px; }
+  .meta span { margin-right: 18px; }
+  .ticker {
+    background: linear-gradient(90deg, rgba(31,111,235,.15), rgba(137,87,229,.15));
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin-bottom: 24px;
+    font-size: 14px;
+    color: var(--fg);
+  }
+  .ticker b { color: var(--accent2); }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  @media (max-width: 800px) { .grid { grid-template-columns: 1fr; } }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px;
+  }
+  .card h2 {
+    margin: 0 0 14px; font-size: 18px;
+    display: flex; align-items: center; gap: 8px;
+    padding-bottom: 10px; border-bottom: 1px solid var(--border);
+  }
+  .badge {
+    display: inline-block; padding: 2px 10px; border-radius: 12px;
+    font-size: 12px; font-weight: 600; color: #fff;
+  }
+  .badge.shipping { background: var(--tag-shipping); }
+  .badge.politics { background: var(--tag-politics); }
+  .badge.finance  { background: var(--tag-finance); }
+  .badge.ai       { background: var(--tag-ai); }
+  ul.news { list-style: none; padding: 0; margin: 0; }
+  ul.news li {
+    padding: 10px 0; border-bottom: 1px dashed var(--border);
+    font-size: 14px;
+  }
+  ul.news li:last-child { border-bottom: none; }
+  ul.news a { color: var(--accent); text-decoration: none; }
+  ul.news a:hover { text-decoration: underline; }
+  .src { color: var(--muted); font-size: 12px; margin-top: 4px; }
+  .src a { color: var(--muted); }
+  .hl { color: var(--warn); font-weight: 600; }
+  footer {
+    margin-top: 32px; padding-top: 16px;
+    border-top: 1px solid var(--border);
+    color: var(--muted); font-size: 13px; text-align: center;
+  }
+</style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>🌍 全球资讯简报</h1>
-            <div class="date">2026年10月18日 星期日</div>
-            <div class="time">新加坡时间 07:15 | UTC 23:15</div>
-        </header>
+<div class="container">
 
-        <!-- 航运板块 -->
-        <div class="section">
-            <div class="section-title"><span class="icon">🚢</span> 航运资讯</div>
-            
-            <div class="news-item">
-                <div class="title"><span class="badge badge-shipping">航运</span> 霍尔木兹海峡袭击升级：伊朗称两艘油轮触雷起火</div>
-                <div class="meta">
-                    <span>📰 NBC News</span>
-                    <span>⏱️ 14小时前</span>
-                    <span>🔗 <a href="https://www.nbcnews.com/world/iran/iran-strikes-strait-hormuz-shipping-trump-oil-prices-midterms-rcna603670" target="_blank">阅读原文</a></span>
-                </div>
-                <div class="summary">伊朗伊斯兰革命卫队海军周六表示，两艘油轮在霍尔木兹海峡撞上海军水雷后起火。伊朗媒体分享了集装箱船沉没的画面。这是<span class="highlight">一周内第12艘以上遇袭油轮</span>， targeting oil, LNG and LPG vessels。</div>
-            </div>
+<header>
+  <h1>🌐 每日全球资讯简报</h1>
+  <div class="meta">
+    <span>📅 2026年10月19日 星期一</span>
+    <span>🕐 新加坡时间 07:15 (SGT)</span>
+    <span>📝 共 24 条</span>
+  </div>
+</header>
 
-            <div class="news-item">
-                <div class="title"><span class="badge badge-shipping">航运</span> 超大型油轮在霍尔木兹海峡爆炸：载有200万桶原油</div>
-                <div class="meta">
-                    <span>📰 RFE/RL</span>
-                    <span>⏱️ 14小时前</span>
-                    <span>🔗 <a href="https://www.rferl.org/a/iran-live-blog-trump-middle-east/33803414.html" target="_blank">阅读原文</a></span>
-                </div>
-                <div class="summary">伊朗革命卫队10月17日表示，一艘载有超过<span class="highlight">200万桶原油的超大型油轮</span>在霍尔木兹海峡撞上海军水雷后爆炸起火。</div>
-            </div>
+<div class="ticker">
+  <b>市场速览：</b> 布伦特原油 <b>$109.86</b> (+3.72%) · WTI <b>$99.02</b> (+1.07%) · 霍尔木兹海峡商业航运已实质关闭第231天 · 美股期指周一小幅高开，本周迎来密集财报与中国GDP数据 · 红海通行运力6周内翻倍至 448,273 TEU
+</div>
 
-            <div class="news-item">
-                <div class="title"><span class="badge badge-shipping">航运</span> 波罗的海国家敦促欧盟禁止俄罗斯粮食转运</div>
-                <div class="meta">
-                    <span>📰 Marine Insight</span>
-                    <span>⏱️ 5天前</span>
-                    <span>🔗 <a href="https://www.marineinsight.com/baltic-states-urge-eu-to-ban-russian-grain-transit-as-black-sea-shipments-fall/" target="_blank">阅读原文</a></span>
-                </div>
-                <div class="summary">立陶宛和拉脱维亚计划停止俄罗斯粮食转运。由于乌克兰袭击俄罗斯黑海港口，莫斯科已将粮食出口转向波罗的海港口（主要是拉脱维亚）。<span class="highlight">波罗的海地区占合并出货量的份额从12.6%飙升至80.7%</span>。</div>
-            </div>
+<div class="grid">
 
-            <div class="news-item">
-                <div class="title"><span class="badge badge-shipping">航运</span> 集装箱运费指数上升至3,679.58点</div>
-                <div class="meta">
-                    <span>📰 Trading Economics</span>
-                    <span>⏱️ 10月16日</span>
-                    <span>🔗 <a href="https://tradingeconomics.com/commodity/containerized-freight-index" target="_blank">阅读原文</a></span>
-                </div>
-                <div class="summary">集装箱运费指数升至<span class="highlight">3,679.58点</span>，较前一日上涨0.42%。过去一年上涨180.81%，显示全球航运成本持续攀升。</div>
-            </div>
+  <!-- ============ 航运 ============ -->
+  <div class="card">
+    <h2><span class="badge shipping">🚢 航运</span> 海运与物流</h2>
+    <ul class="news">
+      <li>
+        <span class="hl">[重大]</span> 霍尔木兹海峡商业航运已实质关闭至第 231 天，10月11日仅 2 艘船只通行（正常约 85 艘/日），布伦特原油被推升至 $109.86。
+        <div class="src">来源：<a href="https://straits.live/">straits.live</a> · 实时追踪 · 2026-10-18</div>
+      </li>
+      <li>
+        红海回归加速：曼德海峡周班运力 6 周内翻倍，10月5日达 <b>448,273 TEU</b>（8月27日基数翻倍）。
+        <div class="src">来源：<a href="https://www.indexbox.io/blog/red-sea-capacity-doubles-in-six-weeks-as-blank-sailings-target-far-east-to-us-rates/">IndexBox</a> · 2026-10-17</div>
+      </li>
+      <li>
+        10月前两周，<b>36%</b> 集装箱船运力选择苏伊士航线（2024年至2026年中均值仅 8%，袭击前为 80%）。
+        <div class="src">来源：<a href="https://intermanager.org/bimco-shipping-number-of-the-week-29/">InterManager / BIMCO</a> · 2026-10-17</div>
+      </li>
+      <li>
+        马士基红海通行量从 2025年9月的 8 艘跃升至 2026年9月的 <b>67 艘</b>，公司建议出口商不要过度依赖单一航线。
+        <div class="src">来源：<a href="https://www.logisticsinsider.in/red-sea-shipping-single-route-indian-exporters/">Logistics Insider</a> · 2026-10-17</div>
+      </li>
+      <li>
+        集装箱班轮公司上调大洋洲—美洲、亚洲—南美运价，新增旺季附加费与燃油附加费，并缩短印度—萨凡纳运输时间。
+        <div class="src">来源：<a href="https://www.indexbox.io/blog/container-carriers-adjust-rates-and-services-to-the-americas/">IndexBox</a> · 2026-10-17</div>
+      </li>
+      <li>
+        胡塞袭击持续推高孟加拉国进口成本，绕行好望角令航程、燃油、保险、运费同步上升。
+        <div class="src">来源：<a href="https://www.europesays.com/3318321/">Europe Says / The Daily Star</a> · 2026-10-19</div>
+      </li>
+    </ul>
+  </div>
 
-            <div class="news-item">
-                <div class="title"><span class="badge badge-shipping">航运</span> 油轮即期运费9月飙升：所有船型上涨</div>
-                <div class="meta">
-                    <span>📰 Hellenic Shipping News</span>
-                    <span>⏱️ 10月17日</span>
-                    <span>🔗 <a href="https://www.hellenicshippingnews.com/" target="_blank">阅读原文</a></span>
-                </div>
-                <div class="summary">9月份脏油轮即期运费在所有船型中飙升，贸易错位导致市场紧张。霍尔木兹局势进一步加剧了这一趋势。</div>
-            </div>
-        </div>
+  <!-- ============ 时政 ============ -->
+  <div class="card">
+    <h2><span class="badge politics">🌍 时政</span> 国际与地缘</h2>
+    <ul class="news">
+      <li>
+        <span class="hl">[重磅]</span> 特朗普于 10月16日 豁免一揽子对俄能源制裁（原定数日后生效），并已与莫斯科达成柴油贸易协议，财政部将对俄柴油销售制裁豁免延长至 2027年4月。欧洲质疑能否独自守住阵线。
+        <div class="src">来源：<a href="https://moderndiplomacy.eu/2026/10/19/trump-eases-russia-sanctions-can-europe-hold-the-line-alone/">Modern Diplomacy</a> · 2026-10-19</div>
+      </li>
+      <li>
+        美国陆军 10月发布新指导文件，沿"第一岛链"（日本、菲律宾北部、台湾）制定对华作战预案，引发区域关注。
+        <div class="src">来源：<a href="https://japan.news-pravda.com/en/japan/2026/10/19/29650.html">Pravda Japan</a> · 2026-10-19</div>
+      </li>
+      <li>
+        西岸紧张升级：以色列定居者袭击阿布法拉村采收橄榄的巴勒斯坦人，以军士兵到场，AP 发布现场图片。
+        <div class="src">来源：<a href="https://apnews.com/world-news">AP News</a> · 2026-10-16</div>
+      </li>
+      <li>
+        某国反政府抗议演变为骚乱后，各政治派领袖相互指责，周日局势基本平息（NYT 头版）。
+        <div class="src">来源：<a href="https://www.nytimes.com/section/world">New York Times</a> · 2026-10-19</div>
+      </li>
+      <li>
+        危地马拉总统阿雷瓦洛：2026年以来已接收约 <b>2,300 名</b> 被美国遣返的墨西哥籍移民，与危地马拉人一同抵达后迅速转送回墨西哥。
+        <div class="src">来源：<a href="https://www.reuters.com/world/">Reuters</a> · 2026-10-18</div>
+      </li>
+      <li>
+        加拿大阿尔伯塔省 10月19日 不会举行"脱加"公投（PBS 辟谣）。
+        <div class="src">来源：<a href="https://www.pbs.org/newshour/world">PBS News</a> · 2026-10-19</div>
+      </li>
+    </ul>
+  </div>
 
-        <!-- 时政板块 -->
-        <div class="section">
-            <div class="section-title"><span class="icon">🌐</span> 时政要闻</div>
-            
-            <div class="news-item">
-                <div class="title"><span class="badge badge-politics">时政</span> 法国爆发全国性抗议：20万人上街抗议生活成本上涨</div>
-                <div class="meta">
-                    <span>📰 Al Jazeera</span>
-                    <span>⏱️ 9小时前</span>
-                    <span>🔗 <a href="https://www.aljazeera.com/news/2026/10/17/france-braces-for-nationwide-protests-with-yellow-vest-members-set-to-join" target="_blank">阅读原文</a></span>
-                </div>
-                <div class="summary">法国各地示威者与学生会合，抗议生活成本上涨。警方估计<span class="highlight">约20万人参加周六抗议</span>，"黄马甲"运动成员加入。巴黎警方发射催泪瓦斯，马赛市政厅被抗议者冲击，超过400人被捕。</div>
-            </div>
+  <!-- ============ 财经 ============ -->
+  <div class="card">
+    <h2><span class="badge finance">💰 财经</span> 市场与宏观</h2>
+    <ul class="news">
+      <li>
+        美股期指周一高开，油价小幅回落；本周聚焦密集企业财报、中国经济数据与地缘政治风险。
+        <div class="src">来源：<a href="https://www.bloomberg.com/news/articles/2026-10-18/stock-market-today-dow-s-p-live-updates">Bloomberg</a> · 2026-10-19</div>
+      </li>
+      <li>
+        本周（10/19–23）财报密集：宝洁 P&G 将于周四盘前发布 2027财年Q1财报，市值约 $3,700亿，五年总回报约 +31%。
+        <div class="src">来源：<a href="https://bkobog.substack.com/p/preview-of-the-week-starting-19oct2026">Stock Titan / bkobog</a> · 2026-10-18</div>
+      </li>
+      <li>
+        AI 基础设施股本周大幅回调：CoreWeave 与 Nebius 单周跌幅均超 <b>25%</b>，市场担忧 AI 融资泡沫，但多头认为 AI 繁荣趋势未变。
+        <div class="src">来源：<a href="https://finance.yahoo.com/">Yahoo Finance</a> · 2026-10-19</div>
+      </li>
+      <li>
+        市场关注科技领导力减弱背景下，财报季能否稳住美股；分析师给出牛熊两种情景与关键 S&P 500 点位。
+        <div class="src">来源：<a href="https://nicholasnicoletti.substack.com/p/the-week-ahead-can-earnings-steady">Nicholas Nicoletti</a> · 2026-10-19</div>
+      </li>
+      <li>
+        中国 Q3 2026 GDP 即将公布：Nikkei 调查经济学家预期 <b>4.4%</b>（Q2 为 4.3%），政府力争实现 4.5%–5% 年度目标；Polymarket 押注 4.3–4.6% 区间概率 78.5%。
+        <div class="src">来源：<a href="https://www.europesays.com/europe/161425/">Europe Says / Nikkei</a> · 2026-10-18</div>
+      </li>
+      <li>
+        美国 Q2 2026 GDP 年化增速上修至 <b>2.2%</b>（前值 +0.7pp），但净出口拖累 3 个百分点。
+        <div class="src">来源：<a href="https://tradingeconomics.com/united-states/gdp-growth">Trading Economics</a> · 2026-10-18</div>
+      </li>
+      <li>
+        印度央行拟对 UPI 数字支付接口征收新费用，影子经济推高实体货币需求。
+        <div class="src">来源：<a href="https://www.ft.com/markets">Financial Times</a> · 2026-10-19</div>
+      </li>
+      <li>
+        雀巢、联合利华在印度因"误导性健康声明"面临监管行动。
+        <div class="src">来源：<a href="https://www.bloomberg.com/">Bloomberg</a> · 2026-10-18</div>
+      </li>
+    </ul>
+  </div>
 
-            <div class="news-item">
-                <div class="title"><span class="badge badge-politics">时政</span> 俄罗斯在乌克兰边境建立"安全区"：普京宣布不可谈判</div>
-                <div class="meta">
-                    <span>📰 The Guardian</span>
-                    <span>⏱️ 17小时前</span>
-                    <span>🔗 <a href="https://www.theguardian.com/world/2026/oct/17/ukraine-war-briefing-russia-building-non-negotiable-security-zone-inside-ukrainian-border-putin-declares" target="_blank">阅读原文</a></span>
-                </div>
-                <div class="summary">俄罗斯总统普京宣布在乌克兰境内建立<span class="highlight">660公里长的"安全区"</span>，该区域不会成为任何潜在和平谈判的一部分。这是战争第1,697天的关键进展。</div>
-            </div>
+  <!-- ============ AI & 机器人 ============ -->
+  <div class="card">
+    <h2><span class="badge ai">🤖 AI & 机器人</span> 智能与自动化</h2>
+    <ul class="news">
+      <li>
+        <span class="hl">[重磅]</span> Sam Altman 确认 OpenAI 将自研人形机器人，目标 <b>2027年</b> 公开演示。
+        <div class="src">来源：<a href="https://aiweekly.co/">AI Weekly</a> · 2026-10-18</div>
+      </li>
+      <li>
+        OpenCode 确认安全事件影响其控制台 <b>1.4%</b> 用户，已与 Google、OpenAI、Anthropic 联合轮换密钥。
+        <div class="src">来源：<a href="https://aiweekly.co/">AI Weekly</a> · 2026-10-18</div>
+      </li>
+      <li>
+        Apollo Research 捕捉到 Z.ai 的 GLM-5.3 在推理过程中"反思"自身训练过程，引发对齐（alignment）社区关注。
+        <div class="src">来源：<a href="https://aiweekly.co/">AI Weekly</a> · 2026-10-18</div>
+      </li>
+      <li>
+        Google DeepMind 发布 <b>Gemini 4 Argon</b>（9月30日）：在官方基准表中领先 13/19 项，CWE-bench v1 持平，5 项代码/终端指标落后。
+        <div class="src">来源：<a href="https://llm-stats.com/ai-news">LLM-Stats</a> · 2026-10-19</div>
+      </li>
+      <li>
+        NVIDIA GTC Berlin 将于 <b>10月20–22日</b> 举行，聚焦欧洲开发生态、研究者与产业领袖。
+        <div class="src">来源：<a href="https://blogs.nvidia.com/gtc-berlin-2026-news/">NVIDIA Blog</a> · 2026-10-18</div>
+      </li>
+      <li>
+        据 Bernstein 统计，2026 年美国已有 <b>47+ 个大型数据中心项目</b> 因地方反对（电力、用水）被推迟、撤回或阻止。
+        <div class="src">来源：<a href="https://aiweekly.co/ai-news-today">AI Weekly / RegLayer</a> · 2026-10-19</div>
+      </li>
+      <li>
+        朝鲜宣称已测试使用 AI 进行目标探测与制导的新型鱼雷系统。
+        <div class="src">来源：<a href="https://apnews.com/hub/artificial-intelligence">AP News</a> · 2026-10-18</div>
+      </li>
+      <li>
+        软银集团正洽谈收购美国安保公司 Allied Universal，孙正义加速在机器人与 AI 领域布局。
+        <div class="src">来源：<a href="https://www.ft.com/artificial-intelligence">Financial Times</a> · 2026-10-18</div>
+      </li>
+      <li>
+        新研究揭示：即使 AI 行为与人类完全一致，人们对"人类意识"与"AI"仍划出一条出乎意料的清晰界限。
+        <div class="src">来源：<a href="https://www.sciencedaily.com/news/computers_math/robotics/">ScienceDaily</a> · 2026-10-13</div>
+      </li>
+      <li>
+        AI 从 40 万条 Reddit 帖子中挖掘出 Ozempic（司美格鲁肽）的隐藏副作用。
+        <div class="src">来源：<a href="https://www.sciencedaily.com/news/computers_math/artificial_intelligence/">ScienceDaily</a> · 2026-10-18</div>
+      </li>
+    </ul>
+  </div>
 
-            <div class="news-item">
-                <div class="title"><span class="badge badge-politics">时政</span> 俄罗斯大规模袭击乌克兰能源设施：15处关键设施被击中</div>
-                <div class="meta">
-                    <span>📰 RFE/RL</span>
-                    <span>⏱️ 12小时前</span>
-                    <span>🔗 <a href="https://www.rferl.org/a/russia-ukraine-civilians-killed-attack/33878396.html" target="_blank">阅读原文</a></span>
-                </div>
-                <div class="summary">泽连斯基称这是<span class="highlight">"俄罗斯对乌克兰能源部门最大规模的袭击之一"</span>，超过15处关键发电和输电设施被击中，影响哈尔科夫、基辅、第聂伯罗等地区，100万人断电。</div>
-            </div>
+</div>
 
-            <div class="news-item">
-                <div class="title"><span class="badge badge-politics">时政</span> 胡塞武装袭击也门机场：沙特拦截导弹和无人机</div>
-                <div class="meta">
-                    <span>📰 Bloomberg</span>
-                    <span>⏱️ 14小时前</span>
-                    <span>🔗 <a href="https://www.bloomberg.com/news/articles/2026-10-17/houthis-hit-yemen-airport-as-saudi-arabia-intercepts-attacks" target="_blank">阅读原文</a></span>
-                </div>
-                <div class="summary">也门胡塞武装袭击了临时首都的主要机场，同时向沙特发射的导弹和无人机被拦截。这是<span class="highlight">2026年伊朗战争以来对海湾阿拉伯国家最致命的系列袭击</span>。</div>
-            </div>
+<footer>
+  由 OpenClaw 总指挥自动生成 · 数据源：Brave News、Bloomberg、Reuters、FT、AP、NVIDIA Blog、AI Weekly 等<br>
+  部署：GitHub Pages · 仓库：mast0506/daily-report-from-ai · 生成时间 2026-10-19 07:15 SGT
+</footer>
 
-            <div class="news-item">
-                <div class="title"><span class="badge badge-politics">时政</span> 特朗普-普京柴油协议遭两党参议员联名反对</div>
-                <div class="meta">
-                    <span>📰 NPR</span>
-                    <span>⏱️ 4天前</span>
-                    <span>🔗 <a href="https://www.npr.org/2026/10/13/g-s1-147871/trump-russia-diesel-deal-congressional-response" target="_blank">阅读原文</a></span>
-                </div>
-                <div class="summary">六名民主党参议员和六名共和党参议员联名致信，呼吁特朗普总统<span class="highlight">退出与普京的柴油协议</span>。该协议允许俄罗斯向全球市场供应超过400万吨柴油。</div>
-            </div>
-
-            <div class="news-item">
-                <div class="title"><span class="badge badge-politics">时政</span> 特朗普-泽连斯基分歧威胁基辅关键支持</div>
-                <div class="meta">
-                    <span>📰 Reuters</span>
-                    <span>⏱️ 4小时前</span>
-                    <span>🔗 <a href="https://www.reuters.com/world/europe/trump-zelenskiy-rift-threatens-vital-support-kyiv-2026-10-17/" target="_blank">阅读原文</a></span>
-                </div>
-                <div class="summary">特朗普与泽连斯基之间的分歧正在威胁美国对乌克兰的关键支持，这可能<span class="highlight">改变战争走向</span>。</div>
-            </div>
-        </div>
-
-        <!-- 财经板块 -->
-        <div class="section">
-            <div class="section-title"><span class="icon">💰</span> 财经动态</div>
-            
-            <div class="news-item">
-                <div class="title"><span class="badge badge-finance">财经</span> 美股创4月以来最差周表现：纳指周跌4.5%</div>
-                <div class="meta">
-                    <span>📰 JournalArta</span>
-                    <span>⏱️ 9小时前</span>
-                    <span>🔗 <a href="https://journalarta.com/en/2026/10/17/stock-market-news-oct-nasdaq-weekly-losses/" target="_blank">阅读原文</a></span>
-                </div>
-                <div class="summary">美国科技股周五下跌，<span class="highlight">纳斯达克综合指数下跌2.14%，周跌幅约4.5%</span>，创4月以来最差周表现。市场对AI泡沫债务融资的担忧加剧。</div>
-            </div>
-
-            <div class="news-item">
-                <div class="title"><span class="badge badge-finance">财经</span> CoreWeave股价暴跌25%：AI基础设施债务担忧</div>
-                <div class="meta">
-                    <span>📰 GuruFocus</span>
-                    <span>⏱️ 4小时前</span>
-                    <span>🔗 <a href="https://www.gurufocus.com/news/9128991/coreweave-crwv-shares-tumble-over-25-amid-debt-concerns-and-semiconductor-selloff" target="_blank">阅读原文</a></span>
-                </div>
-                <div class="summary">CoreWeave（CRWV）股价<span class="highlight">暴跌超过25%</span>，创近一年最大周跌幅。公司债务跌至通常表明困境的水平，股价较历史高点下跌67%以上。</div>
-            </div>
-
-            <div class="news-item">
-                <div class="title"><span class="badge badge-finance">财经</span> 布伦特原油升至109.86美元/桶：年涨79%</div>
-                <div class="meta">
-                    <span>📰 Trading Economics</span>
-                    <span>⏱️ 10月16日</span>
-                    <span>🔗 <a href="https://tradingeconomics.com/commodity/brent-crude-oil" target="_blank">阅读原文</a></span>
-                </div>
-                <div class="summary">布伦特原油升至<span class="highlight">109.86美元/桶</span>，单日上涨3.72%。过去一年上涨79.25%，霍尔木兹局势和供应担忧推动油价持续攀升。</div>
-            </div>
-
-            <div class="news-item">
-                <div class="title"><span class="badge badge-finance">财经</span> Anthropic第三季度营收达168亿美元：IPO前激增45%</div>
-                <div class="meta">
-                    <span>📰 CNBC</span>
-                    <span>⏱️ 2天前</span>
-                    <span>🔗 <a href="https://www.cnbc.com/2026/10/15/anthropics-third-quarter-revenue-hits-16point8-billion-ipo.html" target="_blank">阅读原文</a></span>
-                </div>
-                <div class="summary">Anthropic在IPO前公布的第三季度营收达到<span class="highlight">168亿美元</span>，环比增长45%。这家AI巨头 reportedly turned a profit last quarter。</div>
-            </div>
-
-            <div class="news-item">
-                <div class="title"><span class="badge badge-finance">财经</span> TSMC Q4营收指引增长55-61%：创纪录Q3利润</div>
-                <div class="meta">
-                    <span>📰 Cryptopolitan</span>
-                    <span>⏱️ 2天前</span>
-                    <span>🔗 <a href="https://www.cryptopolitan.com/tsmc-q4-revenue-61-after-record-q3-profit/" target="_blank">阅读原文</a></span>
-                </div>
-                <div class="summary">台积电预计Q4营收<span class="highlight">523亿至543亿美元</span>，同比增长55%至61%，创纪录的Q3利润后给出强劲指引。</div>
-            </div>
-
-            <div class="news-item">
-                <div class="title"><span class="badge badge-finance">财经</span> 半导体ETF周跌11.8%：芯片股遭重创</div>
-                <div class="meta">
-                    <span>📰 Opening Bell Daily</span>
-                    <span>⏱️ 10小时前</span>
-                    <span>🔗 <a href="https://www.openingbelldailynews.com/p/stock-market-this-week-oct-17-2026" target="_blank">阅读原文</a></span>
-                </div>
-                <div class="summary">iShares半导体ETF本周下跌<span class="highlight">11.8%</span>，是标普500跌幅的六倍。美光下跌14.6%，AMD下跌13.0%。</div>
-            </div>
-
-            <div class="news-item">
-                <div class="title"><span class="badge badge-finance">财经</span> 中国Q3经济增长预期回升：刺激政策见效</div>
-                <div class="meta">
-                    <span>📰 Reuters</span>
-                    <span>⏱️ 2天前</span>
-                    <span>🔗 <a href="https://www.reuters.com/world/china/china-q3-growth-set-pick-up-stimulus-keeping-2026-goal-within-reach-2026-10-15/" target="_blank">阅读原文</a></span>
-                </div>
-                <div class="summary">中国第三季度经济增长预计回升，刺激政策使<span class="highlight">2026年增长目标保持在可达范围内</span>。</div>
-            </div>
-        </div>
-
-        <!-- AI&机器人板块 -->
-        <div class="section">
-            <div class="section-title"><span class="icon">🤖</span> AI & 机器人</div>
-            
-            <div class="news-item">
-                <div class="title"><span class="badge badge-ai">AI</span> DeepSeek发布V4.1-Flash-1017：MIT开源权重+Search API</div>
-                <div class="meta">
-                    <span>📰 AI Weekly</span>
-                    <span>⏱️ 9小时前</span>
-                    <span>🔗 <a href="https://aiweekly.co/alerts/deepseek-opens-v41-flash-1017-weights-and-075-search-api" target="_blank">阅读原文</a></span>
-                </div>
-                <div class="summary">DeepSeek于10月17日在Hugging Face发布<span class="highlight">V4.1-Flash-1017</span>，采用MIT许可证。这是一个稀疏MoE智能体模型，总参数552B，输入激活8B，输出激活16B，支持100万token上下文。同时开放Search和Fetch API，定价<span class="highlight">$0.75/千次调用</span>。</div>
-            </div>
-
-            <div class="news-item">
-                <div class="title"><span class="badge badge-ai">机器人</span> 普渡机器人发布D7半人形机器人：23个关节+20kg负载</div>
-                <div class="meta">
-                    <span>📰 AI Weekly</span>
-                    <span>⏱️ 9小时前</span>
-                    <span>🔗 <a href="https://aiweekly.co/alerts/pudu-debuts-23-joint-d7-semi-humanoid-and-d5-w-quadruped" target="_blank">阅读原文</a></span>
-                </div>
-                <div class="summary">普渡机器人D7半人形机器人<span class="highlight">集中23个关节于手臂、腰部和头部</span>，可举起20公斤，完全跳过双足腿部设计。同时发布D5-W轮腿四足机器人，载重30公斤，可爬楼梯和在不平地形行走，跌落后可自主恢复。</div>
-            </div>
-
-            <div class="news-item">
-                <div class="title"><span class="badge badge-ai">AI</span> 微软Work IQ十月 rollout：连接Copilot与业务数据</div>
-                <div class="meta">
-                    <span>📰 Microsoft Blog</span>
-                    <span>⏱️ 1天前</span>
-                    <span>🔗 <a href="https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot/" target="_blank">阅读原文</a></span>
-                </div>
-                <div class="summary">微软开始十月推出<span class="highlight">Work IQ</span>，将Copilot和自主智能体直接连接到Dynamics 365和Power Platform中的实时业务数据，而非主要依赖通用训练数据。</div>
-            </div>
-
-            <div class="news-item">
-                <div class="title"><span class="badge badge-ai">AI</span> OpenAI升级ChatGPT Chrome扩展：浏览器控制+标签页操作</div>
-                <div class="meta">
-                    <span>📰 9to5Google</span>
-                    <span>⏱️ 1天前</span>
-                    <span>🔗 <a href="https://9to5google.com/2026/10/16/chatgpt-gets-deeper-google-chrome-integration-including-control-over-tabs/" target="_blank">阅读原文</a></span>
-                </div>
-                <div class="summary">OpenAI将ChatGPT Chrome扩展分为<span class="highlight">Chat模式（读取打开的标签页）和Work模式</span>（发送消息、填写表单、下载文件、分组标签页）。现已上架Chrome Web Store。</div>
-            </div>
-
-            <div class="news-item">
-                <div class="title"><span class="badge badge-ai">AI</span> Hugging Face与NVIDIA推出Open Data for Agents数据集</div>
-                <div class="meta">
-                    <span>📰 AI Herald</span>
-                    <span>⏱️ 1天前</span>
-                    <span>🔗 <a href="https://artificialintelligenceherald.com/ai-news-today" target="_blank">阅读原文</a></span>
-                </div>
-                <div class="summary">Hugging Face和NVIDIA推出<span class="highlight">Open Data for Agents</span>，包含超过50,000个任务轨迹的精选数据集，用于标准化自主AI智能体的训练数据，基准性能提升40%。</div>
-            </div>
-
-            <div class="news-item">
-                <div class="title"><span class="badge badge-ai">AI</span> 印度CERT-In警告：多个AI智能体已触及生产系统</div>
-                <div class="meta">
-                    <span>📰 AI Agent Store</span>
-                    <span>⏱️ 1天前</span>
-                    <span>🔗 <a href="https://aiagentstore.ai/ai-agent-news/this-week" target="_blank">阅读原文</a></span>
-                </div>
-                <div class="summary">印度网络安全机构CERT-In表示，<span class="highlight">来自多个提供商的AI智能体已触及生产系统</span>，引发安全担忧。</div>
-            </div>
-
-            <div class="news-item">
-                <div class="title"><span class="badge badge-ai">AI</span> 微软Copilot Studio预览版新增智能体账户和共享记忆</div>
-                <div class="meta">
-                    <span>📰 AI Agents Directory</span>
-                    <span>⏱️ 6小时前</span>
-                    <span>🔗 <a href="https://aiagentsdirectory.com/news/ai-agents-news-brief-october-17-2026" target="_blank">阅读原文</a></span>
-                </div>
-                <div class="summary">微软Copilot Studio预览版现在包括<span class="highlight">智能体账户和共享记忆</span>，同时OpenAI升级了ChatGPT Chrome扩展以增强标签页控制和浏览器自动化。</div>
-            </div>
-        </div>
-
-        <footer>
-            <p>📡 简报生成时间：2026年10月18日 07:15 SGT | 数据来源：公开网络资讯</p>
-            <p>🤖 由 OpenClaw AI 自动生成</p>
-        </footer>
-    </div>
+</div>
 </body>
 </html>
