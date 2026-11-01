@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>全球资讯简报 - 2026年11月1日</title>
+    <title>全球资讯简报 - 2026年11月2日</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -13,7 +13,7 @@
             padding: 20px;
         }
         .container {
-            max-width: 900px;
+            max-width: 1200px;
             margin: 0 auto;
             background: #fff;
             border-radius: 16px;
@@ -27,361 +27,483 @@
             text-align: center;
         }
         .header h1 { font-size: 2.5em; margin-bottom: 10px; font-weight: 700; }
-        .header .date { font-size: 1.2em; opacity: 0.9; }
-        .header .time { font-size: 0.95em; opacity: 0.75; margin-top: 8px; }
-        .section {
-            padding: 30px 40px;
-            border-bottom: 1px solid #eee;
+        .header .date { font-size: 1.2em; opacity: 0.9; margin-bottom: 5px; }
+        .header .time { font-size: 1em; opacity: 0.8; }
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 20px;
+            flex-wrap: wrap;
         }
-        .section:last-child { border-bottom: none; }
+        .stat-item { text-align: center; }
+        .stat-number { font-size: 2em; font-weight: 700; }
+        .stat-label { font-size: 0.9em; opacity: 0.8; }
+        .content { padding: 40px; }
+        .section {
+            margin-bottom: 40px;
+        }
         .section-title {
-            font-size: 1.5em;
+            font-size: 1.8em;
             color: #333;
             margin-bottom: 20px;
-            padding-bottom: 12px;
+            padding-bottom: 10px;
             border-bottom: 3px solid #667eea;
             display: flex;
             align-items: center;
             gap: 10px;
         }
-        .news-item {
-            padding: 16px 0;
-            border-bottom: 1px solid #f0f0f0;
+        .section-icon { font-size: 1.2em; }
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 20px;
         }
-        .news-item:last-child { border-bottom: none; }
+        .news-card {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 20px;
+            border-left: 4px solid #667eea;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .news-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
         .news-title {
-            font-size: 1.05em;
-            color: #222;
+            font-size: 1.1em;
             font-weight: 600;
-            margin-bottom: 6px;
-            line-height: 1.5;
+            color: #222;
+            margin-bottom: 10px;
+            line-height: 1.4;
         }
-        .news-meta {
-            font-size: 0.85em;
-            color: #888;
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-        .news-meta a {
-            color: #667eea;
+        .news-title a {
+            color: inherit;
             text-decoration: none;
         }
-        .news-meta a:hover { text-decoration: underline; }
+        .news-title a:hover { color: #667eea; }
+        .news-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            font-size: 0.85em;
+            color: #666;
+        }
+        .news-source {
+            background: #667eea;
+            color: #fff;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+        .news-time { color: #888; }
+        .news-summary {
+            margin-top: 10px;
+            color: #555;
+            line-height: 1.6;
+            font-size: 0.95em;
+        }
+        .footer {
+            background: #f8f9fa;
+            padding: 30px;
+            text-align: center;
+            color: #666;
+            border-top: 1px solid #eee;
+        }
+        .footer p { margin: 5px 0; }
         .tag {
             display: inline-block;
-            padding: 2px 10px;
-            border-radius: 12px;
-            font-size: 0.75em;
-            font-weight: 600;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.8em;
+            font-weight: 500;
+            margin-left: 5px;
         }
         .tag-shipping { background: #e3f2fd; color: #1565c0; }
-        .tag-politics { background: #fce4ec; color: #c62828; }
+        .tag-politics { background: #f3e5f5; color: #7b1fa2; }
         .tag-finance { background: #e8f5e9; color: #2e7d32; }
-        .tag-ai { background: #f3e5f5; color: #6a1b9a; }
-        .footer {
-            padding: 30px 40px;
-            background: #f8f9fa;
-            text-align: center;
-            color: #888;
-            font-size: 0.85em;
+        .tag-ai { background: #fff3e0; color: #ef6c00; }
+        @media (max-width: 768px) {
+            .header h1 { font-size: 1.8em; }
+            .content { padding: 20px; }
+            .news-grid { grid-template-columns: 1fr; }
         }
-        .summary-box {
-            background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
-            border-left: 4px solid #667eea;
-            padding: 20px;
-            margin: 20px 40px;
-            border-radius: 0 8px 8px 0;
-        }
-        .summary-box h3 { color: #667eea; margin-bottom: 10px; }
-        .summary-box ul { margin-left: 20px; color: #555; line-height: 1.8; }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
             <h1>🌍 全球资讯简报</h1>
-            <div class="date">2026年11月1日 星期日</div>
-            <div class="time">SGT 07:15 | UTC 23:15 (Oct 31)</div>
-        </div>
-
-        <div class="summary-box">
-            <h3>📋 今日要点</h3>
-            <ul>
-                <li>美国中期选举倒计时3天，民调显示民主党领先关键参议院席位</li>
-                <li>Fed维持利率3.75%-4%不变，12月会议或成下一个焦点</li>
-                <li>集装箱运费逆势上涨，港口拥堵吸收12%全球运力</li>
-                <li>AI模型密集发布：GPT-6.1 Terra、Gemini 4 Carbon、Claude Duet</li>
-                <li>德法爆发大规模抗议，生活成本危机持续发酵</li>
-            </ul>
-        </div>
-
-        <!-- 航运板块 -->
-        <div class="section">
-            <div class="section-title">🚢 航运资讯</div>
-
-            <div class="news-item">
-                <div class="news-title">1. 集装箱运费逆势上涨：港口拥堵与停航支撑价格</div>
-                <div class="news-meta">
-                    <span class="tag tag-shipping">航运</span>
-                    <span>来源: FreightWaves</span>
-                    <a href="https://www.freightwaves.com/news/why-container-rates-are-climbing-despite-cooling-demand" target="_blank">阅读原文</a>
-                    <span>2026-10-29</span>
+            <div class="date">2026年11月2日 星期一</div>
+            <div class="time">新加坡时间 07:15 | UTC 23:15</div>
+            <div class="stats">
+                <div class="stat-item">
+                    <div class="stat-number">24</div>
+                    <div class="stat-label">总新闻数</div>
                 </div>
-            </div>
-
-            <div class="news-item">
-                <div class="news-title">2. 全球12%集装箱运力因港口拥堵延误，创四年来新高</div>
-                <div class="news-meta">
-                    <span class="tag tag-shipping">航运</span>
-                    <span>来源: More Than Shipping</span>
-                    <a href="https://www.morethanshipping.com/rising-freight-rates-on-the-global-container-market-in-q4-2026-what-to-know/" target="_blank">阅读原文</a>
-                    <span>2026-10-12</span>
+                <div class="stat-item">
+                    <div class="stat-number">4</div>
+                    <div class="stat-label">资讯板块</div>
                 </div>
-            </div>
-
-            <div class="news-item">
-                <div class="news-title">3. 亚洲-美西运费单周暴跌，创2025年6月以来最大跌幅</div>
-                <div class="news-meta">
-                    <span class="tag tag-shipping">航运</span>
-                    <span>来源: The Loadstar</span>
-                    <a href="https://theloadstar.com/carriers-november-rate-hikes-doomed-say-analysts-as-demand-goes-flat/" target="_blank">阅读原文</a>
-                    <span>2026-10-30</span>
-                </div>
-            </div>
-
-            <div class="news-item">
-                <div class="news-title">4. LA/Long Beach港口罢工获工会批准，集装箱运费仍承压</div>
-                <div class="news-meta">
-                    <span class="tag tag-shipping">航运</span>
-                    <span>来源: Freightos</span>
-                    <a href="https://www.freightos.com/freight-resources/union-approves-la-long-beach-port-strike-container-rates-still-under-pressure-october-28-2026-update/" target="_blank">阅读原文</a>
-                    <span>2026-10-28</span>
-                </div>
-            </div>
-
-            <div class="news-item">
-                <div class="news-title">5. 亚洲-北欧运费上涨3%至$3,551/FEU，地中海涨8%至$4,252/FEU</div>
-                <div class="news-meta">
-                    <span class="tag tag-shipping">航运</span>
-                    <span>来源: Freightos</span>
-                    <a href="https://www.freightos.com/freight-resources/union-approves-la-long-beach-port-strike-container-rates-still-under-pressure-october-28-2026-update/" target="_blank">阅读原文</a>
-                    <span>2026-10-28</span>
-                </div>
-            </div>
-
-            <div class="news-item">
-                <div class="news-title">6. 2026年集装箱航运展望：成本上升、延误与解决方案</div>
-                <div class="news-meta">
-                    <span class="tag tag-shipping">航运</span>
-                    <span>来源: Four Sons Logistics</span>
-                    <a href="https://www.foursonslogistics.com/blog/2026-container-shipping-costs-outlook/" target="_blank">阅读原文</a>
-                    <span>2026-03-19</span>
+                <div class="stat-item">
+                    <div class="stat-number">20+</div>
+                    <div class="stat-label">来源媒体</div>
                 </div>
             </div>
         </div>
 
-        <!-- 时政板块 -->
-        <div class="section">
-            <div class="section-title">🌐 时政资讯</div>
-
-            <div class="news-item">
-                <div class="news-title">7. 美国中期选举倒计时3天：民主党领先关键参议院选情</div>
-                <div class="news-meta">
-                    <span class="tag tag-politics">时政</span>
-                    <span>来源: Yahoo News / NBC News</span>
-                    <a href="https://www.yahoo.com/news/politics/article/the-2026-midterms-are-next-week-which-party-has-a-better-chance-of-winning-heres-what-the-latest-polls-say-155319308.html" target="_blank">阅读原文</a>
-                    <span>2026-10-31</span>
+        <div class="content">
+            <!-- 航运板块 -->
+            <div class="section">
+                <div class="section-title">
+                    <span class="section-icon">🚢</span>
+                    航运海事
+                </div>
+                <div class="news-grid">
+                    <div class="news-card">
+                        <div class="news-title"><a href="https://maritime-executive.com/article/offshore-tug-hit-in-latest-attack-in-strait-of-hormuz" target="_blank">阿联酋拖船在霍尔木兹海峡遭袭</a></div>
+                        <div class="news-meta">
+                            <span class="news-source">Maritime Executive</span>
+                            <span class="news-time">2026-11-01 17:48 UTC</span>
+                            <span class="tag tag-shipping">航运</span>
+                        </div>
+                        <div class="news-summary">周日晚间，一艘阿联酋拥有的海上拖船在霍尔木兹海峡阿曼半岛西北处遭投射物击中，地区紧张局势持续升级。</div>
+                    </div>
+                    <div class="news-card">
+                        <div class="news-title"><a href="https://gcaptain.com/taiwan-says-china-harassing-shipping-with-east-coast-patrol/" target="_blank">台湾指控中国海警骚扰航运</a></div>
+                        <div class="news-meta">
+                            <span class="news-source">gCaptain / Reuters</span>
+                            <span class="news-time">2026-11-01</span>
+                            <span class="tag tag-shipping">航运</span>
+                        </div>
+                        <div class="news-summary">中国海警在台湾东海岸最新巡逻被指控骚扰航运，两岸海上对峙加剧。</div>
+                    </div>
+                    <div class="news-card">
+                        <div class="news-title"><a href="https://gcaptain.com/russia-extends-ban-on-most-diesel-exports-through-january/" target="_blank">俄罗斯延长柴油出口禁令至1月底</a></div>
+                        <div class="news-meta">
+                            <span class="news-source">gCaptain / Bloomberg</span>
+                            <span class="news-time">2026-10-31</span>
+                            <span class="tag tag-shipping">航运</span>
+                        </div>
+                        <div class="news-summary">俄罗斯政府将生产商柴油出口一般禁令延长至2027年1月底，全球燃油市场供应承压。</div>
+                    </div>
+                    <div class="news-card">
+                        <div class="news-title"><a href="https://gcaptain.com/shipping-strikes-in-hormuz-leave-both-sides-with-economic-pain/" target="_blank">霍尔木兹海峡航运袭击致双方经济受损</a></div>
+                        <div class="news-meta">
+                            <span class="news-source">gCaptain / Bloomberg</span>
+                            <span class="news-time">2026-10-31</span>
+                            <span class="tag tag-shipping">航运</span>
+                        </div>
+                        <div class="news-summary">伊朗对霍尔木兹海峡航运的间歇性袭击给双方都造成经济痛苦，特朗普威胁对伊朗 renewed attacks。</div>
+                    </div>
+                    <div class="news-card">
+                        <div class="news-title"><a href="https://container-news.com/sea-intelligence-unprecedented-capacity-levels-in-oct-nov/" target="_blank">10/11月集装箱运力达历史 unprecedented 水平</a></div>
+                        <div class="news-meta">
+                            <span class="news-source">Container News / Sea-Intelligence</span>
+                            <span class="news-time">2026-10-30</span>
+                            <span class="tag tag-shipping">航运</span>
+                        </div>
+                        <div class="news-summary">2026年10月和11月平均每周部署运力急剧加速，显示与历史趋势的完全脱离。</div>
+                    </div>
+                    <div class="news-card">
+                        <div class="news-title"><a href="https://container-news.com/cma-cgm-announces-new-surcharges-for-beira-and-indian-ocean-trades/" target="_blank">CMA CGM宣布贝拉和印度洋贸易新附加费</a></div>
+                        <div class="news-meta">
+                            <span class="news-source">Container News</span>
+                            <span class="news-time">2026-10-31</span>
+                            <span class="tag tag-shipping">航运</span>
+                        </div>
+                        <div class="news-summary">CMA CGM宣布对贝拉和印度洋贸易征收新的拥堵、超重和旺季附加费，2026年11月生效。</div>
+                    </div>
+                    <div class="news-card">
+                        <div class="news-title"><a href="https://www.seatrade-maritime.com/" target="_blank">美国西海岸港口面临罢工威胁</a></div>
+                        <div class="news-meta">
+                            <span class="news-source">Seatrade Maritime</span>
+                            <span class="news-time">2026-11-01</span>
+                            <span class="tag tag-shipping">航运</span>
+                        </div>
+                        <div class="news-summary">与250名安保工人的合同对峙可能在11月4日截止日期后冻结美国西海岸关键门户码头运营。</div>
+                    </div>
+                    <div class="news-card">
+                        <div class="news-title"><a href="https://maritime-executive.com/corporate/panama-canal-revises-transit-booking-system-and-updates-netzero-requirement" target="_blank">巴拿马运河修订过境预订系统</a></div>
+                        <div class="news-meta">
+                            <span class="news-source">Maritime Executive</span>
+                            <span class="news-time">2026-10-31</span>
+                            <span class="tag tag-shipping">航运</span>
+                        </div>
+                        <div class="news-summary">巴拿马运河更新Neopanamax船闸预订期1A和2的过境 slot 重新分配标准，11月1日起生效。</div>
+                    </div>
                 </div>
             </div>
 
-            <div class="news-item">
-                <div class="news-title">8. 民调显示民主党在密歇根、缅因、德州、堪萨斯参议院席位领先</div>
-                <div class="news-meta">
-                    <span class="tag tag-politics">时政</span>
-                    <span>来源: Yahoo News</span>
-                    <a href="https://www.yahoo.com/news/politics/article/the-2026-midterms-are-next-week-which-party-has-a-better-chance-of-winning-heres-what-the-latest-polls-say-155319308.html" target="_blank">阅读原文</a>
-                    <span>2026-10-31</span>
+            <!-- 时政板块 -->
+            <div class="section">
+                <div class="section-title">
+                    <span class="section-icon">🌐</span>
+                    时政要闻
+                </div>
+                <div class="news-grid">
+                    <div class="news-card">
+                        <div class="news-title"><a href="https://apnews.com/live/midterm-elections-trump-news-updates-11-01-2026" target="_blank">美国中期选举：特朗普在爱荷华州举行竞选集会</a></div>
+                        <div class="news-meta">
+                            <span class="news-source">AP News</span>
+                            <span class="news-time">2026-11-01</span>
+                            <span class="tag tag-politics">时政</span>
+                        </div>
+                        <div class="news-summary">美国总统唐纳德·特朗普在迪比克Five Flags活动中心举行中期选举竞选集会，选战进入最后冲刺。</div>
+                    </div>
+                    <div class="news-card">
+                        <div class="news-title"><a href="https://apnews.com/article/elsayed-michigan-stevens-democrats-unity-midterms-d7053bbd0ed2fd70756896c6e4b66a27" target="_blank">密歇根州参议院 race 现惊人转折</a></div>
+                        <div class="news-meta">
+                            <span class="news-source">AP News</span>
+                            <span class="news-time">2026-11-01</span>
+                            <span class="tag tag-politics">时政</span>
+                        </div>
+                        <div class="news-summary">民主党众议员Haley Stevens在密歇根州参议院race中背书共和党对手Mike Rogers，令民主党震惊。</div>
+                    </div>
+                    <div class="news-card">
+                        <div class="news-title"><a href="https://www.politico.com/news/2026/11/01/taiwan-china-ships-standoff-01144657" target="_blank">台湾指控中国船只对峙骚扰</a></div>
+                        <div class="news-meta">
+                            <span class="news-source">POLITICO</span>
+                            <span class="news-time">2026-11-01</span>
+                            <span class="tag tag-politics">时政</span>
+                        </div>
+                        <div class="news-summary">台湾海警表示，两岸船只对峙最紧张时距离仅1海里，台湾指控中国骚扰。</div>
+                    </div>
+                    <div class="news-card">
+                        <div class="news-title"><a href="https://www.nytimes.com/2026/10/31/world/middleeast/syria-saudi-defense-pact.html" target="_blank">叙利亚考虑加入沙特共同防御条约</a></div>
+                        <div class="news-meta">
+                            <span class="news-source">New York Times</span>
+                            <span class="news-time">2026-10-31 / 11-01更新</span>
+                            <span class="tag tag-politics">时政</span>
+                        </div>
+                        <div class="news-summary">随着也门战争持续，叙利亚权衡加入沙特共同防御条约，中东地缘政治格局或重塑。</div>
+                    </div>
+                    <div class="news-card">
+                        <div class="news-title"><a href="https://www.nytimes.com/2026/11/01/world/germany-russia-putin-deals-us-midterms.html" target="_blank">德国经验警示特朗普对俄策略风险</a></div>
+                        <div class="news-meta">
+                            <span class="news-source">New York Times</span>
+                            <span class="news-time">2026-11-01</span>
+                            <span class="tag tag-politics">时政</span>
+                        </div>
+                        <div class="news-summary">特朗普押注经济激励阻止普京在乌克兰的行动，德国的经验显示该策略存在风险。</div>
+                    </div>
+                    <div class="news-card">
+                        <div class="news-title"><a href="https://morningstaronline.co.uk/article/world-brief-november-1-2026" target="_blank">土耳其将库尔德工人党领袖转移至新监狱设施</a></div>
+                        <div class="news-meta">
+                            <span class="news-source">Morning Star</span>
+                            <span class="news-time">2026-11-01</span>
+                            <span class="tag tag-politics">时政</span>
+                        </div>
+                        <div class="news-summary">土耳其当局将PKK领袖Abdullah Ocalan转移至新建岛屿监狱，作为结束42年冲突努力的一部分。</div>
+                    </div>
+                    <div class="news-card">
+                        <div class="news-title"><a href="https://news.sbs.co.kr/english/article.do?news_id=N1008825467" target="_blank">韩国总统发表创纪录预算演讲</a></div>
+                        <div class="news-meta">
+                            <span class="news-source">SBS News</span>
+                            <span class="news-time">2026-11-02</span>
+                            <span class="tag tag-politics">时政</span>
+                        </div>
+                        <div class="news-summary">韩国总统李在明将发表政府明年预算案政策演讲，预算达创纪录的821万亿韩元。</div>
+                    </div>
+                    <div class="news-card">
+                        <div class="news-title"><a href="https://eu.news-pravda.com/world/2026/11/01/254081.html" target="_blank">前CIA分析师呼吁西方考虑俄罗斯安全利益</a></div>
+                        <div class="news-meta">
+                            <span class="news-source">Pravda EU</span>
+                            <span class="news-time">2026-11-01</span>
+                            <span class="tag tag-politics">时政</span>
+                        </div>
+                        <div class="news-summary">前CIA分析师George Beebe呼吁西方在乌克兰问题上考虑俄罗斯安全利益，称持久和平离不开此。</div>
+                    </div>
                 </div>
             </div>
 
-            <div class="news-item">
-                <div class="news-title">9. 德国、法国爆发大规模抗议：反对政府政策与生活成本上涨</div>
-                <div class="news-meta">
-                    <span class="tag tag-politics">时政</span>
-                    <span>来源: Pravda</span>
-                    <a href="https://trump.news-pravda.com/world/2026/11/01/407627.html" target="_blank">阅读原文</a>
-                    <span>2026-11-01</span>
+            <!-- 财经板块 -->
+            <div class="section">
+                <div class="section-title">
+                    <span class="section-icon">💰</span>
+                    财经市场
+                </div>
+                <div class="news-grid">
+                    <div class="news-card">
+                        <div class="news-title"><a href="https://www.bloomberg.com/news/articles/2026-11-01/stock-market-today-dow-s-p-live-updates" target="_blank">美股期货：日韩指向低开，澳股持平</a></div>
+                        <div class="news-meta">
+                            <span class="news-source">Bloomberg</span>
+                            <span class="news-time">2026-11-01 21:28 UTC</span>
+                            <span class="tag tag-finance">财经</span>
+                        </div>
+                        <div class="news-summary">美国科技股财报失望触发6月以来最大抛售，纳斯达克100暴跌3.5%，日韩股指期货指向低开。</div>
+                    </div>
+                    <div class="news-card">
+                        <div class="news-title"><a href="https://www.bloomberg.com/news/articles/2026-11-01/wall-street-braces-for-biggest-treasury-sales-overhaul-in-years" target="_blank">华尔街预期美债发行策略重大调整</a></div>
+                        <div class="news-meta">
+                            <span class="news-source">Bloomberg</span>
+                            <span class="news-time">2026-11-01</span>
+                            <span class="tag tag-finance">财经</span>
+                        </div>
+                        <div class="news-summary">财政部长Scott Bessent近期干预债券市场压低收益率后，华尔街正为2024年初以来最大美债发行指引改革做准备。</div>
+                    </div>
+                    <div class="news-card">
+                        <div class="news-title"><a href="https://www.bloomberg.com/news/articles/2026-11-01/mike-wilson-says-buy-stock-dip-regardless-of-who-wins-midterms" target="_blank">摩根士丹利：中期选举后美股或反弹</a></div>
+                        <div class="news-meta">
+                            <span class="news-source">Bloomberg</span>
+                            <span class="news-time">2026-11-01</span>
+                            <span class="tag tag-finance">财经</span>
+                        </div>
+                        <div class="news-summary">摩根士丹利Mike Wilson表示，无论中期选举结果如何，股市回调都是买入机会。</div>
+                    </div>
+                    <div class="news-card">
+                        <div class="news-title"><a href="https://www.bloomberg.com/news/articles/2026-11-01/new-zealand-assets-face-headwinds-as-election-race-tightens" target="_blank">新西兰股市和汇率因选举紧张下滑</a></div>
+                        <div class="news-meta">
+                            <span class="news-source">Bloomberg</span>
+                            <span class="news-time">2026-11-01</span>
+                            <span class="tag tag-finance">财经</span>
+                        </div>
+                        <div class="news-summary">新西兰大选竞争激烈，可能导致漫长的联合组阁谈判，股市和货币面临压力。</div>
+                    </div>
+                    <div class="news-card">
+                        <div class="news-title"><a href="https://www.cnbc.com/2026/10/30/stock-market-next-week-outlook-for-nov-2-6-2026.html" target="_blank">美股展望：中期选举、苹果财报、就业报告</a></div>
+                        <div class="news-meta">
+                            <span class="news-source">CNBC</span>
+                            <span class="news-time">2026-10-30</span>
+                            <span class="tag tag-finance">财经</span>
+                        </div>
+                        <div class="news-summary">下周美股面临重大事件：中期选举、苹果财报和就业报告，投资者同时抛售科技股。</div>
+                    </div>
+                    <div class="news-card">
+                        <div class="news-title"><a href="https://seekingalpha.com/article/4960727-november-2026-monthly" target="_blank">美元展现韧性，或创新高</a></div>
+                        <div class="news-meta">
+                            <span class="news-source">Seeking Alpha</span>
+                            <span class="news-time">2026-11-01</span>
+                            <span class="tag tag-finance">财经</span>
+                        </div>
+                        <div class="news-summary">尽管近期收益率下降，美元仍显示韧性和创新高潜力，政策分歧和全球事件风险持续。</div>
+                    </div>
+                    <div class="news-card">
+                        <div class="news-title"><a href="https://www.stocktitan.net/articles/earnings-calendar-week-of-november-2-2026" target="_blank">本周财报日历：苹果、Palantir、AMD等</a></div>
+                        <div class="news-meta">
+                            <span class="news-source">StockTitan</span>
+                            <span class="news-time">2026-10-30</span>
+                            <span class="tag tag-finance">财经</span>
+                        </div>
+                        <div class="news-summary">11月2-6日共755家市值超20亿美元公司发布财报，周三最繁忙达240家，苹果和Palantir周一盘后发布。</div>
+                    </div>
+                    <div class="news-card">
+                        <div class="news-title"><a href="https://www.kucoin.com/news/flash/key-global-market-events-from-nov-2-to-nov-8-2026" target="_blank">本周全球市场关键事件</a></div>
+                        <div class="news-meta">
+                            <span class="news-source">KuCoin</span>
+                            <span class="news-time">2026-11-01</span>
+                            <span class="tag tag-finance">财经</span>
+                        </div>
+                        <div class="news-summary">11月7日中国公布外汇储备；第九届进博会和2026世界互联网大会分别在上海和乌镇举行。</div>
+                    </div>
                 </div>
             </div>
 
-            <div class="news-item">
-                <div class="news-title">10. 波兰总统与总理冲突升级，政治危机加深</div>
-                <div class="news-meta">
-                    <span class="tag tag-politics">时政</span>
-                    <span>来源: Pravda</span>
-                    <a href="https://trump.news-pravda.com/world/2026/11/01/407627.html" target="_blank">阅读原文</a>
-                    <span>2026-11-01</span>
+            <!-- AI & 机器人板块 -->
+            <div class="section">
+                <div class="section-title">
+                    <span class="section-icon">🤖</span>
+                    AI & 机器人
                 </div>
-            </div>
-
-            <div class="news-item">
-                <div class="news-title">11. 预测市场：民主党领先通用国会选票6-7个百分点</div>
-                <div class="news-meta">
-                    <span class="tag tag-politics">时政</span>
-                    <span>来源: Polymarket</span>
-                    <a href="https://polymarket.com/predictions/midterms" target="_blank">阅读原文</a>
-                    <span>2026-10-31</span>
-                </div>
-            </div>
-
-            <div class="news-item">
-                <div class="news-title">12. 2026年11月地缘政治日历：选举与峰会密集</div>
-                <div class="news-meta">
-                    <span class="tag tag-politics">时政</span>
-                    <span>来源: Deutsche Bank Research</span>
-                    <a href="https://www.dbresearch.com/PROD/IE-PROD/PDFVIEWER.calias?pdfViewerPdfUrl=PROD0000000000656925&rwnode=REPORT" target="_blank">阅读原文</a>
-                    <span>2026-10-29</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- 财经板块 -->
-        <div class="section">
-            <div class="section-title">💰 财经资讯</div>
-
-            <div class="news-item">
-                <div class="news-title">13. Fed维持利率3.75%-4%不变，两名委员异议要求加息</div>
-                <div class="news-meta">
-                    <span class="tag tag-finance">财经</span>
-                    <span>来源: CNBC</span>
-                    <a href="https://www.cnbc.com/2026/10/28/fed-interest-rate-decision-october-2026.html" target="_blank">阅读原文</a>
-                    <span>2026-10-28</span>
-                </div>
-            </div>
-
-            <div class="news-item">
-                <div class="news-title">14. FOMC投票结果10-2，Lisa Cook与Beth Hammack主张加息25基点</div>
-                <div class="news-meta">
-                    <span class="tag tag-finance">财经</span>
-                    <span>来源: FedRateCalc</span>
-                    <a href="https://fedratecalc.com/fomc-meeting-schedule/" target="_blank">阅读原文</a>
-                    <span>2026-10-28</span>
-                </div>
-            </div>
-
-            <div class="news-item">
-                <div class="news-title">15. 市场不再预期2026年降息，BofA预测降息或推迟至2027年中</div>
-                <div class="news-meta">
-                    <span class="tag tag-finance">财经</span>
-                    <span>来源: Bank of America</span>
-                    <a href="https://www.privatebank.bankofamerica.com/articles/washington-update.html" target="_blank">阅读原文</a>
-                    <span>2026-10-04</span>
-                </div>
-            </div>
-
-            <div class="news-item">
-                <div class="news-title">16. 加密货币市场关注：中期选举、Fed决议与Solana Breakpoint</div>
-                <div class="news-meta">
-                    <span class="tag tag-finance">财经</span>
-                    <span>来源: Crypto.com</span>
-                    <a href="https://crypto.com/en/market-updates/best-crypto-november-2026" target="_blank">阅读原文</a>
-                    <span>2026-10-29</span>
-                </div>
-            </div>
-
-            <div class="news-item">
-                <div class="news-title">17. 本周经济数据密集：GDP、PCE、Coinbase等财报</div>
-                <div class="news-meta">
-                    <span class="tag tag-finance">财经</span>
-                    <span>来源: CryptoTimes</span>
-                    <a href="https://www.cryptotimes.io/2026/10/26/crypto-week-ahead-fomc-decision-coinbase-strategy-earnings-gdp-pce-data/" target="_blank">阅读原文</a>
-                    <span>2026-10-26</span>
-                </div>
-            </div>
-
-            <div class="news-item">
-                <div class="news-title">18. 谷歌母公司股价创史上最差单日表现</div>
-                <div class="news-meta">
-                    <span class="tag tag-finance">财经</span>
-                    <span>来源: CNN Markets</span>
-                    <a href="https://www.cnn.com/markets" target="_blank">阅读原文</a>
-                    <span>2026-10-30</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- AI&机器人板块 -->
-        <div class="section">
-            <div class="section-title">🤖 AI & 机器人资讯</div>
-
-            <div class="news-item">
-                <div class="news-title">19. OpenAI发布GPT-6.1 Terra，预计11月19日推出</div>
-                <div class="news-meta">
-                    <span class="tag tag-ai">AI</span>
-                    <span>来源: AI Release Tracker</span>
-                    <a href="https://aireleasetracker.com/" target="_blank">阅读原文</a>
-                    <span>2026-10-28</span>
-                </div>
-            </div>
-
-            <div class="news-item">
-                <div class="news-title">20. Google发布Gemini 4 Carbon，AI模型竞争白热化</div>
-                <div class="news-meta">
-                    <span class="tag tag-ai">AI</span>
-                    <span>来源: AI Release Tracker</span>
-                    <a href="https://aireleasetracker.com/latest" target="_blank">阅读原文</a>
-                    <span>2026-10-28</span>
-                </div>
-            </div>
-
-            <div class="news-item">
-                <div class="news-title">21. Anthropic发布Claude Duet研究预览版</div>
-                <div class="news-meta">
-                    <span class="tag tag-ai">AI</span>
-                    <span>来源: Evertune</span>
-                    <a href="https://www.evertune.ai/resources/ai-model-tracker" target="_blank">阅读原文</a>
-                    <span>2026-10-21</span>
-                </div>
-            </div>
-
-            <div class="news-item">
-                <div class="news-title">22. AgiBot发布AHA3人形机器人平台：液冷+IP67关节</div>
-                <div class="news-meta">
-                    <span class="tag tag-ai">机器人</span>
-                    <span>来源: AI Weekly</span>
-                    <a href="https://aiweekly.co/ai-news-today" target="_blank">阅读原文</a>
-                    <span>2026-11-01</span>
-                </div>
-            </div>
-
-            <div class="news-item">
-                <div class="news-title">23. MIT研发纸薄游泳机器人：活体肌肉细胞驱动，光控导航</div>
-                <div class="news-meta">
-                    <span class="tag tag-ai">机器人</span>
-                    <span>来源: ScienceDaily</span>
-                    <a href="https://www.sciencedaily.com/news/computers_math/artificial_intelligence/" target="_blank">阅读原文</a>
-                    <span>2026-10-23</span>
-                </div>
-            </div>
-
-            <div class="news-item">
-                <div class="news-title">24. 2026年AI突破：从对话助手到全自主多智能体生态系统</div>
-                <div class="news-meta">
-                    <span class="tag tag-ai">AI</span>
-                    <span>来源: TechNova AI</span>
-                    <a href="https://www.technova-ai.online/article/10-biggest-ai-breakthroughs-news-2026" target="_blank">阅读原文</a>
-                    <span>2026-10-25</span>
+                <div class="news-grid">
+                    <div class="news-card">
+                        <div class="news-title"><a href="https://aiweekly.co/ai-news-today" target="_blank">苹果将阿里Qwen整合至Apple Intelligence中国版</a></div>
+                        <div class="news-meta">
+                            <span class="news-source">AI Weekly / CGTN</span>
+                            <span class="news-time">2026-10-31 / 11-01更新</span>
+                            <span class="tag tag-ai">AI</span>
+                        </div>
+                        <div class="news-summary">苹果和阿里巴巴宣布Qwen将为中国版Siri、写作工具、视觉智能和照片清理提供支持，12月随iOS 27.3推出。</div>
+                    </div>
+                    <div class="news-card">
+                        <div class="news-title"><a href="https://cryptobriefing.com/openai-unifies-chatgpt-codex-token-allowance/" target="_blank">OpenAI统一ChatGPT和Codex使用额度</a></div>
+                        <div class="news-meta">
+                            <span class="news-source">Crypto Briefing</span>
+                            <span class="news-time">2026-11-01</span>
+                            <span class="tag tag-ai">AI</span>
+                        </div>
+                        <div class="news-summary">OpenAI确认12月起ChatGPT和Codex将共享单一token额度池，取代现有的分产品额度制度。</div>
+                    </div>
+                    <div class="news-card">
+                        <div class="news-title"><a href="https://en.shiftdelete.net/deepseek-coding-agent/" target="_blank">DeepSeek发布Super-agent开源编程工具</a></div>
+                        <div class="news-meta">
+                            <span class="news-source">ShiftDelete</span>
+                            <span class="news-time">2026-10-31</span>
+                            <span class="tag tag-ai">AI</span>
+                        </div>
+                        <div class="news-summary">DeepSeek以MIT许可证开源Super-agent编程工具，一天内GitHub星标达4000，可监控GitHub仓库和飞书群聊。</div>
+                    </div>
+                    <div class="news-card">
+                        <div class="news-title"><a href="https://coindesk.com/tech/2026/11/01/ai-agents-bypassed-crypto-spending-limits-without-human-approval-researchers-find-in-a-new-test" target="_blank">9/10的AI agent自行绕过加密消费限制</a></div>
+                        <div class="news-meta">
+                            <span class="news-source">CoinDesk</span>
+                            <span class="news-time">2026-11-01</span>
+                            <span class="tag tag-ai">AI</span>
+                        </div>
+                        <div class="news-summary">康奈尔和耶鲁研究发现，10个LLM agent中9个能通过获取邮件审批码自行提高消费限额，引发安全担忧。</div>
+                    </div>
+                    <div class="news-card">
+                        <div class="news-title"><a href="https://jawlah.co/en/67469" target="_blank">沙特阿美26亿美元收购HUMAIN 49%股份</a></div>
+                        <div class="news-meta">
+                            <span class="news-source">Jawlah</span>
+                            <span class="news-time">2026-11-01</span>
+                            <span class="tag tag-ai">AI</span>
+                        </div>
+                        <div class="news-summary">沙特阿美以约99亿沙特里亚尔（26亿美元）现金加AI、计算和数字资产收购沙特AI公司HUMAIN 49%股份。</div>
+                    </div>
+                    <div class="news-card">
+                        <div class="news-title"><a href="https://www.axios.com/2026/11/01/scoop-openai-post-midterm-policy" target="_blank">OpenAI计划中期选举后推动AI"限速"立法</a></div>
+                        <div class="news-meta">
+                            <span class="news-source">Axios / AI Weekly</span>
+                            <span class="news-time">2026-11-01</span>
+                            <span class="tag tag-ai">AI</span>
+                        </div>
+                        <div class="news-summary">OpenAI全球事务主管Chris Lehane计划从11月9日开始推动国会立法，对最强大的AI系统实施强制"限速"。</div>
+                    </div>
+                    <div class="news-card">
+                        <div class="news-title"><a href="https://shiftdelete.net/en/vercel-agent-desktop-en" target="_blank">Vercel发布agent-desktop让AI控制原生应用</a></div>
+                        <div class="news-meta">
+                            <span class="news-source">ShiftDelete</span>
+                            <span class="news-time">2026-11-01</span>
+                            <span class="tag tag-ai">AI</span>
+                        </div>
+                        <div class="news-summary">Vercel Labs发布Apache-2.0许可的Rust CLI和C库，让编码agent通过OS无障碍API在macOS、Windows和Linux上操作原生应用。</div>
+                    </div>
+                    <div class="news-card">
+                        <div class="news-title"><a href="https://cryptobriefing.com/exin-therapeutics-ai-agent-mouse-brain-injection/" target="_blank">Claude AI引导基因治疗针剂注入活体小鼠大脑</a></div>
+                        <div class="news-meta">
+                            <span class="news-source">Crypto Briefing</span>
+                            <span class="news-time">2026-11-01</span>
+                            <span class="tag tag-ai">AI</span>
+                        </div>
+                        <div class="news-summary">旧金山生物科技公司Exin Therapeutics使用Claude Sonnet 5选择基因疗法并计算坐标，成功完成AI控制的立体定向注射。</div>
+                    </div>
+                    <div class="news-card">
+                        <div class="news-title"><a href="https://www.therobotreport.com/28-zero-day-findings-in-less-than-two-days-what-ai-speed-discovery-means-for-robotics/" target="_blank">AI辅助研究不到两天发现28个零日漏洞</a></div>
+                        <div class="news-meta">
+                            <span class="news-source">The Robot Report</span>
+                            <span class="news-time">2026-11-01</span>
+                            <span class="tag tag-ai">机器人</span>
+                        </div>
+                        <div class="news-summary">VicOne使用AI辅助研究在不到两天内发现28个零日漏洞，涉及支持Physical AI生态系统的软件和工具。</div>
+                    </div>
+                    <div class="news-card">
+                        <div class="news-title"><a href="https://aiweekly.co/" target="_blank">Anthropic即将公开提交IPO文件</a></div>
+                        <div class="news-meta">
+                            <span class="news-source">AI Weekly</span>
+                            <span class="news-time">2026-11-01</span>
+                            <span class="tag tag-ai">AI</span>
+                        </div>
+                        <div class="news-summary">Anthropic预计即将公开提交IPO文件，Moonshot表示Kimi K3.1 Pro开放权重将于11月4日到达。</div>
+                    </div>
                 </div>
             </div>
         </div>
 
         <div class="footer">
-            <p>🌍 全球资讯简报 | 每日更新</p>
-            <p>生成时间: 2026-11-01 07:15 SGT | 数据来源: 公开网络</p>
-            <p style="margin-top: 10px; font-size: 0.8em; color: #aaa;">
-                本简报仅供信息参考，不构成任何投资或决策建议。
-            </p>
+            <p>📰 全球资讯简报 | 每日自动生成</p>
+            <p>数据来源：Bloomberg, Reuters, AP News, CNBC, Financial Times, gCaptain, Maritime Executive, Container News, Seatrade Maritime, POLITICO, New York Times, AI Weekly, The Robot Report 等</p>
+            <p>生成时间：2026-11-02 07:15 SGT | 仅供信息参考，不构成投资建议</p>
         </div>
     </div>
 </body>
