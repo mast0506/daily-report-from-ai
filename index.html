@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>全球资讯简报 - 2026年11月4日</title>
+    <title>全球资讯简报 - 2026年11月5日</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -29,123 +29,99 @@
         .header h1 { font-size: 2.5em; margin-bottom: 10px; font-weight: 700; }
         .header .date { font-size: 1.2em; opacity: 0.9; }
         .header .update-time { font-size: 0.9em; opacity: 0.8; margin-top: 10px; }
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            padding: 30px 40px;
+        .nav-tabs {
+            display: flex;
             background: #f8f9fa;
-            border-bottom: 1px solid #e9ecef;
+            border-bottom: 2px solid #e9ecef;
+            overflow-x: auto;
         }
-        .stat-card {
-            background: #fff;
-            padding: 20px;
-            border-radius: 12px;
+        .nav-tab {
+            flex: 1;
+            min-width: 120px;
+            padding: 16px 20px;
             text-align: center;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            cursor: pointer;
+            font-weight: 600;
+            color: #666;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s;
+            white-space: nowrap;
         }
-        .stat-card .number { font-size: 2em; font-weight: 700; color: #667eea; }
-        .stat-card .label { color: #6c757d; margin-top: 5px; }
-        .section {
-            padding: 30px 40px;
-            border-bottom: 1px solid #e9ecef;
+        .nav-tab:hover { background: #e9ecef; }
+        .nav-tab.active {
+            color: #667eea;
+            border-bottom-color: #667eea;
+            background: #fff;
         }
-        .section:last-child { border-bottom: none; }
-        .section-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 25px;
-            padding-bottom: 15px;
-            border-bottom: 2px solid #667eea;
-        }
-        .section-icon {
-            width: 40px;
-            height: 40px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 15px;
-            font-size: 20px;
-        }
-        .section-title { font-size: 1.5em; color: #333; font-weight: 600; }
-        .news-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 20px;
-        }
-        .news-card {
+        .tab-content { display: none; padding: 30px; }
+        .tab-content.active { display: block; }
+        .news-item {
             background: #f8f9fa;
             border-radius: 12px;
             padding: 20px;
+            margin-bottom: 16px;
             border-left: 4px solid #667eea;
             transition: transform 0.2s, box-shadow 0.2s;
         }
-        .news-card:hover {
-            transform: translateY(-2px);
+        .news-item:hover {
+            transform: translateX(4px);
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
         .news-title {
             font-size: 1.1em;
             font-weight: 600;
-            color: #333;
-            margin-bottom: 10px;
+            color: #2d3748;
+            margin-bottom: 8px;
             line-height: 1.4;
         }
         .news-meta {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 10px;
-        }
-        .news-source {
-            background: #667eea;
-            color: #fff;
-            padding: 2px 10px;
-            border-radius: 20px;
-            font-size: 0.8em;
-        }
-        .news-time {
-            color: #6c757d;
+            gap: 12px;
             font-size: 0.85em;
+            color: #718096;
         }
-        .news-desc {
-            color: #555;
+        .news-meta span {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .news-source { color: #667eea; font-weight: 600; }
+        .news-link {
+            color: #667eea;
+            text-decoration: none;
+            word-break: break-all;
+        }
+        .news-link:hover { text-decoration: underline; }
+        .news-summary {
+            margin-top: 10px;
+            color: #4a5568;
             line-height: 1.6;
             font-size: 0.95em;
         }
-        .news-link {
-            display: inline-block;
-            margin-top: 10px;
-            color: #667eea;
-            text-decoration: none;
-            font-size: 0.9em;
-        }
-        .news-link:hover { text-decoration: underline; }
         .footer {
-            background: #f8f9fa;
-            padding: 30px 40px;
             text-align: center;
-            color: #6c757d;
+            padding: 30px;
+            color: #718096;
+            font-size: 0.9em;
+            border-top: 1px solid #e9ecef;
         }
-        .highlight-box {
-            background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+        .badge {
+            display: inline-block;
+            padding: 2px 8px;
             border-radius: 12px;
-            padding: 20px;
-            margin-bottom: 20px;
-            border: 1px solid #667eea30;
+            font-size: 0.75em;
+            font-weight: 600;
+            margin-left: 8px;
         }
-        .highlight-box h3 {
-            color: #667eea;
-            margin-bottom: 10px;
-            font-size: 1.1em;
-        }
-        .highlight-box p { color: #555; line-height: 1.6; }
+        .badge-shipping { background: #e6f3ff; color: #0066cc; }
+        .badge-politics { background: #ffe6e6; color: #cc0000; }
+        .badge-finance { background: #e6ffe6; color: #006600; }
+        .badge-ai { background: #fff3e6; color: #cc6600; }
         @media (max-width: 768px) {
             .header h1 { font-size: 1.8em; }
-            .section { padding: 20px; }
-            .news-grid { grid-template-columns: 1fr; }
+            .tab-content { padding: 20px; }
+            .nav-tab { min-width: 100px; padding: 12px 16px; font-size: 0.9em; }
         }
     </style>
 </head>
@@ -153,302 +129,308 @@
     <div class="container">
         <div class="header">
             <h1>🌍 全球资讯简报</h1>
-            <div class="date">2026年11月4日 星期三</div>
+            <div class="date">2026年11月5日 星期四</div>
             <div class="update-time">更新时间：SGT 07:15 | UTC 23:15</div>
         </div>
 
-        <div class="stats">
-            <div class="stat-card">
-                <div class="number">24</div>
-                <div class="label">今日新闻</div>
+        <div class="nav-tabs">
+            <div class="nav-tab active" onclick="showTab('shipping')">🚢 航运物流</div>
+            <div class="nav-tab" onclick="showTab('politics')">🌐 时政要闻</div>
+            <div class="nav-tab" onclick="showTab('finance')">💰 财经市场</div>
+            <div class="nav-tab" onclick="showTab('ai')">🤖 AI与机器人</div>
+        </div>
+
+        <!-- 航运物流板块 -->
+        <div id="shipping" class="tab-content active">
+            <div class="news-item">
+                <div class="news-title">1. LA/Long Beach港口罢工期限推迟至11月4日<span class="badge badge-shipping">航运</span></div>
+                <div class="news-meta">
+                    <span class="news-source">来源：IAM Union</span>
+                    <span>🕐 2026-11-02</span>
+                    <a href="https://iamovers.org/news/l-a-long-beach-port-strike-deadline-pushed-to-4-november-as-talks-continue/" class="news-link" target="_blank">查看原文</a>
+                </div>
+                <div class="news-summary">洛杉矶和长滩港口约250名工会安检人员的罢工期限已推迟至11月4日下午5点（太平洋时间），ILWU Local 26与太平洋海事协会（PMA）的谈判仍在继续。</div>
             </div>
-            <div class="stat-card">
-                <div class="number">4</div>
-                <div class="label">资讯板块</div>
+
+            <div class="news-item">
+                <div class="news-title">2. 亚洲-美国集装箱运价保持坚挺，船公司寻求11月涨价3000美元<span class="badge badge-shipping">航运</span></div>
+                <div class="news-meta">
+                    <span class="news-source">来源：FreightWaves</span>
+                    <span>🕐 2026-11-05</span>
+                    <a href="https://www.freightwaves.com/news/asia-us-container-rates-hold-as-carriers-seek-3000-november-rate-hikes" class="news-link" target="_blank">查看原文</a>
+                </div>
+                <div class="news-summary">尽管需求降温，集装箱运价仍保持坚挺。中国至美西航线运价维持在8000美元以上，美东超过9000美元，船公司正寻求11月涨价。</div>
             </div>
-            <div class="stat-card">
-                <div class="number">12+</div>
-                <div class="label">消息来源</div>
+
+            <div class="news-item">
+                <div class="news-title">3. 集装箱运价指数持平于3687点，同比上涨137.79%<span class="badge badge-shipping">航运</span></div>
+                <div class="news-meta">
+                    <span class="news-source">来源：Trading Economics</span>
+                    <span>🕐 2026-11-04</span>
+                    <a href="https://tradingeconomics.com/commodity/containerized-freight-index" class="news-link" target="_blank">查看原文</a>
+                </div>
+                <div class="news-summary">集装箱运价指数11月4日持平于3687.35点，过去一个月上涨0.68%，较去年同期大幅上涨137.79%。</div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-title">4. 红海航运危机持续，苏伊士运河通行量仍低于危机前水平<span class="badge badge-shipping">航运</span></div>
+                <div class="news-meta">
+                    <span class="news-source">来源：SeaRates</span>
+                    <span>🕐 2026-11-04</span>
+                    <a href="https://www.searates.com/blog/post/suez-canal-and-red-sea-shipping-in-2026-risks-routes-and-operational-impact" class="news-link" target="_blank">查看原文</a>
+                </div>
+                <div class="news-summary">部分主要船公司正试图在2026年恢复红海航线，以节省成本和减少排放，但苏伊士运河通行量仍远低于2023年危机前水平。</div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-title">5. 全球港口拥堵持续，等待时间居高不下<span class="badge badge-shipping">航运</span></div>
+                <div class="news-meta">
+                    <span class="news-source">来源：Kuehne+Nagel</span>
+                    <span>🕐 2026-11-03</span>
+                    <a href="https://mykn.kuehne-nagel.com/news/article/port-operational-updates-from-03-11-2026" class="news-link" target="_blank">查看原文</a>
+                </div>
+                <div class="news-summary">由于强劲的进口需求、高堆场占用率和冷藏箱高利用率，船舶等待时间仍然较长。卡车短缺减缓集装箱疏散，预计拥堵将持续整个11月。</div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-title">6. 塞浦路斯成功营救沉没货船10名船员<span class="badge badge-shipping">航运</span></div>
+                <div class="news-meta">
+                    <span class="news-source">来源：The Maritime Executive</span>
+                    <span>🕐 2026-11-02</span>
+                    <a href="https://maritime-executive.com/shipping-news" class="news-link" target="_blank">查看原文</a>
+                </div>
+                <div class="news-summary">塞浦路斯当局成功营救了一艘在西部沉没的小型货船上10名船员。</div>
             </div>
         </div>
 
-        <!-- 航运板块 -->
-        <div class="section">
-            <div class="section-header">
-                <div class="section-icon">🚢</div>
-                <div class="section-title">航运资讯</div>
+        <!-- 时政要闻板块 -->
+        <div id="politics" class="tab-content">
+            <div class="news-item">
+                <div class="news-title">1. 美国中期选举：民主党赢得参众两院控制权<span class="badge badge-politics">时政</span></div>
+                <div class="news-meta">
+                    <span class="news-source">来源：BBC News</span>
+                    <span>🕐 2026-11-05</span>
+                    <a href="https://www.bbc.com/news/election/2026/us/results" class="news-link" target="_blank">查看原文</a>
+                </div>
+                <div class="news-summary">美国中期选举结果显示，民主党赢得参议院和众议院控制权，获得参议院多数席位和众议院218个席位。</div>
             </div>
-            <div class="highlight-box">
-                <h3>📌 板块要点</h3>
-                <p>集装箱航运运力创历史新高，红海苏伊士运河通行恢复至危机前50%水平，但运营商仍保持谨慎。美西航线现货运价大幅下跌，11月涨价计划或被搁置。</p>
+
+            <div class="news-item">
+                <div class="news-title">2. 梅拉尼娅·特朗普将在白宫主持俄乌停火谈判<span class="badge badge-politics">时政</span></div>
+                <div class="news-meta">
+                    <span class="news-source">来源：The Independent</span>
+                    <span>🕐 2026-11-04</span>
+                    <a href="https://www.the-independent.com/news/world/europe/ukraine-russia-war-live-putin-zelensky-cyber-attack-oil-refineries-b3077991.html" class="news-link" target="_blank">查看原文</a>
+                </div>
+                <div class="news-summary">美国第一夫人梅拉尼娅·特朗普将于11月5日上午11点在白宫就奥列什基停火问题发表讲话，乌克兰、俄罗斯和美国谈判代表已确认出席。</div>
             </div>
-            <div class="news-grid">
-                <div class="news-card">
-                    <div class="news-title">亚欧集装箱运力达历史最高水平</div>
-                    <div class="news-meta">
-                        <span class="news-source">Global Maritime Hub</span>
-                        <span class="news-time">18小时前</span>
-                    </div>
-                    <div class="news-desc">2026年10月至11月，集装箱航运运力创历史新高，船舶拥堵和港口拥堵推高了实际运力供应。预计高运力水平将持续整个11月。</div>
-                    <a href="https://globalmaritimehub.com/asia-europe-container-capacity-reaches-unprecedented-levels/" class="news-link" target="_blank">查看原文 →</a>
+
+            <div class="news-item">
+                <div class="news-title">3. 俄罗斯袭击乌克兰学校致至少40人死亡<span class="badge badge-politics">时政</span></div>
+                <div class="news-meta">
+                    <span class="news-source">来源：The Independent</span>
+                    <span>🕐 2026-11-04</span>
+                    <a href="https://independent.co.uk/news/world/europe/ukraine-russia-war-live-putin-zelensky-melania-trump-peace-talks-b3078752.html" class="news-link" target="_blank">查看原文</a>
                 </div>
-                <div class="news-card">
-                    <div class="news-title">主要贸易航线集装箱运力创纪录</div>
-                    <div class="news-meta">
-                        <span class="news-source">El Estrecho Digital</span>
-                        <span class="news-time">8小时前</span>
-                    </div>
-                    <div class="news-desc">亚欧、跨太平洋等主要贸易航线集装箱运力在2026年10月达到创纪录水平，预计11月将维持高位运行。</div>
-                    <a href="https://www.elestrechodigital.com/en/2026/11/03/container-shipping-reaches-record-capacity-levels-on-major-trade-routes" class="news-link" target="_blank">查看原文 →</a>
+                <div class="news-summary">泽连斯基谴责俄罗斯对学校的"疯狂"袭击，造成至少40人死亡。俄罗斯还袭击了波尔塔瓦、第聂伯罗、基洛沃格勒和里夫涅等地区。</div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-title">4. 台湾无人机采购将检查是否含中国大陆组件<span class="badge badge-politics">时政</span></div>
+                <div class="news-meta">
+                    <span class="news-source">来源：ISW</span>
+                    <span>🕐 2026-11-03</span>
+                    <a href="https://understandingwar.org/research/china-taiwan/china-taiwan-update-november-3-2026/" class="news-link" target="_blank">查看原文</a>
                 </div>
-                <div class="news-card">
-                    <div class="news-title">运营商11月涨价计划"注定失败"</div>
-                    <div class="news-meta">
-                        <span class="news-source">The Loadstar</span>
-                        <span class="news-time">4天前</span>
-                    </div>
-                    <div class="news-desc">分析师表示，由于需求疲软，运营商11月涨价计划难以成功。亚洲-美西航线现货运价遭遇2025年6月以来最大单周跌幅。</div>
-                    <a href="https://theloadstar.com/carriers-november-rate-hikes-doomed-say-analysts-as-demand-goes-flat/" class="news-link" target="_blank">查看原文 →</a>
+                <div class="news-summary">台湾国防部宣布，所有军用无人机采购将接受检查，确保不含任何中国大陆原产组件。</div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-title">5. 以色列考虑将英国驱逐出加沙战后总部<span class="badge badge-politics">时政</span></div>
+                <div class="news-meta">
+                    <span class="news-source">来源：Financial Times</span>
+                    <span>🕐 2026-11-05</span>
+                    <a href="https://www.ft.com/middle-east-war" class="news-link" target="_blank">查看原文</a>
                 </div>
-                <div class="news-card">
-                    <div class="news-title">红海危机：苏伊士通行恢复至50%以上</div>
-                    <div class="news-meta">
-                        <span class="news-source">Logistics Material</span>
-                        <span class="news-time">1天前</span>
-                    </div>
-                    <div class="news-desc">苏伊士运河通行量已恢复至危机前50%以上水平，但霍尔木兹海峡风险仍然高企。马士基和赫伯罗特已恢复部分航线通过运河。</div>
-                    <a href="https://logisticsmaterial.com/trade/red-sea-shipping-crisis/" class="news-link" target="_blank">查看原文 →</a>
+                <div class="news-summary">以色列正考虑将英国驱逐出加沙战后总部，中东局势持续紧张。</div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-title">6. 印度裔美国人赢得多个众议院席位<span class="badge badge-politics">时政</span></div>
+                <div class="news-meta">
+                    <span class="news-source">来源：Mathrubhumi</span>
+                    <span>🕐 2026-11-05</span>
+                    <a href="https://english.mathrubhumi.com/education/news/school-assembly-news-headlines-5-november-2026-ewrptcxy" class="news-link" target="_blank">查看原文</a>
                 </div>
-                <div class="news-card">
-                    <div class="news-title">Gemini联盟恢复苏伊士运河航线</div>
-                    <div class="news-meta">
-                        <span class="news-source">Carra Globe</span>
-                        <span class="news-time">9月25日</span>
-                    </div>
-                    <div class="news-desc">马士基与赫伯罗特组成的Gemini合作联盟于9月14日发布客户通知，将四条航线从好望角改回苏伊士运河通行。</div>
-                    <a href="https://carraglobe.com/red-sea-carrier-return-2026/" class="news-link" target="_blank">查看原文 →</a>
-                </div>
-                <div class="news-card">
-                    <div class="news-title">2026年11月海运展望：运力过剩压力</div>
-                    <div class="news-meta">
-                        <span class="news-source">C.H. Robinson</span>
-                        <span class="news-time">17小时前</span>
-                    </div>
-                    <div class="news-desc">11月涨价面临可持续性挑战，运力过剩问题凸显。托运人需在年底前应对关税影响和港口拥堵。</div>
-                    <a href="https://www.chrobinson.com/en-us/resources/insights-and-advisories/north-america-freight-insights/nov-2025-freight-market-update/ocean/" class="news-link" target="_blank">查看原文 →</a>
-                </div>
+                <div class="news-summary">多名印度裔在美国中期选举中赢得众议院席位，马里兰州副州长阿鲁娜·米勒成功连任，凸显印度裔代表性的增长。</div>
             </div>
         </div>
 
-        <!-- 时政板块 -->
-        <div class="section">
-            <div class="section-header">
-                <div class="section-icon">🌐</div>
-                <div class="section-title">时政要闻</div>
+        <!-- 财经市场板块 -->
+        <div id="finance" class="tab-content">
+            <div class="news-item">
+                <div class="news-title">1. 美股大涨：民主党获胜缓解不确定性，道指飙升1578点<span class="badge badge-finance">财经</span></div>
+                <div class="news-meta">
+                    <span class="news-source">来源：Trading Economics</span>
+                    <span>🕐 2026-11-05</span>
+                    <a href="https://tradingeconomics.com/united-states/stock-market" class="news-link" target="_blank">查看原文</a>
+                </div>
+                <div class="news-summary">道琼斯指数周三上涨1578点（3.05%），收于53365点。3M上涨9.59%，微软上涨6.82%，领涨大盘。</div>
             </div>
-            <div class="highlight-box">
-                <h3>📌 板块要点</h3>
-                <p>美国中期选举今日投票，决定国会控制权归属。美伊战争和谈出现进展，油价大幅下跌。美国 Grab 委内瑞拉石油引发地缘政治关注。</p>
+
+            <div class="news-item">
+                <div class="news-title">2. 油价暴跌7%：伊朗和平谈判希望提振市场<span class="badge badge-finance">财经</span></div>
+                <div class="news-meta">
+                    <span class="news-source">来源：CNBC</span>
+                    <span>🕐 2026-11-03</span>
+                    <a href="https://www.cnbc.com/2026/11/02/oil-prices-fall-as-iran-us-pursue-diplomacy.html" class="news-link" target="_blank">查看原文</a>
+                </div>
+                <div class="news-summary">原油价格周一下跌超过7%，因美伊两国总统表示愿意通过外交途径解决已持续八个月、扰乱能源市场的冲突。</div>
             </div>
-            <div class="news-grid">
-                <div class="news-card">
-                    <div class="news-title">美国中期选举投票日：决定国会控制权</div>
-                    <div class="news-meta">
-                        <span class="news-source">NBC News</span>
-                        <span class="news-time">实时更新</span>
-                    </div>
-                    <div class="news-desc">共和党寻求保住众议院微弱多数席位，民主党需净增3席才能翻转众议院。435个众议院席位和35个参议院席位改选。</div>
-                    <a href="https://www.nbcnews.com/politics/2026-elections/house-results" class="news-link" target="_blank">查看原文 →</a>
+
+            <div class="news-item">
+                <div class="news-title">3. 比特币回升至78,000美元附近<span class="badge badge-finance">财经</span></div>
+                <div class="news-meta">
+                    <span class="news-source">来源：KuCoin</span>
+                    <span>🕐 2026-11-04</span>
+                    <a href="https://www.kucoin.com/news/articles/crypto-daily-market-report-november-4-2026" class="news-link" target="_blank">查看原文</a>
                 </div>
-                <div class="news-card">
-                    <div class="news-title">美国中期选举：各州投票率或超往届</div>
-                    <div class="news-meta">
-                        <span class="news-source">The New York Times</span>
-                        <span class="news-time">实时更新</span>
-                    </div>
-                    <div class="news-desc">乔治亚州提前投票人数已接近2024年总统选举同期水平，预计总投票人数可能超过1000万，高于过去两次中期选举。</div>
-                    <a href="https://www.nytimes.com/interactive/2026/11/03/us/elections/results-house.html" class="news-link" target="_blank">查看原文 →</a>
+                <div class="news-summary">加密市场保持区间波动，BTC短暂回升至78,000美元附近后回落至77,000美元水平，ETH在2300美元左右波动。</div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-title">4. 美联储11月降息25个基点<span class="badge badge-finance">财经</span></div>
+                <div class="news-meta">
+                    <span class="news-source">来源：Yahoo Finance</span>
+                    <span>🕐 2026-11-04</span>
+                    <a href="https://finance.yahoo.com/personal-finance/banking/article/fed-rate-predictions-2026-154647304.html" class="news-link" target="_blank">查看原文</a>
                 </div>
-                <div class="news-card">
-                    <div class="news-title">伊朗展现和谈灵活性</div>
-                    <div class="news-meta">
-                        <span class="news-source">Trading Economics</span>
-                        <span class="news-time">1天前</span>
-                    </div>
-                    <div class="news-desc">伊朗总统佩泽希齐扬表示，最高领袖哈梅内伊已授权讨论此前被认为不可谈判的问题，为结束美伊冲突带来希望。</div>
-                    <a href="https://tradingeconomics.com/commodity/brent-crude-oil" class="news-link" target="_blank">查看原文 →</a>
+                <div class="news-summary">美联储在11月将联邦基金利率下调25个基点，并在12月再次降息。2025年已进行三次降息。</div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-title">5. AI股票抛售或引发全球经济衰退<span class="badge badge-finance">财经</span></div>
+                <div class="news-meta">
+                    <span class="news-source">来源：Reuters</span>
+                    <span>🕐 2026-11-02</span>
+                    <a href="https://usa.news-pravda.com/world/2026/11/02/937007.html" class="news-link" target="_blank">查看原文</a>
                 </div>
-                <div class="news-card">
-                    <div class="news-title">美国获取委内瑞拉石油引发关注</div>
-                    <div class="news-meta">
-                        <span class="news-source">DW</span>
-                        <span class="news-time">5小时前</span>
-                    </div>
-                    <div class="news-desc">美国正在获取委内瑞拉石油，但政治反对派可能成为主要受益者。柏林简报 podcast 探讨影响全球地缘政治的关键问题。</div>
-                    <a href="https://www.dw.com/en/top-stories/s-9097" class="news-link" target="_blank">查看原文 →</a>
+                <div class="news-summary">路透社分析称，科技股抛售可能加剧全球经济放缓，并将几个主要国家推入衰退。</div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-title">6. 世界银行：中东冲突导致2026年经济增长放缓<span class="badge badge-finance">财经</span></div>
+                <div class="news-meta">
+                    <span class="news-source">来源：World Bank</span>
+                    <span>🕐 2026-11-04</span>
+                    <a href="https://www.worldbank.org/en/publication/global-economic-prospects" class="news-link" target="_blank">查看原文</a>
                 </div>
-                <div class="news-card">
-                    <div class="news-title">2026年全球十大冲突观察</div>
-                    <div class="news-meta">
-                        <span class="news-source">International Crisis Group</span>
-                        <span class="news-time">1月22日</span>
-                    </div>
-                    <div class="news-desc">缅甸军政府在内战中占据上风，中国明确支持军政府。选举将于12月28日和1月举行，但战争远未结束。</div>
-                    <a href="https://www.crisisgroup.org/cmt/global/10-conflicts-watch-2026" class="news-link" target="_blank">查看原文 →</a>
-                </div>
-                <div class="news-card">
-                    <div class="news-title">全球新闻10条：美国中期选举、伊朗战争、网络攻击</div>
-                    <div class="news-meta">
-                        <span class="news-source">10 Things News</span>
-                        <span class="news-time">17小时前</span>
-                    </div>
-                    <div class="news-desc">美国中期选举在巨额支出和特朗普支持率低迷中临近；伊朗战争谈判无 resolution；欧洲超市遭网络攻击。</div>
-                    <a href="https://www.10things.news/p/10-things-global-news-3rd-november-4b6" class="news-link" target="_blank">查看原文 →</a>
-                </div>
+                <div class="news-summary">世界银行预计，由于中东冲突，2026年所有新兴市场和发展中经济体的增长将放缓，中东、北非、阿富汗和巴基斯坦地区受影响最严重。</div>
             </div>
         </div>
 
-        <!-- 财经板块 -->
-        <div class="section">
-            <div class="section-header">
-                <div class="section-icon">💰</div>
-                <div class="section-title">财经动态</div>
+        <!-- AI与机器人板块 -->
+        <div id="ai" class="tab-content">
+            <div class="news-item">
+                <div class="news-title">1. ROBOTWORLD 2026聚焦物理AI与AI驱动制造<span class="badge badge-ai">AI</span></div>
+                <div class="news-meta">
+                    <span class="news-source">来源：PR Newswire</span>
+                    <span>🕐 2026-11-04</span>
+                    <a href="https://www.prnewswire.com/news-releases/the-korea-industry-daily-robotworld-2026-to-spotlight-physical-ai-and-ai-driven-manufacturing-with-402-exhibitors-from-17-countries-302928643.html" class="news-link" target="_blank">查看原文</a>
+                </div>
+                <div class="news-summary">ROBOTWORLD 2026于11月4-7日在韩国高阳举行，聚焦物理AI和AI驱动制造，来自17个国家的402家参展商参展。</div>
             </div>
-            <div class="highlight-box">
-                <h3>📌 板块要点</h3>
-                <p>苹果Q4财报超预期，营收创纪录达1145亿美元。AMD数据中心收入翻倍，股价大涨8%。油价因美伊和谈希望大幅下跌超4%。</p>
-            </div>
-            <div class="news-grid">
-                <div class="news-card">
-                    <div class="news-title">苹果Q4财报：营收1145亿美元创纪录</div>
-                    <div class="news-meta">
-                        <span class="news-source">Apple</span>
-                        <span class="news-time">1天前</span>
-                    </div>
-                    <div class="news-desc">苹果第四财季营收1145亿美元，同比增长12%。毛利率47.9%。这是John Ternus接任CEO后的首份财报，iPhone收入575.8亿美元超预期。</div>
-                    <a href="https://www.apple.com/newsroom/2026/11/apple-reports-fourth-quarter-results/" class="news-link" target="_blank">查看原文 →</a>
-                </div>
-                <div class="news-card">
-                    <div class="news-title">AMD Q3财报：数据中心收入同比增长97%</div>
-                    <div class="news-meta">
-                        <span class="news-source">CNBC</span>
-                        <span class="news-time">25分钟前</span>
-                    </div>
-                    <div class="news-desc">AMD第三季度营收134亿美元，数据中心业务收入近翻倍。CEO苏姿丰表示能满足AI芯片加速需求。股价大涨8%，今年累计上涨129%。</div>
-                    <a href="https://www.cnbc.com/2026/11/03/amd-amd-q3-earnings-report-2026-.html" class="news-link" target="_blank">查看原文 →</a>
-                </div>
-                <div class="news-card">
-                    <div class="news-title">油价因美伊和谈希望大幅下跌</div>
-                    <div class="news-meta">
-                        <span class="news-source">The Guardian</span>
-                        <span class="news-time">1天前</span>
-                    </div>
-                    <div class="news-desc">布伦特原油下跌超6%至105.55美元/桶，创两周新低。美伊战争结束草案提案流传，伊朗谈判代表离开卡塔尔后取得进展。</div>
-                    <a href="https://www.theguardian.com/business/2026/nov/02/oil-price-falls-amid-hope-of-a-breakthrough-to-end-iran-war" class="news-link" target="_blank">查看原文 →</a>
-                </div>
-                <div class="news-card">
-                    <div class="news-title">美股在中期选举和AMD财报前反弹</div>
-                    <div class="news-meta">
-                        <span class="news-source">Charles Schwab</span>
-                        <span class="news-time">9小时前</span>
-                    </div>
-                    <div class="news-desc">科技股在选举日反弹，Arm和AMD即将发布财报。苹果因财报后利润率担忧下滑，美伊冲突引发的外交希望推动油价下跌。</div>
-                    <a href="https://www.schwab.com/learn/story/stock-market-update-open" class="news-link" target="_blank">查看原文 →</a>
-                </div>
-                <div class="news-card">
-                    <div class="news-title">11月4日财经日历：AMD财报、欧美数据</div>
-                    <div class="news-meta">
-                        <span class="news-source">TechFlow</span>
-                        <span class="news-time">7小时前</span>
-                    </div>
-                    <div class="news-desc">11月4日重点关注：AMD盘后发布财报（05:00），高通次日发布。美国中期选举投票日，欧美多项经济数据公布。</div>
-                    <a href="https://www.techflowpost.com/en-US/newsletter/142761" class="news-link" target="_blank">查看原文 →</a>
-                </div>
-                <div class="news-card">
-                    <div class="news-title">本周经济数据展望：就业数据与PMI</div>
-                    <div class="news-meta">
-                        <span class="news-source">Kiplinger</span>
-                        <span class="news-time">4天前</span>
-                    </div>
-                    <div class="news-desc">本周将公布月度职位空缺、周度失业救济申请等劳动力市场数据，以及S&P和ISM制造业/服务业PMI调查。</div>
-                    <a href="https://www.kiplinger.com/investing/economy/this-weeks-economic-calendar" class="news-link" target="_blank">查看原文 →</a>
-                </div>
-            </div>
-        </div>
 
-        <!-- AI&机器人板块 -->
-        <div class="section">
-            <div class="section-header">
-                <div class="section-icon">🤖</div>
-                <div class="section-title">AI & 机器人</div>
+            <div class="news-item">
+                <div class="news-title">2. Agility Robotics humanoid机器人公司今日在纳斯达克上市<span class="badge badge-ai">AI</span></div>
+                <div class="news-meta">
+                    <span class="news-source">来源：ETF Database</span>
+                    <span>🕐 2026-11-05</span>
+                    <a href="https://etfdb.com/artificial-intelligence-content-hub/buying-future-ai-robotics/" class="news-link" target="_blank">查看原文</a>
+                </div>
+                <div class="news-summary">Agility Robotics的Digit人形机器人在GXO仓库工作，公司预计于11月5日在纳斯达克上市。</div>
             </div>
-            <div class="highlight-box">
-                <h3>📌 板块要点</h3>
-                <p>特斯拉Optimus在弗里蒙特工厂开始生产。Agility Robotics获25亿美元SPAC批准即将上市。Figure推出Index数据集包含1600万视频。AI世界模型和智能体应用加速落地。</p>
+
+            <div class="news-item">
+                <div class="news-title">3. 特斯拉计划2027年生产100万台Optimus机器人<span class="badge badge-ai">AI</span></div>
+                <div class="news-meta">
+                    <span class="news-source">来源：Motley Fool</span>
+                    <span>🕐 2026-11-04</span>
+                    <a href="https://www.fool.com/investing/2026/11/04/tesla-wants-to-build-20000-optimus-robots-a-week-h/" class="news-link" target="_blank">查看原文</a>
+                </div>
+                <div class="news-summary">特斯拉计划每周生产2万台Optimus机器人，2027年目标产量100万台。德州仪器为特斯拉人形机器人供应多种芯片。</div>
             </div>
-            <div class="news-grid">
-                <div class="news-card">
-                    <div class="news-title">特斯拉Optimus机器人在弗里蒙特工厂投产</div>
-                    <div class="news-meta">
-                        <span class="news-source">Business Insider</span>
-                        <span class="news-time">2周前</span>
-                    </div>
-                    <div class="news-desc">特斯拉在Q3财报中确认，已在加州弗里蒙特工厂开始生产Optimus人形机器人。该工厂年产能规划100万台。</div>
-                    <a href="https://www.businessinsider.com/tesla-starts-producing-optimus-robots-at-its-fremont-factory-2026-10" class="news-link" target="_blank">查看原文 →</a>
+
+            <div class="news-item">
+                <div class="news-title">4. 谷歌发布Gemini 4 Argon，称其为"最新、最强模型"<span class="badge badge-ai">AI</span></div>
+                <div class="news-meta">
+                    <span class="news-source">来源：Startup Edition</span>
+                    <span>🕐 2026-11-04</span>
+                    <a href="https://blog.mean.ceo/google-gemini-latest-model-news-november-2026/" class="news-link" target="_blank">查看原文</a>
                 </div>
-                <div class="news-card">
-                    <div class="news-title">Agility Robotics获25亿美元SPAC批准即将上市</div>
-                    <div class="news-meta">
-                        <span class="news-source">The Robot Report</span>
-                        <span class="news-time">1天前</span>
-                    </div>
-                    <div class="news-desc">Churchill Capital Corp XI股东批准与Agility Robotics的SPAC合并交易，这家领先的人形机器人公司即将IPO。</div>
-                    <a href="https://www.therobotreport.com/agility-robotics-shareholders-approve-25b-humanoid-spac/" class="news-link" target="_blank">查看原文 →</a>
+                <div class="news-summary">谷歌正式宣布Gemini 4 Argon为其"最新、最强模型"，Flash家族在43天内从3.6版本跳至3.8版本。</div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-title">5. 英伟达宣布AI正在重塑芯片工厂，仿真速度提升35倍<span class="badge badge-ai">AI</span></div>
+                <div class="news-meta">
+                    <span class="news-source">来源：KuCoin</span>
+                    <span>🕐 2026-11-03</span>
+                    <a href="https://www.kucoin.com/news/flash/nvidia-claims-ai-is-reshaping-chip-factories-simulation-speeds-up-to-35x" class="news-link" target="_blank">查看原文</a>
                 </div>
-                <div class="news-card">
-                    <div class="news-title">Figure推出Index：1600万视频数据集</div>
-                    <div class="news-meta">
-                        <span class="news-source">Humanoid Press</span>
-                        <span class="news-time">实时更新</span>
-                    </div>
-                    <div class="news-desc">Figure发布Index项目，包含1600万个视频。同时天工Ultra在世界人形机器人运动会100米赛跑中创8.64-8.86秒纪录。</div>
-                    <a href="https://humanoid.press/" class="news-link" target="_blank">查看原文 →</a>
+                <div class="news-summary">英伟达11月3日宣布，AI正在将半导体晶圆厂转变为"AI定义的工厂"，仿真速度提升高达35倍。</div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-title">6. 英伟达限制中国客户租用其芯片的比例不超过49%<span class="badge badge-ai">AI</span></div>
+                <div class="news-meta">
+                    <span class="news-source">来源：Daily Caller</span>
+                    <span>🕐 2026-11-03</span>
+                    <a href="https://dailycaller.com/2026/11/03/nvidia-china-chips-data-centers-artificial-intelligence-models/" class="news-link" target="_blank">查看原文</a>
                 </div>
-                <div class="news-card">
-                    <div class="news-title">AI世界模型与智能体：11月最新进展</div>
-                    <div class="news-meta">
-                        <span class="news-source">Mean Blog</span>
-                        <span class="news-time">3小时前</span>
-                    </div>
-                    <div class="news-desc">2026年11月AI进展：世界模型、为小企业节省数小时的AI智能体、神经AI等成为热点。</div>
-                    <a href="https://blog.mean.ceo/ai-advancements-news-november-2026/" class="news-link" target="_blank">查看原文 →</a>
+                <div class="news-summary">英伟达正在限制中国客户租用其芯片的比例不超过49%，以缩小中国获取美国AI芯片的后门。</div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-title">7. OpenAI推出Grid Protectors计划加强AI安全<span class="badge badge-ai">AI</span></div>
+                <div class="news-meta">
+                    <span class="news-source">来源：OpenAI</span>
+                    <span>🕐 2026-11-02</span>
+                    <a href="https://openai.com/news/" class="news-link" target="_blank">查看原文</a>
                 </div>
-                <div class="news-card">
-                    <div class="news-title">Ludo Robotics发布Rudy 0.2 AI系统</div>
-                    <div class="news-meta">
-                        <span class="news-source">Rio Rundown</span>
-                        <span class="news-time">2天前</span>
-                    </div>
-                    <div class="news-desc">在2026年湾区机器人研讨会上，Ludo Robotics发布Rudy 0.2 AI系统，增强对人类意图的实时适应能力，包括手势理解和工具操作。</div>
-                    <a href="https://riorundown.substack.com/p/ai-news-nov-02-2026-agentic-benchmarks" class="news-link" target="_blank">查看原文 →</a>
+                <div class="news-summary">OpenAI于11月2日推出Grid Protectors计划，同时准备下一轮安全冲刺以加固系统，并提高漏洞赏金奖励。</div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-title">8. 谷歌关闭K-12学生账户的Gemini AI访问权限<span class="badge badge-ai">AI</span></div>
+                <div class="news-meta">
+                    <span class="news-source">来源：Bloomberg</span>
+                    <span>🕐 2026-11-03</span>
+                    <a href="https://www.bloomberg.com/news/articles/2026-11-03/google-lets-schools-turn-off-gemini-but-not-the-ai-in-search" class="news-link" target="_blank">查看原文</a>
                 </div>
-                <div class="news-card">
-                    <div class="news-title">AI新闻：代理基准测试与物理AI安全</div>
-                    <div class="news-meta">
-                        <span class="news-source">AI Weekly</span>
-                        <span class="news-time">12小时前</span>
-                    </div>
-                    <div class="news-desc">11月3日AI头条：华南理工与香港理工Lab2Sim将218个实验视频转化为交互式模拟。苹果在中国与阿里Qwen测试Apple Intelligence。</div>
-                    <a href="https://aiweekly.co/ai-news-today" class="news-link" target="_blank">查看原文 →</a>
-                </div>
+                <div class="news-summary">谷歌允许学校关闭学生的Gemini AI访问权限，但Search中的AI功能仍保留。学校需自行开启Search访问权限。</div>
             </div>
         </div>
 
         <div class="footer">
-            <p>🌍 全球资讯简报 | 每日更新</p>
-            <p style="margin-top: 10px; font-size: 0.9em;">数据来源：Global Maritime Hub, NBC News, CNBC, Apple, AMD, The Guardian, Business Insider, The Robot Report 等</p>
-            <p style="margin-top: 10px; font-size: 0.85em;">本简报仅供参考，不构成投资建议。新闻内容来自公开报道，版权归原作者所有。</p>
+            <p>🌍 全球资讯简报 | 每日更新 | 由AI团队自动生成</p>
+            <p style="margin-top: 10px; font-size: 0.85em;">本简报仅供信息参考，不构成投资建议。所有新闻均来自公开来源。</p>
         </div>
     </div>
+
+    <script>
+        function showTab(tabId) {
+            // Hide all tab contents
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            document.querySelectorAll('.nav-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            // Show selected tab
+            document.getElementById(tabId).classList.add('active');
+            event.target.classList.add('active');
+        }
+    </script>
 </body>
 </html>
