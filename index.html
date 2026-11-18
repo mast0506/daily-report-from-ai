@@ -1,137 +1,233 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>🌍 全球资讯简报 | 2026-04-01</title>
-  <style>
-    body { font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif; line-height: 1.65; color:#223; max-width: 920px; margin: 0 auto; padding: 20px; background: linear-gradient(135deg,#f5f7fa 0%,#dce6f3 100%); }
-    .container { background:#fff; border-radius: 12px; box-shadow: 0 6px 16px rgba(0,0,0,.08); padding: 28px; }
-    h1 { text-align:center; color:#1f3b57; border-bottom:3px solid #2f80ed; padding-bottom:12px; margin-top:0; }
-    h2 { color:#244a72; border-left: 5px solid #2f80ed; padding-left: 10px; margin-top: 28px; }
-    .meta { text-align:center; color:#5b6b7c; margin: 8px 0 18px; }
-    .item { background:#f8fbff; border-left:4px solid #2f80ed; padding: 12px 14px; border-radius: 0 8px 8px 0; margin: 12px 0; }
-    .title { font-weight:700; color:#1f3650; }
-    .desc { margin-top:6px; color:#364a5f; }
-    .src { margin-top:8px; font-size:.93em; color:#607080; }
-    a { color:#1769d6; text-decoration:none; }
-    a:hover { text-decoration:underline; }
-    .footer { margin-top: 24px; border-top:1px solid #e6edf5; padding-top:14px; color:#617283; font-size: .92em; text-align:center; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌍 全球资讯简报 - Daily Global Briefing | Updated: 2025-11-18</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; line-height: 1.6; color: #333; max-width: 900px; margin: 0 auto; padding: 20px; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); }
+        .container { background: white; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); padding: 30px; margin-bottom: 20px; }
+        h1 { color: #2c3e50; text-align: center; border-bottom: 3px solid #3498db; padding-bottom: 15px; }
+        h2 { color: #34495e; border-left: 4px solid #3498db; padding-left: 12px; margin-top: 30px; }
+        .date { text-align: center; color: #7f8c8d; font-size: 1.1em; margin-bottom: 20px; }
+        .news-item { background: #f8f9fa; border-left: 4px solid #3498db; padding: 15px; margin: 15px 0; border-radius: 0 8px 8px 0; transition: transform 0.2s; }
+        .news-item:hover { transform: translateX(5px); }
+        .news-title { font-weight: bold; color: #2c3e50; margin-bottom: 8px; }
+        .news-desc { color: #555; line-height: 1.6; }
+        .news-source { font-size: 0.9em; color: #7f8c8d; margin-top: 8px; }
+        .news-link { display: inline-block; background: #3498db; color: white; padding: 5px 12px; border-radius: 4px; text-decoration: none; font-size: 0.9em; margin-top: 8px; }
+        .news-link:hover { background: #2980b9; }
+        .shipping { border-left-color: #e67e22; }
+        .geopolitics { border-left-color: #e74c3c; }
+        .finance { border-left-color: #27ae60; }
+        .tech { border-left-color: #8e44ad; }
+        .shipping h2 { border-left-color: #e67e22; }
+        .geopolitics h2 { border-left-color: #e74c3c; }
+        .finance h2 { border-left-color: #27ae60; }
+        .tech h2 { border-left-color: #8e44ad; }
+        .shipping .news-item { border-left-color: #e67e22; }
+        .geopolitics .news-item { border-left-color: #e74c3c; }
+        .finance .news-item { border-left-color: #27ae60; }
+        .tech .news-item { border-left-color: #8e44ad; }
+        .summary { background: #fff3cd; border: 1px solid #ffc107; border-radius: 8px; padding: 15px; margin: 20px 0; }
+        .footer { text-align: center; color: #7f8c8d; font-size: 0.9em; margin-top: 30px; padding-top: 20px; border-top: 1px solid #ecf0f1; }
+        @media (max-width: 600px) { .container { padding: 20px; } h1 { font-size: 1.5em; } }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <h1>🌍 全球资讯简报（Daily Global Briefing）</h1>
-    <div class="meta">📅 2026 年 4 月 1 日（周三） | Last Updated: 2026-04-01 22:33 SGT</div>
+    <div class="container">
+        <h1>🌍 全球资讯简报 - Daily Global Briefing</h1>
+        <div class="date">📅 2025 年 11 月 18 日（周二）| Tuesday, November 18, 2025 | 🕐 Last Updated: 11:45 SGT</div>
 
-    <h2>🚢 航运板块（Shipping / Logistics / Ports）</h2>
+        <!-- ========== 航运板块 ========== -->
+        <h2>🚢 航运板块 (Shipping & Logistics)</h2>
 
-    <div class="item">
-      <div class="title">1) 马士基因安全事件暂停阿曼塞拉莱港运营</div>
-      <div class="desc">Reuters 报道，马士基在阿曼塞拉莱港因安全事件临时停运，虽人员与船货安全，但再次凸显中东航运节点的脆弱性与应急调度压力。</div>
-      <div class="src">来源：Reuters · <a href="https://www.reuters.com/world/middle-east/maersk-halts-operations-omans-salalah-port-due-security-incident-2026-03-28/" target="_blank">查看原文</a></div>
+        <div class="news-item">
+            <div class="news-title">📦 美国进口量预计将持续下降至2026年初</div>
+            <div class="news-desc">美国进口量预计将持续下降至2026年初，反映近期需求疲软和持续的贸易不确定性。进口商需保持积极主动的供应链规划以维持平稳运营。</div>
+            <div class="news-source">来源：WSJ, Imperative Logistics</div>
+            <a class="news-link" href="https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-11-07-2025" target="_blank">阅读详情 →</a>
+        </div>
+
+        <div class="news-item">
+            <div class="news-title">⚠️  FAA航班削减加剧美国空运能力紧张</div>
+            <div class="news-desc">FAA的航班削减加上货机停飞，正在限制美国假日高峰前的空运能力。进口商可能面临延误，需要优先处理货物并考虑多式联运或提前预订选项。</div>
+            <div class="news-source">来源：MSN, Imperative Logistics</div>
+            <a class="news-link" href="https://www.msn.com/en-us/politics/government/faa-ending-all-flight-reductions-at-major-us-airports" target="_blank">阅读详情 →</a>
+        </div>
+
+        <div class="news-item">
+            <div class="news-title">🚢 CMA Terminals收购Eurogate 20%股权</div>
+            <div class="news-desc">CMA Terminals已收购汉堡Eurogate码头20%的股权，扩大容量和铁路连接，可能为进口商提供更快的货运选择。这可能提高北欧关键门户的吞吐量和可靠性。</div>
+            <div class="news-source">来源：Container News</div>
+            <a class="news-link" href="https://container-news.com/eurogate-and-cma-terminals-agree-on-strategic-partnership/" target="_blank">阅读详情 →</a>
+        </div>
+
+        <div class="news-item">
+            <div class="news-title">⛏️ 中国加强稀土出口限制，全球钇供应趋紧</div>
+            <div class="news-desc">随着中国加强出口限制，全球钇供应正在收紧，可能对多个行业造成供应挑战。许多航空航天、电子和能源产品依赖钇基材料，进口商可能面临更长的交货期或有限的供应。</div>
+            <div class="news-source">来源：Reuters</div>
+            <a class="news-link" href="https://www.reuters.com/business/aerospace-defense/new-rare-earth-crisis-is-brewing-yttrium-shortages-spread-2025-11-14/" target="_blank">阅读详情 →</a>
+        </div>
+
+        <div class="news-item">
+            <div class="news-title">🤝 中美关键矿产协议缓解供应风险</div>
+            <div class="news-desc">与中国的新许可协议缓解了锂、钴和稀土等关键矿产的即时供应风险，同时美国致力于建立自己的国内供应链。进口商可以预期持续的采购波动。</div>
+            <div class="news-source">来源：Reuters</div>
+            <a class="news-link" href="https://www.reuters.com/business/energy/china-deal-buys-us-time-build-critical-minerals-supply-chain--reeii-2025-11-17/" target="_blank">阅读详情 →</a>
+        </div>
+
+        <!-- ========== 财经板块 ========== -->
+        <h2>💰 财经板块 (Finance & Markets)</h2>
+
+        <div class="news-item">
+            <div class="news-title">📉 美股连续四日下跌，标普500创8月以来最长连跌</div>
+            <div class="news-desc">美股周二收盘大幅下跌，道指跌498.50点（1.07%）至46,091.74点，标普500跌0.83%至6,617.32点，纳指跌1.21%至22,432.85点。这是标普500自8月以来最长的连续下跌。</div>
+            <div class="news-source">来源：CNBC, Reuters</div>
+            <a class="news-link" href="https://www.cnbc.com/2025/11/17/stock-market-today-live-updates.html" target="_blank">阅读详情 →</a>
+        </div>
+
+        <div class="news-item">
+            <div class="news-title">🤖 英伟达财报前股价下跌超10%，AI估值担忧加剧</div>
+            <div class="news-desc">英伟达本月已下跌超过10%，周三收盘后将公布第三季度业绩。分析师预计每股收益1.25美元（同比增长54%），营收预计550亿美元（同比增长57%）。市场对AI相关股票估值的担忧日益加剧。</div>
+            <div class="news-source">来源：CNBC</div>
+            <a class="news-link" href="https://www.cnbc.com/2025/11/18/nvidia-is-set-to-report-earnings-wednesday-these-stocks-could-be-moved-by-the-results.html" target="_blank">阅读详情 →</a>
+        </div>
+
+        <div class="news-item">
+            <div class="news-title">💻 Anthropic与微软、英伟达达成300亿美元协议</div>
+            <div class="news-desc">AI初创公司Anthropic宣布与微软达成战略合作，将购买300亿美元的Azure计算容量。微软将向Anthropic投资50亿美元，英伟达将投资100亿美元。尽管如此，微软和英伟达股价周二仍下跌。</div>
+            <div class="news-source">来源：CNBC</div>
+            <a class="news-link" href="https://www.cnbc.com/2025/11/18/anthropic-ai-azure-microsoft-nvidia.html" target="_blank">阅读详情 →</a>
+        </div>
+
+        <div class="news-item">
+            <div class="news-title">🏠 家得宝财报不及预期，下调全年展望</div>
+            <div class="news-desc">家得宝第三季度财报不及预期，并下调全年展望，股价下跌6%，成为标普500表现最差的股票。公司指出缺乏风暴天气影响了销售。</div>
+            <div class="news-source">来源：Investopedia</div>
+            <a class="news-link" href="https://www.investopedia.com/dow-jones-today-11182025-11851561" target="_blank">阅读详情 →</a>
+        </div>
+
+        <div class="news-item">
+            <div class="news-title">⚡  Energizer财报 miss，股价创史上最差单日表现</div>
+            <div class="news-desc">Energizer第四季度财报不及预期，股价下跌18%，创下史上最差单日表现。公司CEO将关税成本列为关键因素，第一季度指引大幅低于分析师预期。</div>
+            <div class="news-source">来源：CNBC</div>
+            <a class="news-link" href="https://www.cnbc.com/2025/11/17/stock-market-today-live-updates.html" target="_blank">阅读详情 →</a>
+        </div>
+
+        <div class="news-item">
+            <div class="news-title">📉 比特币短暂跌破90,000美元</div>
+            <div class="news-desc">比特币周二短暂跌破90,000美元，为4月以来首次，随后回升至92,000美元上方。许多科技投资者同时持有大量加密货币，此次回调引发对股市进一步下跌的担忧。</div>
+            <div class="news-source">来源：CNBC</div>
+            <a class="news-link" href="https://www.cnbc.com/2025/11/18/bitcoin-briefly-falls-below-90000-to-lowest-since-april-as-cryptocurrency-gives-up-2025-gain.html" target="_blank">阅读详情 →</a>
+        </div>
+
+        <!-- ========== 时政板块 ========== -->
+        <h2>🏛️ 时政板块 (Geopolitics & World Affairs)</h2>
+
+        <div class="news-item">
+            <div class="news-title">🛩️ 特朗普批准向沙特出售F-35战斗机</div>
+            <div class="news-desc">特朗普宣布批准向沙特阿拉伯出售F-35战斗机，此前沙特王储穆罕默德·本·萨勒曼访美。此次访问议程包括防务协议、AI芯片准入、民用核协议以及沙特2.5万亿美元的矿业转型计划。</div>
+            <div class="news-source">来源：The Hill, Cipher Brief</div>
+            <a class="news-link" href="https://thehill.com/homenews/administration/5609604-trump-us-saudi-arabia-f-35-jets-sale/" target="_blank">阅读详情 →</a>
+        </div>
+
+        <div class="news-item">
+            <div class="news-title">🇷🇺 俄罗斯油价暴跌至36美元/桶</div>
+            <div class="news-desc">俄罗斯乌拉尔原油价格跌至36.61美元/桶，为近三年来最低，因美国对Rosneft和Lukoil的制裁促使中国和印度暂停购买并寻求替代供应商。折扣扩大至每桶23.52美元。</div>
+            <div class="news-source">来源：OilPrice</div>
+            <a class="news-link" href="https://oilprice.com/Energy/Crude-Oil/Russias-Oil-Price-Plummets-to-36-Per-Barrel.html" target="_blank">阅读详情 →</a>
+        </div>
+
+        <div class="news-item">
+            <div class="news-title">🇻🇪 特朗普暗示可能与马杜罗对话</div>
+            <div class="news-desc">特朗普表示可能与委内瑞拉总统马杜罗进行对话，同时美国加强在加勒比海的军事存在，包括福特号航母抵达。美国已进行21次打击，造成83人死亡。</div>
+            <div class="news-source">来源：The Hill</div>
+            <a class="news-link" href="https://thehill.com/homenews/administration/5608709-trump-maduro-venezuela-talks/" target="_blank">阅读详情 →</a>
+        </div>
+
+        <div class="news-item">
+            <div class="news-title">🇲🇽 特朗普表示愿意在墨西哥境内发动打击</div>
+            <div class="news-desc">特朗普表示愿意在墨西哥境内发动打击以阻止毒品走私，称将不惜一切代价。美国海岸警卫队在2025财年已查获近51万磅可卡因。</div>
+            <div class="news-source">来源：The Hill</div>
+            <a class="news-link" href="https://thehill.com/policy/defense/5609602-trump-willing-launch-strikes/" target="_blank">阅读详情 →</a>
+        </div>
+
+        <div class="news-item">
+            <div class="news-title">🇰🇷 韩国宣布2040年前淘汰所有燃煤电厂</div>
+            <div class="news-desc">韩国在Cop30气候大会上宣布承诺加入Powering Past Coal Alliance，到2040年淘汰所有燃煤电厂，退役62座电厂。这一决定对澳大利亚化石燃料出口构成风险，估计23亿澳元的动力煤销售可能受影响。</div>
+            <div class="news-source">来源：The Guardian</div>
+            <a class="news-link" href="https://www.theguardian.com/environment/2025/nov/17/south-korean-decision-to-close-all-coal-fired-power-plants-by-2040-sounds-alarm-for-australian-exports" target="_blank">阅读详情 →</a>
+        </div>
+
+        <div class="news-item">
+            <div class="news-title">🇨🇳 中国C919客机在迪拜航展首次国际亮相</div>
+            <div class="news-desc">中国商飞C919客机在迪拜航展上进行演示飞行，这是其首次在东亚以外的国际亮相。商飞还公布了加长版C919计划，可搭载210名乘客，目标针对亚太市场。</div>
+            <div class="news-source">来源：Modern Diplomacy</div>
+            <a class="news-link" href="https://moderndiplomacy.eu/2025/11/17/chinese-rival-to-boeing-airbus-the-c919-debuts-on-global-stage/" target="_blank">阅读详情 →</a>
+        </div>
+
+        <!-- ========== AI与机器人板块 ========== -->
+        <h2>🤖 AI 与机器人板块 (AI & Robotics)</h2>
+
+        <div class="news-item">
+            <div class="news-title">🧠 Google发布Gemini 3基础模型，推理能力创纪录</div>
+            <div class="news-desc">Google发布其最先进的基础模型Gemini 3，可通过Gemini应用和AI搜索界面立即使用。该模型在基准测试中取得创纪录成绩，包括Humanity's Last Exam上37.4分。</div>
+            <div class="news-source">来源：TechCrunch, Skynet Countdown</div>
+            <a class="news-link" href="https://techcrunch.com/2025/11/18/google-launches-gemini-3-with-new-coding-app-and-record-benchmark-scores/" target="_blank">阅读详情 →</a>
+        </div>
+
+        <div class="news-item">
+            <div class="news-title">⚠️ Hugging Face CEO警告"LLM泡沫"</div>
+            <div class="news-desc">Hugging Face CEO Clem Delangue认为，虽然大型语言模型可能正经历泡沫，可能很快破裂，但更广泛的AI领域仍然健康，才刚刚开始。他预测将向更小的专业化模型转变。</div>
+            <div class="news-source">来源：TechCrunch</div>
+            <a class="news-link" href="https://techcrunch.com/2025/11/18/hugging-face-ceo-says-were-in-an-llm-bubble-not-an-ai-bubble/" target="_blank">阅读详情 →</a>
+        </div>
+
+        <div class="news-item">
+            <div class="news-title">💰 Intuit与OpenAI达成每年超1亿美元协议</div>
+            <div class="news-desc">税务软件提供商Intuit同意每年向OpenAI支付超过1亿美元，使用其大型语言模型来增强其金融产品，包括TurboTax集成ChatGPT。</div>
+            <div class="news-source">来源：CNBC</div>
+            <a class="news-link" href="https://www.cnbc.com/2025/11/18/intuit-pays-openai-100-million-turbotax-integrates-chatgpt.html" target="_blank">阅读详情 →</a>
+        </div>
+
+        <div class="news-item">
+            <div class="news-title">🏭 NVIDIA与美国制造业和机器人领导者推动再工业化</div>
+            <div class="news-desc">NVIDIA宣布美国领先的制造商、工业软件开发商和机器人公司正在使用NVIDIA Omniverse技术构建最先进的机器人工厂和新型自主协作机器人，以帮助克服劳动力短缺并推动美国再工业化。</div>
+            <div class="news-source">来源：NVIDIA Newsroom</div>
+            <a class="news-link" href="https://nvidianews.nvidia.com/news/nvidia-us-manufacturing-robotics-physical-ai" target="_blank">阅读详情 →</a>
+        </div>
+
+        <div class="news-item">
+            <div class="news-title">🤖 Teradyne Robotics裁员约14%</div>
+            <div class="news-desc">Teradyne Robotics在2025年11月进行新一轮裁员，全球裁员约14%，此前九个月已裁员10%。原因是收入增长未达预期。</div>
+            <div class="news-source">来源：The Robot Report</div>
+            <a class="news-link" href="https://www.therobotreport.com/top-10-robotics-developments-november-2025/" target="_blank">阅读详情 →</a>
+        </div>
+
+        <div class="news-item">
+            <div class="news-title">🚗 马斯克宣布2025年部署约1000台Optimus机器人</div>
+            <div class="news-desc">马斯克宣布计划在2025年部署约1000台Optimus机器人，目标消费价格点在2万至3万美元之间，以实现大众市场吸引力。中国电动车制造商小鹏也 debuted其IRON人形机器人。</div>
+            <div class="news-source">来源：Humanoid Press</div>
+            <a class="news-link" href="https://humanoid.press/" target="_blank">阅读详情 →</a>
+        </div>
+
+        <!-- ========== 今日摘要 ========== -->
+        <div class="summary">
+            <h3 style="margin-top: 0; color: #856404;">📋 今日要点摘要</h3>
+            <ul>
+                <li><strong>航运：</strong>美国进口量预计下降至2026年初；FAA航班削减限制空运能力；中美关键矿产协议缓解供应风险</li>
+                <li><strong>财经：</strong>美股四连跌，标普创8月以来最长连跌；英伟达财报前跌超10%；比特币跌破90,000美元</li>
+                <li><strong>时政：</strong>特朗普批准向沙特出售F-35；俄罗斯油价跌至36美元/桶；韩国宣布2040年淘汰煤电</li>
+                <li><strong>AI/机器人：</strong>Google发布Gemini 3；Hugging Face CEO警告LLM泡沫；Intuit与OpenAI达成每年1亿美元协议</li>
+            </ul>
+        </div>
+
+        <div class="footer">
+            <p>🤖 本简报由 AI 自动生成 | 数据来源：CNBC, Reuters, Bloomberg, TechCrunch, The Robot Report 等</p>
+            <p>🕐 更新时间：2025年11月18日 11:45 (SGT) | 下次更新：明日 07:15 (SGT)</p>
+            <p>📧 反馈与建议：请通过 Discord 或邮件联系</p>
+        </div>
     </div>
-
-    <div class="item">
-      <div class="title">2) 俄罗斯 Rosatom 与 DP World 计划成立物流合资公司</div>
-      <div class="desc">该合作聚焦俄境内及北极航道货流能力建设，显示地缘分化背景下，港航与能源集团正在重组跨区域物流网络。</div>
-      <div class="src">来源：Reuters · <a href="https://www.reuters.com/sustainability/boards-policy-regulation/russias-rosatom-uaes-dp-world-plan-logistics-joint-venture-russia-2026-03-27/" target="_blank">查看原文</a></div>
-    </div>
-
-    <div class="item">
-      <div class="title">3) 胡塞武装表态或加入伊朗相关战事，红海/曼德海峡风险抬升</div>
-      <div class="desc">若冲突外溢至曼德海峡，将直接影响经苏伊士通道的全球集装箱与能源运输，航线绕行与保险成本可能继续上行。</div>
-      <div class="src">来源：Reuters · <a href="https://www.reuters.com/world/middle-east/yemens-houthis-ready-join-iran-war-if-needed-raising-new-shipping-risk-2026-03-26/" target="_blank">查看原文</a></div>
-    </div>
-
-    <div class="item">
-      <div class="title">4) 中国确认船舶通过霍尔木兹海峡，关键航道通行受持续关注</div>
-      <div class="desc">Reuters 指三艘中国船舶在协调后通过霍尔木兹，市场将其视作航道可通行性的阶段性信号，但风险溢价尚未完全消退。</div>
-      <div class="src">来源：Reuters · <a href="https://www.reuters.com/world/china/chinese-container-ships-pass-through-strait-hormuz-second-attempt-data-shows-2026-03-30/" target="_blank">查看原文</a></div>
-    </div>
-
-    <h2>🏛️ 时政板块（International Politics / Geopolitics）</h2>
-
-    <div class="item">
-      <div class="title">1) 台湾在野党领袖访华前称“世界不需要台海危机”</div>
-      <div class="desc">台海议题在美中博弈与区域安全背景下再度升温。相关表态反映两岸与大国关系中的“降温叙事”与“战略竞逐”并存。</div>
-      <div class="src">来源：Reuters · <a href="https://www.reuters.com/world/china/world-does-not-need-crisis-over-taiwan-opposition-leader-says-ahead-china-trip-2026-04-01/" target="_blank">查看原文</a></div>
-    </div>
-
-    <div class="item">
-      <div class="title">2) 乌克兰无人机袭击俄南部塔甘罗格，造成死伤和基础设施损毁</div>
-      <div class="desc">俄乌冲突持续呈现跨境打击与基础设施消耗态势，战争外溢风险与能源、物流链条的不确定性同步存在。</div>
-      <div class="src">来源：Reuters · <a href="https://www.reuters.com/world/ukrainian-drones-kill-one-damage-homes-industry-southern-russias-taganrog-2026-03-29/" target="_blank">查看原文</a></div>
-    </div>
-
-    <div class="item">
-      <div class="title">3) 以军空袭加沙警察检查点致多人死亡</div>
-      <div class="desc">当地局势显示军事行动仍在高强度推进，停火与治理安排面临反复，地区安全与人道议题继续承压。</div>
-      <div class="src">来源：Reuters · <a href="https://www.reuters.com/world/middle-east/israeli-strikes-hit-two-gaza-police-checkpoints-killing-six-medics-say-2026-03-28/" target="_blank">查看原文</a></div>
-    </div>
-
-    <div class="item">
-      <div class="title">4) 科索沃批准向加沙派兵参与国际安全力量</div>
-      <div class="desc">美国支持的战后安排进入执行层面，表明中东冲突治理从“停火框架”逐步转向“安全落地”阶段，但政治阻力仍大。</div>
-      <div class="src">来源：Reuters · <a href="https://www.reuters.com/world/asia-pacific/kosovo-approves-troops-gaza-under-us-backed-scheme-2026-03-30/" target="_blank">查看原文</a></div>
-    </div>
-
-    <h2>💰 财经板块（Global Economy / Markets / Trade）</h2>
-
-    <div class="item">
-      <div class="title">1) OECD：伊朗战争冲击抹去全球增长上调空间并推升通胀</div>
-      <div class="desc">Reuters 引述 OECD 预测，2026 年全球增长下修至约 2.9%，能源价格冲击成为核心变量，滞胀担忧上升。</div>
-      <div class="src">来源：Reuters · <a href="https://www.reuters.com/world/china/oecd-iran-war-erases-global-growth-upgrade-fans-inflation-2026-03-26/" target="_blank">查看原文</a></div>
-    </div>
-
-    <div class="item">
-      <div class="title">2) 伊朗战争波动加大，全球主要市场交易承压</div>
-      <div class="desc">Reuters 指市场流动性与风险偏好受到地缘事件冲击，利率、外汇与大宗商品的跨市场联动加剧。</div>
-      <div class="src">来源：Reuters · <a href="https://www.reuters.com/business/finance/global-markets-trading-analysis-pix-2026-03-30/" target="_blank">查看原文</a></div>
-    </div>
-
-    <div class="item">
-      <div class="title">3) 研究称美国 2025 年关税对 GDP 冲击有限，但财政收入明显增加</div>
-      <div class="desc">Reuters 报道相关论文认为，关税结构抬高了名义税率并带来财政收入，同时仍引发贸易效率与价格传导层面的长期讨论。</div>
-      <div class="src">来源：Reuters · <a href="https://www.reuters.com/business/trumps-tariffs-had-little-impact-gdp-2025-raised-revenue-academic-paper-finds-2026-03-26/" target="_blank">查看原文</a></div>
-    </div>
-
-    <div class="item">
-      <div class="title">4) 加拿大“关税前线”企业经营转弱，跨境协议不确定性冲击需求</div>
-      <div class="desc">零售、餐饮与地产等行业出现客流和订单放缓，反映政策不确定性已从金融市场向实体经济扩散。</div>
-      <div class="src">来源：Reuters · <a href="https://www.reuters.com/world/americas/canadas-tariff-frontline-business-stalls-over-us-trade-deal-jitters-2026-03-28/" target="_blank">查看原文</a></div>
-    </div>
-
-    <h2>🤖 AI & 机器人板块（AI / Robotics / Tech）</h2>
-
-    <div class="item">
-      <div class="title">1) 英伟达押注 Marvell：AI 需求推动算力产业链再加码</div>
-      <div class="desc">Reuters 报道英伟达加大资本布局，反映“芯片-网络-数据中心”协同竞争进入更高强度阶段。</div>
-      <div class="src">来源：Reuters · <a href="https://www.reuters.com/technology/" target="_blank">查看原文（科技频道）</a></div>
-    </div>
-
-    <div class="item">
-      <div class="title">2) OpenAI 美国广告试点 6 周年化收入突破 1 亿美元</div>
-      <div class="desc">商业化路径从订阅扩展到广告，说明头部大模型公司正通过多元收入结构对冲训练与推理成本压力。</div>
-      <div class="src">来源：Reuters · <a href="https://www.reuters.com/business/media-telecom/openais-us-ad-pilot-exceeds-100-million-annualized-revenue-six-weeks-2026-03-26/" target="_blank">查看原文</a></div>
-    </div>
-
-    <div class="item">
-      <div class="title">3) 白宫推动联邦层面 AI 立法，监管框架进入关键窗口</div>
-      <div class="desc">美国政策端强调“创新与约束并行”，若立法推进，将深刻影响模型部署、责任边界与企业合规成本。</div>
-      <div class="src">来源：Reuters · <a href="https://www.reuters.com/technology/artificial-intelligence/artificial-intelligencer-white-house-pushes-first-big-federal-ai-law-this-year-2026-03-25/" target="_blank">查看原文</a></div>
-    </div>
-
-    <div class="item">
-      <div class="title">4) 机器人应用热度上行：最新一代机器系统加速走向产业场景</div>
-      <div class="desc">Reuters 图集显示人形与工业机器人在展会、制造与服务场景密集落地，AI+机器人“从演示到部署”进程加快。</div>
-      <div class="src">来源：Reuters · <a href="https://www.reuters.com/pictures/meet-machines-latest-generation-robots-2026-03-25/" target="_blank">查看原文</a></div>
-    </div>
-
-    <div class="footer">
-      🌐 GitHub Pages：<a href="https://mast0506.github.io/daily-report-from-ai/" target="_blank">https://mast0506.github.io/daily-report-from-ai/</a><br/>
-      <small>本简报由 AI 自动整理，供信息参考使用。</small>
-    </div>
-  </div>
 </body>
 </html>
