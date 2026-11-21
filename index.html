@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>全球资讯简报 - 2026年11月21日</title>
+    <title>全球资讯简报 - 2026年11月22日</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -28,7 +28,7 @@
         }
         .header h1 { font-size: 2.5em; margin-bottom: 10px; font-weight: 700; }
         .header .date { font-size: 1.2em; opacity: 0.9; }
-        .header .time { font-size: 1em; opacity: 0.8; margin-top: 5px; }
+        .header .update-time { font-size: 0.9em; opacity: 0.8; margin-top: 8px; }
         .section {
             padding: 30px 40px;
             border-bottom: 1px solid #eee;
@@ -38,66 +38,83 @@
             font-size: 1.8em;
             color: #333;
             margin-bottom: 20px;
-            padding-bottom: 10px;
+            padding-bottom: 12px;
             border-bottom: 3px solid #667eea;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
         }
-        .section-title .icon { font-size: 1.2em; }
-        .news-item {
-            padding: 15px 0;
-            border-bottom: 1px solid #f0f0f0;
+        .section-icon { font-size: 1.2em; }
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 16px;
         }
-        .news-item:last-child { border-bottom: none; }
+        .news-card {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 20px;
+            border-left: 4px solid #667eea;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .news-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
         .news-title {
-            font-size: 1.1em;
-            color: #333;
+            font-size: 1.05em;
             font-weight: 600;
+            color: #222;
             margin-bottom: 8px;
             line-height: 1.4;
         }
         .news-meta {
-            font-size: 0.85em;
-            color: #888;
             display: flex;
-            gap: 15px;
             flex-wrap: wrap;
+            gap: 10px;
+            font-size: 0.85em;
+            color: #666;
         }
-        .news-meta a {
+        .news-source {
+            background: #667eea;
+            color: #fff;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+        .news-time { color: #888; }
+        .news-link {
             color: #667eea;
             text-decoration: none;
+            font-weight: 500;
         }
-        .news-meta a:hover { text-decoration: underline; }
-        .news-summary {
-            color: #666;
-            line-height: 1.6;
+        .news-link:hover { text-decoration: underline; }
+        .news-desc {
             margin-top: 8px;
-            font-size: 0.95em;
+            font-size: 0.9em;
+            color: #555;
+            line-height: 1.5;
         }
         .footer {
             background: #f8f9fa;
-            padding: 30px 40px;
+            padding: 24px 40px;
             text-align: center;
             color: #888;
             font-size: 0.9em;
         }
         .badge {
             display: inline-block;
+            background: #764ba2;
+            color: #fff;
             padding: 4px 12px;
             border-radius: 20px;
-            font-size: 0.75em;
-            font-weight: 600;
+            font-size: 0.8em;
             margin-left: 8px;
         }
-        .badge-shipping { background: #e3f2fd; color: #1976d2; }
-        .badge-politics { background: #ffebee; color: #c62828; }
-        .badge-finance { background: #e8f5e9; color: #2e7d32; }
-        .badge-ai { background: #f3e5f5; color: #7b1fa2; }
         @media (max-width: 768px) {
             .header h1 { font-size: 1.8em; }
             .section { padding: 20px; }
-            .section-title { font-size: 1.4em; }
+            .news-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -105,322 +122,264 @@
     <div class="container">
         <div class="header">
             <h1>🌍 全球资讯简报</h1>
-            <div class="date">2026年11月21日 星期六</div>
-            <div class="time">新加坡时间 07:15 | UTC 23:15</div>
+            <div class="date">2026年11月22日 星期日</div>
+            <div class="update-time">更新时间：SGT 07:15 | UTC 23:15 (11月21日)</div>
         </div>
 
         <!-- 航运板块 -->
         <div class="section">
             <div class="section-title">
-                <span class="icon">🚢</span> 航运资讯
+                <span class="section-icon">🚢</span>
+                航运资讯
+                <span class="badge">5条</span>
             </div>
-            
-            <div class="news-item">
-                <div class="news-title">1. 霍尔木兹海峡又一油轮遇袭，全球海上袭击事件激增<span class="badge badge-shipping">航运</span></div>
-                <div class="news-meta">
-                    <span>来源: gCaptain</span>
-                    <a href="https://gcaptain.com/another-tanker-hit-in-strait-of-hormuz-as-maritime-attacks-surge-worldwide/" target="_blank">查看原文</a>
-                    <span>时间: 2026-11-20</span>
+            <div class="news-grid">
+                <div class="news-card">
+                    <div class="news-title">亚洲港口拥堵缓解，航运市场出现软化迹象</div>
+                    <div class="news-meta">
+                        <span class="news-source">Navia Freight</span>
+                        <span class="news-time">3周前</span>
+                        <a href="https://naviafreight.com/market-updates/november-freight-market-update/" class="news-link" target="_blank">原文</a>
+                    </div>
+                    <div class="news-desc">亚洲港口拥堵开始缓解，船公司恢复红海和苏伊士航线，巴拿马运河通行无进一步限制。</div>
                 </div>
-                <div class="news-summary">海事安全公司Ambrey确认，自11月13日以来已有六艘船只遇袭，其中四艘在罗马尼亚苏利纳锚地附近遇袭，两艘在保加利亚水域遇袭。霍尔木兹海峡局势持续紧张。</div>
-            </div>
-
-            <div class="news-item">
-                <div class="news-title">2. 伊朗航运更新：海峡局势持续动荡<span class="badge badge-shipping">航运</span></div>
-                <div class="news-meta">
-                    <span>来源: UANI</span>
-                    <a href="https://www.unitedagainstnucleariran.com/analysis/iran-shipping-update-november-20-2026" target="_blank">查看原文</a>
-                    <span>时间: 2026-11-20</span>
+                <div class="news-card">
+                    <div class="news-title">全球船队10%仍被困港口拥堵，相当于360万TEU</div>
+                    <div class="news-meta">
+                        <span class="news-source">DHL</span>
+                        <span class="news-time">10月7日</span>
+                        <a href="https://www.dhl.com/us-en/home/global-forwarding/latest-news-and-webinars/ocean-freight-market-update.html" class="news-link" target="_blank">原文</a>
+                    </div>
+                    <div class="news-desc">DHL全球货运市场更新显示，2026年全球船队运力预计同比增长4%，但超过10%的全球船队仍被困于港口拥堵。</div>
                 </div>
-                <div class="news-summary">伊朗对霍尔木兹海峡商业航运的袭击继续扰乱海上交通，伊朗支持的胡塞武装在巴布曼德布海峡的威胁和袭击仍在持续，地区海事安全环境高度动荡。</div>
-            </div>
-
-            <div class="news-item">
-                <div class="news-title">3. 集装箱航运费率策略引发竞争批评<span class="badge badge-shipping">航运</span></div>
-                <div class="news-meta">
-                    <span>来源: Seatrade Maritime</span>
-                    <a href="https://www.seatrade-maritime.com/containers/container-shipping-rate-tactics-draw-competition-criticism" target="_blank">查看原文</a>
-                    <span>时间: 2026-11-20</span>
+                <div class="news-card">
+                    <div class="news-title">红海运力过剩隐现，集装箱现货运价仍高于去年同期50%</div>
+                    <div class="news-meta">
+                        <span class="news-source">FreightWaves</span>
+                        <span class="news-time">4天前</span>
+                        <a href="https://www.freightwaves.com/news/red-sea-overcapacity-looms-as-ocean-container-spot-rates-still-50-above-year-ago" class="news-link" target="_blank">原文</a>
+                    </div>
+                    <div class="news-desc">海运运价保持高位，拥堵、燃油成本和服务中断支撑价格，但船队扩张和红海服务恢复引发运力担忧。</div>
                 </div>
-                <div class="news-summary">托运人对集装箱航运缺乏监管监督表示遗憾，航运公司通过旺季附加费提升收益的同时限制运力，引发竞争担忧。</div>
-            </div>
-
-            <div class="news-item">
-                <div class="news-title">4. 美国海事局警告伊朗封锁推高海湾保费<span class="badge badge-shipping">航运</span></div>
-                <div class="news-meta">
-                    <span>来源: Al Jazeera</span>
-                    <a href="https://www.aljazeera.com/economy/2026/11/20/us-maritime-agency-warned-iran-blockade-was-adding-to-rising-gulf-premiums" target="_blank">查看原文</a>
-                    <span>时间: 2026-11-20</span>
+                <div class="news-card">
+                    <div class="news-title">上海至热那亚运价上涨6%至$4,436/FEU</div>
+                    <div class="news-meta">
+                        <span class="news-source">Seatrade Maritime</span>
+                        <span class="news-time">1天前</span>
+                        <a href="https://www.seatrade-maritime.com/containers/container-shipping-rate-tactics-draw-competition-criticism" class="news-link" target="_blank">原文</a>
+                    </div>
+                    <div class="news-desc">Drewry最新周报显示，亚欧/地中海航线上海至热那亚运价在连续三周稳定后上涨6%，上海至鹿特丹运价保持不变。</div>
                 </div>
-                <div class="news-summary">美国海事管理局承认，海军封锁对保险保费和货运运力造成影响，备忘录显示海湾地区保费持续上升。</div>
-            </div>
-
-            <div class="news-item">
-                <div class="news-title">5. 洛杉矶和长滩港口工人可能罢工<span class="badge badge-shipping">航运</span></div>
-                <div class="news-meta">
-                    <span>来源: Los Angeles Times</span>
-                    <a href="https://www.latimes.com/business/story/2026-11-20/port-workers-could-strike-as-union-fails-to-extend-contract" target="_blank">查看原文</a>
-                    <span>时间: 2026-11-20</span>
+                <div class="news-card">
+                    <div class="news-title">苏伊士集装箱流量上升73%，但曼德海峡安全风险增加</div>
+                    <div class="news-meta">
+                        <span class="news-source">IndexBox</span>
+                        <span class="news-time">2天前</span>
+                        <a href="https://www.indexbox.io/blog/container-traffic-returns-to-suez-as-security-risks-mount-near-bab-al-mandab/" class="news-link" target="_blank">原文</a>
+                    </div>
+                    <div class="news-desc">截至11月15日当周，好望角通行量降至126次，为2026年1月以来最低。Drewry在11月17日安全观察中标记曼德海峡安全形势显著恶化。</div>
                 </div>
-                <div class="news-summary">洛杉矶和长滩港口工人最早可能于周六罢工，合同即将到期，工会未能达成延期协议。</div>
-            </div>
-
-            <div class="news-item">
-                <div class="news-title">6. 宁波舟山港2026年集装箱吞吐量突破4000万TEU<span class="badge badge-shipping">航运</span></div>
-                <div class="news-meta">
-                    <span>来源: People's Daily</span>
-                    <a href="https://en.people.cn/n3/2026/1120/c90000-20521308.html" target="_blank">查看原文</a>
-                    <span>时间: 2026-11-20</span>
-                </div>
-                <div class="news-summary">截至11月10日，宁波舟山港2026年集装箱吞吐量已突破4000万TEU，连续两年达到这一量级。</div>
-            </div>
-
-            <div class="news-item">
-                <div class="news-title">7. 中美元延长船舶服务费和港口费暂停期两个月<span class="badge badge-shipping">航运</span></div>
-                <div class="news-meta">
-                    <span>来源: Global Trade Magazine</span>
-                    <a href="https://www.globaltrademag.com/us-and-china-extend-suspensions-of-vessel-service-fees-and-port-fees-for-two-months/" target="_blank">查看原文</a>
-                    <span>时间: 2026-11-20</span>
-                </div>
-                <div class="news-summary">中国确认将对美国相关船舶的互惠特别港口费暂停期延长至2027年1月10日，中美航运贸易关系暂时缓和。</div>
             </div>
         </div>
 
         <!-- 时政板块 -->
         <div class="section">
             <div class="section-title">
-                <span class="icon">🌐</span> 时政要闻
+                <span class="section-icon">🌐</span>
+                时政要闻
+                <span class="badge">6条</span>
             </div>
-            
-            <div class="news-item">
-                <div class="news-title">8. 特朗普称伊朗不愿达成"可接受"的协议，或对伊行动推迟至2027年<span class="badge badge-politics">时政</span></div>
-                <div class="news-meta">
-                    <span>来源: CBS News / Time</span>
-                    <a href="https://www.cbsnews.com/live-updates/iran-war-trump-tehran-denies-chemical-weapons/" target="_blank">查看原文</a>
-                    <span>时间: 2026-11-20</span>
+            <div class="news-grid">
+                <div class="news-card">
+                    <div class="news-title">霍尔木兹海峡两艘商船遇袭</div>
+                    <div class="news-meta">
+                        <span class="news-source">Au79 Macro Research</span>
+                        <span class="news-time">6小时前</span>
+                        <a href="https://martyau79.substack.com/p/21nov2026-geopolitical-intelligence" class="news-link" target="_blank">原文</a>
+                    </div>
+                    <div class="news-desc">11月21日周六，UKMTO报告两艘商业油轮在霍尔木兹海峡遇袭——一艘船尾被不明抛射物击中，另一艘机舱被击中。IRGC声称一艘"违规"船只被拦截。</div>
                 </div>
-                <div class="news-summary">美国总统特朗普表示，伊朗希望达成协议结束敌对状态，但条件对他而言"不可接受"。他暗示对伊朗的重大决策可能推迟到2027年。</div>
-            </div>
-
-            <div class="news-item">
-                <div class="news-title">9. 俄罗斯对乌克兰发动大规模空袭，基辅三座桥梁被击中<span class="badge badge-politics">时政</span></div>
-                <div class="news-meta">
-                    <span>来源: Kyiv Independent / DW</span>
-                    <a href="https://kyivindependent.com/russia-launches-mass-missile-attack-against-ukraine-after-putin-vows-revenge/" target="_blank">查看原文</a>
-                    <span>时间: 2026-11-20</span>
+                <div class="news-card">
+                    <div class="news-title">乌克兰与伊朗代理战争同时施压国际体系</div>
+                    <div class="news-meta">
+                        <span class="news-source">Velina Tchakarova</span>
+                        <span class="news-time">47分钟前</span>
+                        <a href="https://velinatchakarova.substack.com/p/geopolitics-brief" class="news-link" target="_blank">原文</a>
+                    </div>
+                    <div class="news-desc">核心评估：乌克兰和伊朗的同步代理战争继续对国际体系造成压力。</div>
                 </div>
-                <div class="news-summary">俄罗斯 overnight 对乌克兰发动自入侵以来最大规模空袭之一，基辅三座桥梁被击中，至少9人死亡。袭击涉及从图-160战略轰炸机发射的巡航导弹。</div>
-            </div>
-
-            <div class="news-item">
-                <div class="news-title">10. 俄罗斯导弹和无人机落入波兰境内，北约紧急起飞战机<span class="badge badge-politics">时政</span></div>
-                <div class="news-meta">
-                    <span>来源: AP News / The Independent</span>
-                    <a href="https://apnews.com/article/ukraine-russia-war-kyiv-attacks-putin-crimea-433e18f00cbd37a2a9da94e60fce0e07" target="_blank">查看原文</a>
-                    <span>时间: 2026-11-20</span>
+                <div class="news-card">
+                    <div class="news-title">特朗普威胁对伊朗采取军事行动</div>
+                    <div class="news-meta">
+                        <span class="news-source">Anadolu Agency</span>
+                        <span class="news-time">14小时前</span>
+                        <a href="https://aa.com.tr/en/world/morning-briefing-nov-21-2026/4132676" class="news-link" target="_blank">原文</a>
+                    </div>
+                    <div class="news-desc">美国总统唐纳德·特朗普因传闻中的"脏弹"阴谋威胁华盛顿而威胁对伊朗采取军事行动，同时淡化美国大范围停电事件。丹麦驱逐...</div>
                 </div>
-                <div class="news-summary">俄罗斯导弹和无人机落入波兰境内，北约紧急起飞战机应对。这是冲突升级的重要标志。</div>
-            </div>
-
-            <div class="news-item">
-                <div class="news-title">11. 美参议院否决限制特朗普对伊朗军事行动的战争权力决议<span class="badge badge-politics">时政</span></div>
-                <div class="news-meta">
-                    <span>来源: Democracy Now!</span>
-                    <a href="https://www.democracynow.org/2026/11/20/headlines" target="_blank">查看原文</a>
-                    <span>时间: 2026-11-20</span>
+                <div class="news-card">
+                    <div class="news-title">APEC峰会后中美贸易、台湾和科技紧张关系仍未解决</div>
+                    <div class="news-meta">
+                        <span class="news-source">CNBC</span>
+                        <span class="news-time">1天前</span>
+                        <a href="https://www.cnbc.com/2026/11/20/apec-summit-trump-xi-china-trade-taiwan.html" class="news-link" target="_blank">原文</a>
+                    </div>
+                    <div class="news-desc">特朗普亚洲之行结束后，美中贸易、台湾和科技紧张关系仍未解决。台湾派出宏碁集团创始人施振荣出席深圳APEC会议。</div>
                 </div>
-                <div class="news-summary">美国参议院否决了限制特朗普对伊朗攻击的战争权力决议，同时通过了许可改革法案，获得包括舒默在内的14名民主党人支持。</div>
-            </div>
-
-            <div class="news-item">
-                <div class="news-title">12. 联合国气候大会COP31在土耳其闭幕，未能就削减化石燃料达成具体协议<span class="badge badge-politics">时政</span></div>
-                <div class="news-meta">
-                    <span>来源: Washington Post</span>
-                    <a href="https://www.washingtonpost.com/world/wires/" target="_blank">查看原文</a>
-                    <span>时间: 2026-11-20</span>
+                <div class="news-card">
+                    <div class="news-title">波兰不允许俄罗斯花样滑冰选手参加华沙挑战赛</div>
+                    <div class="news-meta">
+                        <span class="news-source">Pravda</span>
+                        <span class="news-time">18小时前</span>
+                        <a href="https://trump.news-pravda.com/world/2026/11/21/418249.html" class="news-link" target="_blank">原文</a>
+                    </div>
+                    <div class="news-desc">波兰不允许俄罗斯花样滑冰选手参加在华沙举行的挑战赛系列赛。伊朗表示准备与美国讨论开放霍尔木兹海峡。</div>
                 </div>
-                <div class="news-summary">联合国气候谈判在土耳其结束，未能就大幅削减化石燃料使用达成具体协议，活动人士谴责"缩水"的COP31草案文本。</div>
-            </div>
-
-            <div class="news-item">
-                <div class="news-title">13. 特朗普结束亚洲之行，中美贸易、台湾和技术紧张关系仍未解决<span class="badge badge-politics">时政</span></div>
-                <div class="news-meta">
-                    <span>来源: CNBC</span>
-                    <a href="https://www.cnbc.com/2026/11/20/apec-summit-trump-xi-china-trade-taiwan.html" target="_blank">查看原文</a>
-                    <span>时间: 2026-11-20</span>
+                <div class="news-card">
+                    <div class="news-title">加拿大指控印度策划政治暗杀，印美加关系紧张</div>
+                    <div class="news-meta">
+                        <span class="news-source">Geopolitical Briefings</span>
+                        <span class="news-time">14小时前</span>
+                        <a href="https://geopoliticalbriefings.substack.com/p/geopolitical-radar-21-novembre-2026" class="news-link" target="_blank">原文</a>
+                    </div>
+                    <div class="news-desc">加拿大指控印度涉及2023年锡克教分离主义者Hardeep Singh Nijjar谋杀案，这一政治暗杀指控成为华盛顿和渥太华与新德里关系中的结构性摩擦。</div>
                 </div>
-                <div class="news-summary">分析师指出，特朗普在深圳APEC峰会期间举行的三边及其他高级别会议几乎没有取得具体成果，中美贸易、台湾和技术紧张关系仍未解决。</div>
-            </div>
-
-            <div class="news-item">
-                <div class="news-title">14. 以色列在黎巴嫩发动空袭，打击真主党重建努力<span class="badge badge-politics">时政</span></div>
-                <div class="news-meta">
-                    <span>来源: FDD</span>
-                    <a href="https://www.fdd.org/overnight-brief/november-20-2026/" target="_blank">查看原文</a>
-                    <span>时间: 2026-11-20</span>
-                </div>
-                <div class="news-summary">以色列军方周四在黎巴嫩发动空袭，称目标是真主党重建武装力量的努力。伊拉克政府似乎已与被指亲伊朗的民兵组织达成妥协。</div>
             </div>
         </div>
 
         <!-- 财经板块 -->
         <div class="section">
             <div class="section-title">
-                <span class="icon">💰</span> 财经动态
+                <span class="section-icon">💰</span>
+                财经动态
+                <span class="badge">6条</span>
             </div>
-            
-            <div class="news-item">
-                <div class="news-title">15. AI抛售潮席卷全球，纳指跌入负值，道指和标普进入修正区域<span class="badge badge-finance">财经</span></div>
-                <div class="news-meta">
-                    <span>来源: Investopedia / Econcurrents</span>
-                    <a href="https://www.investopedia.com/stock-market-today-dow-jones-s-and-p-500-nasdaq-11202026-12266027" target="_blank">查看原文</a>
-                    <span>时间: 2026-11-20</span>
+            <div class="news-grid">
+                <div class="news-card">
+                    <div class="news-title">纳斯达克暴跌5%收盘，抹去2026年涨幅</div>
+                    <div class="news-meta">
+                        <span class="news-source">Economic Times</span>
+                        <span class="news-time">1天前</span>
+                        <a href="https://economictimes.indiatimes.com/markets/us-stocks/wall-street-guide/stock-market-live-updates-dow-jones-nasdaq-sp-500-meta-tesla-anthropic-claude-nvidia-micron-meta-ai-stocks-fed-rate-hike-inflation-treasury-yield-news-20th-november-2026/liveblog/136028991.cms" class="news-link" target="_blank">原文</a>
+                    </div>
+                    <div class="news-desc">道指下跌511.64点（1.04%）至48,585.42；标普500下跌194.41点（2.71%）至6,981.42；纳斯达克暴跌1,005.90点（4.21%）至22,873.30。</div>
                 </div>
-                <div class="news-summary">美股周五暴跌，AI抛售势头增强，纳斯达克综合指数跌入年度负值，其他两大指数2026年涨幅几乎全部抹去。英伟达领跌科技股，Anthropic IPO后股价下滑。</div>
-            </div>
-
-            <div class="news-item">
-                <div class="news-title">16. Anthropic创纪录IPO次日股价下跌9%，AI交易动摇<span class="badge badge-finance">财经</span></div>
-                <div class="news-meta">
-                    <span>来源: The Guardian / CNBC</span>
-                    <a href="https://www.theguardian.com/business/live/2026/nov/20/asia-stocks-worst-anthropic-ipo-ai-stock-market-latest-updates-news" target="_blank">查看原文</a>
-                    <span>时间: 2026-11-20</span>
+                <div class="news-card">
+                    <div class="news-title">Nvidia财报超预期，营收创纪录$1,158亿</div>
+                    <div class="news-meta">
+                        <span class="news-source">Memeburn</span>
+                        <span class="news-time">2天前</span>
+                        <a href="https://memeburn.com/nvidia-earnings-without-jensen-huang/" class="news-link" target="_blank">原文</a>
+                    </div>
+                    <div class="news-desc">11月17日，Nvidia公布其历史上最大季度营收$1,158亿。联合创始人黄仁勋五天后... 董事会主席Harvey Jones表示不打算恢复黄仁勋职位；11月17日收盘价$155.46。</div>
                 </div>
-                <div class="news-summary">Anthropic在创纪录IPO首秀次日开盘下跌9%，此前股价曾收于发行价上方约17%。AI板块估值担忧引发全球科技股抛售。</div>
-            </div>
-
-            <div class="news-item">
-                <div class="news-title">17. 亚洲科技股暴跌，日经225下跌5.06%，软银重挫14.48%<span class="badge badge-finance">财经</span></div>
-                <div class="news-meta">
-                    <span>来源: CNBC / Armstrong Economics</span>
-                    <a href="https://www.cnbc.com/2026/11/19/stock-market-today-live-updates.html" target="_blank">查看原文</a>
-                    <span>时间: 2026-11-20</span>
+                <div class="news-card">
+                    <div class="news-title">Nvidia毛利率预计保持70%以上</div>
+                    <div class="news-meta">
+                        <span class="news-source">New York Times</span>
+                        <span class="news-time">3天前</span>
+                        <a href="https://www.nytimes.com/live/2026/11/17/technology/nvidia-earnings-stock-price" class="news-link" target="_blank">原文</a>
+                    </div>
+                    <div class="news-desc">Nvidia财报和预测超预期。CFO Kress表示毛利率预计保持70%以上，投资者担忧竞争将降低芯片成本和利润率。</div>
                 </div>
-                <div class="news-summary">日经225指数暴跌3007.56点（-5.06%）至56,436.65点。软银集团收盘下跌14.48%，为2024年8月以来最差表现，AI抛售潮席卷亚洲科技股。</div>
-            </div>
-
-            <div class="news-item">
-                <div class="news-title">18. 油价跌至80美元低位，中东出口恢复推动第三周下跌<span class="badge badge-finance">财经</span></div>
-                <div class="news-meta">
-                    <span>来源: EnergyNow / Oil & Gas 360</span>
-                    <a href="https://energynow.com/2026/11/oil-prices-slide-as-recovering-middle-east-exports-push-wti-toward-81-and-brent-near-90/" target="_blank">查看原文</a>
-                    <span>时间: 2026-11-20</span>
+                <div class="news-card">
+                    <div class="news-title">美债收益率下降，股市抛售推动避险需求</div>
+                    <div class="news-meta">
+                        <span class="news-source">T. Rowe Price</span>
+                        <span class="news-time">2天前</span>
+                        <a href="https://www.troweprice.com/personal-investing/resources/insights/global-markets-weekly-update.html" class="news-link" target="_blank">原文</a>
+                    </div>
+                    <div class="news-desc">尽管美联储发出鹰派信号，美国股市抛售推动避险资产需求，帮助大多数期限的收益率下降，美债产生正回报。</div>
                 </div>
-                <div class="news-summary">WTI原油跌至81.59美元/桶，下跌1.95%；布伦特原油接近90美元。全球石油市场迈向连续第三周下跌，中东出口恢复和供应改善缓解压力。</div>
-            </div>
-
-            <div class="news-item">
-                <div class="news-title">19. 美联储加息预期升温，金价跌至52周低点<span class="badge badge-finance">财经</span></div>
-                <div class="news-meta">
-                    <span>来源: NordFX / Everhint</span>
-                    <a href="https://nordfx.com/market-news/market-pulse-november-20-2026" target="_blank">查看原文</a>
-                    <span>时间: 2026-11-20</span>
+                <div class="news-card">
+                    <div class="news-title">投资者继续预期美联储12月加息</div>
+                    <div class="news-meta">
+                        <span class="news-source">Edward Jones</span>
+                        <span class="news-time">1周前</span>
+                        <a href="https://www.edwardjones.com/us-en/market-news-insights/stock-market-news/stock-market-weekly-update" class="news-link" target="_blank">原文</a>
+                    </div>
+                    <div class="news-desc">债券在避险反弹中上涨，但投资者继续预期美联储将在12月加息，并可能在1月再次加息，因央行仍专注于将粘性通胀压力带回目标水平。</div>
                 </div>
-                <div class="news-summary">美联储加息概率接近96%，黄金和比特币下跌。金价暴跌至52周低点3,515美元附近，美元走强压制大宗商品。</div>
-            </div>
-
-            <div class="news-item">
-                <div class="news-title">20. 美联储官员鹰派信号叠加AI担忧，全球市场承压<span class="badge badge-finance">财经</span></div>
-                <div class="news-meta">
-                    <span>来源: Investrade / CaixaBank</span>
-                    <a href="https://investrade.com/morning-preview-november-20-2026/" target="_blank">查看原文</a>
-                    <span>时间: 2026-11-20</span>
+                <div class="news-card">
+                    <div class="news-title">投资者开始将美国铜运往中国，特朗普关税担忧缓解</div>
+                    <div class="news-meta">
+                        <span class="news-source">Financial Times</span>
+                        <span class="news-time">11月21日</span>
+                        <a href="https://www.ft.com/chinese-economy" class="news-link" target="_blank">原文</a>
+                    </div>
+                    <div class="news-desc">交易员开始将美国铜运往中国，因特朗普关税担忧缓解。FT市场版面指出投资者需忘掉过去20年的教训——通胀、债券和股票处于与金融危机后不同的世界。</div>
                 </div>
-                <div class="news-summary">美股期货延续周四抛售，全球市场下跌。AI交易受增长和估值担忧动摇，美联储官员本周鹰派信号也打压市场情绪。续请失业金人数升至176.3万，高于预期。</div>
             </div>
         </div>
 
         <!-- AI&机器人板块 -->
         <div class="section">
             <div class="section-title">
-                <span class="icon">🤖</span> AI & 机器人
+                <span class="section-icon">🤖</span>
+                AI & 机器人
+                <span class="badge">6条</span>
             </div>
-            
-            <div class="news-item">
-                <div class="news-title">21. OpenAI发布GPT-6.2 Astra和Sol模型<span class="badge badge-ai">AI</span></div>
-                <div class="news-meta">
-                    <span>来源: LLM Stats</span>
-                    <a href="https://llm-stats.com/ai-news" target="_blank">查看原文</a>
-                    <span>时间: 2026-11-20</span>
+            <div class="news-grid">
+                <div class="news-card">
+                    <div class="news-title">Anthropic IPO定价$83/股，估值$1.51万亿</div>
+                    <div class="news-meta">
+                        <span class="news-source">AI Universe Journal</span>
+                        <span class="news-time">1天前</span>
+                        <a href="https://aiuniversejournal.org/issues/2026-11-21/" class="news-link" target="_blank">原文</a>
+                    </div>
+                    <div class="news-desc">Anthropic IPO定价每股83美元，估值达1.51万亿美元，成为AI领域最大IPO之一。</div>
                 </div>
-                <div class="news-summary">OpenAI于11月17日发布GPT-6.2 Astra（$8/$40）和Sol（$2/$10）。Google官方Gemini 4 Neon自报评分在10项中的8项领先Opus 5.5和GPT-6.2 Sol。</div>
-            </div>
-
-            <div class="news-item">
-                <div class="news-title">22. ChatGPT新增实时听写功能，取消10分钟限制<span class="badge badge-ai">AI</span></div>
-                <div class="news-meta">
-                    <span>来源: Sam on AI</span>
-                    <a href="https://samonai.substack.com/p/ai-brief-november-20-2026" target="_blank">查看原文</a>
-                    <span>时间: 2026-11-20</span>
+                <div class="news-card">
+                    <div class="news-title">Anthropic数学家声称与Claude发现黎曼猜想证明</div>
+                    <div class="news-meta">
+                        <span class="news-source">AI.info</span>
+                        <span class="news-time">18小时前</span>
+                        <a href="https://ai.info/daily/2026-11-21" class="news-link" target="_blank">原文</a>
+                    </div>
+                    <div class="news-desc">Anthropic数学家Levent Alpöge表示他和Claude找到了黎曼猜想的证明。该证明尚未经独立验证，Alpöge称论证已被形式化。</div>
                 </div>
-                <div class="news-summary">ChatGPT新增Live Dictation功能，用户可查看实时转录并在提示框中编辑。OpenAI取消了10分钟听写限制，称功能更可靠。</div>
-            </div>
-
-            <div class="news-item">
-                <div class="news-title">23. Google推出Gemini 4 Hydrogen模型，面向Mac的Gemini电脑使用功能<span class="badge badge-ai">AI</span></div>
-                <div class="news-meta">
-                    <span>来源: The Neuron / America Listen</span>
-                    <a href="https://www.theneuron.ai/digest/everything-that-happened-in-ai-today-friday-november-20-2026/" target="_blank">查看原文</a>
-                    <span>时间: 2026-11-20</span>
+                <div class="news-card">
+                    <div class="news-title">联合国AI杀手机器人谈判仅同意继续讨论，无实质承诺</div>
+                    <div class="news-meta">
+                        <span class="news-source">NPR</span>
+                        <span class="news-time">15小时前</span>
+                        <a href="https://www.npr.org/2026/11/21/g-s1-154914/nations-at-un-talks-on-ai-killer-robots-agree-to-more-talks-but-no-firm-commitment-to-rein-them-in" class="news-link" target="_blank">原文</a>
+                    </div>
+                    <div class="news-desc">联合国支持的日内瓦谈判周六结束，仅同意将讨论延长两年，未能就限制AI驱动的杀手机器人和无人机达成实质性承诺。</div>
                 </div>
-                <div class="news-summary">Google推出新的Gemini 4 Hydrogen模型，同时发布了面向Mac的Gemini电脑使用功能。Meta的Muse面临隐私担忧。</div>
-            </div>
-
-            <div class="news-item">
-                <div class="news-title">24. Genesis AI融资5亿美元，用传感器手套训练机器人<span class="badge badge-ai">机器人</span></div>
-                <div class="news-meta">
-                    <span>来源: The Rundown AI / The Sequence</span>
-                    <a href="https://www.therundown.ai/" target="_blank">查看原文</a>
-                    <span>时间: 2026-11-20</span>
+                <div class="news-card">
+                    <div class="news-title">Runway将AI视频和Praxis-1世界模型扩展至机器人领域</div>
+                    <div class="news-meta">
+                        <span class="news-source">Rio Rundown</span>
+                        <span class="news-time">12小时前</span>
+                        <a href="https://riorundown.substack.com/p/ai-news-nov-21-2026-enterprise-infrastructure" class="news-link" target="_blank">原文</a>
+                    </div>
+                    <div class="news-desc">Runway宣布将其AI视频和Praxis-1世界模型扩展至机器人领域，将该技术定位用于创意媒体以外的应用。公司报告年度经常性收入翻倍至2亿美元。</div>
                 </div>
-                <div class="news-summary">Genesis AI融资5亿美元，用于扩展其基于传感器手套的机器人训练方法，该方法可降低数据成本，但仍面临可靠性测试。</div>
-            </div>
-
-            <div class="news-item">
-                <div class="news-title">25. 中国人形机器人产业快速扩张，预计2026年产量超10万台<span class="badge badge-ai">机器人</span></div>
-                <div class="news-meta">
-                    <span>来源: Humanoid Beat / CBS News</span>
-                    <a href="https://humanoidbeat.com/" target="_blank">查看原文</a>
-                    <span>时间: 2026-11-20</span>
+                <div class="news-card">
+                    <div class="news-title">Genesis AI完成$5亿A轮融资，估值$35亿</div>
+                    <div class="news-meta">
+                        <span class="news-source">Herve Cuviliez</span>
+                        <span class="news-time">17小时前</span>
+                        <a href="https://hervecuviliez.substack.com/p/market-news-saturday-21-november" class="news-link" target="_blank">原文</a>
+                    </div>
+                    <div class="news-desc">Genesis AI（巴黎/加州）完成5亿美元A轮融资，估值35亿美元，由Premji Invest、Khosla和Eclipse联合领投，Nvidia、AMD和三星参投；推出Eno通用机器人。</div>
                 </div>
-                <div class="news-summary">中国工信部官员表示，预计2026年中国人形机器人产量将超过10万台。AgiBot全系列产量已达2万台，Figure BotQ以每小时1台速度生产Figure 03。</div>
-            </div>
-
-            <div class="news-item">
-                <div class="news-title">26. 中国AI企业面临英伟达芯片断供困境<span class="badge badge-ai">AI</span></div>
-                <div class="news-meta">
-                    <span>来源: The Wire China / WSJ</span>
-                    <a href="https://www.thewirechina.com/2026/11/20/the-daily-roundup-november-20-2026/" target="_blank">查看原文</a>
-                    <span>时间: 2026-11-20</span>
+                <div class="news-card">
+                    <div class="news-title">Formnext 2026展示AI驱动的机器人工作流程</div>
+                    <div class="news-meta">
+                        <span class="news-source">AI Weekly</span>
+                        <span class="news-time">5小时前</span>
+                        <a href="https://aiweekly.co/ai-news-today" class="news-link" target="_blank">原文</a>
+                    </div>
+                    <div class="news-desc">法兰克福Formnext 2026展示了一个AI代理工作流程：选择夹具类型、在Siemens Designcenter中调整几何形状、模拟操作、验证机器人接口并准备增材制造设计。</div>
                 </div>
-                <div class="news-summary">华尔街日报报道，中国AI企业对英伟达芯片"上瘾"，如今面临断供困境。美国切断中国获取英伟达芯片的渠道，中国企业正面临戒断反应。</div>
-            </div>
-
-            <div class="news-item">
-                <div class="news-title">27. Broadcom修补VMware vCenter漏洞，中国APT组织利用为零日漏洞<span class="badge badge-ai">AI安全</span></div>
-                <div class="news-meta">
-                    <span>来源: AI Weekly</span>
-                    <a href="https://aiweekly.co/ai-news-today" target="_blank">查看原文</a>
-                    <span>时间: 2026-11-20</span>
-                </div>
-                <div class="news-summary">Broadcom修补了VMware vCenter CVE-2026-123890漏洞，此前中国APT组织"Armory Castle"将其作为零日漏洞利用。</div>
-            </div>
-
-            <div class="news-item">
-                <div class="news-title">28. 微软邮件服务中断近一天，FAA路由器故障导致超1.2万航班取消<span class="badge badge-ai">科技</span></div>
-                <div class="news-meta">
-                    <span>来源: AI SDG Substack</span>
-                    <a href="https://aisdg.substack.com/p/ai-news-for-november-20-2026" target="_blank">查看原文</a>
-                    <span>时间: 2026-11-20</span>
-                </div>
-                <div class="news-summary">微软邮件服务中断近一天，影响4.5亿用户；FAA路由器故障导致超过1.2万航班取消。国家情报总监表示企业正在"更大规模"修补漏洞，未发现攻击证据。</div>
             </div>
         </div>
 
         <div class="footer">
-            <p>📰 全球资讯简报 | 每日更新</p>
-            <p>生成时间: 2026年11月21日 07:15 SGT | 数据来源: 公开网络</p>
-            <p style="margin-top: 10px; font-size: 0.85em; color: #aaa;">本简报仅供信息参考，不构成投资建议</p>
+            <p>📡 全球资讯简报 | 每日更新 | 由 OpenClaw AI 自动生成</p>
+            <p style="margin-top: 8px; font-size: 0.85em;">数据来源：FreightWaves, DHL, Seatrade Maritime, CNBC, FT, NPR, AI Weekly 等</p>
         </div>
     </div>
 </body>
