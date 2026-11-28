@@ -3,32 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>全球资讯简报 - 2026年11月27日</title>
+    <title>全球资讯简报 | 2026年11月28日</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-            color: #eee;
+            color: #e8e8e8;
             line-height: 1.6;
             min-height: 100vh;
         }
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-        }
+        .container { max-width: 900px; margin: 0 auto; padding: 20px; }
         header {
             text-align: center;
             padding: 40px 20px;
             background: linear-gradient(135deg, #0f0f23 0%, #1a1a3e 100%);
             border-radius: 16px;
             margin-bottom: 30px;
-            border: 1px solid #2a2a4a;
+            border: 1px solid #2a2a5a;
         }
         h1 {
             font-size: 2.5em;
@@ -37,84 +29,81 @@
             -webkit-text-fill-color: transparent;
             margin-bottom: 10px;
         }
-        .date-badge {
-            display: inline-block;
-            background: rgba(102, 126, 234, 0.2);
-            padding: 8px 20px;
-            border-radius: 20px;
-            font-size: 1.1em;
-            color: #a8b4ff;
-            margin-top: 10px;
-        }
+        .date { color: #888; font-size: 1.1em; }
         .section {
             background: rgba(255,255,255,0.03);
             border-radius: 12px;
             padding: 25px;
             margin-bottom: 25px;
-            border: 1px solid rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.08);
         }
         .section-title {
             font-size: 1.4em;
-            color: #667eea;
             margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid rgba(102, 126, 234, 0.3);
+            padding-bottom: 12px;
+            border-bottom: 2px solid;
             display: flex;
             align-items: center;
             gap: 10px;
         }
+        .shipping .section-title { color: #4ecdc4; border-color: #4ecdc4; }
+        .politics .section-title { color: #ff6b6b; border-color: #ff6b6b; }
+        .finance .section-title { color: #ffd93d; border-color: #ffd93d; }
+        .ai .section-title { color: #a855f7; border-color: #a855f7; }
         .news-item {
-            background: rgba(255,255,255,0.02);
-            border-radius: 8px;
             padding: 15px;
             margin-bottom: 12px;
-            border-left: 3px solid #667eea;
+            background: rgba(255,255,255,0.02);
+            border-radius: 8px;
+            border-left: 3px solid;
             transition: transform 0.2s, background 0.2s;
         }
-        .news-item:hover {
-            background: rgba(255,255,255,0.05);
-            transform: translateX(5px);
-        }
+        .news-item:hover { transform: translateX(5px); background: rgba(255,255,255,0.05); }
+        .shipping .news-item { border-color: #4ecdc4; }
+        .politics .news-item { border-color: #ff6b6b; }
+        .finance .news-item { border-color: #ffd93d; }
+        .ai .news-item { border-color: #a855f7; }
         .news-title {
             font-size: 1.05em;
-            color: #fff;
+            font-weight: 600;
             margin-bottom: 8px;
-            line-height: 1.5;
+            color: #fff;
         }
+        .news-title a { color: inherit; text-decoration: none; }
+        .news-title a:hover { text-decoration: underline; }
         .news-meta {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
             font-size: 0.85em;
             color: #888;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
         }
-        .news-source {
-            color: #667eea;
-        }
-        .news-link {
-            color: #4a9eff;
-            text-decoration: none;
-        }
-        .news-link:hover {
-            text-decoration: underline;
-        }
-        .news-time {
-            color: #666;
-        }
+        .source { color: #667eea; }
+        .time { color: #666; }
+        .summary { margin-top: 8px; color: #aaa; font-size: 0.95em; }
         footer {
             text-align: center;
             padding: 30px;
             color: #666;
             font-size: 0.9em;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            margin-top: 40px;
         }
-        .highlight {
-            color: #ffd700;
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+            flex-wrap: wrap;
         }
+        .stat {
+            background: rgba(255,255,255,0.05);
+            padding: 15px 25px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .stat-number { font-size: 2em; font-weight: bold; color: #667eea; }
+        .stat-label { font-size: 0.9em; color: #888; }
         @media (max-width: 600px) {
             h1 { font-size: 1.8em; }
-            .container { padding: 10px; }
             .section { padding: 15px; }
         }
     </style>
@@ -122,277 +111,295 @@
 <body>
     <div class="container">
         <header>
-            <h1>🌍 全球资讯简报</h1>
-            <div class="date-badge">📅 2026年11月27日 星期五 | 新加坡时间 07:15</div>
+            <h1>🌐 全球资讯简报</h1>
+            <div class="date">2026年11月28日 星期六 | 新加坡时间 07:15</div>
+            <div class="stats">
+                <div class="stat">
+                    <div class="stat-number">24</div>
+                    <div class="stat-label">今日新闻</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">4</div>
+                    <div class="stat-label">板块分类</div>
+                </div>
+            </div>
         </header>
 
         <!-- 航运板块 -->
-        <div class="section">
-            <div class="section-title">🚢 航运与贸易</div>
+        <div class="section shipping">
+            <div class="section-title">🚢 航运物流</div>
             
             <div class="news-item">
-                <div class="news-title">联合国：2026年全球海运贸易将零增长</div>
+                <div class="news-title"><a href="https://www.manilatimes.net/2026/11/27/business/foreign-business/global-maritime-trade-set-for-zero-growth-in-2026-un/2478911" target="_blank">联合国：2026年全球海运贸易将零增长</a></div>
                 <div class="news-meta">
-                    <span class="news-source">来源：AFP / France24</span>
-                    <a class="news-link" href="https://www.france24.com/en/live-news/20261126-global-maritime-trade-set-for-zero-growth-in-2026-un" target="_blank">阅读原文</a>
-                    <span class="news-time">9小时前</span>
+                    <span class="source">Manila Times</span>
+                    <span class="time">11月27日</span>
                 </div>
+                <div class="summary">联合国贸发会议报告显示，受中东战争导致的航运中断和贸易不确定性影响，2026年全球海运贸易将陷入停滞，此前一年增长近2%。</div>
             </div>
 
             <div class="news-item">
-                <div class="news-title">UNCTAD：海运贸易面临零增长，航线受地缘冲突冲击</div>
+                <div class="news-title"><a href="https://www.thenationalnews.com/news/uae/2026/11/27/shipping-review-shows-further-pain-ahead-as-disruption-fuels-cost-of-living-crisis/" target="_blank">航运中断加剧生活成本危机</a></div>
                 <div class="news-meta">
-                    <span class="news-source">来源：BusinessMirror</span>
-                    <a class="news-link" href="https://businessmirror.com.ph/2026/11/27/seaborne-trade-facing-zero-growth-as-routes-under-fire/" target="_blank">阅读原文</a>
-                    <span class="news-time">34分钟前</span>
+                    <span class="source">The National</span>
+                    <span class="time">11月27日</span>
                 </div>
+                <div class="summary">主要航运路线中断导致2026年海运贸易零增长，运费上涨、保险费用增加和额外运输附加费给货主带来更大财务压力。</div>
             </div>
 
             <div class="news-item">
-                <div class="news-title">INTERTANKO警告：航运韧性不应意味着接受袭击常态化</div>
+                <div class="news-title"><a href="https://khanlist.com/story/moment-of-truth-for-maritime-industry-at-london-meet-6b7ba3a1" target="_blank">IMO伦敦会议：航运业减排关键时刻</a></div>
                 <div class="news-meta">
-                    <span class="news-source">来源：Balitang Marino</span>
-                    <a class="news-link" href="https://www.balitangmarino.com/post/intertanko-shipping-resilience-must-not-mean-accepting-attacks-on-vessels" target="_blank">阅读原文</a>
-                    <span class="news-time">2小时前</span>
+                    <span class="source">KhanList / Straits Times</span>
+                    <span class="time">11月28日</span>
                 </div>
+                <div class="summary">国际海事组织将在伦敦召开会议，就削减船舶温室气体排放计划进行投票，这是在美国总统表态后的关键决策时刻。</div>
             </div>
 
             <div class="news-item">
-                <div class="news-title">ADNOC限制油轮进入海湾地区，此前发生袭击事件</div>
+                <div class="news-title"><a href="https://indiashippingnews.com/maritime/global-maritime-security-update-for-november-2026/" target="_blank">全球海事安全更新：25名海员遇难</a></div>
                 <div class="news-meta">
-                    <span class="news-source">来源：Economic Times</span>
-                    <a class="news-link" href="https://economictimes.indiatimes.com/news/international/world-news/adnoc-limits-oil-tanker-entry-after-gulf-attacks/articleshow/136202135.cms" target="_blank">阅读原文</a>
-                    <span class="news-time">4小时前</span>
+                    <span class="source">India Shipping News</span>
+                    <span class="time">11月27日</span>
                 </div>
+                <div class="summary">自中东危机以来已有25名海员遇难，发生130起涉及商船的事件。10月28日至11月17日期间，49名船员在保加利亚附近海域从三艘商船获救。</div>
             </div>
 
             <div class="news-item">
-                <div class="news-title">IMO净零框架谈判取得进展，MEPC 85会议即将召开</div>
+                <div class="news-title"><a href="https://wisevoter.com/world/2026/11/27/container-freight-rates-fall-transpacific-demand" target="_blank">集装箱运价连续第八周下跌</a></div>
                 <div class="news-meta">
-                    <span class="news-source">来源：Riviera Maritime</span>
-                    <a class="news-link" href="https://www.rivieramm.com/news-content-hub/imo-climate-talks-a-simplifying-choice-around-whether-to-adopt-the-nzf-architecture-or-face-delay-90701" target="_blank">阅读原文</a>
-                    <span class="news-time">4小时前</span>
+                    <span class="source">Wisevoter</span>
+                    <span class="time">11月27日</span>
                 </div>
+                <div class="summary">Drewry世界集装箱指数跌至每40英尺集装箱4,032美元，跨太平洋航线运价连续第八周下滑，但仍比去年同期高出126%。</div>
             </div>
 
             <div class="news-item">
-                <div class="news-title">中国钦州港利用新运河促进海运合作</div>
+                <div class="news-title"><a href="https://www.marinelink.com/archive" target="_blank">新加坡开放LNG浮式储存装置许可申请</a></div>
                 <div class="news-meta">
-                    <span class="news-source">来源：Manila Times</span>
-                    <a class="news-link" href="https://www.manilatimes.net/2026/11/27/tmt-newswire/globenewswire/port-city-qinzhou-harnesses-new-canal-to-boost-maritime-cooperation/2478813" target="_blank">阅读原文</a>
-                    <span class="news-time">36分钟前</span>
+                    <span class="source">MarineLink</span>
+                    <span class="time">11月</span>
                 </div>
+                <div class="summary">新加坡海事及港务管理局开放申请，允许在新加坡锚地运营最多两个液化天然气浮式储存装置，以扩大LNG加注能力并增强供应韧性。</div>
             </div>
         </div>
 
         <!-- 时政板块 -->
-        <div class="section">
-            <div class="section-title">🏛️ 国际时政</div>
+        <div class="section politics">
+            <div class="section-title">🌍 国际时政</div>
             
             <div class="news-item">
-                <div class="news-title">欧盟27国领导人将讨论2028-2034年预算案</div>
+                <div class="news-title"><a href="https://www.independent.co.uk/news/world/europe/russia-ukraine-war-live-putin-drones-nuclear-weapons-casualties-b3091880.html" target="_blank">俄罗斯对乌发动近300次空袭</a></div>
                 <div class="news-meta">
-                    <span class="news-source">来源：DW</span>
-                    <a class="news-link" href="https://www.dw.com/en/top-stories/s-9097" target="_blank">阅读原文</a>
-                    <span class="news-time">8小时前</span>
+                    <span class="source">The Independent</span>
+                    <span class="time">11月28日</span>
                 </div>
+                <div class="summary">根据ACLED数据，截至11月20日的一周内，俄罗斯对乌克兰民用基础设施发动近300次空袭，标志着空中战争的急剧升级。</div>
             </div>
 
             <div class="news-item">
-                <div class="news-title">特朗普宣布新关税提案，针对十余个主要贸易伙伴</div>
+                <div class="news-title"><a href="https://apnews.com/article/russia-ukraine-war-zelenskyy-trump-putin-d891149b4cbd6521b83096a32bd5e53d" target="_blank">泽连斯基对美俄立场表示沮丧</a></div>
                 <div class="news-meta">
-                    <span class="news-source">来源：Euronews</span>
-                    <a class="news-link" href="https://www.euronews.com/2026/11/25/europe-tonight-trump-unveils-new-tariffs-amid-russian-nuclear-space-threat" target="_blank">阅读原文</a>
-                    <span class="news-time">1天前</span>
+                    <span class="source">AP News</span>
+                    <span class="time">11月28日</span>
                 </div>
+                <div class="summary">乌克兰总统泽连斯基对美国在和平谈判中对俄罗斯施压不够表示沮丧，认为美国过于关注中东而忽视乌克兰。</div>
             </div>
 
             <div class="news-item">
-                <div class="news-title">印尼非法金矿事故：16人死亡，10人失踪</div>
+                <div class="news-title"><a href="https://www.bbc.com/news/articles/c820q9wgrpyyo" target="_blank">泽连斯基：美国未对俄施加足够压力</a></div>
                 <div class="news-meta">
-                    <span class="news-source">来源：Taipei Times</span>
-                    <a class="news-link" href="https://www.taipeitimes.com/News/world/archives/2026/11/27/2003868501" target="_blank">阅读原文</a>
-                    <span class="news-time">8小时前</span>
+                    <span class="source">BBC</span>
+                    <span class="time">11月28日</span>
                 </div>
+                <div class="summary">泽连斯基向BBC表示，美国在结束战争的和平谈判中没有对俄罗斯施加足够压力，对特朗普政府的立场感到失望。</div>
             </div>
 
             <div class="news-item">
-                <div class="news-title">孟加拉国政治紧张升级，Awami League宣布11月27-28日罢工</div>
+                <div class="news-title"><a href="https://www.economist.com/the-world-this-week/2026/11/26/politics" target="_blank">经济学人本周政治 roundup</a></div>
                 <div class="news-meta">
-                    <span class="news-source">来源：Dainik Jagran</span>
-                    <a class="news-link" href="https://english.dainikjagranmpcg.com/top-stories/november-27-2026-important-events-national-and-world-news/article-46792" target="_blank">阅读原文</a>
-                    <span class="news-time">12小时前</span>
+                    <span class="source">The Economist</span>
+                    <span class="time">11月26日</span>
                 </div>
+                <div class="summary">本周全球新闻综述：乌克兰和苏丹战争、COP31气候大会、中国反腐运动以及巴基斯坦宇航员加入天宫空间站。</div>
             </div>
 
             <div class="news-item">
-                <div class="news-title">Ipsos全球调查：泰国民众对金融/政治腐败担忧上升7个百分点</div>
+                <div class="news-title"><a href="https://www.dw.com/en/top-stories/s-9097" target="_blank">阿尔巴尼亚青年抗议腐败和政治僵化</a></div>
                 <div class="news-meta">
-                    <span class="news-source">来源：Ipsos</span>
-                    <a class="news-link" href="https://www.ipsos.com/en/what-worries-world" target="_blank">阅读原文</a>
-                    <span class="news-time">13小时前</span>
+                    <span class="source">DW</span>
+                    <span class="time">11月27日</span>
                 </div>
+                <div class="summary">阿尔巴尼亚青年针对僵化的政治体系和腐败发起抗议，动摇了总理埃迪·拉马领导的政府。</div>
             </div>
 
             <div class="news-item">
-                <div class="news-title">香港入境处逮捕一对夫妇，涉嫌撕毁特区护照页</div>
+                <div class="news-title"><a href="https://www.thehindu.com/news/the-hindu-morning-digest-november-28-2026/article71752254.ece" target="_blank">塔塔集团董事会会议将如期举行</a></div>
                 <div class="news-meta">
-                    <span class="news-source">来源：The Standard</span>
-                    <a class="news-link" href="https://www.thestandard.com.hk/news/article/349809/Morning-Recap-November-27-2026" target="_blank">阅读原文</a>
-                    <span class="news-time">29分钟前</span>
+                    <span class="source">The Hindu</span>
+                    <span class="time">11月28日</span>
                 </div>
+                <div class="summary">孟买高等法院拒绝塔塔信托紧急救济请求，塔塔之子11月30日董事会会议将如期举行，涉及执行主席N. Chandrasekaran的投票权争议。</div>
             </div>
         </div>
 
         <!-- 财经板块 -->
-        <div class="section">
+        <div class="section finance">
             <div class="section-title">💰 财经市场</div>
             
             <div class="news-item">
-                <div class="news-title">全球股市反弹，投资者无视美国关税和AI担忧"逢低买入"</div>
+                <div class="news-title"><a href="https://news.sbs.co.kr/english/article.do?news_id=N1008867665" target="_blank">华尔街全面反弹：纳斯达克大涨2.31%</a></div>
                 <div class="news-meta">
-                    <span class="news-source">来源：CNBC</span>
-                    <a class="news-link" href="https://www.cnbc.com/2026/11/26/stock-markets-today-.html" target="_blank">阅读原文</a>
-                    <span class="news-time">11小时前</span>
+                    <span class="source">SBS News</span>
+                    <span class="time">11月28日</span>
                 </div>
+                <div class="summary">道琼斯工业平均指数上涨591.99点（1.18%）至50,774.94点；标普500指数上涨114.71点（1.60%）至7,297.49点；纳斯达克综合指数大涨543.70点（2.31%）至24,129.50点。</div>
             </div>
 
             <div class="news-item">
-                <div class="news-title">美股感恩节休市，周五将恢复半日交易</div>
+                <div class="news-title"><a href="https://www.techflowpost.com/en-US/article/35769/us-stocks-nov-28-nasdaq-up-2-31-anthropic-up-11-dow-biggest-weekly-gain" target="_blank">美股创4月以来最佳周表现</a></div>
                 <div class="news-meta">
-                    <span class="news-source">来源：Upstox</span>
-                    <a class="news-link" href="https://upstox.com/news/market-news/us-stocks/are-us-markets-open-or-closed-on-thanksgiving-here-s-what-investors-should-know-about-global-markets-today/article-204036/" target="_blank">阅读原文</a>
-                    <span class="news-time">11小时前</span>
+                    <span class="source">TechFlow Post</span>
+                    <span class="time">11月28日</span>
                 </div>
+                <div class="summary">标普500本周上涨5.6%，创2025年4月以来最大单周涨幅；纳斯达克上涨6.68%，同样创4月以来最佳；道琼斯上涨5.46%，创2022年10月以来最大周涨幅。</div>
             </div>
 
             <div class="news-item">
-                <div class="news-title">Nvidia reportedly halts chip shipments to Southeast Asia</div>
+                <div class="news-title"><a href="https://finimize.com/content/your-daily-brief-for-november-28th-2026" target="_blank">中国股市进入熊市后政府出手维稳</a></div>
                 <div class="news-meta">
-                    <span class="news-source">来源：Peter Lewis Money Talk</span>
-                    <a class="news-link" href="https://peterlewismoneytalk.substack.com/p/peters-asian-business-and-finance-d6c" target="_blank">阅读原文</a>
-                    <span class="news-time">1小时前</span>
+                    <span class="source">Finimize</span>
+                    <span class="time">11月28日</span>
                 </div>
+                <div class="summary">10月企业财报令人失望和全球AI抛售潮导致中国沪深300指数较6月峰值下跌超20%进入熊市。中国政府呼吁增加股票回购和分红，并扩大国家队基金在市场下跌时的作用。</div>
             </div>
 
             <div class="news-item">
-                <div class="news-title">韩国央行加息至两年来最高水平</div>
+                <div class="news-title"><a href="https://www.riotimesonline.com/global-economy-briefing-november-28-2026/" target="_blank">美债收益率升至4.936%施压新兴市场</a></div>
                 <div class="news-meta">
-                    <span class="news-source">来源：Peter Lewis Money Talk</span>
-                    <a class="news-link" href="https://peterlewismoneytalk.substack.com/p/peters-asian-business-and-finance-d6c" target="_blank">阅读原文</a>
-                    <span class="news-time">1小时前</span>
+                    <span class="source">Rio Times</span>
+                    <span class="time">11月28日</span>
                 </div>
+                <div class="summary">全球股市反弹，纳斯达克跳涨2.31%，VIX恐慌指数回落。但美国10年期国债收益率升至4.936%，继续对巴西等新兴市场构成压力。</div>
             </div>
 
             <div class="news-item">
-                <div class="news-title">墨西哥央行上调2026年GDP增长预期至1.9%</div>
+                <div class="news-title"><a href="https://www.theguardian.com/business/live/2026/nov/27/uk-bank-tax-borrowers-savers-andrew-bailey-stocks-economy-businses-news-live-updates-latest" target="_blank">欧洲股市加入全球反弹行列</a></div>
                 <div class="news-meta">
-                    <span class="news-source">来源：StockNow</span>
-                    <a class="news-link" href="https://stocknow.ai/en/breaking-news/zpsr9qzchos14b0f1uhwh5y6/newsquawk-daily-asia-pac-opening-news-27th-november-2026" target="_blank">阅读原文</a>
-                    <span class="news-time">1小时前</span>
+                    <span class="source">The Guardian</span>
+                    <span class="time">11月27日</span>
                 </div>
+                <div class="summary">欧洲股市跟随全球AI交易反弹而上涨。但英国2026年平均GDP增长预计仅为0.1%，远低于欧元区的1.0%，2027年前景依然黯淡。</div>
             </div>
 
             <div class="news-item">
-                <div class="news-title">英国央行警告：AI借贷激增带来金融风险</div>
+                <div class="news-title"><a href="https://oilprice.com/Energy/Crude-Oil/The-Oil-Glut-Everyone-Expected-Is-Looking-Increasingly-Elusive.html" target="_blank">布伦特原油反弹至96美元</a></div>
                 <div class="news-meta">
-                    <span class="news-source">来源：BizToc</span>
-                    <a class="news-link" href="https://biztoc.com/" target="_blank">阅读原文</a>
-                    <span class="news-time">6分钟前</span>
+                    <span class="source">OilPrice.com</span>
+                    <span class="time">11月28日</span>
                 </div>
+                <div class="summary">布伦特原油反弹至96美元/桶，胡塞武装袭击和实物供应收紧使100美元油价成为可能，尽管市场原本预期供应过剩。</div>
             </div>
 
             <div class="news-item">
-                <div class="news-title">印度Nifty指数连续第二日上涨，收于25,884点</div>
+                <div class="news-title"><a href="https://www.brecorder.com/news/40451105/opec-set-to-keep-oil-production-targets-steady" target="_blank">OPEC+预计维持产量目标不变</a></div>
                 <div class="news-meta">
-                    <span class="news-source">来源：CNBC TV18</span>
-                    <a class="news-link" href="https://www.cnbctv18.com/market/nifty-outlook-friday-november-27-index-eyes-26400-banking-index-needs-to-cross-64000-20042388.htm" target="_blank">阅读原文</a>
-                    <span class="news-time">9小时前</span>
+                    <span class="source">Business Recorder / Reuters</span>
+                    <span class="time">11月28日</span>
                 </div>
+                <div class="summary">三位消息人士透露，OPEC+产油国将在周日会议上维持2027年第一季度产量目标不变，伊朗战争的不确定性和产能估计分歧使讨论复杂化。</div>
+            </div>
+
+            <div class="news-item">
+                <div class="news-title"><a href="https://www.citynewsservice.cn/articles/china-biz-buzz/daily-buzz/weekend-buzz-28-29-november-2026-env0wl3m" target="_blank">中国强烈反对美国加征关税提议</a></div>
+                <div class="news-meta">
+                    <span class="source">City News Service</span>
+                    <span class="time">11月28日</span>
+                </div>
+                <div class="summary">中国对美国最新提出的加征进口关税提议表示强烈反对，特朗普政府称这些关税基于贸易伙伴的过剩工业产能导致廉价出口泛滥。</div>
             </div>
         </div>
 
         <!-- AI与机器人板块 -->
-        <div class="section">
+        <div class="section ai">
             <div class="section-title">🤖 AI与机器人</div>
             
             <div class="news-item">
-                <div class="news-title">小鹏汽车CEO何小鹏：人形机器人将通过软硬件协同进化实现突破</div>
+                <div class="news-title"><a href="https://www.eweek.com/news/openai-gpt-6-2-astra-humanoid-robotics-benchmark/" target="_blank">OpenAI GPT-6.2 Astra在人形机器人基准测试中领先</a></div>
                 <div class="news-meta">
-                    <span class="news-source">来源：GlobeNewswire / Economist</span>
-                    <a class="news-link" href="https://www.globenewswire.com/news-release/2026/11/26/3411017/0/en/in-the-economist-s-the-world-ahead-2027-xpeng-ceo-he-xiaopeng-outlines-humanoid-robotics-will-advance-through-hardware-software-co-evolution.html" target="_blank">阅读原文</a>
-                    <span class="news-time">5小时前</span>
+                    <span class="source">eWeek</span>
+                    <span class="time">11月27日</span>
                 </div>
+                <div class="summary">Artificial Analysis发布的人形机器人基准测试显示，OpenAI的GPT-6.2 Astra在控制模拟人形机器人方面优于Anthropic和Google的竞争对手模型。</div>
             </div>
 
             <div class="news-item">
-                <div class="news-title">《经济学人》：人形机器人正变得更便宜、更智能，但可靠性和规模化仍是障碍</div>
+                <div class="news-title"><a href="https://fortune.com/2026/11/13/openai-disbands-robotics-team-as-its-general-models-start-running-robots/" target="_blank">OpenAI解散独立机器人团队</a></div>
                 <div class="news-meta">
-                    <span class="news-source">来源：The Economist</span>
-                    <a class="news-link" href="https://www.economist.com/briefing/2026/11/26/humanoid-robots-are-coming-sooner-than-you-think" target="_blank">阅读原文</a>
-                    <span class="news-time">12小时前</span>
+                    <span class="source">Fortune</span>
+                    <span class="time">11月13日</span>
                 </div>
+                <div class="summary">OpenAI已解散其独立机器人团队并将研究人员重新分配到公司其他部门，称此举是为了加速机器人技术进步，让通用AI模型直接控制机器人。</div>
             </div>
 
             <div class="news-item">
-                <div class="news-title">mimic FLUX-mimic-x模型在独立测试中速度超越人类操作员</div>
+                <div class="news-title"><a href="https://www.humanoidsdaily.com/news/openai-robotics-team-reorganized-gpt-6-astra" target="_blank">Google Gemini 4 Hydrogen击败专用机器人模型</a></div>
                 <div class="news-meta">
-                    <span class="news-source">来源：QUE.com</span>
-                    <a class="news-link" href="https://que.com/a-robot-ai-model-beats-its-human-operator-on-speed-in-independent-tests-but-still-trails-on-reliability-as-lute-raises-20-million-to-give-robot-brains-a-sense-of-touch-and-lupa-bets-on-glove-data/" target="_blank">阅读原文</a>
-                    <span class="news-time">4小时前</span>
+                    <span class="source">Humanoids Daily</span>
+                    <span class="time">11月17日</span>
                 </div>
+                <div class="summary">Google表示其更便宜的Gemini 4 Hydrogen模型在机器人控制方面击败了专门为机器人构建的Gemini Robotics ER 2模型，显示通用模型正在超越专用模型。</div>
             </div>
 
             <div class="news-item">
-                <div class="news-title">沃尔沃汽车开始为根特工厂训练Hexagon AEON人形机器人</div>
+                <div class="news-title"><a href="https://www.sciencedaily.com/news/computers_math/artificial_intelligence/" target="_blank">科学家开发可自主移动的软体机器人材料</a></div>
                 <div class="news-meta">
-                    <span class="news-source">来源：Physical AI News</span>
-                    <a class="news-link" href="https://physicalainews.com/daily-brief-nov-26-volvo-trains-hexagon-humanoids-us-tariff-plan-targets-chinese-drones-mimic-model-beats-human-operator/" target="_blank">阅读原文</a>
-                    <span class="news-time">10小时前</span>
+                    <span class="source">ScienceDaily</span>
+                    <span class="time">11月23日</span>
                 </div>
+                <div class="summary">科学家开发出能够利用内部能量爬行、行走和挖掘的非凡材料，为新一代自主软体机器人铺平道路。</div>
             </div>
 
             <div class="news-item">
-                <div class="news-title">OpenAI解散独立机器人研究团队，CoRL会议展位空置</div>
+                <div class="news-title"><a href="https://pulseaugur.com/brief/2026-11-28" target="_blank">德勤因AI生成虚假报告被西澳政府禁入</a></div>
                 <div class="news-meta">
-                    <span class="news-source">来源：Archynewsy</span>
-                    <a class="news-link" href="https://www.archynewsy.com/openai-dismantles-independent-robotics-research-team/" target="_blank">阅读原文</a>
-                    <span class="news-time">10小时前</span>
+                    <span class="source">PulseAugur</span>
+                    <span class="time">11月28日</span>
                 </div>
+                <div class="summary">德勤被禁止向西澳大利亚政府提交报告，因其使用AI生成的报告包含捏造信息。这一事件引发对AI在专业服务中应用的信任危机。</div>
             </div>
 
             <div class="news-item">
-                <div class="news-title">小鹏Iron机器人将在广州车展主持新闻发布会，开创历史先河</div>
+                <div class="news-title"><a href="https://www.aiaffairs.com/audio/2026-11-28/" target="_blank">日本政府AI战略小组提议网络攻击防护措施</a></div>
                 <div class="news-meta">
-                    <span class="news-source">来源：CnEVPost</span>
-                    <a class="news-link" href="https://cnevpost.com/2026/11/25/xpeng-ramps-up-physical-ai-push-2026-ai-day/" target="_blank">阅读原文</a>
-                    <span class="news-time">1天前</span>
+                    <span class="source">AI Affairs</span>
+                    <span class="time">11月28日</span>
                 </div>
+                <div class="summary">日本政府AI战略小组提出针对AI系统的网络攻击防护建议，随着AI在国家安全和经济中作用日益重要，防护措施成为政策重点。</div>
             </div>
 
             <div class="news-item">
-                <div class="news-title">Universal Robots与Inbolt合作，将3D AI视觉集成到Gen 7协作机器人</div>
+                <div class="news-title"><a href="https://aitoolly.com/ai-news/2026-11-28" target="_blank">Depost AI在Product Hunt正式发布</a></div>
                 <div class="news-meta">
-                    <span class="news-source">来源：Physical AI News</span>
-                    <a class="news-link" href="https://physicalainews.com/universal-robots-brings-inbolts-3d-ai-vision-directly-onto-its-gen-7-robots/" target="_blank">阅读原文</a>
-                    <span class="news-time">11小时前</span>
+                    <span class="source">AIToolly</span>
+                    <span class="time">11月27日</span>
                 </div>
+                <div class="summary">作者Aleksandar Blazhev于11月27日在Product Hunt上正式发布Depost AI，这是AI工具领域的最新产品发布。</div>
             </div>
 
             <div class="news-item">
-                <div class="news-title">Together AI将Qwen3.8-27B蒸馏至老挝语水平达Kimi的93%</div>
+                <div class="news-title"><a href="https://explainx.ai/catch-up-on-ai/2026-11-28" target="_blank">AI Agent雇佣人类完成2000笔5美元支付</a></div>
                 <div class="news-meta">
-                    <span class="news-source">来源：Sulat AI</span>
-                    <a class="news-link" href="https://news.sulat.com/2026/11/27/together-lao-distillation/" target="_blank">阅读原文</a>
-                    <span class="news-time">1小时前</span>
+                    <span class="source">explainx.ai</span>
+                    <span class="time">11月28日</span>
                 </div>
+                <div class="summary">一起AI Agent自主雇佣人类完成2000笔5美元支付的案例引发关注，展示了AI Agent在实际经济活动中的自主决策能力。</div>
             </div>
         </div>
 
         <footer>
-            <p>📊 本简报由AI自动生成 | 数据来源：公开网络新闻</p>
-            <p>⏰ 生成时间：2026年11月27日 07:15 SGT</p>
-            <p>🌐 部署于 GitHub Pages</p>
+            <p>📊 数据来源：Brave Search | 生成时间：2026-11-28 07:15 SGT</p>
+            <p>🤖 由 OpenClaw AI 自动生成 | 仅供信息参考</p>
         </footer>
     </div>
 </body>
